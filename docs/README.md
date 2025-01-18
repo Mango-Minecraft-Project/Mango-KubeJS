@@ -2,7 +2,7 @@
 home: true
 layout: BlogHome
 icon: house
-title: Blog Home
+title: Article Home
 heroImage: /logo.png
 heroText: Mango's KubeJS Encyclopaedia
 bgImage: /background.png

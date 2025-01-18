@@ -5,10 +5,11 @@ import { enusNavbar, zhtwNavbar, zhcnNavbar } from "./theme/navbar/index.js";
 import { enusSidebar, zhtwSidebar, zhcnSidebar } from "./theme/sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "mango-kubejs.pages.dev",
+  hostname: "article.mango-kubejs.pages.dev",
 
   logo: "/logo.svg",
   repo: "Mango-Minecraft-Project/Mango-KubeJS",
+  docsBranch: "article",
   darkmode: "enable",
   docsDir: "docs",
   favicon: "/logo.png",

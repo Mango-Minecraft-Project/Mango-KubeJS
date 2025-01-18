@@ -2,7 +2,7 @@
 home: true
 layout: BlogHome
 icon: house
-title: 首頁
+title: 文章首頁
 heroImage: /logo.png
 heroText: 芒果的 KubeJS 百科全書
 bgImage: /background.png

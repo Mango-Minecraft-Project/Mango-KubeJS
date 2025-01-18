@@ -2,10 +2,10 @@
 home: true
 layout: BlogHome
 icon: house
-title: 主页
+title: 文章主页
 heroImage: /logo.png
 bgImage: /background.png
-heroText: 芒果的 KubeJS 百科全书
+heroText: 芒果的 KubeJS 文章
 tagline: 与 KubeJS 有关的全在这！
 projects:
   - icon: book
