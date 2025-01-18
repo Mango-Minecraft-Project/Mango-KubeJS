@@ -19,19 +19,19 @@ star: true
 - Wiki：[https://kubejs.com/wiki/](https://kubejs.com/wiki/)
 - 舊版 Wiki
   - KubeJS 5：[https://wiki.latvian.dev/books/kubejs-legacy](https://wiki.latvian.dev/books/kubejs-legacy)
-  - KubeJS 6+：[https://wiki.latvian.dev/books/kubejs](https://wiki.latvian.dev/books/kubejs)
+  - KubeJS 6：[https://wiki.latvian.dev/books/kubejs](https://wiki.latvian.dev/books/kubejs)
 
 ## 第三方連結
 
 - MC百科：[https://www.mcmod.cn/class/2450.html](https://www.mcmod.cn/class/2450.html)
 - QQ 群
-  - 日常交流群：665153457
-  - 純討論群（禁止閒聊）：742635193
+  - KubeJS 魔改交流群：[665153457](https://qm.qq.com/q/MBb7ELoy8o)
+  - KubeJS 魔改交流群－末地书院（禁止閒聊）：[742635193](https://qm.qq.com/q/uNI6sSBiVM)：
 - DoDo 群：[https://imdodo.com/s/208104](https://imdodo.com/s/208104)
 - KubeJS 中文開發論壇：[https://kjscndev.flarum.cloud/](https://kjscndev.flarum.cloud/)
 - Wudji
   - KubeJS 5：[https://wudji.gitbook.io/xplus-kubejs-tutorial-v1-zh_cn](https://wudji.gitbook.io/xplus-kubejs-tutorial-v1-zh_cn)
-  - KubeJS 6+：[https://wudji.gitbook.io/xplus-kubejs-tutorial-v2-zh_cn](https://wudji.gitbook.io/xplus-kubejs-tutorial-v1-zh_cn)
+  - KubeJS 6：[https://wudji.gitbook.io/xplus-kubejs-tutorial-v2-zh_cn](https://wudji.gitbook.io/xplus-kubejs-tutorial-v1-zh_cn)
 - 芒果凍布丁
   - 文章：[https://article.mango-kubejs.pages.dev/](https://article.mango-kubejs.pages.dev/)
   - Wiki：[https://wiki.mango-kubejs.pages.dev/](https://wiki.mango-kubejs.pages.dev/)
