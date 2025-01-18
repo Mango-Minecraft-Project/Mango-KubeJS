@@ -8,6 +8,6 @@ export const zhcnNavbar = navbar([
   "/zh-cn/",
   {
     text: "文章",
-    link: "https://artcle.mango-kubejs.pages.dev/zh-cn/",
+    link: "https://article.mango-kubejs.pages.dev/zh-cn/",
   },
 ]);
