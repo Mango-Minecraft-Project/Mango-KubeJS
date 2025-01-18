@@ -8,6 +8,6 @@ export const enusNavbar = navbar([
   },
   {
     text: "Article",
-    link: "https://artcle.mango-kubejs.pages.dev/",
+    link: "https://article.mango-kubejs.pages.dev/",
   },
 ]);

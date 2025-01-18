@@ -9,6 +9,7 @@ export default hopeTheme({
 
   logo: "/logo.svg",
   repo: "Mango-Minecraft-Project/Mango-KubeJS",
+  docsBranch: "wiki",
   darkmode: "enable",
   docsDir: "docs",
   favicon: "/logo.png",
