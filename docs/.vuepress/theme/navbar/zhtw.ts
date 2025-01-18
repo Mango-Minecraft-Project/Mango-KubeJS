@@ -2,12 +2,12 @@ import { navbar } from "vuepress-theme-hope";
 
 export const zhtwNavbar = navbar([
   {
-    text: "首頁",
-    link: "https://mango-kubejs.pages.dev/zh-tw/",
-  },
-  {
     text: "Wiki",
     link: "https://wiki.mango-kubejs.pages.dev/zh-tw/",
+  },
+  {
+    text: "首頁",
+    link: "https://mango-kubejs.pages.dev/zh-tw/",
   },
   {
     text: "文章首頁",
