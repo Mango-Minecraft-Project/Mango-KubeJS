@@ -4,7 +4,7 @@ layout: BlogHome
 icon: house
 title: 文章首頁
 heroImage: /logo.png
-heroText: 芒果的 KubeJS 百科全書
+heroText: 芒果的 KubeJS 文章
 bgImage: /background.png
 tagline: 與 KubeJS 有關的全在這！
 projects:

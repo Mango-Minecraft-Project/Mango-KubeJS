@@ -4,7 +4,7 @@ layout: BlogHome
 icon: house
 title: Article Home
 heroImage: /logo.png
-heroText: Mango's KubeJS Encyclopaedia
+heroText: Mango's KubeJS Article
 bgImage: /background.png
 tagline: All about KubeJS
 projects:
