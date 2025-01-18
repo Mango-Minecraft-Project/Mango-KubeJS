@@ -9,25 +9,21 @@ export default defineUserConfig({
   base: "/",
   port: 8080,
 
-  lang: "en-US",
-  title: "Blog Demo",
-  description: "A blog demo for vuepress-theme-hope",
-
   locales: {
     "/": {
       lang: "en-US",
-      title: "Blog Demo",
-      description: "A blog demo for vuepress-theme-hope",
+      title: "Mango's KubeJS Encyclopaedia",
+      description: "Mango's KubeJS Encyclopaedia",
     },
     "/zh-tw/": {
       lang: "zh-TW",
-      title: "部落格範例",
-      description: "vuepress-theme-hope 的部落格範例",
+      title: "芒果的 KubeJS 百科",
+      description: "芒果的 KubeJS 百科",
     },
     "/zh-cn/": {
       lang: "zh-CN",
-      title: "博客演示",
-      description: "vuepress-theme-hope 的博客演示",
+      title: "芒果的 KubeJS 百科",
+      description: "芒果的 KubeJS 百科",
     },
   },
 

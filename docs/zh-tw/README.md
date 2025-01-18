@@ -2,42 +2,32 @@
 home: true
 layout: BlogHome
 icon: house
-title: 部落客首頁
-heroImage: https://theme-hope-assets.vuejs.press/logo.svg
-heroText: 你部落格的名稱
-heroFullScreen: true
-tagline: 你可以在這裡放置你的口號與標語
+title: 首頁
+heroImage: /logo.png
+heroText: 芒果的 KubeJS 百科全書
+bgImage: /background.png
+tagline: 與 KubeJS 有關的全在這！
 projects:
-  - icon: folder-open
-    name: 項目名稱
-    desc: 項目詳細描述
-    link: https://你的項目連結
-
-  - icon: link
-    name: 連結名稱
-    desc: 連結詳細描述
-    link: https://連結地址
+  - icon: book
+    name: CrychicDoc
+    link: https://docs2.mihono.cn/
 
   - icon: book
-    name: 書籍名稱
-    desc: 書籍詳細描述
-    link: https://你的書籍連結
+    name: 孤梦 KubeJS 教程
+    desc: "1.20.1"
+    link: https://gumeng.gitbook.io/kubejs-jiao-cheng-1.20.1
 
-  - icon: newspaper
-    name: 文章名稱
-    desc: 文章詳細描述
-    link: https://你的文章連結
+  - icon: book
+    name: Wudji KubeJS 教程
+    desc: "1.19.2+"
+    link: https://wudji.gitbook.io/xplus-kubejs-tutorial-v2-zh_cn
 
-  - icon: user-group
-    name: 伙伴名稱
-    desc: 伙伴詳細介紹
-    link: https://你的伙伴連結
+  - icon: book
+    name: Wudji KubeJS 教程
+    desc: "1.16.5 / 1.18.2"
+    link: https://wudji.gitbook.io/xplus-kubejs-tutorial-v1-zh_cn
 
-  - icon: https://theme-hope-assets.vuejs.press/logo.svg
-    name: 自訂項目
-    desc: 自訂詳細介紹
-    link: https://你的自訂連結
-
-footer: 自訂你的頁尾文字
+  - icon: comments
+    name: KubeJS 中文开发论坛
+    link: https://gumeng.gitbook.io/kubejs-jiao-cheng-1.20.1
 ---
-

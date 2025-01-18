@@ -1,110 +1,77 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import { Page } from "vuepress";
 
-import { enusNavbar, zhtwNavbar, zhcnNavbar } from "./navbar/index.js";
-import { enusSidebar, zhtwSidebar, zhcnSidebar } from "./sidebar/index.js";
+import { enusNavbar, zhtwNavbar, zhcnNavbar } from "./theme/navbar/index.js";
+import { enusSidebar, zhtwSidebar, zhcnSidebar } from "./theme/sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://mister-hope.github.io",
+  hostname: "mango-kubejs.pages.dev",
 
-  author: {
-    name: "Mr.Hope",
-    url: "https://mister-hope.com",
-  },
-
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  logo: "/logo.svg",
+  repo: "Mango-Minecraft-Project/Mango-KubeJS",
   darkmode: "enable",
   docsDir: "docs",
   favicon: "/logo.png",
 
   blog: {
     medias: {
-      Baidu: "https://example.com",
-      BiliBili: "https://example.com",
-      Bitbucket: "https://example.com",
-      Dingding: "https://example.com",
-      Discord: "https://example.com",
-      Dribbble: "https://example.com",
-      Email: "mailto:info@example.com",
-      Evernote: "https://example.com",
-      Facebook: "https://example.com",
-      Flipboard: "https://example.com",
-      Gitee: "https://example.com",
-      GitHub: "https://example.com",
-      Gitlab: "https://example.com",
-      Gmail: "mailto:info@example.com",
-      Instagram: "https://example.com",
-      Lark: "https://example.com",
-      Lines: "https://example.com",
-      Linkedin: "https://example.com",
-      Pinterest: "https://example.com",
-      Pocket: "https://example.com",
-      QQ: "https://example.com",
-      Qzone: "https://example.com",
-      Reddit: "https://example.com",
-      Rss: "https://example.com",
-      Steam: "https://example.com",
-      Twitter: "https://example.com",
-      Wechat: "https://example.com",
-      Weibo: "https://example.com",
-      Whatsapp: "https://example.com",
-      Youtube: "https://example.com",
-      Zhihu: "https://example.com",
-      VuePressThemeHope: {
-        icon: "https://theme-hope-assets.vuejs.press/logo.svg",
-        link: "https://theme-hope.vuejs.press",
+      BiliBili: "https://space.bilibili.com/430008973",
+      Discord: "https://discord.com/invite/SCAfRyAVnR",
+      Github: "https://github.com/EvanHsieh0415/",
+      QQ: "https://qm.qq.com/q/qmCIBVUwY",
+      Youtube: "https://www.youtube.com/@%E8%8A%92%E6%9E%9C%E5%87%8D%E5%B8%83%E4%B8%81",
+      "Personal Blog": {
+        icon: "https://avatars.githubusercontent.com/u/74277414",
+        link: "https://mango-blog.pages.dev/",
       },
     },
+    avatar: "https://avatars.githubusercontent.com/u/74277414",
+  },
+
+  displayFooter: true,
+  blogLocales: {
+    empty: "",
   },
 
   locales: {
-    "/en-us/": {
+    "/": {
       navbar: enusNavbar,
       sidebar: enusSidebar,
 
-      footer: "Default footer",
-      displayFooter: true,
-
       blog: {
-        description: "A FrontEnd programmer",
-        intro: "/en-us/intro.html",
+        description: "An interested KubeJS developer.",
       },
 
-      metaLocales: {
-        editLink: "Edit this page on GitHub",
+      author: {
+        name: "MangoJellyPudding",
       },
     },
     "/zh-tw/": {
       navbar: zhtwNavbar,
       sidebar: zhtwSidebar,
 
-      footer: "預設頁腳",
-      displayFooter: true,
-
       blog: {
-        description: "一個前端開發者",
-        intro: "/en-tw/intro.html",
+        description: "一個興趣使然的 KubeJS 開發者",
       },
 
-      metaLocales: {
-        editLink: "在 GitHub 上編輯此頁",
+      author: {
+        name: "芒果凍布丁",
       },
+
+      navbarLocales: {
+        langName: "正體中文",
+      }
     },
     "/zh-cn/": {
       navbar: zhcnNavbar,
       sidebar: zhcnSidebar,
 
-      footer: "默认页脚",
-      displayFooter: true,
-
       blog: {
-        description: "一个前端开发者",
-        intro: "/en-cn/intro.html",
+        description: "一个兴趣使然的 KubeJS 开发者",
       },
 
-      metaLocales: {
-        editLink: "在 GitHub 上编辑此页",
+      author: {
+        name: "芒果凍布丁",
       },
     },
   },
@@ -161,15 +128,6 @@ export default hopeTheme({
             frontmatter.index !== false)
         ),
       excerptLength: 100,
-    },
-
-    redirect: {
-      switchLocale: "modal",
-      defaultBehavior: "homepage",
-      defaultLocale: "/en-us/",
-      config: {
-        "/": "/en-us/",
-      },
     },
 
     components: {

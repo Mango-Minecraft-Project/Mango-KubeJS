@@ -3,46 +3,31 @@ home: true
 layout: BlogHome
 icon: house
 title: Blog Home
-heroImage: https://theme-hope-assets.vuejs.press/logo.svg
-heroText: The name of your blog
-tagline: You can put your slogan here
-heroFullScreen: true
+heroImage: /logo.png
+heroText: Mango's KubeJS Encyclopaedia
+bgImage: /background.png
+tagline: All about KubeJS
 projects:
-  - icon: folder-open
-    name: project name
-    desc: project detailed description
-    link: https://your.project.link
-
-  - icon: link
-    name: link name
-    desc: link detailed description
-    link: https://link.address
+  - icon: book
+    name: CrychicDoc
+    link: https://docs2.mihono.cn/
 
   - icon: book
-    name: book name
-    desc: Detailed description of the book
-    link: https://link.to.your.book
+    name: 孤梦 KubeJS 教程
+    desc: "1.20.1"
+    link: https://gumeng.gitbook.io/kubejs-jiao-cheng-1.20.1
 
-  - icon: newspaper
-    name: article name
-    desc: Detailed description of the article
-    link: https://link.to.your.article
+  - icon: book
+    name: Wudji KubeJS 教程
+    desc: "1.19.2+"
+    link: https://wudji.gitbook.io/xplus-kubejs-tutorial-v2-zh_cn
 
-  - icon: user-group
-    name: friend name
-    desc: Detailed description of friend
-    link: https://link.to.your.friend
+  - icon: book
+    name: Wudji KubeJS 教程
+    desc: "1.16.5 / 1.18.2"
+    link: https://wudji.gitbook.io/xplus-kubejs-tutorial-v1-zh_cn
 
-  - icon: https://theme-hope-assets.vuejs.press/logo.svg
-    name: custom item
-    desc: Detailed description of this custom item
-    link: https://link.to.your.friend
-
-footer: customize your footer text
+  - icon: comments
+    name: KubeJS 中文开发论坛
+    link: https://gumeng.gitbook.io/kubejs-jiao-cheng-1.20.1
 ---
-
-This is a blog home page demo.
-
-To use this layout, you should set both `layout: BlogHome` and `home: true` in the page front matter.
-
-For related configuration docs, please see [blog homepage](https://theme-hope.vuejs.press/guide/blog/home.html).

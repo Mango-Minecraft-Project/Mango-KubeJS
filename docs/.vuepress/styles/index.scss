@@ -1,1 +1,11 @@
-// place your custom styles here
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+
+
+body {
+  font-family: 'Noto Sans TC', 'Noto Sans SC', sans-serif;
+}
+
+.external-link-icon .theme-hope-content a.custom-badge[href*="://"]:not(.no-external-link-icon)::after {
+  content: none;
+}
