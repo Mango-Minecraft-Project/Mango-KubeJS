@@ -4,14 +4,17 @@ export const zhcnNavbar = navbar([
   {
     text: "Wiki",
     link: "https://wiki.mango-kubejs.pages.dev/zh-cn/",
+    target: "_self",
   },
   {
     text: "主页",
     link: "https://mango-kubejs.pages.dev/zh-cn/",
+    target: "_self",
   },
   {
     text: "文章主页",
     link: "/zh-cn/",
+    target: "_self",
     children: [
       {
         text: "相关链接",

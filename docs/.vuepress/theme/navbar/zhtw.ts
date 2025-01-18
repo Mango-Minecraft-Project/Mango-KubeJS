@@ -4,14 +4,17 @@ export const zhtwNavbar = navbar([
   {
     text: "Wiki",
     link: "https://wiki.mango-kubejs.pages.dev/zh-tw/",
+    target: "_self",
   },
   {
     text: "首頁",
     link: "https://mango-kubejs.pages.dev/zh-tw/",
+    target: "_self",
   },
   {
     text: "文章首頁",
     link: "/zh-tw/",
+    target: "_self",
     children: [
       {
         text: "相關連結",

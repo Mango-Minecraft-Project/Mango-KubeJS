@@ -4,14 +4,17 @@ export const enusNavbar = navbar([
   {
     text: "Wiki",
     link: "https://wiki.mango-kubejs.pages.dev/",
+    target: "_self",
   },
   {
     text: "Home Page",
     link: "https://mango-kubejs.pages.dev/",
+    target: "_self",
   },
   {
     text: "Article Home",
     link: "/",
+    target: "_self",
     children: [
       {
         text: "Helpful Links",
