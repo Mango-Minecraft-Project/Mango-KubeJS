@@ -5,7 +5,7 @@ import { enusNavbar, zhtwNavbar, zhcnNavbar } from "./theme/navbar/index.js";
 import { enusSidebar, zhtwSidebar, zhcnSidebar } from "./theme/sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "mango-kubejs.pages.dev",
+  hostname: "wiki.mango-kubejs.pages.dev",
 
   logo: "/logo.svg",
   repo: "Mango-Minecraft-Project/Mango-KubeJS",

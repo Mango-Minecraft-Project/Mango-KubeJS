@@ -12,18 +12,18 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "en-US",
-      title: "Mango's KubeJS Encyclopaedia",
-      description: "Mango's KubeJS Encyclopaedia",
+      title: "Mango's KubeJS Wiki",
+      description: "Mango's KubeJS Wiki",
     },
     "/zh-tw/": {
       lang: "zh-TW",
-      title: "芒果的 KubeJS 百科",
-      description: "芒果的 KubeJS 百科",
+      title: "芒果的 KubeJS Wiki",
+      description: "芒果的 KubeJS Wiki",
     },
     "/zh-cn/": {
       lang: "zh-CN",
-      title: "芒果的 KubeJS 百科",
-      description: "芒果的 KubeJS 百科",
+      title: "芒果的 KubeJS Wiki",
+      description: "芒果的 KubeJS Wiki",
     },
   },
 
