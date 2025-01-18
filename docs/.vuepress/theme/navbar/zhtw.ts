@@ -5,9 +5,11 @@ export const zhtwNavbar = navbar([
   {
     text: "首頁",
     link: "https://mango-kubejs.pages.dev/zh-tw/",
+    target: "_self",
   },
   {
     text: "文章",
     link: "https://article.mango-kubejs.pages.dev/zh-tw/",
+    target: "_self",
   },
 ]);
