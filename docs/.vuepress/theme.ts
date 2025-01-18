@@ -42,10 +42,6 @@ export default hopeTheme({
       blog: {
         description: "An interested KubeJS developer.",
       },
-
-      author: {
-        name: "MangoJellyPudding",
-      },
     },
     "/zh-tw/": {
       navbar: zhtwNavbar,
@@ -53,10 +49,6 @@ export default hopeTheme({
 
       blog: {
         description: "一個興趣使然的 KubeJS 開發者",
-      },
-
-      author: {
-        name: "芒果凍布丁",
       },
 
       navbarLocales: {
@@ -69,10 +61,6 @@ export default hopeTheme({
 
       blog: {
         description: "一个兴趣使然的 KubeJS 开发者",
-      },
-
-      author: {
-        name: "芒果凍布丁",
       },
     },
   },
