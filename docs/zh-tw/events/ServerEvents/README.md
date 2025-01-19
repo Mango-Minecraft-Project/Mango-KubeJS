@@ -1,6 +1,7 @@
 ---
 title: ServerEvents
-order: 0
+dir:
+  link: true
 ---
 
 <Catalog/>

@@ -1,6 +1,7 @@
 ---
 title: ClientEvents
-order: 0
+dir:
+  link: true
 ---
 
 <Catalog/>

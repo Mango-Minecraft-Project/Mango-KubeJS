@@ -1,6 +1,8 @@
 ---
 title: 資料夾結構
-order: 4
+dir:
+  link: true
+  order: 4
 ---
 
 <Catalog/>

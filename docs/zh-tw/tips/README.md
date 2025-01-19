@@ -1,6 +1,8 @@
 ---
 title: 小技巧
-order: 3
+dir:
+  link: true
+  order: 3
 ---
 
 <Catalog/>

@@ -1,6 +1,8 @@
 ---
 title: 事件
-order: 5
+dir:
+  link: true
+  order: 5
 ---
 
 <Catalog/>

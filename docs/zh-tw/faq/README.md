@@ -1,6 +1,8 @@
 ---
 title: 常見問題
-order: 1
+dir:
+  link: true
+  order: 1
 ---
 
 <Catalog/>

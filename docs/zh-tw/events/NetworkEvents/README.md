@@ -1,6 +1,7 @@
 ---
 title: NetworkEvents
-order: 0
+dir:
+  link: true
 ---
 
 <Catalog/>

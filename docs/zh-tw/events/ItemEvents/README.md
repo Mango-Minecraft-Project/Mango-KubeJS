@@ -1,6 +1,7 @@
 ---
 title: ItemEvents
-order: 0
+dir:
+  link: true
 ---
 
 <Catalog/>

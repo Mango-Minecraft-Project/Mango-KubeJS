@@ -1,6 +1,7 @@
 ---
 title: NativeEvents
-order: 0
+dir:
+  link: true
 ---
 
 <Catalog/>

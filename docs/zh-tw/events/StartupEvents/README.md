@@ -1,6 +1,7 @@
 ---
 title: StartupEvents
-order: 0
+dir:
+  link: true
 ---
 
 <Catalog/>

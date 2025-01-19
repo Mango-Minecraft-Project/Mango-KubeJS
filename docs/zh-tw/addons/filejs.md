@@ -1,11 +1,10 @@
 ---
 author: PrizOwO
+title: FilesJS
 description: KubeJS 文件管理附屬模組
 ---
 
 <BadgeCompat CurseForge="mc-mods/filesjs" Modrinth="mod/filesjs" Github="xiaoliziawa/Files-JS" Mcmod="class/17414"/>
-
-# FilesJS
 
 *FilesJS（文件吉斯）是一個功能強大的 KubeJS 6 附屬模組，用來偷走你的失諧帳號和錢包。*
 

@@ -1,13 +1,12 @@
 ---
 author: ZZZank
+title: EventJS
 description: 為 KubeJS 添加原生事件監聽的熱重載支持
 ---
 
 <BadgeCompat CurseForge="mc-mods/eventjs" Modrinth="mod/eventjs" Github="ZZZank/EventJS" Mcmod="class/17008"/>
 
-# EventJS
-
-## 太長不看
+## 簡介
 
 EventJS 最顯著的功能是，你可以不必重啟遊戲就能刷新/增加/刪減 KubeJS 對 Forge 事件的監聽，只需要進行一次腳本重載（比如命令 `/kubejs reload startup_scripts`）即可。
 

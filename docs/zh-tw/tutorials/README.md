@@ -1,6 +1,8 @@
 ---
 title: 教學
-order: 2
+dir:
+  link: true
+  order: 2
 ---
 
 <Catalog/>

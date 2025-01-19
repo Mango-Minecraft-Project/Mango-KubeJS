@@ -1,6 +1,7 @@
 ---
 title: PlayerEvents
-order: 0
+dir:
+  link: true
 ---
 
 <Catalog/>

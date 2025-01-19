@@ -1,6 +1,7 @@
 ---
 title: LevelEvents
-order: 0
+dir:
+  link: true
 ---
 
 <Catalog/>
