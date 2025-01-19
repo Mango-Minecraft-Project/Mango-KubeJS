@@ -4,11 +4,13 @@
 
 body {
   font-family: 'Noto Sans TC', 'Noto Sans SC', sans-serif;
-  // letter-spacing: normal;
-  // word-spacing: normal;
 }
 
-.external-link-icon .theme-hope-content a.custom-badge[href*="://"]:not(.no-external-link-icon)::after {
+p {
+  text-align: start !important;
+}
+
+.external-link-icon .theme-hope-content a.custom-badge[href*="://"]::after {
   content: none;
 }
 
