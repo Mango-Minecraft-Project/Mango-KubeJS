@@ -1,151 +1,153 @@
 ---
 author: PrizOwO
-description: KubeJS 文件管理附属模组
+description: KubeJS 文件管理附屬模組
 ---
+
+<BadgeCompat CurseForge="mc-mods/filesjs" Modrinth="mod/filesjs" Github="xiaoliziawa/Files-JS" Mcmod="class/17414"/>
 
 # FilesJS
 
-*FilesJS（文件吉斯）是一个功能强大的 KubeJS 6 附属模组，用来偷走你的失谐账号和钱包。*
+*FilesJS（文件吉斯）是一個功能強大的 KubeJS 6 附屬模組，用來偷走你的失諧帳號和錢包。*
 
 ## 功能
 
-- 文件操作：读取、写入、追加、复制、移动和删除文件
-- 目录管理：列出、创建和监视目录
-- 文件监控：监视文件变更和内容修改
-- 文件分析：比较文件、计算MD5哈希值、搜索文件内容
-- 备份管理：创建和管理文件备份
-- 归档操作：创建ZIP压缩包
+- 文件操作：讀取、寫入、追加、複製、移動和刪除文件
+- 目錄管理：列出、創建和監視目錄
+- 文件監控：監視文件變更和內容修改
+- 文件分析：比較文件、計算MD5哈希值、搜索文件內容
+- 備份管理：創建和管理文件備份
+- 歸檔操作：創建ZIP壓縮包
 
-## API 部分参考（不全面）
+## API 部分參考（不全面）
 
-### 文件读写操作
+### 文件讀寫操作
 
 ```javascript
 
-// 读取文件内容
+// 讀取文件內容
 let content = FilesJS.readFile('kubejs/config/myconfig.txt');
 
-// 写入文件
+// 寫入文件
 FilesJS.writeFile('kubejs/data/output.txt', '你好，世界！');
 
 // 追加到文件
-FilesJS.appendFile('kubejs/logs/mylog.txt', '新的日志条目');
+FilesJS.appendFile('kubejs/logs/mylog.txt', '新的日誌條目');
 
-// 追加单行
+// 追加單行
 FilesJS.appendLine('kubejs/logs/mylog.txt', '新的一行');
 
-// 写入多行
+// 寫入多行
 FilesJS.writeLines('kubejs/data/lines.txt', ['第一行', '第二行', '第三行']);
 
-// 读取所有行
+// 讀取所有行
 let lines = FilesJS.readLines('kubejs/data/lines.txt');
 
-// 读取最后N行
+// 讀取最後N行
 let lastLines = FilesJS.readLastLines('kubejs/logs/latest.log', 10);
 
-// 保存脚本文件（自动添加.js扩展名和时间戳注释）
+// 保存腳本文件（自動添加.js擴展名和時間戳註釋）
 FilesJS.saveScript('kubejs/scripts/newscript', 'console.log("Hello");');
 ```
 
 ### 文件管理操作
 
 ```javascript
-// 检查文件是否存在
+// 檢查文件是否存在
 if (FilesJS.exists('kubejs/scripts/myscript.js')) {
-    // 执行操作
+    // 執行操作
 }
 
-// 删除文件
+// 刪除文件
 FilesJS.delete('kubejs/temp/oldfile.txt');
 
-// 复制文件
+// 複製文件
 FilesJS.copy('source.txt', 'target.txt');
 
-// 移动文件
+// 移動文件
 FilesJS.move('old/path.txt', 'new/path.txt');
 
 // 重命名文件
 FilesJS.renameFile('oldname.txt', 'newname.txt');
 
-// 创建目录
+// 創建目錄
 FilesJS.createDirectory('kubejs/newdir');
 
-// 检查文件是否为空
+// 檢查文件是否為空
 let isEmpty = FilesJS.isFileEmpty('kubejs/data/file.txt');
 
-// 获取文件MD5哈希值
+// 獲取文件MD5哈希值
 let hash = FilesJS.getFileMD5('kubejs/data/important.dat');
 
-// 比较两个文件
+// 比較兩個文件
 let areEqual = FilesJS.compareFiles('file1.txt', 'file2.txt');
 ```
 
 ### 批量文件操作
 
 ```javascript
-// 合并多个文件
+// 合併多個文件
 FilesJS.mergeFiles(['file1.txt', 'file2.txt'], 'merged.txt');
 
-// 批量复制文件（使用通配符）
+// 批量複製文件（使用通配符）
 FilesJS.copyFiles('source/dir', 'target/dir', '*.json');
 
-// 创建ZIP压缩包
+// 創建ZIP壓縮包
 FilesJS.createZip('kubejs/data', 'kubejs/backups/data.zip');
 
-// 替换文件中的内容
-FilesJS.replaceInFile('config.txt', '旧值', '新值');
+// 替換文件中的內容
+FilesJS.replaceInFile('config.txt', '舊值', '新值');
 ```
 
-### 目录操作
+### 目錄操作
 
 ```javascript
-// 列出目录中的文件
+// 列出目錄中的文件
 let files = FilesJS.listFiles('kubejs/data');
 
-// 递归列出所有文件
+// 遞歸列出所有文件
 let allFiles = FilesJS.listFilesRecursively('kubejs/scripts');
 
-// 获取文件信息
+// 獲取文件信息
 let fileInfo = FilesJS.getFileInfo('kubejs/config/settings.json');
 // fileInfo包含：exists, size, lastModified, isDirectory, isFile, isReadable, isWritable
 ```
 
-### 文件监控
+### 文件監控
 
 ```javascript
-// 监视目录变更
+// 監視目錄變更
 FilesJS.watchDirectory('kubejs/data', (changedPath) => {
     console.log('文件已更改:', changedPath);
 });
 
-// 监视文件内容变更（带相似度阈值）
+// 監視文件內容變更（帶相似度閾值）
 FilesJS.watchContentChanges('kubejs/config/dynamic.json', 0.1);
 
-// 监视匹配特定模式的文件
+// 監視匹配特定模式的文件
 FilesJS.watchFilePattern('kubejs/scripts', '*.js');
 
-// 监视文件大小
-FilesJS.watchFileSize('kubejs/data/growing.log', 1024 * 1024); // 1MB阈值
+// 監視文件大小
+FilesJS.watchFileSize('kubejs/data/growing.log', 1024 * 1024); // 1MB閾值
 ```
 
-### 备份系统
+### 備份系統
 
 ```javascript
-// 立即创建备份
+// 立即創建備份
 FilesJS.backupFile('kubejs/important/data.json');
 
-// 计划备份（延迟执行tick）
-FilesJS.scheduleBackup('kubejs/config/settings.json', 100); // 100 tick后开始备份这个文件
+// 計劃備份（延遲執行tick）
+FilesJS.scheduleBackup('kubejs/config/settings.json', 100); // 100 tick後開始備份這個文件
 
-// 搜索文件内容
+// 搜索文件內容
 let matches = FilesJS.searchInFile('kubejs/logs/latest.log', 'ERROR');
 ```
 
 ## 安全性和限制
 
-### 允许访问的目录
+### 允許訪問的目錄
 
-只能访问以下目录中的文件：
+只能訪問以下目錄中的文件：
 - kubejs/
 - config/
 - logs/
@@ -155,11 +157,11 @@ let matches = FilesJS.searchInFile('kubejs/logs/latest.log', 'ERROR');
 ### 文件大小限制
 
 - 最大文件大小：5MB
-- 写入操作的内容大小限制：5MB
+- 寫入操作的內容大小限制：5MB
 
-### 文件类型限制
+### 文件類型限制
 
-允许的文件扩展名：
+允許的文件擴展名：
 - .txt
 - .json
 - .js
@@ -168,68 +170,68 @@ let matches = FilesJS.searchInFile('kubejs/logs/latest.log', 'ERROR');
 - .toml
 - .properties
 - .backup
-- 。。。还有很多
+- 。。。還有很多
 
 ### 安全措施
 
-- 禁止访问Minecraft实例目录之外的文件
-- 禁止父目录遍历 (..)
-- 关键操作自动创建备份
-- 所有操作都进行文件访问验证
-- 文件大小限制检查
-- 文件类型验证
-- 路径安全性检查
-- 文件拓展名验证
+- 禁止訪問Minecraft實例目錄之外的文件
+- 禁止父目錄遍歷 (..)
+- 關鍵操作自動創建備份
+- 所有操作都進行文件訪問驗證
+- 文件大小限制檢查
+- 文件類型驗證
+- 路徑安全性檢查
+- 文件擴展名驗證
 
-## 错误处理
+## 錯誤處理
 
-使用`try` `catch`进行异常处理
+使用`try` `catch`進行異常處理
 
 ```javascript
 try {
-    Files.writeFile('kubejs/data/test.txt', '内容');
+    Files.writeFile('kubejs/data/test.txt', '內容');
 } catch (e) {
-    console.error('写入文件失败:', e.message);
+    console.error('寫入文件失敗:', e.message);
 }
 ```
 
-## 最佳实践
+## 最佳實踐
 
-1. 始终在脚本中处理异常
-2. 使用适当的文件扩展名
-3. 在操作前检查文件大小
-4. 及时清理临时文件
-5. 对重要文件使用备份功能
-6. 谨慎监控文件变更
-7. 写入前验证文件内容
-8. 使用事件系统进行日志记录
-9. 实现适当的错误恢复机制
-10. 定期清理旧的备份文件
+1. 始終在腳本中處理異常
+2. 使用適當的文件擴展名
+3. 在操作前檢查文件大小
+4. 及時清理臨時文件
+5. 對重要文件使用備份功能
+6. 謹慎監控文件變更
+7. 寫入前驗證文件內容
+8. 使用事件系統進行日誌記錄
+9. 實現適當的錯誤恢復機制
+10. 定期清理舊的備份文件
 
-## 性能考虑
+## 性能考慮
 
-1. 大文件操作时注意内存使用
-2. 避免频繁的文件监控
-3. 合理使用递归文件操作
-4. 适当设置监控阈值
-5. 使用批量操作代替单个操作
+1. 大文件操作時注意內存使用
+2. 避免頻繁的文件監控
+3. 合理使用遞歸文件操作
+4. 適當設置監控閾值
+5. 使用批量操作代替單個操作
 
 ## 支持
 
-如果遇到问题或有疑问：
-1. 检查日志中的详细错误信息
-2. 验证文件权限和路径
-3. 确保在允许的目录中操作
-4. 检查文件大小限制
-5. 查看事件监听器的日志输出
+如果遇到問題或有疑問：
+1. 檢查日誌中的詳細錯誤信息
+2. 驗證文件權限和路徑
+3. 確保在允許的目錄中操作
+4. 檢查文件大小限制
+5. 查看事件監聽器的日誌輸出
 
-## 许可证
+## 許可證
 
-本项目采用 MIT 许可证 - 详见 LICENSE 文件
+本項目採用 MIT 許可證 - 詳見 LICENSE 文件
 
-## 问题
+## 問題
 
-1. 如果遇到无法访问路径或文件的，说明是做了限制。
-2. 文件路径只能在Minecraft的实例路径开始访问，超过实例路径的不得访问。
-3. URI无法访问。
-4. 文件拓展名做了限制，可能导致有些拓展名的文件无法访问。
+1. 如果遇到無法訪問路徑或文件的，說明是做了限制。
+2. 文件路徑只能在Minecraft的實例路徑開始訪問，超過實例路徑的不得訪問。
+3. URI無法訪問。
+4. 文件擴展名做了限制，可能導致有些擴展名的文件無法訪問。

@@ -6,30 +6,31 @@ description: KubeJS 套件管理器
 
 # KJSPKG
 
-KJSPKG is a package manager for KubeJS that allows you to download different example scripts and libraries into your own instance.  
-It will automatically manage your minecraft version, modloader, dependency and incompatibility control. It works with all modern KubeJS versions, and should even work with some older versions, ie. 1.12!
+KJSPKG 是一個 KubeJS 的套件管理器，允許你下載不同的範例腳本和庫到你的實例中。  
+它會自動管理你的 Minecraft 版本、模組加載器、依賴和不兼容控制。它適用於所有現代的 KubeJS 版本，甚至應該適用於一些較舊的版本，例如 1.12！
 
 ![](https://kubejs.com/wiki/files/tooling/kjspkg/kjspkg.png)
 
-## Installation
+## 安裝
 
-1. Download the [CLI version of KJSPKG](https://github.com/Modern-Modpacks/kjspkg/tree/main#installation--update).
-2. Open a terminal in the kubejs directory inside of your instance.
-3. Run kjspkg init and select your minecraft version/modloader.
+1. 下載 [KJSPKG 的 CLI 版本](https://github.com/Modern-Modpacks/kjspkg/tree/main#installation--update)。
+2. 在你的實例中的 kubejs 目錄中打開終端。
+3. 運行 kjspkg init 並選擇你的 Minecraft 版本/模組加載器。
 
-> [!tip]
-> Now you are able to install packages into your instance!
+::: tip
+現在你可以將套件安裝到你的實例中了！
+:::
 
-## Usage
+## 使用方法
 
-- To see more info about a package, run `kjspkg pkg <package_name>`
-- To download a package, run `kjspkg install <package_name>`
-- To remove a package, run `kjspkg remove <package_name>`
-- To update a package, run `kjspkg update <package_name>`
-- To search for a package, run `kjspkg search <query>`
-- To list all packages in your instance, run `kjspkg list`
-- To list all of the commands available, run `kjspkg help`
+- 要查看有關套件的更多信息，運行 `kjspkg pkg <package_name>`
+- 要下載套件，運行 `kjspkg install <package_name>`
+- 要移除套件，運行 `kjspkg remove <package_name>`
+- 要更新套件，運行 `kjspkg update <package_name>`
+- 要搜索套件，運行 `kjspkg search <query>`
+- 要列出實例中的所有套件，運行 `kjspkg list`
+- 要列出所有可用的命令，運行 `kjspkg help`
 
-## Adding your own package
+## 添加你自己的套件
 
-If you have an example script you would like to share on KJSPKG, check out [the "Adding your own package" section](https://github.com/Modern-Modpacks/kjspkg#adding-your-own-package) of KJSPKG's README. We are always happy to add more scripts from different authors to our list!
+如果你有想要在 KJSPKG 上分享的範例腳本，請查看 KJSPKG 的 README 中的 [“添加你自己的套件”部分](https://github.com/Modern-Modpacks/kjspkg#adding-your-own-package)。我們總是很高興將不同作者的更多腳本添加到我們的列表中！

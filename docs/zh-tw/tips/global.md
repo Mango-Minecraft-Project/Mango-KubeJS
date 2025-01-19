@@ -1,29 +1,29 @@
 ---
-description: How to use the global object
+description: 如何使用 global 物件
 ---
 
-# Global Object
+# Global 物件
 
-global is an object accessible in all script types.
+`global` 是一個在所有腳本類型中都可以訪問的物件。
 
-It can be used for sharing data across scripts, ie. for automatically adding recipes to items.
+它可以用於在腳本之間共享數據，例如自動為物品添加配方。
 
-Here's an example:
+這裡有一個例子：
 
 ```js
-// Startup scripts
+// 啟動腳本
 global.items = [
   ['hi_wiki', '4x diamond']
 ]
 StartupEvents.registry('item', event => {
-  // Register the items
+  // 註冊物品
   global.items.forEach(items => event.register(items[0]))
 })
 ```
 ```js
-// Server scripts
+// 伺服器腳本
 ServerEvents.recipes(event => {
-  // Add the recipes
+  // 添加配方
   global.items.forEach(items => event.shapeless(items[0], items[1]))
 })
 ```

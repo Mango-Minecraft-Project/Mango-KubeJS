@@ -1,16 +1,17 @@
 ---
-description: How to use beans
+description: 如何使用 beans
 ---
 
 # Beans
 
-KubeJS has a feature known as beans which allows you to make scripts a tad more readable.
+KubeJS 有一個稱為 beans 的功能，可以讓腳本更易讀。
 
-Anything `getXy()` can be gotten with `xy`, anything `setXy(value)` can be set with `xy = value` and anything `isXy()` can be checked with just `xy`.
+任何 `getXy()` 都可以用 `xy` 來獲取，任何 `setXy(value)` 都可以用 `xy = value` 來設置，任何 `isXy()` 都可以用 `xy` 來檢查。
 
-This allows us to shorten our code! For example, to get a list of all online players you can do: event.getServer().getPlayers(). With beans this can be shortened to event.server.players!
+這讓我們可以縮短代碼！例如，要獲取所有在線玩家的列表，你可以這樣做：`event.getServer().getPlayers()`。使用 beans 可以縮短為 `event.server.players`！
 
-> ![warning]
-> Note that get and is beans only work if the method has no parameters. This means a method like `getHeldItem(InteractionHand hand)` cannot be shortened to `heldItem`.
-> 
-> For set the method needs to have a single parameter.
+::: warning
+請注意，get 和 is beans 只有在方法沒有參數時才有效。這意味著像 `getHeldItem(InteractionHand hand)` 這樣的方法不能縮短為 `heldItem`。
+
+對於 set 方法，需要有一個參數。
+:::

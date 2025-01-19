@@ -1,6 +1,6 @@
 ---
 title: 擴充模組
-order: 0
+order: 6
 ---
 
 <Catalog/>

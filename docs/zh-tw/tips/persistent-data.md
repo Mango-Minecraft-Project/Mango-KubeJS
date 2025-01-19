@@ -1,23 +1,24 @@
 ---
-description: What is persistent data and how to use it
+description: 什麼是持久數據以及如何使用它
 ---
 
-# Persistent Data
+# 持久數據
 
-`persistentData` is an object available on players, levels, and servers.
-It's useful for simple data storage.
+`persistentData` 是一個可用於玩家、關卡和伺服器的對象。
+它對於簡單的數據存儲非常有用。
 
-> [!caution]
-> Persistent Data is broken on 1.21+!
+::: caution
+持久數據在 1.21+ 版本中已損壞！
+:::
 
-Here's an example of persistentData:
+以下是持久數據的示例：
 
 ```js
 PlayerEvents.loggedIn(event => {
   let pData = event.player.persistentData;
   if (!pData.firstJoin) {
     pData.firstJoin = true
-    // Do stuff only on first join, here we give the player some diamonds and a sword
+    // 僅在首次加入時執行的操作，這裡我們給玩家一些鑽石和一把劍
     event.player.give('29x diamond')
     event.player.give('minecraft:diamond_sword[damage=2]')
   }

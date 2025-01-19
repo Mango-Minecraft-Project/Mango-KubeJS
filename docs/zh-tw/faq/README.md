@@ -1,6 +1,6 @@
 ---
 title: 常見問題
-order: 0
+order: 1
 ---
 
 <Catalog/>
