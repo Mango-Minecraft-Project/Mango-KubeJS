@@ -65,6 +65,8 @@ export default hopeTheme({
     },
   },
 
+  copyright: "Copyright © 2025 MangoJellyPudding",
+
   encrypt: {
     config: {},
   },
