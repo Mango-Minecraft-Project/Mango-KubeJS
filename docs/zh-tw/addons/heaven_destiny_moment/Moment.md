@@ -12,7 +12,49 @@ title: 事件（Moment）
     "type": "heaven_destiny_moment:default",
   },
   "area": {},
-  "moment_data": {},
+  "moment_data": {
+    "effects": {
+      "type": "single",
+      "entries": [
+        {
+          "data": {
+            "id": "minecraft:speed",
+            "duration": 10,
+            "neoforge:cures": [
+              "milk",
+              "protected_by_totem"
+            ],
+            "show_icon": true
+          },
+          "weight": 10
+        },
+        {
+          "data": {
+            "id": "minecraft:bad_omen",
+            "duration": 10,
+            "neoforge:cures": [
+              "milk",
+              "protected_by_totem"
+            ],
+            "show_icon": true
+          },
+          "weight": 40
+        },
+        {
+          "data": {
+            "id": "minecraft:glowing",
+            "duration": 10,
+            "neoforge:cures": [
+              "milk",
+              "protected_by_totem"
+            ],
+            "show_icon": true
+          },
+          "weight": 5
+        }
+      ]
+    }
+  },
   "tips": {
     "soundEvents": {
       "ready": "minecraft:item.goat_horn.sound.2"
@@ -48,23 +90,52 @@ StartupEvents.registry("heaven_destiny_moment:moment", (event) => {
     // 設置 BossBar 顯示
     .barRenderType(new DefaultBarRenderType(BossBarOverlay.PROGRESS, BossBarColor.PURPLE))
 
+    // 設置事件獎勵
+    .momentData((data) => {
+      data.addReward(
+        new EffectReward.Builder()
+          .addEffect(new EffectInstance(MobEffects.MOVEMENT_SPEED))
+          .build(),
+        new XpReward().add(10),
+        new AttributeReward.Builder()
+          .addAttribute(new AttributeElement(Attributes.ATTACK_DAMAGE, 1))
+          .build(),
+        new ItemReward.Builder()
+          .add(new ItemStack(Items.DIAMOND))
+          .build()
+      )
+    })
+
     // 設置提示設置
     .tipSettings((setting) => {
-      setting.tooltip(MomentState.READY, TerraMoment.asDescriptionId("slime_rain"))
-      setting.tooltip(MomentState.READY, SoundEvent.GOAT_HORN_SOUND_VARIANTS.get(2))
+      setting
+        .tooltip(MomentState.READY, TerraMoment.asDescriptionId("slime_rain"))
+        .tooltip(MomentState.READY, SoundEvent.GOAT_HORN_SOUND_VARIANTS.get(2))
+    })
+    
+    // 設置客戶端設置
+    .clientSettings((setting) => {
+      setting
+        .environmentColor(16711680)
+        .clientMoonSetting((moonSetting) => {
+          moonSetting
+            .moonColor(16711680)
+            .moonSize(25)
+            .moonTexture(TerraMoment.asResource("textures/gui/blood_moon.png"))
+        })
     })
 })
 ```
 
 ### 2.1. MomentBuilder
 
-| 方法                                                                                                                                                                    | 描述             | 備註           |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------------- |
-| <code>barRenderType(type: [BossBarRenderType](#bossbarrendertype))</code>                                                                                               | BossBar 顯示方式 |                |
-| <code>area()</code>                                                                                                                                                     | 區域             | 目前不推薦設置 |
-| <code>momentData(reward: [Reward](#reward), conditionGroup: [ConditionGroup](#conditiongroup), entitySpawnSettings: [EntitySpawnSettings](#entityspawnsettings))</code> | 時刻資料         |                |
-| <code>tipSettings((setting: [TipSetting](#tipsetting)) => {})</code>                                                                                                    | 提示設置         |                |
-| <code>clientSettings((setting: [ClientSetting](#clientsetting)) => {})</code>                                                                                           | 客戶端設置       |                |
+| 方法                                                                          | 描述             | 備註           |
+| ----------------------------------------------------------------------------- | ---------------- | -------------- |
+| <code>barRenderType(type: [BossBarRenderType](#bossbarrendertype))</code>     | BossBar 顯示方式 |                |
+| <code>area()</code>                                                           | 事件所覆蓋的區域 | 目前不推薦設置 |
+| <code>momentData((data: [MomentData](#momentdata)) => {})</code>              | 事件資料         |                |
+| <code>tipSettings((setting: [TipSetting](#tipsetting)) => {})</code>          | 提示設置         |                |
+| <code>clientSettings((setting: [ClientSetting](#clientsetting)) => {})</code> | 客戶端設置       |                |
 
 ---
 
@@ -74,12 +145,12 @@ StartupEvents.registry("heaven_destiny_moment:moment", (event) => {
 
 BossBar 渲染類型
 
-目前內建了 `DefaultBarRenderType`，即為原版的 BossBar，可以使用原版進度條的樣式和顏色
+天命時刻內建一個渲染類型：`DefaultBarRenderType`，即為原版的 BossBar，可以使用原版進度條的樣式和顏色
 
 通過以下方法建立：
 
 ```ts
-DefaultBarRenderType(overlay: BossBarOverlay, color: BossBarColor): MomentBuilder
+new DefaultBarRenderType(overlay: BossBarOverlay, color: BossBarColor): MomentBuilder
 ```
 - [BossBarOverlay](#bossbaroverlay)
 - [BossBarColor](#bossbarcolor)
@@ -114,16 +185,169 @@ BossBar 的顏色
 | `BossBarColor.PURPLE` | 紫色   |
 | `BossBarColor.WHITE`  | 白色   |
 
-#### `Reward`
+#### `MomentData`
+
+事件資料
+
+| 方法                                                                                                              | 描述             |
+| ----------------------------------------------------------------------------------------------------------------- | ---------------- |
+| <code>MomentData.addReward(...rewards: [IReward](#ireward)[]): MomentData</code>                                  | 添加獎勵         |
+| <code>MomentData.addConditionGroup((group: [ConditionGroup](#conditiongroup)) => {}): MomentData</code>           | 添加條件組       |
+| <code>MomentData.addEntitySpawnSettings(settings: [EntitySpawnSettings](#entityspawnsettings)): MomentData</code> | 添加實體生成設置 |
+
+#### `IReward`
 
 獲勝後的獎勵
 
-::: warning (WIP)
-:::
+天命時刻內建獎勵類型：
+
+- [`EffectReward`](#effectreward)：藥水效果
+- [`XpReward`](#xpreward)：經驗
+- [`AttributeReward`](#attributereward)：屬性
+- [`ItemReward`](#itemreward)：物品
+
+#### `EffectReward`
+
+藥水效果獎勵
+
+| 方法                                                                             | 描述       |
+| -------------------------------------------------------------------------------- | ---------- |
+| <code>EffectReward.Builder(): [EffectRewardBuilder](#effectrewardbuilder)</code> | 創建建構子 |
+
+#### `EffectRewardBuilder`
+
+藥水效果獎勵建構子
+
+| 方法                                                                                                    | 描述                         |
+| ------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| <code>EffectRewardBuilder.randomType(randomType: [RandomType](#randomtype)): EffectRewardBuilder</code> | 設置隨機類型                 |
+| `EffectRewardBuilder.add(effectInstance: MobEffectInstance): EffectRewardBuilder`                       | 添加藥水效果，權重預設為 `1` |
+| `EffectRewardBuilder.add(effectInstance: MobEffectInstance, weight: number): EffectRewardBuilder`       | 添加藥水效果                 |
+| `EffectRewardBuilder.build(): EffectReward`                                                             | 建構藥水效果獎勵             |
+
+#### `XpReward`
+
+經驗獎勵
+
+| 方法                                                 | 描述     |
+| ---------------------------------------------------- | -------- |
+| `XpReward.add(xp: number): XpReward`                 | 添加經驗 |
+| `XpReward.add(xp: number, weight: number): XpReward` | 添加經驗 |
+
+#### `AttributeReward`
+
+屬性獎勵
+
+| 方法                                                                                      | 描述       |
+| ----------------------------------------------------------------------------------------- | ---------- |
+| <code>AttributeReward.Builder(): [AttributeRewardBuilder](#attributerewardbuilder)</code> | 創建建構子 |
+
+#### `AttributeRewardBuilder`
+
+屬性獎勵建構子
+
+| 方法                                                                                                          | 描述                     |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| <code>AttributeRewardBuilder.randomType(randomType: [RandomType](#randomtype)): AttributeRewardBuilder</code> | 設置隨機類型             |
+| `AttributeRewardBuilder.add(attribute: AttributeElement): AttributeRewardBuilder`                             | 添加屬性，權重預設為 `1` |
+| `AttributeRewardBuilder.add(attribute: AttributeElement, weight: number): AttributeRewardBuilder`             | 添加屬性                 |
+| `AttributeRewardBuilder.build(): AttributeReward`                                                             | 建構屬性獎勵             |
+
+#### `ItemReward`
+
+物品獎勵
+
+| 方法                                                                       | 描述       |
+| -------------------------------------------------------------------------- | ---------- |
+| <code>ItemReward.Builder(): [ItemRewardBuilder](#itemrewardbuilder)</code> | 創建建構子 |
+
+#### `ItemRewardBuilder`
+
+物品獎勵建構子
+
+| 方法                                                                                                | 描述         |
+| --------------------------------------------------------------------------------------------------- | ------------ |
+| <code>ItemRewardBuilder.randomType(randomType: [RandomType](#randomtype)): ItemRewardBuilder</code> | 設置隨機類型 |
+| `ItemRewardBuilder.add(item: ItemStack, weight: number): ItemRewardBuilder`                         | 添加物品     |
+| `ItemRewardBuilder.build(): ItemReward`                                                             | 建構物品獎勵 |
 
 #### `ConditionGroup`
 
 獲勝條件
+
+| 方法                                                                                   | 描述       |
+| -------------------------------------------------------------------------------------- | ---------- |
+| <code>ConditionGroup.Builder(): [ConditionGroupBuilder](#conditiongroupbuilder)</code> | 創建建構子 |
+
+#### `ConditionGroupBuilder`
+
+獲勝條件建構子
+
+| 方法                                                                                                                        | 描述           |
+| --------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| <code>ConditionGroupBuilder.create(auto: boolean, ...conditions: [ICondition](#icondition)[]): ConditionGroupBuilder</code> | 創建條件組     |
+| <code>ConditionGroupBuilder.victory(...conditions: [ICondition](#icondition)[]): ConditionGroupBuilder</code>               | 創建獲勝條件組 |
+| <code>ConditionGroupBuilder.lose(...conditions: [ICondition](#icondition)[]): ConditionGroupBuilder</code>                  | 創建失敗條件組 |
+| <code>ConditionGroupBuilder.end(...conditions: [ICondition](#icondition)[]): ConditionGroupBuilder</code>                   | 創建結束條件組 |
+
+#### `ICondition`
+
+條件
+
+天命時刻內建條件類型：
+- [`LevelCondition`](#levelcondition)：維度條件
+- [`LocationCondition`](#locationcondition)：位置條件
+- [`PlayerCondition`](#playercondition)：玩家條件
+- [`AutoProbabilityCondition`](#autoprobabilitycondition)：自動概率條件
+- [`WorldUniqueCondition`](#worlduniquecondition)：世界唯一條件
+- [`DifficultyCondition`](#difficultycondition)：難度條件
+- [`TimeCondition`](#timecondition)：時間條件
+
+#### `LevelCondition`
+
+維度條件
+
+::: warning (WIP)
+:::
+
+#### `LocationCondition`
+
+位置條件
+
+::: warning (WIP)
+:::
+
+#### `PlayerCondition`
+
+玩家條件
+
+::: warning (WIP)
+:::
+
+#### `AutoProbabilityCondition`
+
+自動概率條件
+
+::: warning (WIP)
+:::
+
+#### `WorldUniqueCondition`
+
+世界唯一條件
+
+::: warning (WIP)
+:::
+
+#### `DifficultyCondition`
+
+難度條件
+
+::: warning (WIP)
+:::
+
+#### `TimeCondition`
+
+時間條件
 
 ::: warning (WIP)
 :::
@@ -134,6 +358,26 @@ BossBar 的顏色
 
 ::: warning (WIP)
 :::
+
+#### `Weighted`
+
+加權
+
+使用以下方法建立：
+
+```ts
+new Weighted(type: RandomType, totalWeight: number, list: WeightEntry[]): Weighted
+```
+
+#### `RandomType`
+
+隨機類型
+
+| 值                  | 描述                         |
+| ------------------- | ---------------------------- |
+| `RandomType.SINGLE` | 輸出 **1** 個物品            |
+| `RandomType.SUBSET` | 根據每個資料獨立判斷         |
+| `RandomType.ALL`    | （預設值）忽略全重並全部輸出 |
 
 #### `TipSetting`
 
@@ -161,18 +405,18 @@ BossBar 的顏色
 
 客戶端設置
 
-| 方法                                                                                     | 描述         |
-| ---------------------------------------------------------------------------------------- | ------------ |
-| `environmentColor(color: number)`                                                        | 設置環境顏色 |
-| <code>clientMoonSetting((setting: [ClientMoonSetting](#clientmoonsetting)) => {})</code> | 設置月亮設置 |
+| 方法                                                                                                   | 描述         |
+| ------------------------------------------------------------------------------------------------------ | ------------ |
+| `ClientSetting.environmentColor(color: number)`                                                        | 設置環境顏色 |
+| <code>ClientSetting.clientMoonSetting((setting: [ClientMoonSetting](#clientmoonsetting)) => {})</code> | 設置月亮設置 |
 
 #### `ClientMoonSetting`
 
 客戶端顯示的月亮設置
 
-| 方法                                     | 描述         |
-| ---------------------------------------- | ------------ |
-| `moonColor(color: number)`               | 設置月亮顏色 |
-| `moonSize(size: number)`                 | 設置月亮大小 |
-| `moonTexture(texture: ResourceLocation)` | 設置月亮材質 |
+| 方法                                                       | 描述         |
+| ---------------------------------------------------------- | ------------ |
+| `ClientMoonSetting.moonColor(color: number)`               | 設置月亮顏色 |
+| `ClientMoonSetting.moonSize(size: number)`                 | 設置月亮大小 |
+| `ClientMoonSetting.moonTexture(texture: ResourceLocation)` | 設置月亮材質 |
 
