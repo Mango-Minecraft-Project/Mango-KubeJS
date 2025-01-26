@@ -333,7 +333,7 @@ BossBar 的顏色
 
 #### `WorldUniqueCondition`
 
-世界唯一條件
+世界唯一條件，世界內僅存在一種類型的事件
 
 ::: warning (WIP)
 :::
