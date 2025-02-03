@@ -3,6 +3,10 @@ title: 全域常數
 order: 8
 ---
 
+::: info 原始網頁
+https://kubejs.com/wiki/global-scope
+:::
+
 ## 常數與物件
 
 | 名稱      | 類型                  | 描述                                                                                                 |

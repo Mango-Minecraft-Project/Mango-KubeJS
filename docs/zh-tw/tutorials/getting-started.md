@@ -4,6 +4,10 @@ description: KubeJS 的基礎
 order: 1
 ---
 
+::: info 原始網頁
+https://kubejs.com/wiki/tutorials/getting-started
+:::
+
 ::: warning
 在開始使用 KubeJS 之前，您必須學習程式設計和 JavaScript 的基礎知識！
 :::

@@ -1,9 +1,12 @@
 ---
 author: FooterManDev
+title: Data Gen
 description: 厭倦了一次製作大量相同的方塊/物品，導致腳本臃腫且難以閱讀嗎？
 ---
 
-# Data Gen
+::: info 原始網頁
+https://kubejs.com/wiki/tooling/datagen
+:::
 
 [https://github.com/FooterManDev/KJS-Datagen-Scripts](https://github.com/FooterManDev/KJS-Datagen-Scripts)
 

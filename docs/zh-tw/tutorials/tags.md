@@ -3,6 +3,10 @@ title: 編輯標籤
 description: 添加、移除和修改標籤
 ---
 
+::: info 原始網頁
+https://kubejs.com/wiki/tutorials/tags
+:::
+
 ::: warning
 此處的標籤是指[資料包標籤](https://zh.minecraft.wiki/w/標籤)，而非[記分板標籤](https://zh.minecraft.wiki/w/記分板)或 [NBT 標籤](https://zh.minecraft.wiki/w/NBT格式)。
 

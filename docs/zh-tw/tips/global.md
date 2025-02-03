@@ -1,8 +1,11 @@
 ---
-description: 如何使用 global 物件
+title: Global 物件
+description: 如何使用 Global 物件
 ---
 
-# Global 物件
+::: info 原始網頁
+https://kubejs.com/wiki/tips/global
+:::
 
 `global` 是一個在所有腳本類型中都可以訪問的物件。
 

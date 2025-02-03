@@ -1,8 +1,11 @@
 ---
-description: 什麼是持久數據以及如何使用它
+title: 持久化資料
+description: 什麼是持久化資料以及如何使用它
 ---
 
-# 持久數據
+::: info 原始網頁
+https://kubejs.com/wiki/tips/persistent-data
+:::
 
 `persistentData` 是一個可用於玩家（`Player`）、世界（`ServerLevel`）和伺服器（`MinecraftServer`）的對象。
 它對於簡單的數據存儲非常有用。

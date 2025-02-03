@@ -1,10 +1,13 @@
 ---
 author: G_cat [KJSPKG/HehVerse]
 banner: https://kubejs.com/wiki/files/tooling/kjspkg/kjspkg.png
+title: KJSPKG
 description: KubeJS 套件管理器
 ---
 
-# KJSPKG
+::: info 原始網頁
+https://kubejs.com/wiki/tooling/kjspkg
+:::
 
 KJSPKG 是一個 KubeJS 的套件管理器，允許你下載不同的範例腳本和庫到你的實例中。  
 它會自動管理你的 Minecraft 版本、模組加載器、依賴和不兼容控制。它適用於所有現代的 KubeJS 版本，甚至應該適用於一些較舊的版本，例如 1.12！

@@ -1,13 +1,17 @@
 ---
-title: Using /kjs hand
-description: How to get the ID of an item with NBT data
+title: 使用 /kjs hand
+description: 如何獲取帶有 NBT 資料的物品 ID
 ---
 
-To get the ID of an item with NBT data/components, you can use the /kjs hand command (/kjs_hand on versions before 1.19).
-Here's how to use it:
+::: info 原始網頁
+https://kubejs.com/wiki/tutorials/hand
+:::
 
-1. Put the item in your main hand
-2. Run the command
-3. Now you should see something similar to this:
+要獲取帶有 NBT 資料/組件的物品 ID，你可以使用 /kjs hand 指令（1.19 之前的版本使用 /kjs_hand）。
+以下是使用方法：
+
+1. 將物品放在主手中
+2. 執行指令
+3. 現在你應該會看到類似這樣的內容：
    ![](/docs/zh-tw/tutorials/hand/command_output.png)
-4. Click on the green text (the item ID) to copy it
+4. 點擊綠色文字（物品 ID）來複製它

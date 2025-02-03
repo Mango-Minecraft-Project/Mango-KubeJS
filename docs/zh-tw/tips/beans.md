@@ -1,8 +1,11 @@
 ---
+title: Beans
 description: 如何使用 beans
 ---
 
-# Beans
+::: info 原始網頁
+https://kubejs.com/wiki/tips/beans
+:::
 
 KubeJS 有一個稱為 beans 的功能，可以讓腳本更易讀。
 
