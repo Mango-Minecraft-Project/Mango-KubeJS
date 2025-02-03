@@ -9,7 +9,7 @@ tag:
 
 # 將腳本自動同步到 Github
 
-以下步驟皆以 Prism Launcher 為基礎
+<!-- 以下步驟皆以 Prism Launcher 為基礎
 
 1. 備份 `.minecraft`；
 2. 清空原有的 `.minecraft`；
@@ -26,4 +26,4 @@ tag:
       ```
       !*
       probe/
-      ```
+      ``` -->
