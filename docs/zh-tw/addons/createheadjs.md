@@ -2,6 +2,7 @@
 author: XiaoHuNao
 title: Create Heat JS
 description: 自訂 Create 配方的熱源類型＆熱量等級
+isOriginal: true
 ---
 
 <BadgeCompat CurseForge="mc-mods/create-heat-js" Modrinth="mod/create-heat-js" Github="XiaoHuNao/CreateHeatJS" Mcmod="class/15160"/>

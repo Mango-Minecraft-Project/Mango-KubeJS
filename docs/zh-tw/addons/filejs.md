@@ -2,6 +2,7 @@
 author: PrizOwO
 title: FilesJS
 description: KubeJS 文件管理附屬模組
+isOriginal: true
 ---
 
 <BadgeCompat CurseForge="mc-mods/filesjs" Modrinth="mod/filesjs" Github="xiaoliziawa/Files-JS" Mcmod="class/17414"/>

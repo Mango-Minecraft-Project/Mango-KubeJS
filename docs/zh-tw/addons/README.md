@@ -5,4 +5,4 @@ dir:
   order: 6
 ---
 
-<Catalog/>
+<Catalog level="1"/>

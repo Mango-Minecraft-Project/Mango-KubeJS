@@ -2,6 +2,7 @@
 author: XiaoHuNao
 title: 天命時刻（Heaven Destiny Moment）
 description: 提供 API 以創建各種事件，如血月、襲擊等事件。
+isOriginal: true
 dir:
   link: true
 ---
