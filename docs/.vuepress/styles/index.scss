@@ -1,19 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap");
 
 body {
-  font-family: 'Noto Sans TC', 'Noto Sans SC', sans-serif;
+  font-family: "Noto Sans TC", "Noto Sans SC", sans-serif;
 }
 
 p {
   text-align: start !important;
 }
 
-.external-link-icon .theme-hope-content a.custom-badge[href*="://"]::after {
+.external-link-icon .theme-hope-content a.custom-badge[href*="://"]::after
+{
   content: none;
 }
 
 .vp-navbar-center .vp-nav-item a.external-link::after {
   content: none;
+}
+
+details tbody tr:nth-child(2n) {
+  background: rgb(29, 30, 33);
+  transition: background-color var(--vp-t-color);
 }

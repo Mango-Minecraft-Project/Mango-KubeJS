@@ -76,6 +76,8 @@ export default hopeTheme({
 
   // These features are enabled for demo, only preserve features you need here
   markdown: {
+    alert: true,
+    hint: true,
     align: true,
     attrs: true,
     codeTabs: true,
