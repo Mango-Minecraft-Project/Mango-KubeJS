@@ -109,6 +109,12 @@ export default hopeTheme({
     tabs: true,
     tasklist: true,
     vPre: true,
+
+    highlighter: {
+      type: "shiki",
+      defaultLang: "javascript",
+      logLevel: "silent",
+    }
   },
 
   plugins: {

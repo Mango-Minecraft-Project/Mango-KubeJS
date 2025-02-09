@@ -7,7 +7,7 @@ dir:
   link: true
 ---
 
-<BadgeCompat CurseForge="mc-mods/tconjs" Modrinth="mod/tconjs" Github="xiaoliziawa/TConJS" Mcmod="class/17415"/>
+<!-- <BadgeCompat CurseForge="mc-mods/tconstructjs" Modrinth="mod/tconjsconstructjs" Github="xiaoyue/constructjs" Mcmod="class/17415"/> -->
 
 ---
 
