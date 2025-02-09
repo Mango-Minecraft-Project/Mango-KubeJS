@@ -53,7 +53,10 @@ export default hopeTheme({
 
       navbarLocales: {
         langName: "正體中文",
-      }
+      },
+      metaLocales: {
+        origin: "原創",
+      },
     },
     "/zh-cn/": {
       navbar: zhcnNavbar,
@@ -114,18 +117,13 @@ export default hopeTheme({
       type: "shiki",
       defaultLang: "javascript",
       logLevel: "silent",
-    }
+    },
   },
 
   plugins: {
     blog: {
       filter: ({ frontmatter, filePathRelative, lang, path }: Page) =>
-        !!(
-          frontmatter.article ??
-          (!!filePathRelative &&
-            !frontmatter.home &&
-            frontmatter.index !== false)
-        ),
+        !!(frontmatter.article ?? (!!filePathRelative && !frontmatter.home && frontmatter.index !== false)),
       excerptLength: 100,
     },
 
