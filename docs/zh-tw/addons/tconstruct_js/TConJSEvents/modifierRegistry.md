@@ -35,49 +35,51 @@ builder 實際在 ProbeJS 生成的文件中的類型顯示為 `Consumer_<com.xi
 
 ### 方法列表
 
-| 方法                                          | 適用範圍                               | 簡介                                                                                                                                    |
-| --------------------------------------------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| [`addAttributes`](#addattributes)             | 通用                                   | 新增屬性修飾符                                                                                                                          |
-| [`addToolStats`](#addtoolstats)               | 通用                                   | 新增物品基本數值                                                                                                                        |
-| [`addVolatileData`](#addvolatiledata)         | 通用                                   | 工具更新時添加額外資料                                                                                                                  |
-| [`armoTakeAttacked`](#armotakeattacked)       | <IconImage preset="chestplate" /> 盔甲 | 裝備時受傷能力                                                                                                                          |
-| [`canBlockAttacked`](#canblockattacked)       | <IconImage preset="chestplate" /> 盔甲 | 免疫傷害能力                                                                                                                            |
-| [`findBowAmmo`](#findbowammo)                 | <IconImage preset="bow" /> 遠程武器    | 彈藥找尋邏輯                                                                                                                            |
-| [`getBreakSpeed`](#getbreakspeed)             | 通用                                   | 方塊破壞速度                                                                                                                            |
-| [`getDurabilityRGB`](#getdurabilityrgb)       | 通用                                   | 耐久度條顏色                                                                                                                            |
-| [`getDurabilityWidth`](#getdurabilitywidth)   | 通用                                   | 耐久度條長度                                                                                                                            |
-| [`getMeleeDamage`](#getmeleedamage)           | <IconImage preset="sword" /> 近戰武器  | 攻擊傷害                                                                                                                                |
-| [`getRepairFactor`](#getrepairfactor)         | 通用                                   | 物品修復工廠方法                                                                                                                        |
-| [`getToolDamage`](#gettooldamage)             | 通用                                   | 工具耐久                                                                                                                                |
-| [`getUseAnim`](#getuseanim)                   | 通用                                   | 工具使用動畫                                                                                                                            |
-| [`getUseTime`](#getusetime)                   | 通用                                   | 使用時間                                                                                                                                |
-| [`isDurabilityShowBar`](#isdurabilityshowbar) | 通用                                   | 耐久度條是否顯示                                                                                                                        |
-| [`isSingleLevel`](#issinglelevel)             | 通用                                   | 是否單一等級                                                                                                                            |
-| [`modifyDamageTake`](#modifydamagetake)       | <IconImage preset="chestplate" /> 盔甲 | 裝備時受到的最終傷害修改                                                                                                                |
-| [`modifyProtection`](#modifyprotection)       | <IconImage preset="chestplate" /> 盔甲 | 修改[保護係數](https://zh.minecraft.wiki/w/%E7%9B%94%E7%94%B2%E6%9C%BA%E5%88%B6#%E4%BF%9D%E6%8A%A4%E9%AD%94%E5%92%92%E6%9C%BA%E5%88%B6) |
-| [`modifyStat`](#modifystat)                   | 通用                                   | 修改物品基本數值                                                                                                                        |
-| [`onAfterBreak`](#onafterbreak)               | 通用                                   | 方塊破壞事件（後）                                                                                                                      |
-| [`onAfterMeleeHit`](#onaftermeleehit)         | <IconImage preset="sword" /> 近戰武器  | 攻擊事件（後）                                                                                                                          |
-| [`onBeforeMeleeHit`](#onbeforemeleehit)       | <IconImage preset="sword" /> 近戰武器  | 攻擊事件（前）                                                                                                                          |
-| [`onDamageDealt`](#ondamagedealt)             | <IconImage preset="chestplate" /> 盔甲 | 裝備時攻擊實體事件                                                                                                                      |
-| [`onEquip`](#onequip)                         | <IconImage preset="chestplate" /> 盔甲 | 裝備事件                                                                                                                                |
-| [`onFinishUsing`](#onfinishusing)             | 通用                                   | 長按使用結束事件                                                                                                                        |
-| [`onInventoryTick`](#oninventorytick)         | 通用                                   | 物品欄刻事件                                                                                                                            |
-| [`onModifierRemove`](#onmodifierremove)       | 通用                                   | 匠魂修飾符去除事件                                                                                                                      |
-| [`onStoppedUsing`](#onstoppedusing)           | 通用                                   | 長按使用停止事件                                                                                                                        |
-| [`onUnequip`](#onunequip)                     | <IconImage preset="chestplate" /> 盔甲 | 取消裝備事件                                                                                                                            |
-| [`onUseTool`](#onusool)                       | 通用                                   | 物品右鍵事件                                                                                                                            |
-| [`onUsingTick`](#onusingtick)                 | 通用                                   | 長按使用刻事件                                                                                                                          |
-| [`processLoot`](#processloot)                 | 通用                                   | 戰利品處理                                                                                                                              |
-| [`projectileHitBlock`](#projectilehitblock)   | <IconImage preset="bow" /> 遠程武器    | 彈射物擊中方塊                                                                                                                          |
-| [`projectileHitEntity`](#projectilehitentity) | <IconImage preset="bow" /> 遠程武器    | 彈射物擊中實體                                                                                                                          |
-| [`projectileLaunch`](#projectilelaunch)       | <IconImage preset="bow" /> 遠程武器    | 彈射物發射                                                                                                                              |
-| [`setElytraFlight`](#setelytraflight)         | <IconImage preset="chestplate" /> 盔甲 | 鞘翅滑翔能力                                                                                                                            |
-| [`tooltipSetting`](#tooltipsetting)           | 通用                                   | 物品提示設置                                                                                                                            |
-| [`toolUseAction`](#tooluseaction)             | 通用                                   | 操作行為                                                                                                                                |
-| [`ToolValidate`](#toolvalidate)               | 通用                                   | 添加額外資料的檢查                                                                                                                      |
-| [`updateArmorLooting`](#updatearmorlooting)   | <IconImage preset="chestplate" /> 盔甲 | 修改掠奪等級                                                                                                                            |
-| [`updateToolLooting`](#updatetoollooting)     | 通用                                   | 修改掠奪等級                                                                                                                            |
+| 方法                                          | 適用範圍           | 簡介                                                              |
+| --------------------------------------------- | ------------------ | ----------------------------------------------------------------- |
+| [`addAttributes`](#addattributes)             | <Common /> 通用    | 新增屬性修飾符                                                    |
+| [`addToolStats`](#addtoolstats)               | <Common /> 通用    | 新增物品基本數值                                                  |
+| [`addVolatileData`](#addvolatiledata)         | <Common /> 通用    | 工具更新時添加額外資料                                            |
+| [`armoTakeAttacked`](#armotakeattacked)       | <Armor />  盔甲    | 裝備時受傷能力                                                    |
+| [`canBlockAttacked`](#canblockattacked)       | <Armor /> 盔甲     | 免疫傷害能力                                                      |
+| [`findBowAmmo`](#findbowammo)                 | <Range /> 遠程武器 | 彈藥找尋邏輯                                                      |
+| [`getBreakSpeed`](#getbreakspeed)             | <Common /> 通用    | 方塊破壞速度                                                      |
+| [`getDurabilityRGB`](#getdurabilityrgb)       | <Common /> 通用    | 耐久度條顏色                                                      |
+| [`getDurabilityWidth`](#getdurabilitywidth)   | <Common /> 通用    | 耐久度條長度                                                      |
+| [`getMeleeDamage`](#getmeleedamage)           | <Melee /> 近戰武器 | 攻擊傷害                                                          |
+| [`getRepairFactor`](#getrepairfactor)         | <Common /> 通用    | 物品修復工廠方法                                                  |
+| [`getToolDamage`](#gettooldamage)             | <Common /> 通用    | 工具耐久                                                          |
+| [`getUseAnim`](#getuseanim)                   | <Common /> 通用    | 工具使用動畫                                                      |
+| [`getUseTime`](#getusetime)                   | <Common /> 通用    | 使用時間                                                          |
+| [`isDurabilityShowBar`](#isdurabilityshowbar) | <Common /> 通用    | 耐久度條是否顯示                                                  |
+| [`isSingleLevel`](#issinglelevel)             | <Common /> 通用    | 是否單一等級                                                      |
+| [`modifyDamageTake`](#modifydamagetake)       | <Armor /> 盔甲     | 裝備時受到的最終傷害修改                                          |
+| [`modifyProtection`](#modifyprotection)       | <Armor /> 盔甲     | 修改[保護係數](https://zh.minecraft.wiki/w/盔甲机制#保护魔咒机制) |
+| [`modifyStat`](#modifystat)                   | <Common /> 通用    | 修改物品基本數值                                                  |
+| [`onAfterBreak`](#onafterbreak)               | <Common /> 通用    | 方塊破壞事件（後）                                                |
+| [`onAfterMeleeHit`](#onaftermeleehit)         | <Melee /> 近戰武器 | 攻擊事件（後）                                                    |
+| [`onBeforeMeleeHit`](#onbeforemeleehit)       | <Melee /> 近戰武器 | 攻擊事件（前）                                                    |
+| [`onDamageDealt`](#ondamagedealt)             | <Armor /> 盔甲     | 裝備時攻擊實體事件                                                |
+| [`onEquip`](#onequip)                         | <Armor /> 盔甲     | 裝備事件                                                          |
+| [`onFinishUsing`](#onfinishusing)             | <Common /> 通用    | 長按使用結束事件                                                  |
+| [`onInventoryTick`](#oninventorytick)         | <Common /> 通用    | 物品欄刻事件                                                      |
+| [`onModifierRemove`](#onmodifierremove)       | <Common /> 通用    | 匠魂修飾符去除事件                                                |
+| [`onStoppedUsing`](#onstoppedusing)           | <Common /> 通用    | 長按使用停止事件                                                  |
+| [`onUnequip`](#onunequip)                     | <Armor /> 盔甲     | 取消裝備事件                                                      |
+| [`onUseTool`](#onusool)                       | <Common /> 通用    | 物品右鍵事件                                                      |
+| [`onUsingTick`](#onusingtick)                 | <Common /> 通用    | 長按使用刻事件                                                    |
+| [`processLoot`](#processloot)                 | <Common /> 通用    | 戰利品處理                                                        |
+| [`projectileHitBlock`](#projectilehitblock)   | <Range /> 遠程武器 | 彈射物擊中方塊                                                    |
+| [`projectileHitEntity`](#projectilehitentity) | <Range /> 遠程武器 | 彈射物擊中實體                                                    |
+| [`projectileLaunch`](#projectilelaunch)       | <Range /> 遠程武器 | 彈射物發射                                                        |
+| [`setElytraFlight`](#setelytraflight)         | <Armor /> 盔甲     | 鞘翅滑翔能力                                                      |
+| [`tooltipSetting`](#tooltipsetting)           | <Common /> 通用    | 物品提示設置                                                      |
+| [`toolUseAction`](#tooluseaction)             | <Common /> 通用    | 操作行為                                                          |
+| [`ToolValidate`](#toolvalidate)               | <Common /> 通用    | 添加額外資料的檢查                                                |
+| [`updateArmorLooting`](#updatearmorlooting)   | <Armor /> 盔甲     | 修改掠奪等級                                                      |
+| [`updateToolLooting`](#updatetoollooting)     | <Common /> 通用    | 修改掠奪等級                                                      |
+
+---
 
 #### `addAttributes`
 
@@ -85,8 +87,20 @@ builder 實際在 ProbeJS 生成的文件中的類型顯示為 `Consumer_<com.xi
 addAttributes(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentSlot, arg3: Map<ResourceLocation, AttributeModifier>) => Map_<ResourceLocation, AttributeModifier>) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: EquipmentSlot` - 裝備槽
+- `arg3: Map<ResourceLocation, AttributeModifier>` - 屬性修飾符
+
+##### 回傳值
+
+- `Map_<ResourceLocation, AttributeModifier>` - 屬性修飾符
+
 ##### 範例
 
+::: details 範例
 ```js
 const $AttributeModifier = Java.loadClass("net.minecraft.world.entity.ai.attributes.AttributeModifier");
 
@@ -105,6 +119,7 @@ event.createNew("speedy", (builder) => {
   });
 });
 ```
+:::
 
 #### `addToolStats`
 
@@ -112,6 +127,19 @@ event.createNew("speedy", (builder) => {
 addToolStats(consumer: (arg0: IToolContext, arg1: number, arg2: ModifierStatsBuilder) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolContext` - 工具上下文
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: ModifierStatsBuilder` - 修飾符統計數據生成器
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `addVolatileData`
 
@@ -119,6 +147,19 @@ addToolStats(consumer: (arg0: IToolContext, arg1: number, arg2: ModifierStatsBui
 addVolatileData(consumer: (arg0: IToolContext, arg1: number, arg2: ModDataNBT) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolContext` - 工具上下文
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: ModDataNBT` - 額外資料
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `armoTakeAttacked`
 
@@ -126,6 +167,26 @@ addVolatileData(consumer: (arg0: IToolContext, arg1: number, arg2: ModDataNBT) =
 armoTakeAttacked(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentContext, arg3: EquipmentSlot, arg4: DamageSource, arg5: number) => boolean) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: EquipmentContext` - 裝備上下文
+- `arg3: EquipmentSlot` - 裝備槽
+- `arg4: DamageSource` - 傷害來源
+- `arg5: number` - 傷害值
+
+##### 回傳值
+
+- `boolean` - 是否受到傷害
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `canBlockAttacked`
 
@@ -133,6 +194,26 @@ armoTakeAttacked(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentC
 canBlockAttacked(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentContext, arg3: EquipmentSlot, arg4: DamageSource, arg5: number) => boolean) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: EquipmentContext` - 裝備上下文
+- `arg3: EquipmentSlot` - 裝備槽
+- `arg4: DamageSource` - 傷害來源
+- `arg5: number` - 傷害值
+
+##### 回傳值
+
+- `boolean` - 是否免疫傷害
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `findBowAmmo`
 
@@ -140,6 +221,25 @@ canBlockAttacked(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentC
 findBowAmmo(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, arg3: ItemStack, arg4: Predicate<ItemStack>) => ItemStack_) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: LivingEntity` - 生物
+- `arg3: ItemStack` - 物品堆疊
+- `arg4: Predicate<ItemStack>` - 物品堆疊述詞
+
+##### 回傳值
+
+- `ItemStack_` - 物品堆疊
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `getBreakSpeed`
 
@@ -147,6 +247,22 @@ findBowAmmo(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, a
 getBreakSpeed(consumer: (arg0: IToolStackView, arg1: number, arg2: PlayerEvent$BreakSpeed, arg3: Direction, arg4: boolean, arg5: number) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: PlayerEvent$BreakSpeed` - 玩家事件
+- `arg3: Direction` - 方向
+- `arg4: boolean` - 是否破壞
+- `arg5: number` - 破壞速度
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `getDurabilityRGB`
 
@@ -154,6 +270,22 @@ getBreakSpeed(consumer: (arg0: IToolStackView, arg1: number, arg2: PlayerEvent$B
 getDurabilityRGB(consumer: (arg0: IToolStackView, arg1: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 損壞值
+
+##### 回傳值
+
+- `number` - 顏色值
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `getDurabilityWidth`
 
@@ -161,6 +293,22 @@ getDurabilityRGB(consumer: (arg0: IToolStackView, arg1: number) => number) => th
 getDurabilityWidth(consumer: (arg0: IToolStackView, arg1: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 損壞值
+
+##### 回傳值
+
+- `number` - 寬度
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `getMeleeDamage`
 
@@ -168,6 +316,25 @@ getDurabilityWidth(consumer: (arg0: IToolStackView, arg1: number) => number) => 
 getMeleeDamage(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolAttackContext, arg3: number, arg4: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: ToolAttackContext` - 工具攻擊上下文
+- `arg3: number` - 傷害值
+- `arg4: number` - 攻擊速度
+
+##### 回傳值
+
+- `number` - 傷害值
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `getRepairFactor`
 
@@ -175,6 +342,23 @@ getMeleeDamage(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolAttackCo
 getRepairFactor(consumer: (arg0: IToolStackView, arg1: number, arg2: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: number` - 修復因子
+
+##### 回傳值
+
+- `number` - 修復因子
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `getToolDamage`
 
@@ -182,6 +366,24 @@ getRepairFactor(consumer: (arg0: IToolStackView, arg1: number, arg2: number) => 
 getToolDamage(consumer: (arg0: IToolStackView, arg1: number, arg2: number, arg3: LivingEntity) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: number` - 工具耐久
+- `arg3: LivingEntity` - 生物
+
+##### 回傳值
+
+- `number` - 工具耐久
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `getUseAnim`
 
@@ -189,6 +391,22 @@ getToolDamage(consumer: (arg0: IToolStackView, arg1: number, arg2: number, arg3:
 getUseAnim(consumer: (arg0: IToolStackView, arg1: number) => UseAnim_) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+
+##### 回傳值
+
+- `UseAnim_` - 使用動畫
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `getUseTime`
 
@@ -196,6 +414,22 @@ getUseAnim(consumer: (arg0: IToolStackView, arg1: number) => UseAnim_) => this
 getUseTime(consumer: (arg0: IToolStackView, arg1: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+
+##### 回傳值
+
+- `number` - 使用時間
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `isDurabilityShowBar`
 
@@ -203,6 +437,22 @@ getUseTime(consumer: (arg0: IToolStackView, arg1: number) => number) => this
 isDurabilityShowBar(consumer: (arg0: IToolStackView, arg1: number) => boolean) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 損壞值
+
+##### 回傳值
+
+- `boolean` - 是否顯示耐久度條
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `isSingleLevel`
 
@@ -210,6 +460,17 @@ isDurabilityShowBar(consumer: (arg0: IToolStackView, arg1: number) => boolean) =
 isSingleLevel() => this
 ```
 
+##### 回傳值
+
+- `this`
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `modifyDamageTake`
 
@@ -217,6 +478,26 @@ isSingleLevel() => this
 modifyDamageTake(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentContext, arg3: EquipmentSlot, arg4: DamageSource, arg5: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: EquipmentContext` - 裝備上下文
+- `arg3: EquipmentSlot` - 裝備槽
+- `arg4: DamageSource` - 傷害來源
+- `arg5: number` - 傷害值
+
+##### 回傳值
+
+- `number` - 傷害值
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `modifyProtection`
 
@@ -224,6 +505,26 @@ modifyDamageTake(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentC
 modifyProtection(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentContext, arg3: EquipmentSlot, arg4: DamageSource, arg5: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: EquipmentContext` - 裝備上下文
+- `arg3: EquipmentSlot` - 裝備槽
+- `arg4: DamageSource` - 傷害來源
+- `arg5: number` - 盔甲值
+
+##### 回傳值
+
+- `number` - 盔甲值
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `modifyStat`
 
@@ -231,6 +532,26 @@ modifyProtection(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentC
 modifyStat(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, arg3: FloatToolStat, arg4: number, arg5: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: LivingEntity` - 生物
+- `arg3: FloatToolStat` - 工具基本數值
+- `arg4: number` - 數值
+- `arg5: number` - 數值
+
+##### 回傳值
+
+- `number` - 數值
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onAfterBreak`
 
@@ -238,6 +559,19 @@ modifyStat(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, ar
 onAfterBreak(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolHarvestContext)=> void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: ToolHarvestContext` - 工具收穫上下文
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onAfterMeleeHit`
 
@@ -245,8 +579,16 @@ onAfterBreak(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolHarvestCon
 onAfterMeleeHit(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolAttackContext, arg3: number) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: ToolAttackContext` - 工具攻擊上下文
+- `arg3: number` - 傷害值
+
 ##### 範例
 
+::: details 範例
 ```js
 event.createNew("give_me_hat", (builder) => {
   builder
@@ -259,6 +601,7 @@ event.createNew("give_me_hat", (builder) => {
     });
 });
 ```
+:::
 
 #### `onBeforeMeleeHit`
 
@@ -266,6 +609,26 @@ event.createNew("give_me_hat", (builder) => {
 onBeforeMeleeHit(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolAttackContext, arg3: number, arg4: number, arg5: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: ToolAttackContext` - 工具攻擊上下文
+- `arg3: number` - 傷害值
+- `arg4: number` - 攻擊速度
+- `arg5: number` - 傷害值
+
+##### 回傳值
+
+- `number` - 傷害值
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onDamageDealt`
 
@@ -273,6 +636,24 @@ onBeforeMeleeHit(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolAttack
 onDamageDealt(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentContext, arg3: EquipmentSlot, arg4: LivingEntity, arg5: DamageSource, arg6: number, arg7: boolean)=> void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: EquipmentContext` - 裝備上下文
+- `arg3: EquipmentSlot` - 裝備槽
+- `arg4: LivingEntity` - 生物
+- `arg5: DamageSource` - 傷害來源
+- `arg6: number` - 傷害值
+- `arg7: boolean` - 是否致命
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onEquip`
 
@@ -280,6 +661,19 @@ onDamageDealt(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentCont
 onEquip(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentChangeContext) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: EquipmentChangeContext` - 裝備更換上下文
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onFinishUsing`
 
@@ -287,6 +681,19 @@ onEquip(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentChangeCont
 onFinishUsing(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: LivingEntity` - 生物
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onInventoryTick`
 
@@ -294,6 +701,24 @@ onFinishUsing(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity)
 onInventoryTick(consumer: (arg0: IToolStackView, arg1: number, arg2: Level, arg3: LivingEntity, arg4: number, arg5: boolean, arg6: boolean, arg7: ItemStack)=> void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: Level` - 維度
+- `arg3: LivingEntity` - 生物
+- `arg4: number` - 時間
+- `arg5: boolean` - 是否在物品欄
+- `arg6: boolean` - 是否在主手
+- `arg7: ItemStack` - 物品堆疊
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onModifierRemove`
 
@@ -301,6 +726,22 @@ onInventoryTick(consumer: (arg0: IToolStackView, arg1: number, arg2: Level, arg3
 onModifierRemove(consumer: (arg0: IToolStackView, arg1: Modifier)=> Component_) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: Modifier` - 修飾符
+
+##### 回傳值
+
+- `Component_` - 組件
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onStoppedUsing`
 
@@ -308,6 +749,20 @@ onModifierRemove(consumer: (arg0: IToolStackView, arg1: Modifier)=> Component_) 
 onStoppedUsing(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, arg3: number) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: LivingEntity` - 生物
+- `arg3: number` - 使用時間
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onUnequip`
 
@@ -315,6 +770,19 @@ onStoppedUsing(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity
 onUnequip(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentChangeContext) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: EquipmentChangeContext` - 裝備更換上下文
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onUseTool`
 
@@ -322,6 +790,25 @@ onUnequip(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentChangeCo
 onUseTool(consumer: (arg0: IToolStackView, arg1: number, arg2: Player, arg3: InteractionHand, arg4: InteractionSource) => boolean) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: Player` - 玩家
+- `arg3: InteractionHand` - 交互手
+- `arg4: InteractionSource` - 交互來源
+
+##### 回傳值
+
+- `boolean` - 是否使用工具
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `onUsingTick`
 
@@ -329,6 +816,20 @@ onUseTool(consumer: (arg0: IToolStackView, arg1: number, arg2: Player, arg3: Int
 onUsingTick(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, arg3: number) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: LivingEntity` - 生物
+- `arg3: number` - 使用時間
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `processLoot`
 
@@ -336,6 +837,20 @@ onUsingTick(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, a
 processLoot(consumer: (arg0: IToolStackView, arg1: number, arg2: List<ItemStack>, arg3: LootContext) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: List<ItemStack>` - 物品堆疊列表
+- `arg3: LootContext` - 戰利品上下文
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `projectileHitBlock`
 
@@ -343,6 +858,26 @@ processLoot(consumer: (arg0: IToolStackView, arg1: number, arg2: List<ItemStack>
 projectileHitBlock(consumer: (arg0: ModifierNBT, arg1: NamespacedNBT, arg2: number, arg3: Projectile, arg4: BlockHitResult, arg5: LivingEntity) => boolean) => this
 ```
 
+##### 參數
+
+- `arg0: ModifierNBT` - 修飾符
+- `arg1: NamespacedNBT` - 命名空間
+- `arg2: number` - 傷害值
+- `arg3: Projectile` - 彈射物
+- `arg4: BlockHitResult` - 方塊擊中結果
+- `arg5: LivingEntity` - 生物
+
+##### 回傳值
+
+- `boolean` - 是否擊中方塊
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `projectileHitEntity`
 
@@ -350,8 +885,23 @@ projectileHitBlock(consumer: (arg0: ModifierNBT, arg1: NamespacedNBT, arg2: numb
 projectileHitEntity(consumer: (arg0: ModifierNBT, arg1: NamespacedNBT, arg2: number, arg3: Projectile, arg4: EntityHitResult, arg5: LivingEntity, arg6: LivingEntity) => boolean) => this
 ```
 
+##### 參數
+
+- `arg0: ModifierNBT` - 修飾符
+- `arg1: NamespacedNBT` - 命名空間
+- `arg2: number` - 傷害值
+- `arg3: Projectile` - 彈射物
+- `arg4: EntityHitResult` - 實體擊中結果
+- `arg5: LivingEntity` - 攻擊者
+- `arg6: LivingEntity` - 受害者
+
+##### 回傳值
+
+- `boolean` - 是否擊中實體
+
 ##### 範例
 
+::: details 範例
 ```js
 event.createNew("give_me_hat", (builder) => {
   builder
@@ -364,6 +914,7 @@ event.createNew("give_me_hat", (builder) => {
     });
 });
 ```
+:::
 
 #### `projectileLaunch`
 
@@ -371,6 +922,23 @@ event.createNew("give_me_hat", (builder) => {
 projectileLaunch(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, arg3: Projectile, arg4: AbstractArrow, arg5: NamespacedNBT, arg6: boolean) => void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: LivingEntity` - 生物
+- `arg3: Projectile` - 彈射物
+- `arg4: AbstractArrow` - 抽象箭
+- `arg5: NamespacedNBT` - 命名空間
+- `arg6: boolean` - 是否成功
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `setElytraFlight`
 
@@ -378,6 +946,24 @@ projectileLaunch(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEnti
 setElytraFlight(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, arg3: number) => boolean) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: LivingEntity` - 生物
+- `arg3: number` - 損壞值
+
+##### 回傳值
+
+- `boolean` - 是否滑翔
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `tooltipSetting`
 
@@ -385,6 +971,22 @@ setElytraFlight(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntit
 tooltipSetting(consumer: (arg0: IToolStackView, arg1: number, arg2: Player, arg3: List<Component>, arg4: TooltipKey, arg5: TooltipFlag)=> void) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: Player` - 玩家
+- `arg3: List<Component>` - 組件列表
+- `arg4: TooltipKey` - 提示鍵
+- `arg5: TooltipFlag` - 提示標誌
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `toolUseAction`
 
@@ -392,6 +994,22 @@ tooltipSetting(consumer: (arg0: IToolStackView, arg1: number, arg2: Player, arg3
 toolUseAction(consumer: (arg0: IToolStackView, arg1: number) => ToolAction_) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+
+##### 回傳值
+
+- `ToolAction_` - 工具操作行為
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `ToolValidate`
 
@@ -399,6 +1017,22 @@ toolUseAction(consumer: (arg0: IToolStackView, arg1: number) => ToolAction_) => 
 ToolValidate(consumer: (arg0: IToolStackView, arg1: number) => Component_) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+
+##### 回傳值
+
+- `Component_` - 組件
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `updateArmorLooting`
 
@@ -406,6 +1040,26 @@ ToolValidate(consumer: (arg0: IToolStackView, arg1: number) => Component_) => th
 updateArmorLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingContext, arg3: EquipmentContext, arg4: EquipmentSlot, arg5: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: LootingContext` - 掠奪上下文
+- `arg3: EquipmentContext` - 裝備上下文
+- `arg4: EquipmentSlot` - 裝備槽
+- `arg5: number` - 掠奪等級
+
+##### 回傳值
+
+- `number` - 掠奪等級
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
 
 #### `updateToolLooting`
 
@@ -413,3 +1067,28 @@ updateArmorLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingC
 updateToolLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingContext, arg3: number) => number) => this
 ```
 
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: LootingContext` - 掠奪上下文
+- `arg3: number` - 掠奪等級
+
+##### 回傳值
+
+- `number` - 掠奪等級
+
+##### 範例
+
+::: details 範例
+```js
+
+```
+:::
+
+<script setup>
+import Common from "@components/tconstruct_js/applicable/common.vue";
+import Armor from "@components/tconstruct_js/applicable/armor.vue";
+import Melee from "@components/tconstruct_js/applicable/melee.vue";
+import Range from "@components/tconstruct_js/applicable/range.vue";
+</script>

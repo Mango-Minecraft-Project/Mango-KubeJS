@@ -39,6 +39,7 @@ export default defineUserConfig({
 
   clientConfigFile: path.resolve(__dirname, "./client.ts"),
 
-  // Enable it with pwa
-  // shouldPrefetch: false,
+  alias: {
+    "@components": path.resolve(__dirname, "./components"),
+  }
 });
