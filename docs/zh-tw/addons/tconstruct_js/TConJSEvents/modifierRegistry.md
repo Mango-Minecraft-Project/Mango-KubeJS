@@ -42,7 +42,7 @@ builder 實際在 ProbeJS 生成的文件中的類型顯示為 `Consumer_<com.xi
 | [`addVolatileData`](#addvolatiledata)         | <Common /> 通用    | 工具更新時添加額外資料                                            |
 | [`armoTakeAttacked`](#armotakeattacked)       | <Armor />  盔甲    | 裝備時受傷能力                                                    |
 | [`canBlockAttacked`](#canblockattacked)       | <Armor /> 盔甲     | 免疫傷害能力                                                      |
-| [`findBowAmmo`](#findbowammo)                 | <Range /> 遠程武器 | 彈藥找尋邏輯                                                      |
+| [`findBowAmmo`](#findbowammo)                 | <Ranged /> 遠程武器 | 彈藥找尋邏輯                                                      |
 | [`getBreakSpeed`](#getbreakspeed)             | <Common /> 通用    | 方塊破壞速度                                                      |
 | [`getDurabilityRGB`](#getdurabilityrgb)       | <Common /> 通用    | 耐久度條顏色                                                      |
 | [`getDurabilityWidth`](#getdurabilitywidth)   | <Common /> 通用    | 耐久度條長度                                                      |
@@ -69,9 +69,9 @@ builder 實際在 ProbeJS 生成的文件中的類型顯示為 `Consumer_<com.xi
 | [`onUseTool`](#onusool)                       | <Common /> 通用    | 物品右鍵事件                                                      |
 | [`onUsingTick`](#onusingtick)                 | <Common /> 通用    | 長按使用刻事件                                                    |
 | [`processLoot`](#processloot)                 | <Common /> 通用    | 戰利品處理                                                        |
-| [`projectileHitBlock`](#projectilehitblock)   | <Range /> 遠程武器 | 彈射物擊中方塊                                                    |
-| [`projectileHitEntity`](#projectilehitentity) | <Range /> 遠程武器 | 彈射物擊中實體                                                    |
-| [`projectileLaunch`](#projectilelaunch)       | <Range /> 遠程武器 | 彈射物發射                                                        |
+| [`projectileHitBlock`](#projectilehitblock)   | <Ranged /> 遠程武器 | 彈射物擊中方塊                                                    |
+| [`projectileHitEntity`](#projectilehitentity) | <Ranged /> 遠程武器 | 彈射物擊中實體                                                    |
+| [`projectileLaunch`](#projectilelaunch)       | <Ranged /> 遠程武器 | 彈射物發射                                                        |
 | [`setElytraFlight`](#setelytraflight)         | <Armor /> 盔甲     | 鞘翅滑翔能力                                                      |
 | [`tooltipSetting`](#tooltipsetting)           | <Common /> 通用    | 物品提示設置                                                      |
 | [`toolUseAction`](#tooluseaction)             | <Common /> 通用    | 操作行為                                                          |
@@ -1087,8 +1087,8 @@ updateToolLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingCo
 :::
 
 <script setup>
-import Common from "@components/tconstruct_js/applicable/common.vue";
-import Armor from "@components/tconstruct_js/applicable/armor.vue";
-import Melee from "@components/tconstruct_js/applicable/melee.vue";
-import Range from "@components/tconstruct_js/applicable/range.vue";
+import Common from "@components/tconstruct_js/applicable/Common.vue";
+import Armor from "@components/tconstruct_js/applicable/Armor.vue";
+import Melee from "@components/tconstruct_js/applicable/Melee.vue";
+import Ranged from "@components/tconstruct_js/applicable/Ranged.vue";
 </script>
