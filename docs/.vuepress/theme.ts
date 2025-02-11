@@ -115,6 +115,16 @@ export default hopeTheme({
 
     highlighter: {
       type: "shiki",
+
+      theme: "one-dark-pro",
+      collapsedLines: false,
+      notationDiff: true,
+      notationFocus: true,
+      notationHighlight: true,
+      notationErrorLevel: true,
+      notationWordHighlight: true,
+      whitespace: "trailing",
+
       defaultLang: "javascript",
       logLevel: "silent",
     },

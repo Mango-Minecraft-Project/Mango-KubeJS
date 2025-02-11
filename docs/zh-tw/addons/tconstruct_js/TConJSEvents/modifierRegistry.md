@@ -35,49 +35,49 @@ builder 實際在 ProbeJS 生成的文件中的類型顯示為 `Consumer_<com.xi
 
 ### 方法列表
 
-| 方法                                          | 適用範圍 | 簡介                                                                                                                                    |
-| --------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| [`addAttributes`](#addattributes)             | 通用     | 新增屬性修飾符                                                                                                                          |
-| [`addToolStats`](#addtoolstats)               | 通用     | 新增物品基本數值                                                                                                                        |
-| [`addVolatileData`](#addvolatiledata)         | 通用     | 工具更新時添加額外資料                                                                                                                  |
-| [`armoTakeAttacked`](#armotakeattacked)       | 盔甲     | 裝備時受傷能力                                                                                                                          |
-| [`canBlockAttacked`](#canblockattacked)       | 盔甲     | 免疫傷害能力                                                                                                                            |
-| [`findBowAmmo`](#findbowammo)                 | 遠程武器 | 彈藥找尋邏輯                                                                                                                            |
-| [`getBreakSpeed`](#getbreakspeed)             | 通用     | 方塊破壞速度                                                                                                                            |
-| [`getDurabilityRGB`](#getdurabilityrgb)       | 通用     | 耐久度條顏色                                                                                                                            |
-| [`getDurabilityWidth`](#getdurabilitywidth)   | 通用     | 耐久度條長度                                                                                                                            |
-| [`getMeleeDamage`](#getmeleedamage)           | 近戰     | 攻擊傷害                                                                                                                                |
-| [`getRepairFactor`](#getrepairfactor)         | 通用     | 物品修復工廠方法                                                                                                                        |
-| [`getToolDamage`](#gettooldamage)             | 通用     | 工具耐久                                                                                                                                |
-| [`getUseAnim`](#getuseanim)                   | 通用     | 工具使用動畫                                                                                                                            |
-| [`getUseTime`](#getusetime)                   | 通用     | 使用時間                                                                                                                                |
-| [`isDurabilityShowBar`](#isdurabilityshowbar) | 通用     | 耐久度條是否顯示                                                                                                                        |
-| [`isSingleLevel`](#issinglelevel)             | 通用     | 是否單一等級                                                                                                                            |
-| [`modifyDamageTake`](#modifydamagetake)       | 盔甲     | 裝備時受到的最終傷害修改                                                                                                                |
-| [`modifyProtection`](#modifyprotection)       | 盔甲     | 修改[保護係數](https://zh.minecraft.wiki/w/%E7%9B%94%E7%94%B2%E6%9C%BA%E5%88%B6#%E4%BF%9D%E6%8A%A4%E9%AD%94%E5%92%92%E6%9C%BA%E5%88%B6) |
-| [`modifyStat`](#modifystat)                   | 通用     | 修改物品基本數值                                                                                                                        |
-| [`onAfterBreak`](#onafterbreak)               | 通用     | 方塊破壞事件（後）                                                                                                                      |
-| [`onAfterMeleeHit`](#onaftermeleehit)         | 近戰武器 | 攻擊事件（後）                                                                                                                          |
-| [`onBeforeMeleeHit`](#onbeforemeleehit)       | 近戰武器 | 攻擊事件（前）                                                                                                                          |
-| [`onDamageDealt`](#ondamagedealt)             | 盔甲     | 裝備時攻擊實體事件                                                                                                                      |
-| [`onEquip`](#onequip)                         | 盔甲     | 裝備事件                                                                                                                                |
-| [`onFinishUsing`](#onfinishusing)             | 通用     | 長按使用結束事件                                                                                                                        |
-| [`onInventoryTick`](#oninventorytick)         | 通用     | 物品欄刻事件                                                                                                                            |
-| [`onModifierRemove`](#onmodifierremove)       | 通用     | 匠魂修飾符去除事件                                                                                                                      |
-| [`onStoppedUsing`](#onstoppedusing)           | 通用     | 長按使用停止事件                                                                                                                        |
-| [`onUnequip`](#onunequip)                     | 盔甲     | 取消裝備事件                                                                                                                            |
-| [`onUseTool`](#onusool)                       | 通用     | 物品右鍵事件                                                                                                                            |
-| [`onUsingTick`](#onusingtick)                 | 通用     | 長按使用刻事件                                                                                                                          |
-| [`processLoot`](#processloot)                 | 通用     | 戰利品處理                                                                                                                              |
-| [`projectileHitBlock`](#projectilehitblock)   | 遠程武器 | 彈射物擊中方塊                                                                                                                          |
-| [`projectileHitEntity`](#projectilehitentity) | 遠程武器 | 彈射物擊中實體                                                                                                                          |
-| [`projectileLaunch`](#projectilelaunch)       | 遠程武器 | 彈射物發射                                                                                                                              |
-| [`setElytraFlight`](#setelytraflight)         | 盔甲     | 鞘翅滑翔能力                                                                                                                            |
-| [`tooltipSetting`](#tooltipsetting)           | 通用     | 物品提示設置                                                                                                                            |
-| [`toolUseAction`](#tooluseaction)             | 通用     | 操作行為                                                                                                                                |
-| [`ToolValidate`](#toolvalidate)               | 通用     | 添加額外資料的檢查                                                                                                                      |
-| [`updateArmorLooting`](#updatearmorlooting)   | 盔甲     | 修改掠奪等級                                                                                                                            |
-| [`updateToolLooting`](#updatetoollooting)     | 通用     | 修改掠奪等級                                                                                                                            |
+| 方法                                          | 適用範圍                               | 簡介                                                                                                                                    |
+| --------------------------------------------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| [`addAttributes`](#addattributes)             | 通用                                   | 新增屬性修飾符                                                                                                                          |
+| [`addToolStats`](#addtoolstats)               | 通用                                   | 新增物品基本數值                                                                                                                        |
+| [`addVolatileData`](#addvolatiledata)         | 通用                                   | 工具更新時添加額外資料                                                                                                                  |
+| [`armoTakeAttacked`](#armotakeattacked)       | <IconImage preset="chestplate" /> 盔甲 | 裝備時受傷能力                                                                                                                          |
+| [`canBlockAttacked`](#canblockattacked)       | <IconImage preset="chestplate" /> 盔甲 | 免疫傷害能力                                                                                                                            |
+| [`findBowAmmo`](#findbowammo)                 | <IconImage preset="bow" /> 遠程武器    | 彈藥找尋邏輯                                                                                                                            |
+| [`getBreakSpeed`](#getbreakspeed)             | 通用                                   | 方塊破壞速度                                                                                                                            |
+| [`getDurabilityRGB`](#getdurabilityrgb)       | 通用                                   | 耐久度條顏色                                                                                                                            |
+| [`getDurabilityWidth`](#getdurabilitywidth)   | 通用                                   | 耐久度條長度                                                                                                                            |
+| [`getMeleeDamage`](#getmeleedamage)           | <IconImage preset="sword" /> 近戰武器  | 攻擊傷害                                                                                                                                |
+| [`getRepairFactor`](#getrepairfactor)         | 通用                                   | 物品修復工廠方法                                                                                                                        |
+| [`getToolDamage`](#gettooldamage)             | 通用                                   | 工具耐久                                                                                                                                |
+| [`getUseAnim`](#getuseanim)                   | 通用                                   | 工具使用動畫                                                                                                                            |
+| [`getUseTime`](#getusetime)                   | 通用                                   | 使用時間                                                                                                                                |
+| [`isDurabilityShowBar`](#isdurabilityshowbar) | 通用                                   | 耐久度條是否顯示                                                                                                                        |
+| [`isSingleLevel`](#issinglelevel)             | 通用                                   | 是否單一等級                                                                                                                            |
+| [`modifyDamageTake`](#modifydamagetake)       | <IconImage preset="chestplate" /> 盔甲 | 裝備時受到的最終傷害修改                                                                                                                |
+| [`modifyProtection`](#modifyprotection)       | <IconImage preset="chestplate" /> 盔甲 | 修改[保護係數](https://zh.minecraft.wiki/w/%E7%9B%94%E7%94%B2%E6%9C%BA%E5%88%B6#%E4%BF%9D%E6%8A%A4%E9%AD%94%E5%92%92%E6%9C%BA%E5%88%B6) |
+| [`modifyStat`](#modifystat)                   | 通用                                   | 修改物品基本數值                                                                                                                        |
+| [`onAfterBreak`](#onafterbreak)               | 通用                                   | 方塊破壞事件（後）                                                                                                                      |
+| [`onAfterMeleeHit`](#onaftermeleehit)         | <IconImage preset="sword" /> 近戰武器  | 攻擊事件（後）                                                                                                                          |
+| [`onBeforeMeleeHit`](#onbeforemeleehit)       | <IconImage preset="sword" /> 近戰武器  | 攻擊事件（前）                                                                                                                          |
+| [`onDamageDealt`](#ondamagedealt)             | <IconImage preset="chestplate" /> 盔甲 | 裝備時攻擊實體事件                                                                                                                      |
+| [`onEquip`](#onequip)                         | <IconImage preset="chestplate" /> 盔甲 | 裝備事件                                                                                                                                |
+| [`onFinishUsing`](#onfinishusing)             | 通用                                   | 長按使用結束事件                                                                                                                        |
+| [`onInventoryTick`](#oninventorytick)         | 通用                                   | 物品欄刻事件                                                                                                                            |
+| [`onModifierRemove`](#onmodifierremove)       | 通用                                   | 匠魂修飾符去除事件                                                                                                                      |
+| [`onStoppedUsing`](#onstoppedusing)           | 通用                                   | 長按使用停止事件                                                                                                                        |
+| [`onUnequip`](#onunequip)                     | <IconImage preset="chestplate" /> 盔甲 | 取消裝備事件                                                                                                                            |
+| [`onUseTool`](#onusool)                       | 通用                                   | 物品右鍵事件                                                                                                                            |
+| [`onUsingTick`](#onusingtick)                 | 通用                                   | 長按使用刻事件                                                                                                                          |
+| [`processLoot`](#processloot)                 | 通用                                   | 戰利品處理                                                                                                                              |
+| [`projectileHitBlock`](#projectilehitblock)   | <IconImage preset="bow" /> 遠程武器    | 彈射物擊中方塊                                                                                                                          |
+| [`projectileHitEntity`](#projectilehitentity) | <IconImage preset="bow" /> 遠程武器    | 彈射物擊中實體                                                                                                                          |
+| [`projectileLaunch`](#projectilelaunch)       | <IconImage preset="bow" /> 遠程武器    | 彈射物發射                                                                                                                              |
+| [`setElytraFlight`](#setelytraflight)         | <IconImage preset="chestplate" /> 盔甲 | 鞘翅滑翔能力                                                                                                                            |
+| [`tooltipSetting`](#tooltipsetting)           | 通用                                   | 物品提示設置                                                                                                                            |
+| [`toolUseAction`](#tooluseaction)             | 通用                                   | 操作行為                                                                                                                                |
+| [`ToolValidate`](#toolvalidate)               | 通用                                   | 添加額外資料的檢查                                                                                                                      |
+| [`updateArmorLooting`](#updatearmorlooting)   | <IconImage preset="chestplate" /> 盔甲 | 修改掠奪等級                                                                                                                            |
+| [`updateToolLooting`](#updatetoollooting)     | 通用                                   | 修改掠奪等級                                                                                                                            |
 
 #### `addAttributes`
 
@@ -85,6 +85,26 @@ builder 實際在 ProbeJS 生成的文件中的類型顯示為 `Consumer_<com.xi
 addAttributes(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentSlot, arg3: Map<ResourceLocation, AttributeModifier>) => Map_<ResourceLocation, AttributeModifier>) => this
 ```
 
+##### 範例
+
+```js
+const $AttributeModifier = Java.loadClass("net.minecraft.world.entity.ai.attributes.AttributeModifier");
+
+event.createNew("speedy", (builder) => {
+  builder.addAttributes((view, lvl, slot, attributes) => {
+    attributes.put(
+      new ResourceLocation("minecraft:generic.movement_speed" ),
+      new $AttributeModifier(
+        "b444bae1-abde-41ed-8688-f75a469fdbf4",
+        "minecraft:generic.movement_speed",
+        lvl * 0.1,
+        "multiply_base"
+      )
+    );
+    return attributes;
+  });
+});
+```
 
 #### `addToolStats`
 
@@ -225,6 +245,20 @@ onAfterBreak(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolHarvestCon
 onAfterMeleeHit(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolAttackContext, arg3: number) => void) => this
 ```
 
+##### 範例
+
+```js
+event.createNew("give_me_hat", (builder) => {
+  builder
+    .onAfterMeleeHit((view, damage, context) => {
+      const { headArmorItem } = context.livingTarget;
+
+      context.livingTarget.block.up.popItem(headArmorItem);
+      context.livingTarget.headArmorItem = "air";
+      context.playerAttacker.statusMessage = ["帽子給我好嗎？"];
+    });
+});
+```
 
 #### `onBeforeMeleeHit`
 
@@ -316,6 +350,20 @@ projectileHitBlock(consumer: (arg0: ModifierNBT, arg1: NamespacedNBT, arg2: numb
 projectileHitEntity(consumer: (arg0: ModifierNBT, arg1: NamespacedNBT, arg2: number, arg3: Projectile, arg4: EntityHitResult, arg5: LivingEntity, arg6: LivingEntity) => boolean) => this
 ```
 
+##### 範例
+
+```js
+event.createNew("give_me_hat", (builder) => {
+  builder
+    .projectileHitEntity((modifier, namespaced, damage, projectile, hitResult, sourceEntity, targetEntity) => {
+      targetEntity.block.up.popItem(targetEntity.headArmorItem);
+      targetEntity.headArmorItem = "air";
+      sourceEntity.statusMessage = ["帽子給我好嗎？"];
+
+      return false;
+    });
+});
+```
 
 #### `projectileLaunch`
 
