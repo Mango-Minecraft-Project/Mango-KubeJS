@@ -35,4 +35,4 @@ isOriginal: true
 :::
 
 [資源路徑]: https://zh.minecraft.wiki/w/資源路徑
-[Beans]: /zh-tw/tips/beans.md
+[Beans]: /zh-tw/tips/beans

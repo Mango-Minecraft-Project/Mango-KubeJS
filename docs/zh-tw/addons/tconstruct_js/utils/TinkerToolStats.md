@@ -61,17 +61,3 @@ import Melee from "@components/tconstruct_js/applicable/Melee.vue";
 import Mining from "@components/tconstruct_js/applicable/Mining.vue";
 import Ranged from "@components/tconstruct_js/applicable/Ranged.vue";
 </script>
-
-<script>
-window.addEventListener("load", (event) => {
-  const olds = document.getElementsByClassName("language-");
-
-  for (let i = 0, len = olds.length | 0; i < len; i = (i + 1) | 0) {
-    let oldEle = olds[i];
-    oldEle.classList.remove("language-");
-    oldEle.classList.add("language-js");
-    oldEle.setAttribute("data-ext", "js");
-    oldEle.setAttribute("data-title", "js");
-  }
-});
-</script>
