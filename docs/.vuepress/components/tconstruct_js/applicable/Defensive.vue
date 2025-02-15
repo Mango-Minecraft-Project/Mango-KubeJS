@@ -3,5 +3,5 @@ import IconImage from '../../IconImage.vue';
 </script>
 
 <template>
-  <IconImage preset="sword" />
+  <IconImage preset="shield" />
 </template>

@@ -116,6 +116,11 @@ export default hopeTheme({
     highlighter: {
       type: "shiki",
 
+      langAlias: {
+        "": "javascript",
+        "text": "javascript",
+      },
+
       theme: "one-dark-pro",
       collapsedLines: false,
       notationDiff: true,

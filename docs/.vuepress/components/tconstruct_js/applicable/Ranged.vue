@@ -1,6 +1,5 @@
 <script setup>
 import IconImage from '../../IconImage.vue';
-
 </script>
 
 <template>

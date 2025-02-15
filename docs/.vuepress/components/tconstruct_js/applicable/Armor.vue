@@ -1,8 +1,7 @@
 <script setup>
 import IconImage from '../../IconImage.vue';
-
 </script>
 
 <template>
-  <IconImage preset="sword" />
+  <IconImage preset="chestplate" />
 </template>
