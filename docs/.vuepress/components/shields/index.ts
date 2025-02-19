@@ -7,3 +7,4 @@ import BadgeCompat from "./BadgeCompat.vue";
 
 
 export default { BadgeCurseForge, BadgeGitHub, BadgeMcmod, BadgeModrinth, BadgeWiki, BadgeCompat };
+
