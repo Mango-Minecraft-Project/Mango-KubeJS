@@ -17,7 +17,7 @@ const aHref = computed(() => {
 });
 
 const ImageAlt = computed(() => {
-  return `${props.name ?? props.path} Github Badge`;
+  return `${props.name ?? props.path} GitHub Badge`;
 });
 </script>
 

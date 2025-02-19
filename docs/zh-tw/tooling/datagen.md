@@ -4,7 +4,7 @@ title: Data Gen
 description: 厭倦了一次製作大量相同的方塊/物品，導致腳本臃腫且難以閱讀嗎？
 ---
 
-::: info 原始網頁
+::: info 原文
 https://kubejs.com/wiki/tooling/datagen
 :::
 

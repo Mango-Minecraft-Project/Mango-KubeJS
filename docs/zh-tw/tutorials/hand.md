@@ -3,7 +3,7 @@ title: 使用 /kjs hand
 description: 如何獲取帶有 NBT 資料的物品 ID
 ---
 
-::: info 原始網頁
+::: info 原文
 https://kubejs.com/wiki/tutorials/hand
 :::
 

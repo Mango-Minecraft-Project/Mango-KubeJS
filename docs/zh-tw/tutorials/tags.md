@@ -3,7 +3,7 @@ title: 編輯標籤
 description: 添加、移除和修改標籤
 ---
 
-::: info 原始網頁
+::: info 原文
 https://kubejs.com/wiki/tutorials/tags
 :::
 

@@ -3,7 +3,7 @@ title: 持久化資料
 description: 什麼是持久化資料以及如何使用它
 ---
 
-::: info 原始網頁
+::: info 原文
 https://kubejs.com/wiki/tips/persistent-data
 :::
 

@@ -3,7 +3,7 @@ title: Beans
 description: 如何使用 beans
 ---
 
-::: info 原始網頁
+::: info 原文
 https://kubejs.com/wiki/tips/beans
 :::
 

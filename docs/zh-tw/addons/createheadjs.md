@@ -5,7 +5,7 @@ description: 自訂 Create 配方的熱源類型＆熱量等級
 isOriginal: true
 ---
 
-<BadgeCompat CurseForge="mc-mods/create-heat-js" Modrinth="mod/create-heat-js" Github="XiaoHuNao/CreateHeatJS" Mcmod="class/15160"/>
+<BadgeCompat CurseForge="mc-mods/create-heat-js" Modrinth="mod/create-heat-js" GitHub="XiaoHuNao/CreateHeatJS" Mcmod="class/15160"/>
 
 此 Mod 允許你通過 KubeJS & KubeJS Create 自訂部分加工配方所需求的熱源類型＆熱量等級；
 

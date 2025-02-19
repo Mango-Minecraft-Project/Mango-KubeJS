@@ -4,7 +4,7 @@ title: USSR
 description: 有用的入門腳本庫
 ---
 
-::: info 原始網頁
+::: info 原文
 https://kubejs.com/wiki/tooling/ussr
 :::
 

@@ -5,7 +5,7 @@ description: 為 KubeJS 添加原生事件監聽的熱重載支持
 isOriginal: true
 ---
 
-<BadgeCompat CurseForge="mc-mods/eventjs" Modrinth="mod/eventjs" Github="ZZZank/EventJS" Mcmod="class/17008"/>
+<BadgeCompat CurseForge="mc-mods/eventjs" Modrinth="mod/eventjs" GitHub="ZZZank/EventJS" Mcmod="class/17008"/>
 
 ## 簡介
 

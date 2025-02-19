@@ -3,7 +3,7 @@ title: 更改模組顯示名稱
 description: 是的，這很奇怪，但確實可行！
 ---
 
-::: info 原始網頁
+::: info 原文
 https://kubejs.com/wiki/tutorials/changing-mod-names
 :::
 

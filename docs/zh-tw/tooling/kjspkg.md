@@ -5,7 +5,7 @@ title: KJSPKG
 description: KubeJS 套件管理器
 ---
 
-::: info 原始網頁
+::: info 原文
 https://kubejs.com/wiki/tooling/kjspkg
 :::
 

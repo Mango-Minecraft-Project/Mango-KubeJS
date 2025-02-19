@@ -2,6 +2,8 @@
   "files.autoSave": "off",
   "typescript.suggest.autoImports": true,
   "cSpell.words": [
+    "Mcmod",
+    "Modrinth",
     "tconstruct"
   ],
 }

@@ -3,7 +3,7 @@ title: Global 物件
 description: 如何使用 Global 物件
 ---
 
-::: info 原始網頁
+::: info 原文
 https://kubejs.com/wiki/tips/global
 :::
 

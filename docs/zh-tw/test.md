@@ -1,3 +1,7 @@
+---
+index: false
+---
+
 <button @click="testStatus ^= 1"> Click me testStatus: {{testStatus}}</button> <span v-show="testStatus"> Test </span>
 
 <script>
