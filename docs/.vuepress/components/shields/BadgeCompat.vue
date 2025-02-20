@@ -14,7 +14,7 @@ const props = defineProps({
     type: String,
     required: false,
   },
-  GitHub: {
+  Github: {
     type: String,
     required: false,
   },
@@ -30,7 +30,7 @@ const props = defineProps({
 
 // 只生成有值的 badge 列表
 const available = computed(() =>
-  ["CurseForge", "Modrinth", "Wiki", "GitHub", "Mcmod"]
+  ["CurseForge", "Modrinth", "Wiki", "Github", "Mcmod"]
     .filter((key) => props[key]) // 過濾掉沒有值的屬性
     .map((key) => ({
       component: `Badge${key}`, // Badge 的 component 名稱

@@ -7,21 +7,24 @@ description: 一個 JEI 的附屬模組，它可以讓你在遊戲中透過點�
 模組作者：Prunoideae
 :::
 
-<BadgeCompat CurseForge="mc-mods/jei-crafting" GitHub="Prunoideae/JEI-Crafting" />
+<BadgeCompat CurseForge="mc-mods/jei-crafting" Github="Prunoideae/JEI-Crafting" />
 
 ---
 
 這個附屬模組增加了一種定義配方的方法，當玩家將光標懸停在 JEI 物品列表或書籤中的物品上並中鍵點擊它們時，玩家將獲得這些物品，同時消耗一些定義的材料。
 
-也支持 JEI+EMI 或 TMRV+EMI，但在某些極端情況下，當真正的作弊功能啟用時，會有行為問題。
+也支持 JEI+[EMI] 或 [TMRV]+EMI，但在某些極端情況下，當真正的作弊功能啟用時，會有行為問題。
 
-這個附加模組主要是為模組包製作而設計的，所以它不包含任何配方，模組包作者可以定義自己的 JEI 製作配方，以便玩家更容易獲得某些物品。
+這個附屬模組主要是為模組包製作而設計的，所以它不包含任何配方，模組包作者可以定義自己的 JEI 製作配方，以便玩家更容易獲得某些物品。
 
 ![](/docs/zh-tw/addons/jei-crafting/2.png)
 
+[EMI]: https://modrinth.com/mod/emi
+[TMRV]: https://www.curseforge.com/minecraft/mc-mods/tmrv
+
 ## 理念
 
-Minecraft 中的一些配方其實很煩人，尤其是對於彩色建築方塊或僅僅是建築材料但需要經過 2 或 3 次製作操作才能獲得的裝飾方塊。例如，如果你想用 5 種不同顏色的混凝土建造一座房子，那麼你需要準備那些染料並提前獲得 5 種混凝土沙子，如果你不小心用完了材料，你需要找到一個製作台並製作更多。
+Minecraft 中的一些配方其實很煩人，尤其是對於彩色建築方塊或僅僅是建築材料但需要經過 2 或 3 次製作操作才能獲得的裝飾方塊。例如，如果你想用 5 種不同顏色的混凝土建造一座房子，那麼你需要準備那些染料並提前獲得 5 種混凝土粉末，如果你不小心用完了材料，你需要再去找工作臺來製作更多。
 
 ![](/docs/zh-tw/addons/jei-crafting/3.png)
 
@@ -31,7 +34,7 @@ Minecraft 中的一些配方其實很煩人，尤其是對於彩色建築方塊�
 
 ## 使用方法
 
-這個模組提供的配方可以使用數據包定義：
+這個模組提供的配方可以使用資料包定義：
 
 ```json
 {
@@ -47,7 +50,7 @@ Minecraft 中的一些配方其實很煩人，尤其是對於彩色建築方塊�
       },
       "count": 4
     },
-    {
+       {
       "ingredient": {
         "tag": "c:cobblestones"
       },
@@ -67,7 +70,7 @@ Minecraft 中的一些配方其實很煩人，尤其是對於彩色建築方塊�
 }
 ```
 
-所以我們定義了一個 JEI 製作配方，將 4 根原木和 8 塊鵝卵石轉換為一個煙燻爐。JEI 製作的默認配置一次製作 8 次，並且可以在 config/jei/_crafting-client.toml 中調整。
+所以我們定義了一個 JEI 製作配方，將 4 個原木和 8 個鵝卵石轉換為一個煙燻爐。JEI 製作的默認配置一次製作 8 次，並且可以在 `config/jei/_crafting-client.toml` 中調整。
 
 可以省略 `uncraftsTo` 來禁用配方的反製作，並且可以省略 `ingredients` 來使配方“免費”，當玩家取出輸出物品時不消耗任何物品：
 
@@ -81,34 +84,47 @@ Minecraft 中的一些配方其實很煩人，尤其是對於彩色建築方塊�
 }
 ```
 
-免費配方自動不可反製作，因為那時它與將物品放入垃圾桶沒有太大區別。
+無輸入的配方自動不可反製作，因為那時它與將物品放入垃圾桶沒有太大區別。
 
 最後，我們將得到如下所示的內容：
 
-目前 KubeJS 支持不是很完善，因為配方組件不允許空列表，這在定義免費或不可反製作的物品時是不可避免的 :/ 但可以使用 `event.custom` 定義配方，如：
+在 v1.1.0 中，你還可以配置 `craftsInTicks` 字段來設置製作所需的時間（以刻為單位），例如：
+
+<VidStack src="/docs/zh-tw/addons/jei-crafting/4.mp4" />
+
+我們在 v1.2.0 中獲得了 KubeJS 的兼容性，允許你動態修改配方輸出。然而，目前 KubeJS 的配方支持並不完善，因為配方組件不允許空列表，這在定義無輸入或不可反製作的物品時是不可避免的 :/ 但可以使用 `event.custom` 定義配方，例如：
 
 ```js
-ServerEvents.recipes(event => {
-
+ServerEvents.recipes((event) => {
   event.custom({
     type: "jei_crafting:jei_crafting",
     output: Item.of("minecraft:bedrock"),
-  })
+    craftInTicks: 10,
+  });
 
   event.custom({
     type: "jei_crafting:jei_crafting",
-    output: Item.of('minecraft:smoker'),
-    ingredients: [{
-      ingredient: Ingredient.of('#minecraft:logs'),
-      count: 4,
-    }, {
-      ingredient: Ingredient.of('#c:cobblestones'),
-      count: 8
-    }],
-    uncraftsTo: [
-      Item.of('minecraft:oak_wood', 4),
-      Item.of('minecraft:cobblestone', 8)
+    output: Item.of("minecraft:copper_block"),
+    ingredients: [
+      {
+        ingredient: Ingredient.of("minecraft:copper_ingot"),
+        count: 9,
+      },
     ],
+    uncraftsTo: [Item.of("minecraft:copper_ingot", 8)],
+    craftInTicks: 20,
   })
-})
+  .id("kubejs:foobar");
+});
+
+// 當這些事件 `are event.cancel()` 時，製作將失敗並會有一些通知聲音
+JeiCraftingEvents.itemCrafting("kubejs:foobar", (event) => {
+  // 當物品被製作時，將輸出修改為 Sussy baka
+  event.recipeOutput = Item.of("minecraft:copper_block[custom_name='\"Sussy baka\"']");
+});
+
+JeiCraftingEvents.itemUncrafting("kubejs:foobar", (event) => {
+  // 將原始的反製作列表覆蓋為另一個
+  event.recipeOutput = [Item.of("minecraft:copper_block[custom_name='\"Sussy baka\"']")];
+});
 ```

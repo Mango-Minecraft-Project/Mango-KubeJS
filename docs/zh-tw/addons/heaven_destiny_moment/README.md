@@ -7,7 +7,7 @@ dir:
   link: true
 ---
 
-<BadgeCompat CurseForge="mc-mods/heaven-destiny-moment" GitHub="XiaoHuNao/HeavenDestinyMoment" Mcmod="class/17474"/>
+<BadgeCompat CurseForge="mc-mods/heaven-destiny-moment" Github="XiaoHuNao/HeavenDestinyMoment" Mcmod="class/17474"/>
 
 ---
 

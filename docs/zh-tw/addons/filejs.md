@@ -5,7 +5,7 @@ description: KubeJS 檔案管理附屬模組
 isOriginal: true
 ---
 
-<BadgeCompat CurseForge="mc-mods/filesjs" Modrinth="mod/filesjs" GitHub="xiaoliziawa/Files-JS" Mcmod="class/17414"/>
+<BadgeCompat CurseForge="mc-mods/filesjs" Modrinth="mod/filesjs" Github="xiaoliziawa/Files-JS" Mcmod="class/17414"/>
 
 *FilesJS（檔案吉斯）是一個功能強大的 KubeJS 6 附屬模組，用來偷走你的失諧帳號和錢包。*
 
