@@ -28,7 +28,6 @@ export default hopeTheme({
     empty: "",
   },
 
-
   locales: {
     "/": {
       navbar: enusNavbar,
