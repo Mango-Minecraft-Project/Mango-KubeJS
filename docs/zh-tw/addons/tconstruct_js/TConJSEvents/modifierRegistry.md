@@ -26,8 +26,10 @@ TConJSEvents.modifierRegistry((event) => {
 | ------------- | --------------------------------------------------------------------- | ------------------ |
 | `createEmpty` | `(id: string) => void`                                                | 創建一個空的修飾符 |
 | `createNew`   | `(id: string, builder: (builder: ModifierBuilderJS) => void) => void` | 創建一個新的修飾符 |
- note
+
+::: note
 builder 實際在 ProbeJS 生成的文件中的類型顯示為 `Consumer_<com.xiaoyue.tconstruct_js.content.ModifierBuilder>`，為了方便理解，這裡將其簡化為 `ModifierBuilderJS`。
+:::
 
 ## `ModifierBuilderJS`
 
@@ -119,6 +121,8 @@ builder.addAttributes((view, lvl, slot, attributes) => {
 });
 ```
 
+---
+
 #### `addToolStats`
 
 ```ts
@@ -142,6 +146,8 @@ builder.addToolStats((view, lvl, statsBuilder) => {
 });
 ```
 
+---
+
 #### `addVolatileData`
 
 ```ts
@@ -163,6 +169,8 @@ builder.addVolatileData((context, lvl, data) => {
   data.putBoolean("tconstruct:shiny", true);
 });
 ```
+
+---
 
 #### `armorTakeAttacked`
 
@@ -197,6 +205,8 @@ builder.armorTakeAttacked((view, lvl, context, slot, source, damage) => {
 });
 ```
 
+---
+
 #### `canBlockAttacked`
 
 ```ts
@@ -226,6 +236,8 @@ builder.canBlockAttacked((view, lvl, context, slot, source, damage) => {
 });
 ```
 
+---
+
 #### `findBowAmmo`
 
 ```ts
@@ -254,6 +266,8 @@ builder.findBowAmmo((view, lvl, living, stack, predicate) => {
 });
 ```
 
+---
+
 #### `getBreakSpeed`
 
 ```ts
@@ -281,6 +295,8 @@ builder.getBreakSpeed((view, lvl, breakSpeedEvent, direction, canDrop, currentSp
 });
 ```
 
+---
+
 #### `getDurabilityRGB`
 
 ```ts
@@ -306,6 +322,8 @@ builder.getDurabilityRGB((view, lvl) => {
 });
 ```
 
+---
+
 #### `getDurabilityWidth`
 
 ```ts
@@ -330,6 +348,8 @@ builder.getDurabilityWidth((view, lvl) => {
   return 6;
 });
 ```
+
+---
 
 #### `getMeleeDamage`
 
@@ -359,6 +379,8 @@ builder.getMeleeDamage((view, lvl, context, baseDamage, finalDamage) => {
 });
 ```
 
+---
+
 #### `getRepairFactor`
 
 ```ts
@@ -384,6 +406,8 @@ builder.getRepairFactor((view, lvl, repaired) => {
   return repaired * (1 + lvl * 0.15);
 });
 ```
+
+---
 
 #### `getToolDamage`
 
@@ -411,6 +435,8 @@ builder.getToolDamage((view, lvl, damage, entity) =>
 );
 ```
 
+---
+
 #### `getUseAnim`
 
 ```ts
@@ -435,6 +461,8 @@ builder.getUseAnim((view, lvl, ) => {
   return "spyglass";
 });
 ```
+
+---
 
 #### `getUseTime`
 
@@ -461,6 +489,8 @@ builder.getUseTime((view, lvl) => {
 });
 ```
 
+---
+
 #### `isDurabilityShowBar`
 
 ```ts
@@ -486,6 +516,8 @@ builder.isDurabilityShowBar((view, lvl, ) => {
 });
 ```
 
+---
+
 #### `isSingleLevel`
 
 ```ts
@@ -503,6 +535,8 @@ isSingleLevel() => this
 ```js
 builder.isSingleLevel();
 ```
+
+---
 
 #### `modifyDamageTake`
 
@@ -533,6 +567,8 @@ builder.modifyDamageTake((view, lvl, context, slot, source, damage) => {
 });
 ```
 
+---
+
 #### `modifyProtection`
 
 ```ts
@@ -561,6 +597,8 @@ builder.modifyProtection((view, lvl, context, slot, source, protection) => {
   return protection - protection * (0.1 * lvl);
 });
 ```
+
+---
 
 #### `modifyStat`
 
@@ -598,6 +636,8 @@ builder.modifyStat((view, lvl, entity, stat, base, magnification) => {
 });
 ```
 
+---
+
 #### `onAfterBreak`
 
 ```ts
@@ -619,6 +659,8 @@ builder.onAfterBreak((view, lvl, context) => {
   context.world.getBlock(context.pos).set("minecraft:gold_block");
 });
 ```
+
+---
 
 #### `onAfterMeleeHit`
 
@@ -646,6 +688,8 @@ event.createNew("give_me_hat", (builder) => {
     });
 });
 ```
+
+---
 
 #### `onBeforeMeleeHit`
 
@@ -675,6 +719,8 @@ builder.onBeforeMeleeHit((view, lvl, context, damage, baseKnockback, finalKnockb
   return finalKnockback * (1 + lvl * 0.1);
 });
 ```
+
+---
 
 #### `onDamageDealt`
 
@@ -708,6 +754,8 @@ builder.onDamageDealt((view, lvl, context, slot, living, source, damage) => {
 });
 ```
 
+---
+
 #### `onEquip`
 
 ```ts
@@ -729,6 +777,8 @@ builder.onEquip((view, lvl, context) => {
   context.entity.secondsOnFire = 1 * lvl;
 });
 ```
+
+---
 
 #### `onFinishUsing`
 
@@ -753,6 +803,8 @@ builder.onFinishUsing((view, lvl, living) => {
   }
 });
 ```
+
+---
 
 #### `onInventoryTick`
 
@@ -783,6 +835,8 @@ builder.onInventoryTick((view, lvl, level, entity, slot, inMainHand, inAvailable
 });
 ```
 
+---
+
 #### `onModifierRemove`
 
 ```ts
@@ -802,6 +856,8 @@ onModifierRemove(consumer: (arg0: IToolStackView, arg1: Modifier)=> Component_) 
 ```js
 
 ```
+
+---
 
 #### `onStoppedUsing`
 
@@ -828,6 +884,8 @@ builder.onStoppedUsing((view, lvl, living, duration) => {
 });
 ```
 
+---
+
 #### `onUnequip`
 
 ```ts
@@ -849,6 +907,8 @@ builder.onUnequip((view, lvl, context) => {
   context.entity.ticksFrozen = 20 * 25;
 });
 ```
+
+---
 
 #### `onUseTool`
 
@@ -879,6 +939,8 @@ builder.onUseTool((view, lvl, player, hand, source) => {
 });
 ```
 
+---
+
 #### `onUsingTick`
 
 ```ts
@@ -902,6 +964,8 @@ builder.onUsingTick((view, lvl, living, duration) => {
 });
 ```
 
+---
+
 #### `processLoot`
 
 ```ts
@@ -919,6 +983,8 @@ processLoot(consumer: (arg0: IToolStackView, arg1: number, arg2: List<ItemStack>
 ```js
 
 ```
+
+---
 
 #### `projectileHitBlock`
 
@@ -939,6 +1005,8 @@ projectileHitBlock(consumer: (arg0: ModifierNBT, arg1: ModDataNBT, arg2: number,
 ```js
 
 ```
+
+---
 
 #### `projectileHitEntity`
 
@@ -970,6 +1038,8 @@ builder.projectileHitEntity((modifier, namespaced, damage, projectile, hitResult
 });
 ```
 
+---
+
 #### `projectileLaunch`
 
 ```ts
@@ -990,6 +1060,8 @@ projectileLaunch(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEnti
 ```js
 
 ```
+
+---
 
 #### `setElytraFlight`
 
@@ -1012,6 +1084,8 @@ setElytraFlight(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntit
 ```js
 
 ```
+
+---
 
 #### `tooltipSetting`
 
@@ -1038,6 +1112,8 @@ builder.tooltipSetting((view, lvl, player, tooltip, key, flag) => {
 });
 ```
 
+---
+
 #### `toolUseAction`
 
 ```ts
@@ -1058,6 +1134,8 @@ toolUseAction(consumer: (arg0: IToolStackView, arg1: number) => ToolAction_) => 
 
 ```
 
+---
+
 #### `ToolValidate`
 
 ```ts
@@ -1077,6 +1155,8 @@ ToolValidate(consumer: (arg0: IToolStackView, arg1: number) => Component_) => th
 ```js
 
 ```
+
+---
 
 #### `updateArmorLooting`
 
@@ -1101,6 +1181,8 @@ updateArmorLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingC
 ```js
 
 ```
+
+---
 
 #### `updateToolLooting`
 
@@ -1129,6 +1211,8 @@ updateToolLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingCo
 | 方法名稱                                        | 簡介           |
 | ----------------------------------------------- | -------------- |
 | [`getAttributeModifier`](#getattributemodifier) | 獲取屬性修飾符 |
+
+---
 
 ---
 
