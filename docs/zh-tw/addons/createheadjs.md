@@ -2,10 +2,20 @@
 author: XiaoHuNao
 title: Create Heat JS
 description: 自訂 Create 配方的熱源類型＆熱量等級
-isOriginal: true
+categories:
+  - forge-1.19
+  - forge-1.20
+tags:
+  - 自訂熱源
 ---
 
 <BadgeCompat CurseForge="mc-mods/create-heat-js" Modrinth="mod/create-heat-js" Github="XiaoHuNao/CreateHeatJS" Mcmod="class/15160"/>
+
+---
+
+::: info 原文
+https://github.com/XiaoHuNao/CreateHeatJS/blob/1.20.1/README.md
+:::
 
 此 Mod 允許你通過 KubeJS & KubeJS Create 自訂部分加工配方所需求的熱源類型＆熱量等級；
 

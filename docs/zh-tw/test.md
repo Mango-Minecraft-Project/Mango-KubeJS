@@ -2,14 +2,18 @@
 index: false
 ---
 
-<button @click="testStatus ^= 1"> Click me testStatus: {{testStatus}}</button> <span v-show="testStatus"> Test </span>
-
-<script>
-export default {
-  data() {
-    return {
-      testStatus: 0
-    }
-  }
+```
+function foo() {
+  console.log('foo')
 }
-</script>
+```
+```b
+function foo() {
+  console.log('foo')
+}
+```
+```js
+function foo() {
+  console.log('foo')
+}
+```

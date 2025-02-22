@@ -41,5 +41,5 @@ export default defineUserConfig({
 
   alias: {
     "@components": path.resolve(__dirname, "./components"),
-  }
+  },
 });

@@ -1,11 +1,24 @@
 ---
-author: ZZZank
 title: EventJS
 description: 為 KubeJS 添加原生事件監聽的熱重載支持
-isOriginal: true
+author: ZZZank
+categories:
+  - forge-1.16
+  - forge-1.18
+  - forge-1.19
+  - forge-1.20
+tags:
+  - hot-reload
+  - 熱重載
 ---
 
 <BadgeCompat CurseForge="mc-mods/eventjs" Modrinth="mod/eventjs" Github="ZZZank/EventJS" Mcmod="class/17008"/>
+
+---
+
+::: info 原文
+https://www.curseforge.com/minecraft/mc-mods/eventjs/description
+:::
 
 ## 簡介
 
@@ -21,7 +34,7 @@ EventJS 最顯著的功能是，你可以不必重啟遊戲就能刷新/增加/�
 
 默認情況下，EventJS 會替換掉原來的原生事件監聽，以此為其添加熱重載支持。  
 所以，你可以什麼新東西都不必學就可以享受到 EventJS 帶來的好處。  
-不過呢，如果你需要一些更加動態，更利於自定義，形式更完整的原生事件監聽，你可以使用 `NativeEvents.onEvent(...)` 監聽事件，或者 `NativeEvents.onGenericEvent(...)` 監聽帶泛型事件（Generic Event）。
+不過呢，如果你需要一些更加動態，更利於自訂，形式更完整的原生事件監聽，你可以使用 `NativeEvents.onEvent(...)` 監聽事件，或者 `NativeEvents.onGenericEvent(...)` 監聽帶泛型事件（Generic Event）。
 
 `NativeEvents` 在所有三個腳本類型（ScriptType）對應的定義域（client/server/startup）內都是可用的，因此你可以藉此做到為客戶端/服務端分別添加事件監聽，也就是說，比如你在 `client_scripts` 內添加了一個對僅客戶端的事件的監聽，則這個事件監聽不會發生在服務端。
 

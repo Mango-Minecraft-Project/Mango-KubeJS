@@ -5,12 +5,20 @@ author: xiaoyue
 isOriginal: true
 dir:
   link: true
+categories:
+  - forge-1.20
+tags:
+  - 匠魂
 ---
 
 <!-- <BadgeCompat CurseForge="mc-mods/tconstructjs" Modrinth="mod/tconjsconstructjs" Github="xiaoyue/constructjs" Mcmod="class/17415"/> -->
 
 ::: warning
 此模組尚未公開發布，此文檔僅供參考
+:::
+
+:::details 下載連結
+<a href="/docs/addons/tconstruct_js/tconstruct_js-1.0+aa6.jar" download>點擊這裡</a>
 :::
 
 ---

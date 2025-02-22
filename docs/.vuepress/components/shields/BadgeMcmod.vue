@@ -13,7 +13,7 @@ const props = defineProps({
 });
 
 const aHref = computed(() => {
-  return `https://mcmod.cn/class/${props.path}`;
+  return `https://mcmod.cn/${props.path}`;
 });
 
 const ImageAlt = computed(() => {

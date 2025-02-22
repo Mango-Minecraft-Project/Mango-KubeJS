@@ -41,13 +41,13 @@ dir:
 
 如果您看到兩個圖標，則表示客戶端和伺服器端
 
-| 自定義條目 RecipeViewerEvents | JEI | REI    | EMI |
+| 自訂條目 RecipeViewerEvents | JEI | REI    | EMI |
 | ----------------------------- | --- | ------ | --- |
 | `addEntries`                  | ❌   | ✅* / ❌ | ❌   |
 | `removeEntries`               | ❌   | ✅* / ❌ | ❌   |
 | removeEntriesCompletely`      | ❌   | ✅* / ❌ | ❌   |
 | `addInformation`              | ❌   | ✅* / ❌ | ❌   |
 | `groupEntries`                | 🧋   | ✅* / ❌ | 🧋   |
-* 需要 KubeJS 插件來註冊自定義類型
+* 需要 KubeJS 插件來註冊自訂類型
 
 <catalog/>

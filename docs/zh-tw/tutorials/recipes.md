@@ -53,7 +53,7 @@ ServerEvents.recipes((event) => {
 2. 一個代表工作台行的陣列（最大長度為 3），以字串表示（最大長度為 3）。空格代表沒有物品的槽位，字母代表物品。字母不必有特定含義；你可以在下一個參數中解釋它們的含義。
 3. 一個將字母映射到物品的對象，如 `{letter: item}`。輸入的物品數量必須只有 1 個。
 
-如果你想強制嚴格的位置或禁用鏡像配方，請參見自定義配方的方法。
+如果你想強制嚴格的位置或禁用鏡像配方，請參見自訂配方的方法。
 
 ```js
 event.recipes.minecraft.crafting_shaped(
@@ -151,7 +151,7 @@ event.recipes.minecraft.campfire_cooking('minecraft:torch', 'minecraft:stick', 0
 event.recipes.minecraft.stonecutting('3x minecraft:stick', '#minecraft:planks')
 ```
 
-### 自定義/模組 JSON 配方
+### 自訂/模組 JSON 配方
 
 如果模組支持資料包配方，你可以在不需要任何附加模組支持的情況下為其添加配方！不幸的是，我們無法提供具體建議，因為每個模組的設計都不同，但如果模組有 GitHub（大多數都有！）或其他原始碼，你可以在 `/src/generated/resources/data/<modname>/recipes/` 中找到相關的 JSON 文件。不然你也可能可以通過解壓模組的 .jar 文件找到它。
 

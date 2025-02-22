@@ -5,13 +5,15 @@ description: 提供 API 以創建各種事件，如血月、襲擊等事件。
 isOriginal: true
 dir:
   link: true
+categories:
+  - neoforge-1.21
 ---
 
 <BadgeCompat CurseForge="mc-mods/heaven-destiny-moment" Github="XiaoHuNao/HeavenDestinyMoment" Mcmod="class/17474"/>
 
 ---
 
-提供 API 以創建各種事件，如血月、襲擊，允許使用資料包自定義
+提供 API 以創建各種事件，如血月、襲擊，允許使用資料包自訂
 
 ```js
 //修改當前支持的生物生成規則

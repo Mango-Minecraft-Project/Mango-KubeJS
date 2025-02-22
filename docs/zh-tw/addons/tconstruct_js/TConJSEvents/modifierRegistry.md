@@ -755,7 +755,7 @@ onDamageDealt(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentCont
 - `arg1: number` - 匠魂修飾符等級
 - `arg2: EquipmentContext` - 裝備上下文
 - `arg3: EquipmentSlot` - 裝備槽
-- `arg4: LivingEntity` - 生物
+- `arg4: LivingEntity` - 被攻擊者
 - `arg5: DamageSource` - 傷害來源
 - `arg6: number` - 傷害值
 - `arg7: boolean` - 是否為直接傷害
@@ -763,8 +763,18 @@ onDamageDealt(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentCont
 ##### 範例
 
 ::: details 範例
-```js
 
+當攻擊實體時，交換攻擊者和被攻擊者的氧氣值
+
+```js
+builder.onDamageDealt((view, lvl, context, slot, living, source, damage) => {
+  const { airSupply } = living;
+  const attacker = (source.actual || source.immediate)
+  if (attacker != null) {
+    living.airSupply = attacker.airSupply;
+    attacker.airSupply = airSupply;
+  }
+});
 ```
 :::
 
@@ -783,8 +793,13 @@ onEquip(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentChangeCont
 ##### 範例
 
 ::: details 範例
-```js
 
+裝備時將生物點燃 1 秒
+
+```js
+builder.onEquip((view, lvl, context) => {
+  context.entity.secondsOnFire = 1 * lvl;
+});
 ```
 :::
 
@@ -803,8 +818,15 @@ onFinishUsing(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity)
 ##### 範例
 
 ::: details 範例
-```js
 
+十字弓使用完畢後使玩家增加與金蘋果一樣的飽食度與營養度
+
+```js
+builder.onFinishUsing((view, lvl, living) => {
+  if (view.item.id == "tconstruct:crossbow" && living.player) {
+    living.foodData.eat("golden_apple", "golden_apple");
+  }
+});
 ```
 :::
 
@@ -879,8 +901,15 @@ onStoppedUsing(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity
 ##### 範例
 
 ::: details 範例
-```js
 
+中斷使用工具時踢出玩家
+
+```js
+builder.onStoppedUsing((view, lvl, living, duration) => {
+  if (living.player) {
+    living.kick();
+  }
+});
 ```
 :::
 
@@ -899,8 +928,13 @@ onUnequip(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentChangeCo
 ##### 範例
 
 ::: details 範例
-```js
 
+卸下時使生物冷凍 20 秒
+
+```js
+builder.onUnequip((view, lvl, context) => {
+  context.entity.ticksFrozen = 20 * 25;
+});
 ```
 :::
 
@@ -925,8 +959,14 @@ onUseTool(consumer: (arg0: IToolStackView, arg1: number, arg2: Player, arg3: Int
 ##### 範例
 
 ::: details 範例
-```js
 
+使用工具時告訴玩家手持物品的名稱
+
+```js
+builder.onUseTool((view, lvl, player, hand, source) => {
+  player.tell(player.getItemInHand(hand).displayName);
+  return true;
+});
 ```
 :::
 
@@ -946,8 +986,13 @@ onUsingTick(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, a
 ##### 範例
 
 ::: details 範例
-```js
 
+使用工具時給予生物抗性 5 效果
+
+```js
+builder.onUsingTick((view, lvl, living, duration) => {
+  living.potionEffects.add("resistance", 1, 4);
+});
 ```
 :::
 
@@ -975,21 +1020,17 @@ processLoot(consumer: (arg0: IToolStackView, arg1: number, arg2: List<ItemStack>
 #### `projectileHitBlock`
 
 ```ts
-projectileHitBlock(consumer: (arg0: ModifierNBT, arg1: NamespacedNBT, arg2: number, arg3: Projectile, arg4: BlockHitResult, arg5: LivingEntity) => boolean) => this
+projectileHitBlock(consumer: (arg0: ModifierNBT, arg1: ModDataNBT, arg2: number, arg3: Projectile, arg4: BlockHitResult, arg5: LivingEntity) => void) => this
 ```
 
 ##### 參數
 
 - `arg0: ModifierNBT` - 修飾符
-- `arg1: NamespacedNBT` - 命名空間
+- `arg1: ModDataNBT` - 匠魂資料NBT
 - `arg2: number` - 傷害值
 - `arg3: Projectile` - 彈射物
 - `arg4: BlockHitResult` - 方塊擊中結果
 - `arg5: LivingEntity` - 生物
-
-##### 回傳值
-
-- `boolean` - 是否擊中方塊
 
 ##### 範例
 
@@ -1002,13 +1043,13 @@ projectileHitBlock(consumer: (arg0: ModifierNBT, arg1: NamespacedNBT, arg2: numb
 #### `projectileHitEntity`
 
 ```ts
-projectileHitEntity(consumer: (arg0: ModifierNBT, arg1: NamespacedNBT, arg2: number, arg3: Projectile, arg4: EntityHitResult, arg5: LivingEntity, arg6: LivingEntity) => boolean) => this
+projectileHitEntity(consumer: (arg0: ModifierNBT, arg1: ModDataNBT, arg2: number, arg3: Projectile, arg4: EntityHitResult, arg5: LivingEntity, arg6: LivingEntity) => boolean) => this
 ```
 
 ##### 參數
 
 - `arg0: ModifierNBT` - 修飾符
-- `arg1: NamespacedNBT` - 命名空間
+- `arg1: ModDataNBT` - 匠魂資料NBT
 - `arg2: number` - 傷害值
 - `arg3: Projectile` - 彈射物
 - `arg4: EntityHitResult` - 實體擊中結果
@@ -1035,7 +1076,7 @@ builder.projectileHitEntity((modifier, namespaced, damage, projectile, hitResult
 #### `projectileLaunch`
 
 ```ts
-projectileLaunch(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, arg3: Projectile, arg4: AbstractArrow, arg5: NamespacedNBT, arg6: boolean) => void) => this
+projectileLaunch(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, arg3: Projectile, arg4: AbstractArrow, arg5: ModDataNBT, arg6: boolean) => void) => this
 ```
 
 ##### 參數
@@ -1045,7 +1086,7 @@ projectileLaunch(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEnti
 - `arg2: LivingEntity` - 生物
 - `arg3: Projectile` - 彈射物
 - `arg4: AbstractArrow` - 抽象箭
-- `arg5: NamespacedNBT` - 命名空間
+- `arg5: ModDataNBT` - 匠魂資料NBT
 - `arg6: boolean` - 是否成功
 
 ##### 範例

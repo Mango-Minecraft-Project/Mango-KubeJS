@@ -9,15 +9,6 @@ p {
   text-align: start !important;
 }
 
-.external-link-icon .theme-hope-content a.custom-badge[href*="://"]::after
-{
-  content: none;
-}
-
-.vp-navbar-center .vp-nav-item a.external-link::after {
-  content: none;
-}
-
 details tbody tr:nth-child(2n) {
   background: rgb(29, 30, 33);
   transition: background-color var(--vp-t-color);

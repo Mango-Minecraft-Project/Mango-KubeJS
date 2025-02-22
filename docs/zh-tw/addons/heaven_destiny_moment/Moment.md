@@ -156,9 +156,9 @@ new DefaultBarRenderType(overlay: BossBarOverlay, color: BossBarColor): MomentBu
 - [BossBarOverlay](#bossbaroverlay)
 - [BossBarColor](#bossbarcolor)
 
-附屬模組可以實現 IBarRenderType 介面達成自定義 BossBar，如：
+附屬模組可以實現 IBarRenderType 介面達成自訂 BossBar，如：
 
-![](/docs/zh-tw/addons/heaven_destiny_moment/Moment/CustomBarRenderTypeExample.png)
+<Attachment link="CustomBarRenderTypeExample.png"/>
 
 #### `BossBarOverlay`
 
