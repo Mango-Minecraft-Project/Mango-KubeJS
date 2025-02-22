@@ -41,11 +41,12 @@ export default defineUserConfig({
 
   alias: {
     "@components": path.resolve(__dirname, "./components"),
+    "@theme-hope": "vuepress-theme-hope",
   },
 
   markdown: {
     headers: {
       level: [2, 3, 4, 5],
-    }
-  }
+    },
+  },
 });

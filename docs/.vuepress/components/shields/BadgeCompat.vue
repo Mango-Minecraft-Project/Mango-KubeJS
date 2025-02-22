@@ -1,3 +1,18 @@
+<template>
+  <div align="center">
+    <table>
+      <tbody>
+        <tr>
+          <td v-for="badge in available" :key="badge.path">
+            <!-- 動態渲染 Badge component -->
+            <component :is="badge.component" :path="badge.path" :name="badge.name" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
 <script setup>
 import { computed } from "vue";
 
@@ -39,18 +54,3 @@ const available = computed(() =>
     }))
 );
 </script>
-
-<template>
-  <div align="center">
-    <table>
-      <tbody>
-        <tr>
-          <td v-for="badge in available" :key="badge.path">
-            <!-- 動態渲染 Badge component -->
-            <component :is="badge.component" :path="badge.path" :name="badge.name" />
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</template>

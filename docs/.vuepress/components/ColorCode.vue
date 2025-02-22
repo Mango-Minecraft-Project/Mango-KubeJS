@@ -1,3 +1,7 @@
+<template>
+  <span class="color-code" :style="backgroundColor"><br /></span>&nbsp;{{ color }}
+</template>
+
 <script setup>
 import { computed } from "vue";
 
@@ -24,7 +28,3 @@ const backgroundColor = computed(() => {
   vertical-align: text-top;
 }
 </style>
-
-<template>
-  <span class="color-code" :style="backgroundColor"><br /></span>&nbsp;{{ color }}
-</template>

@@ -1,3 +1,7 @@
+<template>
+  <img :src="src" class="icon-image" />
+</template>
+
 <script setup>
 import { computed } from "vue";
 
@@ -9,12 +13,12 @@ const props = defineProps({
   preset: {
     type: String,
     required: false,
-  }
+  },
 });
 
 const urlPrefix = {
   wiki: "https://minecraft.wiki/images/",
-}
+};
 
 const presets = {
   sword: urlPrefix.wiki + "ItemSprite_iron-sword.png",
@@ -35,16 +39,12 @@ const presets = {
   shears: urlPrefix.wiki + "ItemSprite_shears.png",
   compass: urlPrefix.wiki + "ItemSprite_compass.png",
   clock: urlPrefix.wiki + "ItemSprite_clock.png",
-}
+};
 
 const src = computed(() => {
   return props.preset ? presets[props.preset] : props.src;
 });
 </script>
-
-<template>
-  <img :src="src" class="icon-image" />
-</template>
 
 <style scoped>
 .icon-image {

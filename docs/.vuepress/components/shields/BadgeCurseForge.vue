@@ -1,3 +1,9 @@
+<template>
+  <a :href="aHref" class="custom-badge">
+    <img src="https://img.shields.io/badge/CurseForge-313338?style=for-the-badge&logo=CurseForge" :alt="ImageAlt" />
+  </a>
+</template>
+
 <script setup>
 import { computed } from "vue";
 
@@ -19,8 +25,3 @@ const ImageAlt = computed(() => {
 });
 </script>
 
-<template>
-  <a :href="aHref" class="custom-badge"
-    ><img src="https://img.shields.io/badge/CurseForge-313338?style=for-the-badge&logo=CurseForge" :alt="ImageAlt"
-  /></a>
-</template>

@@ -9,7 +9,6 @@ import Image from "./attachment/image.vue";
 import Video from "./attachment/video.vue";
 import Download from "./attachment/download.vue";
 
-
 const props = defineProps({
   type: {
     type: String,
