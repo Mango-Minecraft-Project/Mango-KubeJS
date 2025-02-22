@@ -26,10 +26,8 @@ TConJSEvents.modifierRegistry((event) => {
 | ------------- | --------------------------------------------------------------------- | ------------------ |
 | `createEmpty` | `(id: string) => void`                                                | 創建一個空的修飾符 |
 | `createNew`   | `(id: string, builder: (builder: ModifierBuilderJS) => void) => void` | 創建一個新的修飾符 |
-
-::: note
+ note
 builder 實際在 ProbeJS 生成的文件中的類型顯示為 `Consumer_<com.xiaoyue.tconstruct_js.content.ModifierBuilder>`，為了方便理解，這裡將其簡化為 `ModifierBuilderJS`。
-:::
 
 ## `ModifierBuilderJS`
 
@@ -100,10 +98,9 @@ addAttributes(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentSlot
 
 ##### 範例
 
-::: details 範例
-
-> [!TIP]
-> 推薦使用 [`builder.getAttributeModifier()`](#getattributemodifier)
+::: tip
+推薦使用 [`builder.getAttributeModifier()`](#getattributemodifier)
+:::
 
 每級增加玩家 10% 的移動速度
 
@@ -121,7 +118,6 @@ builder.addAttributes((view, lvl, slot, attributes) => {
   return attributes;
 });
 ```
-:::
 
 #### `addToolStats`
 
@@ -137,8 +133,6 @@ addToolStats(consumer: (arg0: IToolContext, arg1: number, arg2: ModifierStatsBui
 
 ##### 範例
 
-::: details 範例
-
 每等級增加 10% 的攻擊傷害和彈射物傷害
 
 ```js
@@ -147,7 +141,6 @@ builder.addToolStats((view, lvl, statsBuilder) => {
   TinkerToolStats.PROJECTILE_DAMAGE.multiply(statsBuilder, 1 + lvl * 0.1);
 });
 ```
-:::
 
 #### `addVolatileData`
 
@@ -163,8 +156,6 @@ addVolatileData(consumer: (arg0: IToolContext, arg1: number, arg2: ModDataNBT) =
 
 ##### 範例
 
-::: details 範例
-
 使物品獲得附魔光效
 
 ```js
@@ -172,7 +163,6 @@ builder.addVolatileData((context, lvl, data) => {
   data.putBoolean("tconstruct:shiny", true);
 });
 ```
-:::
 
 #### `armorTakeAttacked`
 
@@ -195,8 +185,6 @@ armorTakeAttacked(consumer: (arg0: IToolStackView, arg1: number, arg2: Equipment
 
 ##### 範例
 
-::: details 範例
-
 裝備時將傷害反彈給攻擊者
 
 ```js
@@ -208,7 +196,6 @@ builder.armorTakeAttacked((view, lvl, context, slot, source, damage) => {
   return true;
 });
 ```
-:::
 
 #### `canBlockAttacked`
 
@@ -231,8 +218,6 @@ canBlockAttacked(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentC
 
 ##### 範例
 
-::: details 範例
-
 免疫近戰攻擊（直接攻擊者與實際攻擊者為同一人的攻擊）
 
 ```js
@@ -240,7 +225,6 @@ builder.canBlockAttacked((view, lvl, context, slot, source, damage) => {
   return !!(source.immediate && source.actual && source.immediate.is(source.actual));d
 });
 ```
-:::
 
 #### `findBowAmmo`
 
@@ -262,8 +246,6 @@ findBowAmmo(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, a
 
 ##### 範例
 
-::: details 範例
-
 讓武器只能射出追跡之箭
 
 ```js
@@ -271,7 +253,6 @@ builder.findBowAmmo((view, lvl, living, stack, predicate) => {
   return stack.id == "minecraft:spectral_arrow" ? stack.withCount(stack.count - 1) : Item.empty();
 });
 ```
-:::
 
 #### `getBreakSpeed`
 
@@ -290,8 +271,6 @@ getBreakSpeed(consumer: (arg0: IToolStackView, arg1: number, arg2: PlayerEvent$B
 
 ##### 範例
 
-::: details 範例
-
 當生物生命值低於 50% 時，每級增加 10% 的破壞速度
 
 ```js
@@ -301,7 +280,6 @@ builder.getBreakSpeed((view, lvl, breakSpeedEvent, direction, canDrop, currentSp
   }
 });
 ```
-:::
 
 #### `getDurabilityRGB`
 
@@ -320,8 +298,6 @@ getDurabilityRGB(consumer: (arg0: IToolStackView, arg1: number) => number) => th
 
 ##### 範例
 
-::: details 範例
-
 耐久度條顏色設置為紅色
 
 ```js
@@ -329,7 +305,6 @@ builder.getDurabilityRGB((view, lvl) => {
   return 0xff0000;
 });
 ```
-:::
 
 #### `getDurabilityWidth`
 
@@ -348,8 +323,6 @@ getDurabilityWidth(consumer: (arg0: IToolStackView, arg1: number) => number) => 
 
 ##### 範例
 
-::: details 範例
-
 耐久度條寬度設置為 6
 
 ```js
@@ -357,7 +330,6 @@ builder.getDurabilityWidth((view, lvl) => {
   return 6;
 });
 ```
-:::
 
 #### `getMeleeDamage`
 
@@ -379,8 +351,6 @@ getMeleeDamage(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolAttackCo
 
 ##### 範例
 
-::: details 範例
-
 使傷害值隨機增加 0.0 到 2.0 倍
 
 ```js
@@ -388,7 +358,6 @@ builder.getMeleeDamage((view, lvl, context, baseDamage, finalDamage) => {
   return finalDamage * (context.attacker.random.nextInt(1, 20) / 10);
 });
 ```
-:::
 
 #### `getRepairFactor`
 
@@ -408,8 +377,6 @@ getRepairFactor(consumer: (arg0: IToolStackView, arg1: number, arg2: number) => 
 
 ##### 範例
 
-::: details 範例
-
 每等級提高 15 % 的修復耐久值
 
 ```js
@@ -417,7 +384,6 @@ builder.getRepairFactor((view, lvl, repaired) => {
   return repaired * (1 + lvl * 0.15);
 });
 ```
-:::
 
 #### `getToolDamage`
 
@@ -437,8 +403,6 @@ getToolDamage(consumer: (arg0: IToolStackView, arg1: number, arg2: number, arg3:
 - `number` - 工具耐久
 
 ##### 範例
-
-::: details 範例
 ```js
 builder.getToolDamage((view, lvl, damage, entity) =>
   Array(damage)
@@ -446,7 +410,6 @@ builder.getToolDamage((view, lvl, damage, entity) =>
     .reduce((acc, cur) => acc + entity.random.nextBoolean(), 0)
 );
 ```
-:::
 
 #### `getUseAnim`
 
@@ -465,8 +428,6 @@ getUseAnim(consumer: (arg0: IToolStackView, arg1: number) => UseAnim_) => this
 
 ##### 範例
 
-::: details 範例
-
 使用望遠鏡的使用動畫
 
 ```js
@@ -474,7 +435,6 @@ builder.getUseAnim((view, lvl, ) => {
   return "spyglass";
 });
 ```
-:::
 
 #### `getUseTime`
 
@@ -493,8 +453,6 @@ getUseTime(consumer: (arg0: IToolStackView, arg1: number) => number) => this
 
 ##### 範例
 
-::: details 範例
-
 減少 `1 / 1 + 等級` 的使用時間
 
 ```js
@@ -502,7 +460,6 @@ builder.getUseTime((view, lvl) => {
   return SimpleTCon.castToolStack(view).item.getUseDuration() / (1 + lvl);
 });
 ```
-:::
 
 #### `isDurabilityShowBar`
 
@@ -521,8 +478,6 @@ isDurabilityShowBar(consumer: (arg0: IToolStackView, arg1: number) => boolean) =
 
 ##### 範例
 
-::: details 範例
-
 不顯示耐久度條
 
 ```js
@@ -530,7 +485,6 @@ builder.isDurabilityShowBar((view, lvl, ) => {
   return false;
 });
 ```
-:::
 
 #### `isSingleLevel`
 
@@ -544,14 +498,11 @@ isSingleLevel() => this
 
 ##### 範例
 
-::: details 範例
-
 此匠魂修飾符只有一個等級
 
 ```js
 builder.isSingleLevel();
 ```
-:::
 
 #### `modifyDamageTake`
 
@@ -574,8 +525,6 @@ modifyDamageTake(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentC
 
 ##### 範例
 
-::: details 範例
-
 每級減少 10% 的受到傷害
 
 ```js
@@ -583,7 +532,6 @@ builder.modifyDamageTake((view, lvl, context, slot, source, damage) => {
   return damage - damage * (0.1 * lvl);
 });
 ```
-:::
 
 #### `modifyProtection`
 
@@ -606,8 +554,6 @@ modifyProtection(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentC
 
 ##### 範例
 
-::: details 範例
-
 每級減少 10% 的保護係數
 
 ```js
@@ -615,7 +561,6 @@ builder.modifyProtection((view, lvl, context, slot, source, protection) => {
   return protection - protection * (0.1 * lvl);
 });
 ```
-:::
 
 #### `modifyStat`
 
@@ -638,8 +583,6 @@ modifyStat(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, ar
 
 ##### 範例
 
-::: details 範例
-
 每級增加 10% 的攻擊傷害和彈射物傷害
 
 ```js
@@ -654,7 +597,6 @@ builder.modifyStat((view, lvl, entity, stat, base, magnification) => {
   }
 });
 ```
-:::
 
 #### `onAfterBreak`
 
@@ -670,8 +612,6 @@ onAfterBreak(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolHarvestCon
 
 ##### 範例
 
-::: details 範例
-
 破壞方塊後將方塊替換為黃金方塊
 
 ```js
@@ -679,7 +619,6 @@ builder.onAfterBreak((view, lvl, context) => {
   context.world.getBlock(context.pos).set("minecraft:gold_block");
 });
 ```
-:::
 
 #### `onAfterMeleeHit`
 
@@ -695,8 +634,6 @@ onAfterMeleeHit(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolAttackC
 - `arg3: number` - 傷害值
 
 ##### 範例
-
-::: details 範例
 ```js
 event.createNew("give_me_hat", (builder) => {
   builder
@@ -709,7 +646,6 @@ event.createNew("give_me_hat", (builder) => {
     });
 });
 ```
-:::
 
 #### `onBeforeMeleeHit`
 
@@ -732,8 +668,6 @@ onBeforeMeleeHit(consumer: (arg0: IToolStackView, arg1: number, arg2: ToolAttack
 
 ##### 範例
 
-::: details 範例
-
 每級增加 10% 的擊退值
 
 ```js
@@ -741,7 +675,6 @@ builder.onBeforeMeleeHit((view, lvl, context, damage, baseKnockback, finalKnockb
   return finalKnockback * (1 + lvl * 0.1);
 });
 ```
-:::
 
 #### `onDamageDealt`
 
@@ -762,8 +695,6 @@ onDamageDealt(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentCont
 
 ##### 範例
 
-::: details 範例
-
 當攻擊實體時，交換攻擊者和被攻擊者的氧氣值
 
 ```js
@@ -776,7 +707,6 @@ builder.onDamageDealt((view, lvl, context, slot, living, source, damage) => {
   }
 });
 ```
-:::
 
 #### `onEquip`
 
@@ -792,8 +722,6 @@ onEquip(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentChangeCont
 
 ##### 範例
 
-::: details 範例
-
 裝備時將生物點燃 1 秒
 
 ```js
@@ -801,7 +729,6 @@ builder.onEquip((view, lvl, context) => {
   context.entity.secondsOnFire = 1 * lvl;
 });
 ```
-:::
 
 #### `onFinishUsing`
 
@@ -817,8 +744,6 @@ onFinishUsing(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity)
 
 ##### 範例
 
-::: details 範例
-
 十字弓使用完畢後使玩家增加與金蘋果一樣的飽食度與營養度
 
 ```js
@@ -828,7 +753,6 @@ builder.onFinishUsing((view, lvl, living) => {
   }
 });
 ```
-:::
 
 #### `onInventoryTick`
 
@@ -849,8 +773,6 @@ onInventoryTick(consumer: (arg0: IToolStackView, arg1: number, arg2: Level, arg3
 
 ##### 範例
 
-::: details 範例
-
 在主慣用手持有物品時，每 tick 給予生物匠魂修飾符等級的力量效果。
 
 ```js
@@ -860,7 +782,6 @@ builder.onInventoryTick((view, lvl, level, entity, slot, inMainHand, inAvailable
   }
 });
 ```
-:::
 
 #### `onModifierRemove`
 
@@ -878,12 +799,9 @@ onModifierRemove(consumer: (arg0: IToolStackView, arg1: Modifier)=> Component_) 
 - `Component_` - 組件
 
 ##### 範例
-
-::: details 範例
 ```js
 
 ```
-:::
 
 #### `onStoppedUsing`
 
@@ -900,8 +818,6 @@ onStoppedUsing(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity
 
 ##### 範例
 
-::: details 範例
-
 中斷使用工具時踢出玩家
 
 ```js
@@ -911,7 +827,6 @@ builder.onStoppedUsing((view, lvl, living, duration) => {
   }
 });
 ```
-:::
 
 #### `onUnequip`
 
@@ -927,8 +842,6 @@ onUnequip(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentChangeCo
 
 ##### 範例
 
-::: details 範例
-
 卸下時使生物冷凍 20 秒
 
 ```js
@@ -936,7 +849,6 @@ builder.onUnequip((view, lvl, context) => {
   context.entity.ticksFrozen = 20 * 25;
 });
 ```
-:::
 
 #### `onUseTool`
 
@@ -958,8 +870,6 @@ onUseTool(consumer: (arg0: IToolStackView, arg1: number, arg2: Player, arg3: Int
 
 ##### 範例
 
-::: details 範例
-
 使用工具時告訴玩家手持物品的名稱
 
 ```js
@@ -968,7 +878,6 @@ builder.onUseTool((view, lvl, player, hand, source) => {
   return true;
 });
 ```
-:::
 
 #### `onUsingTick`
 
@@ -985,8 +894,6 @@ onUsingTick(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, a
 
 ##### 範例
 
-::: details 範例
-
 使用工具時給予生物抗性 5 效果
 
 ```js
@@ -994,7 +901,6 @@ builder.onUsingTick((view, lvl, living, duration) => {
   living.potionEffects.add("resistance", 1, 4);
 });
 ```
-:::
 
 #### `processLoot`
 
@@ -1010,12 +916,9 @@ processLoot(consumer: (arg0: IToolStackView, arg1: number, arg2: List<ItemStack>
 - `arg3: LootContext` - 戰利品上下文
 
 ##### 範例
-
-::: details 範例
 ```js
 
 ```
-:::
 
 #### `projectileHitBlock`
 
@@ -1033,12 +936,9 @@ projectileHitBlock(consumer: (arg0: ModifierNBT, arg1: ModDataNBT, arg2: number,
 - `arg5: LivingEntity` - 生物
 
 ##### 範例
-
-::: details 範例
 ```js
 
 ```
-:::
 
 #### `projectileHitEntity`
 
@@ -1061,8 +961,6 @@ projectileHitEntity(consumer: (arg0: ModifierNBT, arg1: ModDataNBT, arg2: number
 - `boolean` - 是否擊中實體
 
 ##### 範例
-
-::: details 範例
 ```js
 builder.projectileHitEntity((modifier, namespaced, damage, projectile, hitResult, sourceEntity, targetEntity) => {
   targetEntity.block.up.popItem(targetEntity.headArmorItem);
@@ -1071,7 +969,6 @@ builder.projectileHitEntity((modifier, namespaced, damage, projectile, hitResult
   return false;
 });
 ```
-:::
 
 #### `projectileLaunch`
 
@@ -1090,12 +987,9 @@ projectileLaunch(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEnti
 - `arg6: boolean` - 是否成功
 
 ##### 範例
-
-::: details 範例
 ```js
 
 ```
-:::
 
 #### `setElytraFlight`
 
@@ -1115,12 +1009,9 @@ setElytraFlight(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntit
 - `boolean` - 是否滑翔
 
 ##### 範例
-
-::: details 範例
 ```js
 
 ```
-:::
 
 #### `tooltipSetting`
 
@@ -1138,8 +1029,6 @@ tooltipSetting(consumer: (arg0: IToolStackView, arg1: number, arg2: Player, arg3
 - `arg5: TooltipFlag` - 工具提示標誌（advanced、creative）
 
 ##### 範例
-
-::: details 範例
 ```js
 
 顯示一串亂碼
@@ -1148,7 +1037,6 @@ builder.tooltipSetting((view, lvl, player, tooltip, key, flag) => {
   tooltip.add(Text.of("000000000").obfuscated());
 });
 ```
-:::
 
 #### `toolUseAction`
 
@@ -1166,12 +1054,9 @@ toolUseAction(consumer: (arg0: IToolStackView, arg1: number) => ToolAction_) => 
 - `ToolAction_` - 工具操作行為
 
 ##### 範例
-
-::: details 範例
 ```js
 
 ```
-:::
 
 #### `ToolValidate`
 
@@ -1189,12 +1074,9 @@ ToolValidate(consumer: (arg0: IToolStackView, arg1: number) => Component_) => th
 - `Component_` - 組件
 
 ##### 範例
-
-::: details 範例
 ```js
 
 ```
-:::
 
 #### `updateArmorLooting`
 
@@ -1216,12 +1098,9 @@ updateArmorLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingC
 - `number` - 掠奪等級
 
 ##### 範例
-
-::: details 範例
 ```js
 
 ```
-:::
 
 #### `updateToolLooting`
 
@@ -1241,12 +1120,9 @@ updateToolLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingCo
 - `number` - 掠奪等級
 
 ##### 範例
-
-::: details 範例
 ```js
 
 ```
-:::
 
 ### 特殊方法
 
