@@ -3,7 +3,6 @@ import CommonWrapper from "vuepress-theme-hope/components/CommonWrapper.js";
 import NormalPage from "vuepress-theme-hope/components/NormalPage.js";
 import SkipLink from "vuepress-theme-hope/components/SkipLink.js";
 import { FadeSlideY } from "vuepress-theme-hope/components/transitions/index.js";
-
 </script>
 
 <template>
@@ -12,7 +11,7 @@ import { FadeSlideY } from "vuepress-theme-hope/components/transitions/index.js"
   <CommonWrapper>
     <FadeSlideY>
       <NormalPage>
-        <!-- <template #contentBefore>
+        <template #contentBefore>
           <div class="slot-demo-block">contentBefore Slot</div>
         </template>
 
@@ -26,19 +25,19 @@ import { FadeSlideY } from "vuepress-theme-hope/components/transitions/index.js"
 
         <template #bottom>
           <div class="slot-demo-block">page bottom Slot</div>
-        </template> -->
+        </template>
 
         <template #tocBefore>
           <div class="slot-demo-block">tocBefore Slot</div>
         </template>
 
-        <!-- <template #tocAfter>
+        <template #tocAfter>
           <div class="slot-demo-block">tocAfter Slot</div>
-        </template> -->
+        </template>
       </NormalPage>
     </FadeSlideY>
 
-    <!-- <template #sidebarTop>
+    <template #sidebarTop>
       <div class="slot-demo-block">sidebarTop Slot</div>
     </template>
 
@@ -52,7 +51,7 @@ import { FadeSlideY } from "vuepress-theme-hope/components/transitions/index.js"
 
     <template #navScreenBottom>
       <div class="slot-demo-block">navScreenBottom Slot</div>
-    </template> -->
+    </template>
   </CommonWrapper>
 </template>
 

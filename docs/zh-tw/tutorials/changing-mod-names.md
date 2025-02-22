@@ -1,11 +1,9 @@
 ---
 title: 更改模組顯示名稱
 description: 是的，這很奇怪，但確實可行！
+layout: AddonPage
+source: https://kubejs.com/wiki/tutorials/changing-mod-names
 ---
-
-::: info 原文
-https://kubejs.com/wiki/tutorials/changing-mod-names
-:::
 
 在啟動腳本中，添加這行代碼：
 

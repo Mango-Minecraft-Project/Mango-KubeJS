@@ -1,11 +1,9 @@
 ---
 title: 標頭
 description: 什麼是標頭以及如何使用它們
+layout: AddonPage
+source: https://kubejs.com/wiki/tips/headers
 ---
-
-::: info 原文
-https://kubejs.com/wiki/tips/headers
-:::
 
 在 1.19.2+ 版本中，您可以在腳本的頂部添加各種標頭來更改其加載條件。
 

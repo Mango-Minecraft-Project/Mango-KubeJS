@@ -3,7 +3,7 @@ import { getDirname, path } from "vuepress/utils";
 
 import theme from "./theme.js";
 
-const __dirname = getDirname(import.meta.url);
+const Dir = ($path: string) => path.resolve(getDirname(import.meta.url), $path);
 
 export default defineUserConfig({
   base: "/",
@@ -37,10 +37,10 @@ export default defineUserConfig({
     ["meta", { property: "theme-color", content: "#422066" }],
   ],
 
-  clientConfigFile: path.resolve(__dirname, "./client.ts"),
+  clientConfigFile: Dir("./client.ts"),
 
   alias: {
-    "@components": path.resolve(__dirname, "./components"),
+    "@components": Dir("./components"),
     "@theme-hope": "vuepress-theme-hope",
   },
 

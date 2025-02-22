@@ -4,13 +4,16 @@ description: 一個 JEI 的附屬模組，它可以讓你在遊戲中透過點�
 author: Prunoideae
 categories:
   - neoforge-1.21
+layout: AddonPage
+mod:
+  name: JEI Crafting
+  author: Prunoideae
+  CurseForge: mc-mods/jei-crafting
+  GitHub: Prunoideae/JEI-Crafting
+  Modrinth: mod/jei-crafting
+  McMod: class/17415
+source: https://github.com/Prunoideae/JEI-Crafting/blob/master/README.md
 ---
-
-<BadgeCompat CurseForge="mc-mods/jei-crafting" Github="Prunoideae/JEI-Crafting" />
-
----
- info 原文
-https://github.com/Prunoideae/JEI-Crafting/blob/master/README.md
 
 這個附屬模組增加了一種定義配方的方法，當玩家將光標懸停在 JEI 物品列表或書籤中的物品上並中鍵點擊它們時，玩家將獲得這些物品，同時消耗一些定義的材料。
 

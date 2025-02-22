@@ -1,11 +1,9 @@
 ---
 title: Global 物件
 description: 如何使用 Global 物件
+layout: AddonPage
+source: https://kubejs.com/wiki/tips/global
 ---
-
-::: info 原文
-https://kubejs.com/wiki/tips/global
-:::
 
 `global` 是一個在所有腳本類型中都可以訪問的物件。
 

@@ -1,5 +1,4 @@
 ---
-author: PrizOwO
 title: FilesJS
 description: KubeJS 檔案管理附屬模組
 categories:
@@ -7,15 +6,16 @@ categories:
   - neoforge-1.21
 tags:
   - 檔案
+layout: AddonPage
+mod:
+  name: FilesJS
+  author: xiaoliziawa
+  CurseForge: mc-mods/filesjs
+  Modrinth: mod/filesjs
+  GitHub: xiaoliziawa/Files-JS
+  McMod: class/17414
+source: https://github.com/xiaoliziawa/Files-JS/blob/main/README-CN.md
 ---
-
-<BadgeCompat CurseForge="mc-mods/filesjs" Modrinth="mod/filesjs" Github="xiaoliziawa/Files-JS" Mcmod="class/17414"/>
-
----
-
-::: info 原文
-https://github.com/xiaoliziawa/Files-JS/blob/main/README-CN.md
-:::
 
 *FilesJS（檔案吉斯）是一個功能強大的 KubeJS 6 附屬模組，用來偷走你的失諧帳號和錢包。*
 

@@ -2,18 +2,12 @@
   <img :src="src" class="icon-image" />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 
 const props = defineProps({
-  src: {
-    type: String,
-    required: false,
-  },
-  preset: {
-    type: String,
-    required: false,
-  },
+  src: String,
+  preset: String,
 });
 
 const urlPrefix = {

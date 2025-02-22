@@ -1,22 +1,21 @@
 ---
 title: KubeLoader
 description: 允許將打包過的 KubeJS 腳本載入到遊戲中。
-author: Whise
-isOriginal: true
 categories:
   - forge-1.20
 tags:
   - contentpack
   - loader
+layout: AddonPage
+mod:
+  name: KubeLoader
+  author: WhiseNT
+  CurseForge: mc-mod/kubeloader
+  Modrinth: mod/kubeloader
+  GitHub: WhiseNT/kubeloader
+  McMod: class/18512
+source: https://github.com/WhiseNT/kubeloader/blob/master/README.md
 ---
-
-<BadgeCompat CurseForge="mc-mod/kubeloader" Modrinth="mod/kubeloader" Github="WhiseNT/kubeloader" Mcmod="class/18512" />
-
----
-
-::: info 原文
-https://github.com/WhiseNT/kubeloader/blob/master/README.md
-:::
 
 KubeLoader 是一個 KubeJS 擴充模組，目前處於早期開發階段，僅支持 Forge 1.20.1（因為模組所涉及內容與 Minecraft 本體關聯度不大，所以版本的遷移很容易。在進度足夠時會盡快支持其他版本）。
 

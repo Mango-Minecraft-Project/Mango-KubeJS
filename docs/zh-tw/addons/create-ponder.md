@@ -1,22 +1,22 @@
 ---
 title: Create Ponder
 description: 將思索功能從動力機械中拆分出來，並內置了 Ponder for KubeJS
-author: Westernat
 categories:
   - forge-1.20
   - fabric-1.20
 tags:
   - ponder
   - 思索
+layout: AddonPage
+mod:
+  name: Create Ponder
+  author: Westernatan
+  CurseForge: 987863
+  Modrinth: i-TUJE7X6P
+  GitHub: Westernat/CreatePonder
+  McMod: class/14089
+source: https://www.mcmod.cn/class/14089.html
 ---
-
-<BadgeCompat CurseForge=987863 Modrinth="i-TUJE7X6P" Github="Westernat/CreatePonder" Mcmod="class/14089"/>
-
----
-
-::: info 原文
-https://www.mcmod.cn/class/14089.html
-:::
 
 本模組將思索功能從動力機械中單獨拆分出來。
 

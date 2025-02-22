@@ -2,11 +2,9 @@
 title: 如何開始
 description: KubeJS 的基礎
 order: 1
+layout: AddonPage
+source: https://kubejs.com/wiki/tutorials/getting-started
 ---
-
-::: info 原文
-https://kubejs.com/wiki/tutorials/getting-started
-:::
 
 ::: warning
 在開始使用 KubeJS 之前，您必須學習程式設計和 JavaScript 的基礎知識！

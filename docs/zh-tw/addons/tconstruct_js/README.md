@@ -1,7 +1,6 @@
 ---
 title: TConstruct JS
 description: 為 1.20.1 的 Tinkers' Construct 添加 KubeJS 支援。
-author: xiaoyue
 isOriginal: true
 dir:
   link: true
@@ -9,9 +8,15 @@ categories:
   - forge-1.20
 tags:
   - 匠魂
+layout: AddonPage
+mod:
+  name: TConstruct JS
+  author: xiaoyue
+  CurseForge: mc-mods/tconstructjs
+  Modrinth: mod/tconjsconstructjs
+  GitHub: xiaoyue/constructjs
+  McMod: class/17415
 ---
-
-<!-- <BadgeCompat CurseForge="mc-mods/tconstructjs" Modrinth="mod/tconjsconstructjs" Github="xiaoyue/constructjs" Mcmod="class/17415"/> -->
 
 ::: warning
 此模組尚未公開發布，此文檔僅供參考

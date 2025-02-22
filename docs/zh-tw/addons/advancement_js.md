@@ -1,7 +1,6 @@
 ---
 title: Advancement JS
 description: 使用 KubeJS 創建、修改進度（Advancement）
-author: Westernat
 categories:
   - forge-1.18
   - forge-1.19
@@ -11,15 +10,16 @@ categories:
   - fabric-1.20
 tags:
   - 進度
+layout: AddonPage
+mod:
+  name: Advancement JS
+  author: Westernat
+  CurseForge: mc-mods/advancementjs
+  Modrinth: mod/advancementjs
+  GitHub: Westernat/AdvancementJS
+  Mcmod: class/13137
+source: https://github.com/westernat/AdvancementJS/blob/2001/forge/README.md
 ---
-
-<BadgeCompat CurseForge="mc-mods/advancementjs" Modrinth="mod/advancementjs" Github="Westernat/AdvancementJS" Mcmod="class/13137"/>
-
----
-
-::: info 原文
-https://github.com/westernat/AdvancementJS/blob/2001/forge/README.md
-:::
 
 ## 快速範例（最新版本 ```2.9.4```）
 

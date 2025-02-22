@@ -2,7 +2,7 @@ import { defineClientConfig } from "vuepress/client";
 import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
 
 import CustomComponents from "./components/index.js";
-import SlotDemo from "./layouts/SlotDemo.vue";
+import layouts from "./layouts/index.js";
 
 export default defineClientConfig({
   enhance: ({ app }) => {
@@ -17,7 +17,5 @@ export default defineClientConfig({
       "/zh-cn/": "已运行 :day 天 :hour 小时 :minute 分钟 :second 秒",
     },)
   },
-  layouts: {
-    SlotDemo,
-  }
+  layouts,
 });

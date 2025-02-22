@@ -1,11 +1,9 @@
 ---
 title: 編輯配方
 description: 添加、移除和修改配方
+layout: AddonPage
+source: https://kubejs.com/wiki/tutorials/recipes
 ---
-
-::: info 原文
-https://kubejs.com/wiki/tutorials/recipes
-:::
 
 ::: warning
 此頁面仍在開發中。內容尚未完成，隨時可能更改。

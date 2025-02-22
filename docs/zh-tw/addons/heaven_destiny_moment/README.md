@@ -1,5 +1,4 @@
 ---
-author: XiaoHuNao
 title: 天命時刻（Heaven Destiny Moment）
 description: 提供 API 以創建各種事件，如血月、襲擊等事件。
 isOriginal: true
@@ -7,10 +6,13 @@ dir:
   link: true
 categories:
   - neoforge-1.21
----
-
-<BadgeCompat CurseForge="mc-mods/heaven-destiny-moment" Github="XiaoHuNao/HeavenDestinyMoment" Mcmod="class/17474"/>
-
+layout: AddonPage
+mod:
+  name: 天命時刻（Heaven Destiny Moment）
+  author: XiaoHuNao
+  CurseForge: mc-mods/heaven-destiny-moment
+  GitHub: XiaoHuNao/HeavenDestinyMoment
+  McMod: class/17474
 ---
 
 提供 API 以創建各種事件，如血月、襲擊，允許使用資料包自訂

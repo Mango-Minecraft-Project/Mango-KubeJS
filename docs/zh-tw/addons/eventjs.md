@@ -1,7 +1,6 @@
 ---
 title: EventJS
 description: 為 KubeJS 添加原生事件監聽的熱重載支持
-author: ZZZank
 categories:
   - forge-1.16
   - forge-1.18
@@ -10,15 +9,16 @@ categories:
 tags:
   - hot-reload
   - 熱重載
+layout: AddonPage
+mod:
+  name: EventJS
+  author: ZZZank
+  CurseForge: mc-mods/eventjs
+  Modrinth: mod/eventjs
+  GitHub: ZZZank/EventJS
+  McMod: class/17008
+source: https://www.curseforge.com/minecraft/mc-mods/eventjs/description
 ---
-
-<BadgeCompat CurseForge="mc-mods/eventjs" Modrinth="mod/eventjs" Github="ZZZank/EventJS" Mcmod="class/17008"/>
-
----
-
-::: info 原文
-https://www.curseforge.com/minecraft/mc-mods/eventjs/description
-:::
 
 ## 簡介
 
