@@ -42,4 +42,10 @@ export default defineUserConfig({
   alias: {
     "@components": path.resolve(__dirname, "./components"),
   },
+
+  markdown: {
+    headers: {
+      level: [2, 3, 4, 5],
+    }
+  }
 });

@@ -10,16 +10,7 @@ tags:
   - loader
 ---
 
-<BadgeCompat Github="WhiseNT/kubeloader" />
-
-::: warning
-此模組尚未公開發布，此文檔僅供參考
-:::
-
-:::details 下載連結
-<Attachment link="kubeloader-0.0.2.jar" text="測試版模組" /><br>
-<Attachment link="testcontentpackmod-1.0.0.jar" text="用於測試此模組的測試模組" />
-:::
+<BadgeCompat CurseForge="mc-mod/kubeloader" Modrinth="mod/kubeloader" Github="WhiseNT/kubeloader" Mcmod="class/18512" />
 
 ---
 

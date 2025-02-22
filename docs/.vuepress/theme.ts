@@ -1,79 +1,58 @@
 import { hopeTheme } from "vuepress-theme-hope";
-
-import { enusNavbar, zhtwNavbar, zhcnNavbar } from "./theme/navbar/index.js";
-import { enusSidebar, zhtwSidebar, zhcnSidebar } from "./theme/sidebar/index.js";
+import locales from "./theme/locales.js";
 
 export default hopeTheme({
+  // Basic
   hostname: "wiki.mango-kubejs.pages.dev",
-
-  logo: "/logo.svg",
-  darkmode: "enable",
   favicon: "/logo.png",
+  license: "AGPL-3.0",
+  // hotReload: true, // enable it to preview all changes in time
+  locales,
 
+  // Feature
+  encrypt: {
+    config: {},
+  },
+
+  // Layouts
+  // - Navbar
+  navbarLayout: {
+    start: ["Brand", "Language", "Search"],
+    center: ["Links"],
+    end: ["Repo", "Outlook"],
+  },
+  logo: "/logo.svg",
   repo: "Mango-Minecraft-Project/Mango-KubeJS",
-  docsBranch: "wiki",
-  docsDir: "docs",
 
+  // - Sidebar
+  sidebarSorter: ["readme", "order", "filename", "title", "date", "date-desc"],
+  headerDepth: 2,
+
+  // - Metadata
   lastUpdated: true,
   contributors: true,
   editLink: true,
+  docsRepo: "Mango-Minecraft-Project/Mango-KubeJS",
+  docsBranch: "wiki",
+  docsDir: "docs",
 
+  // - Footer
+  copyright: "Copyright © 2025 MangoJellyPudding",
+  displayFooter: true,
+
+  // Appearance
+  darkmode: "enable",
   externalLinkIcon: false,
   fullscreen: true,
   pure: true,
   focus: false,
 
-  displayFooter: true,
+  // i18n
   blogLocales: {
     empty: "",
   },
 
-  locales: {
-    "/": {
-      navbar: enusNavbar,
-      sidebar: enusSidebar,
-
-      author: "MangoJellyPudding",
-
-      blog: {
-        description: "An interested KubeJS developer.",
-      },
-    },
-    "/zh-tw/": {
-      navbar: zhtwNavbar,
-      sidebar: zhtwSidebar,
-
-      author: "芒果凍布丁",
-
-      navbarLocales: {
-        langName: "正體中文",
-      },
-      metaLocales: {
-        origin: "原創",
-      },
-    },
-    "/zh-cn/": {
-      navbar: zhcnNavbar,
-      sidebar: zhcnSidebar,
-
-      author: "芒果凍布丁",
-
-      blog: {
-        description: "一个兴趣使然的 KubeJS 开发者",
-      },
-    },
-  },
-
-  copyright: "Copyright © 2025 MangoJellyPudding",
-
-  encrypt: {
-    config: {},
-  },
-
-  // enable it to preview all changes in time
-  // hotReload: true,
-
-  // These features are enabled for demo, only preserve features you need here
+  // Markdown
   markdown: {
     alert: true,
     hint: true,

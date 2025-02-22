@@ -2,6 +2,7 @@
 title: TConJSEvents.modifierRegistry
 shortTitle: modifierRegistry
 isOriginal: true
+headerDepth: 4
 ---
 
 ```ts
@@ -1206,13 +1207,13 @@ updateToolLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingCo
 
 ```
 
+---
+
 ### 特殊方法
 
 | 方法名稱                                        | 簡介           |
 | ----------------------------------------------- | -------------- |
 | [`getAttributeModifier`](#getattributemodifier) | 獲取屬性修飾符 |
-
----
 
 ---
 

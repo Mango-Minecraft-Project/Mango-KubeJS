@@ -18,7 +18,7 @@ tags:
 :::
 
 :::details 下載連結
-<a href="/docs/addons/tconstruct_js/tconstruct_js-1.0+aa6.jar" download>點擊這裡</a>
+<Attachment link="tconstruct_js-1.0+aa6.jar" text="點擊這裡"/>
 :::
 
 ---
