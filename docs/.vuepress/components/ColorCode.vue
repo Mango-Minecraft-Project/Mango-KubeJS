@@ -1,21 +1,6 @@
 <template>
-  <span class="color-code" :style="backgroundColor"><br /></span>&nbsp;{{ color }}
+  <div><span class="color-code" :style="backgroundColor"></span>&nbsp;{{ color }}</div>
 </template>
-
-<script setup>
-import { computed } from "vue";
-
-const props = defineProps({
-  color: String,
-});
-
-const color = computed(() => {
-  return props.color;
-});
-const backgroundColor = computed(() => {
-  return `background-color: ${props.color}`;
-});
-</script>
 
 <style scoped>
 .color-code {
@@ -24,7 +9,20 @@ const backgroundColor = computed(() => {
   border-radius: 1em;
   height: 1em;
   width: 1em;
-  border: 1px solid #aaa;
+  border: 0.1em solid #aaa;
   vertical-align: text-top;
 }
 </style>
+
+<script lang="ts">
+export default {
+  props: {
+    color: String,
+  },
+  computed: {
+    backgroundColor() {
+      return `background-color: ${this.color}`;
+    },
+  },
+};
+</script>

@@ -4,24 +4,24 @@
   </a>
 </template>
 
-<script setup>
-import { computed } from "vue";
-
-const props = defineProps({
-  name: String,
-  path: {
-    type: [String, Number],
-    required: true,
+<script lang="ts">
+export default {
+  props: {
+    name: String,
+    path: {
+      type: [String, Number],
+      required: true,
+    },
   },
-});
-
-const aHref = computed(() => {
-  if (parseInt(props.path)) return `https://curseforge.com/projects/${props.path}`;
-  return `https://curseforge.com/minecraft/${props.path}`;
-});
-
-const ImageAlt = computed(() => {
-  return `${props.name ?? props.path} CurseForge Badge`;
-});
+  computed: {
+    aHref() {
+      return parseInt(this.path)
+        ? `https://curseforge.com/projects/${this.path}`
+        : `https://curseforge.com/minecraft/${this.path}`;
+    },
+    ImageAlt() {
+      return `${this.name ?? this.path} CurseForge Badge`;
+    },
+  },
+};
 </script>
-

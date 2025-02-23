@@ -134,6 +134,10 @@ export default hopeTheme(
         getExtraFields: (page) =>
           (<string[]>page.frontmatter.tags ?? []).concat(<string[]>page.frontmatter.categories ?? []),
       },
+
+      git: {
+        changelog: true,
+      }
     },
   },
   {

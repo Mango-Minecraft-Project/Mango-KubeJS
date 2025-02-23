@@ -41,6 +41,7 @@ export default defineUserConfig({
 
   alias: {
     "@components": Dir("./components"),
+    "@private-components": Dir("./components/private"),
     "@theme-hope": "vuepress-theme-hope",
   },
 

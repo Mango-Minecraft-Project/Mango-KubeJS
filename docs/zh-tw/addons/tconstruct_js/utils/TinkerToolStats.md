@@ -1,6 +1,9 @@
 ---
 title: TinkerToolStats
 isOriginal: true
+layout: AddonPage
+mod:
+  ref: "../README.md"
 ---
 
 ## 類別屬性／方法
@@ -54,10 +57,10 @@ TinkerToolStats.ATTACK_DAMAGE.update();
 ```
 
 <script setup>
-import Armor from "@components/tconstruct_js/applicable/Armor.vue";
-import Common from "@components/tconstruct_js/applicable/Common.vue";
-import Defensive from "@components/tconstruct_js/applicable/Defensive.vue";
-import Melee from "@components/tconstruct_js/applicable/Melee.vue";
-import Mining from "@components/tconstruct_js/applicable/Mining.vue";
-import Ranged from "@components/tconstruct_js/applicable/Ranged.vue";
+import Armor from "@private-components/tconstruct_js/applicable/Armor.vue";
+import Common from "@private-components/tconstruct_js/applicable/Common.vue";
+import Defensive from "@private-components/tconstruct_js/applicable/Defensive.vue";
+import Melee from "@private-components/tconstruct_js/applicable/Melee.vue";
+import Mining from "@private-components/tconstruct_js/applicable/Mining.vue";
+import Ranged from "@private-components/tconstruct_js/applicable/Ranged.vue";
 </script>

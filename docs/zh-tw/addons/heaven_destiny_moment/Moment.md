@@ -1,6 +1,9 @@
 ---
 title: 事件（Moment）
 isOriginal: true
+layout: AddonPage
+mod:
+  ref: "./README.md"
 ---
 
 ## 1. 資料包登錄

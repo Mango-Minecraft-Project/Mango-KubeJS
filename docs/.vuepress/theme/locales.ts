@@ -1,4 +1,5 @@
 import { enusNavbar, zhtwNavbar, zhcnNavbar } from "./navbar/index.js";
+import { zhTWLocale } from "./patch/i18n/zh_tw.js";
 import { enusSidebar, zhtwSidebar, zhcnSidebar } from "./sidebar/index.js";
 
 export default {
@@ -18,12 +19,9 @@ export default {
 
     author: "芒果凍布丁",
 
+    ...zhTWLocale,
     navbarLocales: {
       langName: "正體中文",
-    },
-    metaLocales: {
-      origin: "原創",
-      toc: "此頁內容",
     },
   },
   "/zh-cn/": {

@@ -1,6 +1,9 @@
 ---
 title: TinkerDamageHelper
 isOriginal: true
+layout: AddonPage
+mod:
+  ref: "../README.md"
 ---
 
 ## 類別屬性／方法

@@ -3,6 +3,9 @@ title: TConJSEvents.modifierRegistry
 shortTitle: modifierRegistry
 isOriginal: true
 headerDepth: 4
+layout: AddonPage
+mod:
+  ref: "../README.md"
 ---
 
 ```ts
@@ -1234,8 +1237,8 @@ getAttributeModifier(arg0: string, arg1: string, arg2: number, arg3: string): At
   - `"multiply_total"`: 最終倍乘操作
 
 <script setup>
-import Common from "@components/tconstruct_js/applicable/Common.vue";
-import Armor from "@components/tconstruct_js/applicable/Armor.vue";
-import Melee from "@components/tconstruct_js/applicable/Melee.vue";
-import Ranged from "@components/tconstruct_js/applicable/Ranged.vue";
+import Common from "@private-components/tconstruct_js/applicable/Common.vue";
+import Armor from "@private-components/tconstruct_js/applicable/Armor.vue";
+import Melee from "@private-components/tconstruct_js/applicable/Melee.vue";
+import Ranged from "@private-components/tconstruct_js/applicable/Ranged.vue";
 </script>

@@ -1,6 +1,9 @@
 ---
 title: 冶煉爐配方
 isOriginal: true
+layout: AddonPage
+mod:
+  ref: "../README.md"
 ---
 
 ## 合金

@@ -8,7 +8,7 @@ categories:
   - neoforge-1.21
 layout: AddonPage
 mod:
-  name: 天命時刻（Heaven Destiny Moment）
+  name: 天命時刻
   author: XiaoHuNao
   CurseForge: mc-mods/heaven-destiny-moment
   GitHub: XiaoHuNao/HeavenDestinyMoment

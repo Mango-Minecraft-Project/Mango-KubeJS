@@ -7,25 +7,22 @@
   </a>
 </template>
 
-<script setup>
-import { computed } from "vue";
-
-const props = defineProps({
-  name: {
-    type: String,
-    required: false,
+<script lang="ts">
+export default {
+  props: {
+    name: String,
+    path: {
+      type: String,
+      required: true,
+    },
   },
-  path: {
-    type: String,
-    required: true,
+  computed: {
+    aHref() {
+      return `https://mcmod.cn/${this.path}`;
+    },
+    ImageAlt() {
+      return `${this.name ?? this.path} mcmond.cn Badge`;
+    },
   },
-});
-
-const aHref = computed(() => {
-  return `https://mcmod.cn/${props.path}`;
-});
-
-const ImageAlt = computed(() => {
-  return `${props.name ?? props.path} mcmond.cn Badge`;
-});
+};
 </script>

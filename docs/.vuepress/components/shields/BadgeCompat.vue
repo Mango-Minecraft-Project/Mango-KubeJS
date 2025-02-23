@@ -1,10 +1,9 @@
 <template>
-  <div align="center">
+  <div>
     <table>
       <tbody>
         <tr>
           <td v-for="badge in available" :key="badge.path">
-            <!-- 動態渲染 Badge component -->
             <component :is="badge.component" :path="badge.path" :name="badge.name" />
           </td>
         </tr>
@@ -13,44 +12,32 @@
   </div>
 </template>
 
-<script setup>
-import { computed } from "vue";
+<style lang="scss" scoped>
+div {
+  align-items: center;
+}
+</style>
 
-const props = defineProps({
-  CurseForge: {
-    type: String,
-    required: false,
+<script lang="ts">
+export default {
+  props: {
+    CurseForge: String,
+    Modrinth: String,
+    Wiki: String,
+    GitHub: String,
+    McMod: String,
+    name: String,
   },
-  Modrinth: {
-    type: String,
-    required: false,
+  computed: {
+    available() {
+      return ["CurseForge", "Modrinth", "Wiki", "GitHub", "McMod"]
+        .filter((key) => this[key]) // 過濾掉沒有值的屬性
+        .map((key) => ({
+          component: `Badge${key}`, // Badge 的 component 名稱
+          path: this[key],
+          name: this.name,
+        }));
+    },
   },
-  Wiki: {
-    type: String,
-    required: false,
-  },
-  GitHub: {
-    type: String,
-    required: false,
-  },
-  McMod: {
-    type: String,
-    required: false,
-  },
-  name: {
-    type: String,
-    required: false,
-  },
-});
-
-// 只生成有值的 badge 列表
-const available = computed(() =>
-  ["CurseForge", "Modrinth", "Wiki", "GitHub", "McMod"]
-    .filter((key) => props[key]) // 過濾掉沒有值的屬性
-    .map((key) => ({
-      component: `Badge${key}`, // Badge 的 component 名稱
-      path: props[key],
-      name: props.name,
-    }))
-);
+};
 </script>

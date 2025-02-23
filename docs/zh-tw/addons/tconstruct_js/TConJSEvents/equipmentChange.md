@@ -2,6 +2,9 @@
 title: TConJSEvents.equipmentChange
 shortTitle: equipmentChange
 isOriginal: true
+layout: AddonPage
+mod:
+  ref: "../README.md"
 ---
 
 ```ts
