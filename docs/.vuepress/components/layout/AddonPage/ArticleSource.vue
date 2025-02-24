@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!frontmatter.isOriginal" class="component-info-block">
+  <div v-if="!frontmatter.isOriginal && source" class="component-info-block">
     <div v-if="source">原文：<a :href="source">{{ source }}</a></div>
   </div>
 </template>
