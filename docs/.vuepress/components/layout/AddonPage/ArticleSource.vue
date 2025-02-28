@@ -1,6 +1,8 @@
 <template>
   <div v-if="!frontmatter.isOriginal && source" class="component-info-block">
-    <div v-if="source">原文：<a :href="source">{{ source }}</a></div>
+    <div v-if="source">
+      {{ i18nText.source }}<a :href="source">{{ source }}</a>
+    </div>
   </div>
 </template>
 
@@ -20,6 +22,8 @@
 </style>
 
 <script lang="ts">
+import { usePageLang } from "vuepress/client";
+
 export default {
   computed: {
     frontmatter() {
@@ -27,6 +31,19 @@ export default {
     },
     source() {
       return this.frontmatter.source;
+    },
+    i18nText() {
+      return {
+        "en-US": {
+          source: "Original Article:",
+        },
+        "zh-CN": {
+          source: "原文：",
+        },
+        "zh-TW": {
+          source: "原文：",
+        },
+      }[usePageLang().value];
     },
   },
 };

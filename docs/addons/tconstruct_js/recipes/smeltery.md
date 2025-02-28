@@ -1,6 +1,9 @@
 ---
-title: Smeltery
+title: Smeltery Recipes
 isOriginal: true
+layout: AddonPage
+mod:
+  ref: "../README.md"
 ---
 
 ## Alloy

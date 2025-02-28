@@ -1,5 +1,5 @@
 <template>
-  <component :is="currentComponent" :link="link" :text="text" />
+  <component :is="currentComponent" :link="resolvedLink" :text="resolvedText" />
 </template>
 
 <script lang="ts">
@@ -53,7 +53,7 @@ export default {
           return getComponentByExtension(getExtension(this.link));
       }
     },
-    link() {
+    resolvedLink() {
       // "/xxx.html" -> "/docs/xxx/"
       return (
         "/docs/" +
@@ -63,7 +63,7 @@ export default {
         this.link
       );
     },
-    text() {
+    resolvedText() {
       // 如果沒有指定 text，則使用 link
       return this.text ?? this.link;
     },

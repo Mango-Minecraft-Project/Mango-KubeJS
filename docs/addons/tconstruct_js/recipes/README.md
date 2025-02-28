@@ -3,6 +3,9 @@ title: Recipes
 isOriginal: true
 dir:
   link: true
+layout: AddonPage
+mod:
+  ref: "../README.md"
 ---
 
 ```js

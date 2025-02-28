@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" class="icon-image" />
+  <img :src="outputSrc" class="icon-image" />
 </template>
 
 <style scoped>
@@ -40,7 +40,7 @@ export default {
     preset: String,
   },
   computed: {
-    src() {
+    outputSrc() {
       return PRESET[this.preset] ?? this.src;
     },
   },

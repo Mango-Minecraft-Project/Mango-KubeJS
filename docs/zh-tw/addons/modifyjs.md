@@ -11,7 +11,9 @@ mod:
   name: ModifyJS
   author: AnNingUI
   CurseForge: mc-mod/modifyjs
+  Modrinth: mod/modifyjs
   GitHub: AnNingUI/ModifyJS
+  McMod: class/18566
 source: https://github.com/AnNingUI/ModifyJs/blob/main/README_ZH.md
 ---
 

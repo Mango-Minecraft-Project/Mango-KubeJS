@@ -2,7 +2,7 @@
 title: TConJSEvents.modifierRegistry
 shortTitle: modifierRegistry
 isOriginal: true
-headerDepth: 4
+headerDepth: 3
 layout: AddonPage
 mod:
   ref: "../README.md"
@@ -39,49 +39,51 @@ builder 實際在 ProbeJS 生成的文件中的類型顯示為 `Consumer_<com.xi
 
 ### 方法列表
 
-| 方法                                          | 適用範圍            | 簡介                                                              |
-| --------------------------------------------- | ------------------- | ----------------------------------------------------------------- |
-| [`addAttributes`](#addattributes)             | <Common /> 通用     | 新增屬性修飾符                                                    |
-| [`addToolStats`](#addtoolstats)               | <Common /> 通用     | 新增物品基本數值                                                  |
-| [`addVolatileData`](#addvolatiledata)         | <Common /> 通用     | 工具更新時添加額外資料                                            |
-| [`armorTakeAttacked`](#armotakeattacked)      | <Armor />  盔甲     | 裝備時受傷能力                                                    |
-| [`canBlockAttacked`](#canblockattacked)       | <Armor /> 盔甲      | 免疫傷害能力                                                      |
-| [`findBowAmmo`](#findbowammo)                 | <Ranged /> 遠程武器 | 彈藥找尋邏輯                                                      |
-| [`getBreakSpeed`](#getbreakspeed)             | <Common /> 通用     | 方塊破壞速度                                                      |
-| [`getDurabilityRGB`](#getdurabilityrgb)       | <Common /> 通用     | 耐久度條顏色                                                      |
-| [`getDurabilityWidth`](#getdurabilitywidth)   | <Common /> 通用     | 耐久度條長度                                                      |
-| [`getMeleeDamage`](#getmeleedamage)           | <Melee /> 近戰武器  | 攻擊傷害                                                          |
-| [`getRepairFactor`](#getrepairfactor)         | <Common /> 通用     | 物品修復工廠方法                                                  |
-| [`getToolDamage`](#gettooldamage)             | <Common /> 通用     | 工具耐久                                                          |
-| [`getUseAnim`](#getuseanim)                   | <Common /> 通用     | 工具使用動畫                                                      |
-| [`getUseTime`](#getusetime)                   | <Common /> 通用     | 使用時間                                                          |
-| [`isDurabilityShowBar`](#isdurabilityshowbar) | <Common /> 通用     | 耐久度條是否顯示                                                  |
-| [`isSingleLevel`](#issinglelevel)             | <Common /> 通用     | 是否單一等級                                                      |
-| [`modifyDamageTake`](#modifydamagetake)       | <Armor /> 盔甲      | 裝備時受到的最終傷害修改                                          |
-| [`modifyProtection`](#modifyprotection)       | <Armor /> 盔甲      | 修改[保護係數](https://zh.minecraft.wiki/w/盔甲机制#保护魔咒机制) |
-| [`modifyStat`](#modifystat)                   | <Common /> 通用     | 修改物品基本數值                                                  |
-| [`onAfterBreak`](#onafterbreak)               | <Common /> 通用     | 方塊破壞事件（後）                                                |
-| [`onAfterMeleeHit`](#onaftermeleehit)         | <Melee /> 近戰武器  | 攻擊事件（後）                                                    |
-| [`onBeforeMeleeHit`](#onbeforemeleehit)       | <Melee /> 近戰武器  | 攻擊事件（前）                                                    |
-| [`onDamageDealt`](#ondamagedealt)             | <Armor /> 盔甲      | 裝備時攻擊實體事件                                                |
-| [`onEquip`](#onequip)                         | <Armor /> 盔甲      | 裝備事件                                                          |
-| [`onFinishUsing`](#onfinishusing)             | <Common /> 通用     | 長按使用結束事件                                                  |
-| [`onInventoryTick`](#oninventorytick)         | <Common /> 通用     | 物品欄刻事件                                                      |
-| [`onModifierRemove`](#onmodifierremove)       | <Common /> 通用     | 匠魂修飾符去除事件                                                |
-| [`onStoppedUsing`](#onstoppedusing)           | <Common /> 通用     | 長按使用停止事件                                                  |
-| [`onUnequip`](#onunequip)                     | <Armor /> 盔甲      | 取消裝備事件                                                      |
-| [`onUseTool`](#onusool)                       | <Common /> 通用     | 物品右鍵事件                                                      |
-| [`onUsingTick`](#onusingtick)                 | <Common /> 通用     | 長按使用刻事件                                                    |
-| [`processLoot`](#processloot)                 | <Common /> 通用     | 戰利品處理                                                        |
-| [`projectileHitBlock`](#projectilehitblock)   | <Ranged /> 遠程武器 | 彈射物擊中方塊                                                    |
-| [`projectileHitEntity`](#projectilehitentity) | <Ranged /> 遠程武器 | 彈射物擊中實體                                                    |
-| [`projectileLaunch`](#projectilelaunch)       | <Ranged /> 遠程武器 | 彈射物發射                                                        |
-| [`setElytraFlight`](#setelytraflight)         | <Armor /> 盔甲      | 鞘翅滑翔能力                                                      |
-| [`tooltipSetting`](#tooltipsetting)           | <Common /> 通用     | 物品提示設置                                                      |
-| [`toolUseAction`](#tooluseaction)             | <Common /> 通用     | 操作行為                                                          |
-| [`ToolValidate`](#toolvalidate)               | <Common /> 通用     | 添加額外資料的檢查                                                |
-| [`updateArmorLooting`](#updatearmorlooting)   | <Armor /> 盔甲      | 修改掠奪等級                                                      |
-| [`updateToolLooting`](#updatetoollooting)     | <Common /> 通用     | 修改掠奪等級                                                      |
+| 方法                                          | 適用範圍            | 簡介                     |
+| --------------------------------------------- | ------------------- | ------------------------ |
+| [`addAttributes`](#addattributes)             | <Common /> 通用     | 新增屬性修飾符           |
+| [`addToolStats`](#addtoolstats)               | <Common /> 通用     | 新增物品基本數值         |
+| [`addVolatileData`](#addvolatiledata)         | <Common /> 通用     | 工具更新時添加額外資料   |
+| [`armorTakeAttacked`](#armotakeattacked)      | <Armor />  盔甲     | 裝備時受傷能力           |
+| [`canBlockAttacked`](#canblockattacked)       | <Armor /> 盔甲      | 免疫傷害能力             |
+| [`conditionalStat`](#conditionalstat)         | <Common /> 通用     | 修改物品基本數值         |
+| [`findBowAmmo`](#findbowammo)                 | <Ranged /> 遠程武器 | 彈藥找尋邏輯             |
+| [`getBreakSpeed`](#getbreakspeed)             | <Common /> 通用     | 方塊破壞速度             |
+| [`getDurabilityRGB`](#getdurabilityrgb)       | <Common /> 通用     | 耐久度條顏色             |
+| [`getDurabilityWidth`](#getdurabilitywidth)   | <Common /> 通用     | 耐久度條長度             |
+| [`getMeleeDamage`](#getmeleedamage)           | <Melee /> 近戰武器  | 攻擊傷害                 |
+| [`getRepairFactor`](#getrepairfactor)         | <Common /> 通用     | 物品修復工廠方法         |
+| [`getToolDamage`](#gettooldamage)             | <Common /> 通用     | 工具耐久                 |
+| [`getUseAnim`](#getuseanim)                   | <Common /> 通用     | 工具使用（右鍵）動畫     |
+| [`getUseTime`](#getusetime)                   | <Common /> 通用     | 使用時間                 |
+| [`isDurabilityShowBar`](#isdurabilityshowbar) | <Common /> 通用     | 耐久度條是否顯示         |
+| [`isSingleLevel`](#issinglelevel)             | <Common /> 通用     | 是否單一等級             |
+| [`modifyDamageTaken`](#modifydamagetaken)     | <Armor /> 盔甲      | 裝備時受到的最終傷害修改 |
+| [`modifyProtection`](#modifyprotection)       | <Armor /> 盔甲      | 修改[保護係數]           |
+| [`onAfterBreak`](#onafterbreak)               | <Common /> 通用     | 方塊破壞事件（後）       |
+| [`onAfterMeleeHit`](#onaftermeleehit)         | <Melee /> 近戰武器  | 攻擊事件（後）           |
+| [`onBeforeMeleeHit`](#onbeforemeleehit)       | <Melee /> 近戰武器  | 攻擊事件（前）           |
+| [`onDamageDealt`](#ondamagedealt)             | <Armor /> 盔甲      | 裝備時攻擊實體事件       |
+| [`onEquip`](#onequip)                         | <Armor /> 盔甲      | 裝備事件                 |
+| [`onFinishUsing`](#onfinishusing)             | <Common /> 通用     | 長按使用結束事件         |
+| [`onInventoryTick`](#oninventorytick)         | <Common /> 通用     | 物品欄刻事件             |
+| [`onModifierRemove`](#onmodifierremove)       | <Common /> 通用     | 匠魂修飾符去除事件       |
+| [`onStoppedUsing`](#onstoppedusing)           | <Common /> 通用     | 長按使用停止事件         |
+| [`onUnequip`](#onunequip)                     | <Armor /> 盔甲      | 取消裝備事件             |
+| [`onUseTool`](#onusool)                       | <Common /> 通用     | 物品右鍵事件             |
+| [`onUsingTick`](#onusingtick)                 | <Common /> 通用     | 長按使用刻事件           |
+| [`processLoot`](#processloot)                 | <Common /> 通用     | 戰利品處理               |
+| [`projectileHitBlock`](#projectilehitblock)   | <Ranged /> 遠程武器 | 彈射物擊中方塊           |
+| [`projectileHitEntity`](#projectilehitentity) | <Ranged /> 遠程武器 | 彈射物擊中實體           |
+| [`projectileLaunch`](#projectilelaunch)       | <Ranged /> 遠程武器 | 彈射物發射               |
+| [`setElytraFlight`](#setelytraflight)         | <Armor /> 盔甲      | 鞘翅滑翔能力             |
+| [`tooltipSetting`](#tooltipsetting)           | <Common /> 通用     | 物品提示設置             |
+| [`toolUseAction`](#tooluseaction)             | <Common /> 通用     | 物品左鍵行為             |
+| [`updateArmorLooting`](#updatearmorlooting)   | <Armor /> 盔甲      | 修改掠奪等級             |
+| [`updateToolLooting`](#updatetoollooting)     | <Common /> 通用     | 修改掠奪等級             |
+| [`validateTool`](#validatetool)               | <Common /> 通用     | 添加額外資料的檢查       |
+
+[保護係數]: https://zh.minecraft.wiki/w/盔甲机制#保护魔咒机制
 
 ---
 
@@ -237,6 +239,44 @@ canBlockAttacked(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentC
 ```js
 builder.canBlockAttacked((view, lvl, context, slot, source, damage) => {
   return !!(source.immediate && source.actual && source.immediate.is(source.actual));d
+});
+```
+
+---
+
+#### `conditionalStat`
+
+```ts
+conditionalStat(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, arg3: FloatToolStat, arg4: number, arg5: number) => number) => this
+```
+
+##### 參數
+
+- `arg0: IToolStackView` - 工具堆疊視圖
+- `arg1: number` - 匠魂修飾符等級
+- `arg2: LivingEntity` - 生物
+- `arg3: FloatToolStat` - 工具基本數值
+- `arg4: number` - 基礎數值
+- `arg5: number` - 倍率
+
+##### 回傳值
+
+- `number` - 數值
+
+##### 範例
+
+每級增加 10% 的攻擊傷害和彈射物傷害
+
+```js
+builder.modifyStat((view, lvl, entity, stat, base, magnification) => {
+  switch (stat) {
+    case TinkerToolStats.ATTACK_DAMAGE:
+      return base * (1 + lvl * magnification);
+    case TinkerToolStats.PROJECTILE_DAMAGE:
+      return base * (1 + lvl * magnification);
+    default:
+      return base;
+  }
 });
 ```
 
@@ -542,10 +582,10 @@ builder.isSingleLevel();
 
 ---
 
-#### `modifyDamageTake`
+#### `modifyDamageTaken`
 
 ```ts
-modifyDamageTake(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentContext, arg3: EquipmentSlot, arg4: DamageSource, arg5: number) => number) => this
+modifyDamageTaken(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentContext, arg3: EquipmentSlot, arg4: DamageSource, arg5: number) => number) => this
 ```
 
 ##### 參數
@@ -599,44 +639,6 @@ modifyProtection(consumer: (arg0: IToolStackView, arg1: number, arg2: EquipmentC
 ```js
 builder.modifyProtection((view, lvl, context, slot, source, protection) => {
   return protection - protection * (0.1 * lvl);
-});
-```
-
----
-
-#### `modifyStat`
-
-```ts
-modifyStat(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntity, arg3: FloatToolStat, arg4: number, arg5: number) => number) => this
-```
-
-##### 參數
-
-- `arg0: IToolStackView` - 工具堆疊視圖
-- `arg1: number` - 匠魂修飾符等級
-- `arg2: LivingEntity` - 生物
-- `arg3: FloatToolStat` - 工具基本數值
-- `arg4: number` - 基礎數值
-- `arg5: number` - 倍率
-
-##### 回傳值
-
-- `number` - 數值
-
-##### 範例
-
-每級增加 10% 的攻擊傷害和彈射物傷害
-
-```js
-builder.modifyStat((view, lvl, entity, stat, base, magnification) => {
-  switch (stat) {
-    case TinkerToolStats.ATTACK_DAMAGE:
-      return base * (1 + lvl * magnification);
-    case TinkerToolStats.PROJECTILE_DAMAGE:
-      return base * (1 + lvl * magnification);
-    default:
-      return base;
-  }
 });
 ```
 
@@ -984,8 +986,13 @@ processLoot(consumer: (arg0: IToolStackView, arg1: number, arg2: List<ItemStack>
 - `arg3: LootContext` - 戰利品上下文
 
 ##### 範例
-```js
 
+清空掉落物品
+
+```js
+builder.processLoot((view, lvl, items, context) => {
+  items.clear();
+});
 ```
 
 ---
@@ -1000,7 +1007,7 @@ projectileHitBlock(consumer: (arg0: ModifierNBT, arg1: ModDataNBT, arg2: number,
 
 - `arg0: ModifierNBT` - 修飾符
 - `arg1: ModDataNBT` - 匠魂資料NBT
-- `arg2: number` - 傷害值
+- `arg2: number` - 修飾符等級
 - `arg3: Projectile` - 彈射物
 - `arg4: BlockHitResult` - 方塊擊中結果
 - `arg5: LivingEntity` - 生物
@@ -1058,11 +1065,18 @@ projectileLaunch(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEnti
 - `arg3: Projectile` - 彈射物
 - `arg4: AbstractArrow` - 抽象箭
 - `arg5: ModDataNBT` - 匠魂資料NBT
-- `arg6: boolean` - 是否成功
+- `arg6: boolean` - 是否為第一次觸發，多重射擊可能觸發多次此事件
 
 ##### 範例
-```js
 
+根據玩家的飽食度增加箭的傷害
+
+```js
+builder.projectileLaunch((view, lvl, living, projectile, arrow, modData, isPrimary) => {
+  if (living.player) {
+    arrow.baseDamage += living.foodData.foodLevel;
+  }
+});
 ```
 
 ---
@@ -1078,15 +1092,20 @@ setElytraFlight(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntit
 - `arg0: IToolStackView` - 工具堆疊視圖
 - `arg1: number` - 匠魂修飾符等級
 - `arg2: LivingEntity` - 生物
-- `arg3: number` - 損壞值
+- `arg3: number` - 飛行時間
 
 ##### 回傳值
 
 - `boolean` - 是否滑翔
 
 ##### 範例
-```js
 
+使玩家無需滑翔即可飛行
+
+```js
+builder.setElytraFlight((view, lvl, living, flyDuration) => {
+  return true;
+});
 ```
 
 ---
@@ -1140,10 +1159,10 @@ toolUseAction(consumer: (arg0: IToolStackView, arg1: number) => ToolAction_) => 
 
 ---
 
-#### `ToolValidate`
+#### `validateTool`
 
 ```ts
-ToolValidate(consumer: (arg0: IToolStackView, arg1: number) => Component_) => this
+validateTool(consumer: (arg0: IToolStackView, arg1: number) => Component_) => this
 ```
 
 ##### 參數
@@ -1182,8 +1201,13 @@ updateArmorLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingC
 - `number` - 掠奪等級
 
 ##### 範例
-```js
 
+每級增加掠奪等級
+
+```js
+builder.updateArmorLooting((view, lvl, looting, equipment, slot, originalLvl) => {
+  return originalLvl * lvl;
+});
 ```
 
 ---
@@ -1206,8 +1230,13 @@ updateToolLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingCo
 - `number` - 掠奪等級
 
 ##### 範例
-```js
 
+每級增加掠奪等級
+
+```js
+builder.updateToolLooting((view, lvl, looting,  originalLvl) => {
+  return originalLvl * lvl;
+});
 ```
 
 ---
@@ -1217,6 +1246,7 @@ updateToolLooting(consumer: (arg0: IToolStackView, arg1: number, arg2: LootingCo
 | 方法名稱                                        | 簡介           |
 | ----------------------------------------------- | -------------- |
 | [`getAttributeModifier`](#getattributemodifier) | 獲取屬性修飾符 |
+| [`toolActionOf`](#toolactionof)                 | 工具操作行為   |
 
 ---
 
@@ -1229,12 +1259,24 @@ getAttributeModifier(arg0: string, arg1: string, arg2: number, arg3: string): At
 ##### 參數
 
 - `arg0: string` - 屬性修飾符 UUID
-- `arg1: string` - 屬性修飾符  ID
+- `arg1: string` - 屬性修飾符 ID
 - `arg2: number` - 數值
 - `arg3: string` - 屬性修飾符類型，可參考 [運算模式§MinecraftWiki](https://zh.minecraft.wiki/w/属性#运算模式)
   - `"addition"`: 增量操作
   - `"multiply_base"`: 倍率操作
   - `"multiply_total"`: 最終倍乘操作
+
+---
+
+#### `toolActionOf`
+
+```ts
+toolActionOf(arg0: string): ToolAction;
+```
+
+##### 參數
+
+- `arg0: string` - 工具操作 ID
 
 <script setup>
 import Common from "@private-components/tconstruct_js/applicable/Common.vue";

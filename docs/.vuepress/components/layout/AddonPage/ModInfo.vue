@@ -1,7 +1,7 @@
 <template>
   <div v-if="hasInfoBox" class="component-modinfo-block">
-    <div v-if="name">模組名稱：<br />　{{ name }}</div>
-    <div v-if="author">作者：<br />　{{ author }}</div>
+    <div v-if="name">{{ i18nText.name }}<br />　{{ name }}</div>
+    <div v-if="author">{{ i18nText.author }}<br />　{{ author }}</div>
     <div v-if="hasExternalLink">
       <span v-if="CurseForge"><BadgeCurseForge :path="CurseForge" /><br /></span>
       <span v-if="Modrinth"><BadgeModrinth :path="Modrinth" /><br /></span>
@@ -34,10 +34,29 @@
 </style>
 
 <script lang="ts">
+import { usePageLang } from "vuepress/client";
+
 export default {
   computed: {
     mod() {
       return this.$page.frontmatter.mod;
+    },
+
+    i18nText() {
+      return {
+        "en-US": {
+          name: "Mod Name: ",
+          author: "Author: ",
+        },
+        "zh-CN": {
+          name: "模组名称：",
+          author: "作者：",
+        },
+        "zh-TW": {
+          name: "模組名稱：",
+          author: "作者：",
+        },
+      }[usePageLang().value];
     },
 
     hasInfoBox() {
