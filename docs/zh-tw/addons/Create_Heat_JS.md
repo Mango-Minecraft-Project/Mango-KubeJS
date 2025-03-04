@@ -9,7 +9,7 @@ tags:
 layout: AddonPage
 mod:
   name: Create Heat JS
-  author: XiaoHuNao
+  author: 小胡闹
   CurseForge: mc-mods/create-heat-js
   Modrinth: mod/create-heat-js
   GitHub: XiaoHuNao/CreateHeatJS

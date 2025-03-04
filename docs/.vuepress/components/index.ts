@@ -4,6 +4,7 @@ import IconImage from "./IconImage.vue";
 import Attachment from "./attachment/Attachment.vue";
 import ModInfo from "./layout/AddonPage/ModInfo.vue";
 import ArticleSource from "./layout/AddonPage/ArticleSource.vue";
+import Http from "./badge/http/http.vue";
 
 const alias = {
   Attach: Attachment,
@@ -16,6 +17,7 @@ export default {
   Attachment,
   ModInfo,
   ArticleSource,
+  Http,
 
   ...alias,
 };

@@ -117,7 +117,7 @@ export default hopeTheme(
       blog: true,
 
       components: {
-        components: ["Badge", "VPCard", "VidStack"],
+        components: ["Badge", "VPCard", "VidStack", "SiteInfo", "VPBanner"],
       },
 
       icon: {

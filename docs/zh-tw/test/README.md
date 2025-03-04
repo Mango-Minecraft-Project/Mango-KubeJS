@@ -3,8 +3,11 @@ dir:
   index: false
 ---
 
-<TestComponent path="./AddonPage" />
+<!-- <TestComponent refPath="./AddonPage" /> -->
+<!-- <TestComponent /> -->
+
+<!-- <Catalog /> -->
 
 <script setup>
-import TestComponent from "@private-components/TestComponent.vue";
+// import TestComponent from "@private-components/TestComponent.vue";
 </script>

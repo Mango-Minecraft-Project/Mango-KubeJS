@@ -34,13 +34,28 @@
 </style>
 
 <script lang="ts">
-import { usePageLang } from "vuepress/client";
+import { usePageLang, useRoutes } from "vuepress/client";
 
 export default {
   computed: {
     mod() {
       return this.$page.frontmatter.mod;
     },
+
+    // ref() {
+    //   const ref = this.mod?.ref;
+    //   let page = null;
+    //   if (ref) {
+    //     const routes = useRoutes();
+    //     try {
+    //       page = routes[ref].loader()
+    //       console.log(page)
+    //     } catch (error) {
+    //       console.error(error);
+    //     }
+    //   }
+    //   return page;
+    // },
 
     i18nText() {
       return {

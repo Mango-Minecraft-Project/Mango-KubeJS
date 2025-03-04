@@ -1,5 +1,4 @@
 ---
-index: false
 layout: AddonPage
 
 title: BBB
