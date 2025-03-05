@@ -11,6 +11,9 @@ importers:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.19
         version: 2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4)
+      '@vuepress/plugin-redirect':
+        specifier: 2.0.0-rc.81
+        version: 2.0.0-rc.81(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13))
       '@vuepress/plugin-search':
         specifier: 2.0.0-rc.78
         version: 2.0.0-rc.78(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13))
@@ -880,6 +883,11 @@ packages:
     peerDependencies:
       vuepress: 2.0.0-rc.19
 
+  '@vuepress/helper@2.0.0-rc.81':
+    resolution: {integrity: sha512-20n/FVs0gujZIo8SwDmwx9J5nMaS8VCzcCxbeyzw2QU2n+nTIDKzLg9c7SWylBVNQ+866ZpL8a8fhJe+4v00sA==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.20
+
   '@vuepress/highlighter-helper@2.0.0-rc.71':
     resolution: {integrity: sha512-Hi9ira4VmX1MuRcagbSIZ/hHtwB4Fduz/NfiFGmOYX68zWIsQ1e90Ntku8GeI2MEDWlFxGU8PY/7VcXwINjoXQ==}
     peerDependencies:
@@ -1019,6 +1027,12 @@ packages:
     hasBin: true
     peerDependencies:
       vuepress: 2.0.0-rc.19
+
+  '@vuepress/plugin-redirect@2.0.0-rc.81':
+    resolution: {integrity: sha512-12r8F7gUMvmUA+eg9dsOtQ2kb7VI1Oo7/WwJISOPtLh/K6QYb2iZ+7R6KeLlv9eIWWSuX3HI4Y1TAyy8xfLZkQ==}
+    hasBin: true
+    peerDependencies:
+      vuepress: 2.0.0-rc.20
 
   '@vuepress/plugin-rtl@2.0.0-rc.71':
     resolution: {integrity: sha512-62tJkGxjCEW0Q8zcqUANHGdm+mVXmfZZX3aHC04cd7nvgi4qrfaQlFfmAsDkCQa6FW5f8eT+7S1jOh2DhGgr1g==}
@@ -1211,6 +1225,10 @@ packages:
 
   commander@13.0.0:
     resolution: {integrity: sha512-oPYleIY8wmTVzkvQq10AEok6YcTC4sRUBl8F9gVuwchGVUCTbl/vhLTaQqutuuySYOsu8YTgV+OxKc/8Yvx+mQ==}
+    engines: {node: '>=18'}
+
+  commander@13.1.0:
+    resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
     engines: {node: '>=18'}
 
   connect-history-api-fallback@2.0.0:
@@ -3047,6 +3065,18 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
+  '@vuepress/helper@2.0.0-rc.81(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13))':
+    dependencies:
+      '@vue/shared': 3.5.13
+      '@vueuse/core': 12.7.0
+      cheerio: 1.0.0
+      fflate: 0.8.2
+      gray-matter: 4.0.3
+      vue: 3.5.13
+      vuepress: 2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13)
+    transitivePeerDependencies:
+      - typescript
+
   '@vuepress/highlighter-helper@2.0.0-rc.71(@vueuse/core@12.7.0)(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13))':
     dependencies:
       vuepress: 2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13)
@@ -3292,6 +3322,16 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
+  '@vuepress/plugin-redirect@2.0.0-rc.81(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13))':
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.81(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13))
+      '@vueuse/core': 12.7.0
+      commander: 13.1.0
+      vue: 3.5.13
+      vuepress: 2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13)
+    transitivePeerDependencies:
+      - typescript
+
   '@vuepress/plugin-rtl@2.0.0-rc.71(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13))':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.71(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.7)(sass-embedded@1.83.4))(vue@3.5.13))
@@ -3524,6 +3564,8 @@ snapshots:
   comma-separated-tokens@2.0.3: {}
 
   commander@13.0.0: {}
+
+  commander@13.1.0: {}
 
   connect-history-api-fallback@2.0.0: {}
 

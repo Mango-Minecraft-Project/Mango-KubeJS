@@ -137,7 +137,38 @@ export default hopeTheme(
 
       git: {
         changelog: true,
-      }
+      },
+
+      redirect: {
+        config: (app) => {
+          const config = {
+            ...Object.fromEntries(
+              app.pages
+                .filter(({ path }) => {
+                  const data = path.split("/").includes("addons");
+                  return data;
+                })
+                .map(({ path }) => {
+                  const before = path
+                    .replace("Heaven_Destiny_Moment", "heaven_destiny_moment")
+                    .replace("TConstruct_JS", "tconstruct_js");
+                  const data = [before, path];
+                  return before !== path ? data : [];
+                })
+                .filter((data) => !!data.length)
+            ),
+            "/zh-tw/addons/advancement_js": "/zh-tw/addons/Advancement_JS",
+            "/zh-tw/addons/createheatjs": "/zh-tw/addons/Create_Heat_JS",
+            "/zh-tw/addons/create-ponder": "/zh-tw/addons/Create_Ponder",
+            "/zh-tw/addons/eventjs": "/zh-tw/addons/EventJS",
+            "/zh-tw/addons/filesjs": "/zh-tw/addons/FilesJS",
+            "/zh-tw/addons/heaven_destiny_moment/": "/zh-tw/addons/Heaven_Destiny_Moment/",
+            "/zh-tw/addons/tconstruct_js/": "/zh-tw/addons/TConstruct_JS/",
+          };
+          // console.log(config);
+          return config;
+        },
+      },
     },
   },
   {
