@@ -164,6 +164,8 @@ export default hopeTheme(
             "/zh-tw/addons/filesjs": "/zh-tw/addons/FilesJS",
             "/zh-tw/addons/heaven_destiny_moment/": "/zh-tw/addons/Heaven_Destiny_Moment/",
             "/zh-tw/addons/tconstruct_js/": "/zh-tw/addons/TConstruct_JS/",
+
+            "/addons/tconstruct_js/": "/addons/TConstruct_JS/",
           };
           // console.log(config);
           return config;
