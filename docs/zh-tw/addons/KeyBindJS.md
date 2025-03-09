@@ -30,3 +30,38 @@ KeyBindEvents.modify((event) => {
 ::: important
 請勿在獨立伺服器端安裝此模組，因為它會導致伺服器和客戶端之間的不一致。
 :::
+
+
+在开始进行使用按键绑定前你需要注册按键绑定或者添加对已有按键绑定的监听
+```js
+//在startup
+KeyBindEvents.register(event=>{
+    //创建按键绑定 (第一个参数为标识，按键触发都会使用这个标识)
+    event.create('create1','key.test.create.1',-1,'key.group.debug')
+
+    event.create('create2','key.test.create.2',GLFW.GLFW_KEY_X,'key.group.debug')
+    //添加修饰按键
+    .addModifier(KeyModifier.ALT)
+})
+KeyBindEvents.modify(event=>{
+    //添加对原版前进键的监听 (第一个参数为标识)
+    //若不清楚有哪些按键可以使用 @key_name 查看
+    event.addListener('forward',"key.forward")
+})
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
