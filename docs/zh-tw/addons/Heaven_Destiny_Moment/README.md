@@ -1,9 +1,11 @@
 ---
-title: 天命時刻（Heaven Destiny Moment）
+title: 天命時刻
 description: 提供 API 以創建各種事件，如血月、襲擊等事件。
 isOriginal: true
 dir:
   link: true
+  icon: star
+  order: 1
 categories:
   - neoforge-1.21
 layout: AddonPage

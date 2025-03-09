@@ -4,6 +4,8 @@ description: 為 1.20.1 的 Tinkers' Construct 添加 KubeJS 支援。
 isOriginal: true
 dir:
   link: true
+  icon: star
+  order: 1
 categories:
   - forge-1.20
 tags:
