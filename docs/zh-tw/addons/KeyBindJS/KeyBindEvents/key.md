@@ -35,12 +35,13 @@ keyReleaseInGui(handler: (event: KeyPressedEvent) => void):void,
 
 ### 屬性與方法
 
-| 名稱                             | 回傳值            | 說明               |
-| -------------------------------- | ----------------- | ------------------ |
-| `removeGameStage(stage: string)` | `void`            | 移除遊戲階段       |
-| `addGameStage(stage: string)`    | `void`            | 添加遊戲階段       |
-| `hasGameStage(stage: string)`    | `boolean`         | 判斷是否有遊戲階段 |
-| `getLevel()` <br> `get level`    | `Level`           | 獲取當前世界       |
-| `getEntity()` <br> `get entity`  | `Entity`          | 獲取當前實體       |
-| `getPlayer()` <br> `get player`  | `LocalPlayer`     | 獲取當前玩家       |
-| `getServer()` <br> `get server`  | `MinecraftServer` | 獲取伺服器         |
+| 名稱                                    | 回傳值            | 說明               |
+| --------------------------------------- | ----------------- | ------------------ |
+| `removeGameStage(stage: string)`        | `void`            | 移除遊戲階段       |
+| `addGameStage(stage: string)`           | `void`            | 添加遊戲階段       |
+| `hasGameStage(stage: string)`           | `boolean`         | 判斷是否有遊戲階段 |
+| `getCustomName()` <br> `get customName` | `string`          | 獲取自定義名稱     |
+| `getEntity()` <br> `get entity`         | `Entity`          | 獲取當前實體       |
+| `getLevel()` <br> `get level`           | `Level`           | 獲取當前世界       |
+| `getPlayer()` <br> `get player`         | `LocalPlayer`     | 獲取當前玩家       |
+| `getServer()` <br> `get server`         | `MinecraftServer` | 獲取伺服器         |
