@@ -25,13 +25,6 @@ export default defineUserConfig({
       title: "芒果的 KubeJS Wiki",
       description: "芒果的 KubeJS Wiki",
     },
-    // "/test/zh-tw": {
-    //   lang: "zh-TW",
-    // },
-    // "/test/zh-cn": {
-    "/test/": {
-      lang: "zh-CN",
-    },
   },
 
   theme,
