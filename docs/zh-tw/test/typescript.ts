@@ -1,1 +1,0 @@
-import { usePageData } from "vuepress/client"

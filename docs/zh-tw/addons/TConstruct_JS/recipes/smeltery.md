@@ -14,8 +14,15 @@ mod:
 /**
  * @param temperature defaults to `100.0`
 */
-alloy(result: Internal.OutputFluid_, inputs: Internal.InputFluid_[]):Special.Recipes.AlloyTconstruct
-alloy(result: Internal.OutputFluid_, inputs: Internal.InputFluid_[], temperature?: number):Special.Recipes.AlloyTconstruct
+alloy(result: OutputFluid_, inputs: InputFluid_[]): AlloyTconstruct
+alloy(result: OutputFluid_, inputs: InputFluid_[], temperature?: number): AlloyTconstruct
+```
+```ts
+class AlloyTconstruct {
+  result(result: OutputFluid_): this
+  inputs(inputs: InputFluid_[]): this
+  temperature(temperature: number): this
+}
 ```
 
 ## 澆鑄
@@ -30,10 +37,20 @@ alloy(result: Internal.OutputFluid_, inputs: Internal.InputFluid_[], temperature
  * @param cooling_time defaults to `1.0`
  * @param switch_slots defaults to `false`
 */
-casting_table(result: OutputItem_, fluid: Internal.InputFluid_, cast: InputItem_):Special.Recipes.CastingTableTconstruct
-casting_table(result: OutputItem_, fluid: Internal.InputFluid_, cast: InputItem_, cast_consumed?: boolean):Special.Recipes.CastingTableTconstruct
-casting_table(result: OutputItem_, fluid: Internal.InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number):Special.Recipes.CastingTableTconstruct
-casting_table(result: OutputItem_, fluid: Internal.InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number, switch_slots?: boolean):Special.Recipes.CastingTableTconstruct
+casting_table(result: OutputItem_, fluid: InputFluid_, cast: InputItem_): CastingTableTconstruct
+casting_table(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean): CastingTableTconstruct
+casting_table(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number): CastingTableTconstruct
+casting_table(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number, switch_slots?: boolean): CastingTableTconstruct
+```
+```ts
+class CastingTableTconstruct {
+  result(result: OutputItem_): this
+  fluid(fluid: InputFluid_): this
+  cast(cast: InputItem_): this
+  cast_consumed(castConsumed: boolean): this
+  cooling_time(coolingTime: number): this
+  switch_slots(switchSlots: boolean): this
+}
 ```
 
 #### `tconstruct.casting_basin`
@@ -44,10 +61,21 @@ casting_table(result: OutputItem_, fluid: Internal.InputFluid_, cast: InputItem_
  * @param cooling_time defaults to `1.0`
  * @param switch_slots defaults to `false`
 */
-casting_basin(result: OutputItem_, fluid: Internal.InputFluid_, cast: InputItem_):Special.Recipes.CastingTableTconstruct
-casting_basin(result: OutputItem_, fluid: Internal.InputFluid_, cast: InputItem_, cast_consumed?: boolean):Special.Recipes.CastingTableTconstruct
-casting_basin(result: OutputItem_, fluid: Internal.InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number):Special.Recipes.CastingTableTconstruct
-casting_basin(result: OutputItem_, fluid: Internal.InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number, switch_slots?: boolean):Special.Recipes.CastingTableTconstruct
+casting_basin(result: OutputItem_, fluid: InputFluid_): CastingBasinTconstruct
+casting_basin(result: OutputItem_, fluid: InputFluid_, cast: InputItem_): CastingTableTconstruct
+casting_basin(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean): CastingTableTconstruct
+casting_basin(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number): CastingTableTconstruct
+casting_basin(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number, switch_slots?: boolean): CastingTableTconstruct
+```
+```ts
+class CastingBasinTconstruct {
+  result(result: OutputItem_): this
+  fluid(fluid: InputFluid_): this
+  cast(cast: InputItem_): this
+  cast_consumed(castConsumed: boolean): this
+  cooling_time(coolingTime: number): this
+  switch_slots(switchSlots: boolean): this
+}
 ```
 
 ### 鑄件複製
@@ -58,8 +86,15 @@ casting_basin(result: OutputItem_, fluid: Internal.InputFluid_, cast: InputItem_
 /**
  * @param cooling_time defaults to `1.0`
 */
-table_duplication(cast: InputItem_, fluid: Internal.InputFluid_):Special.Recipes.BasinDuplicationTconstruct
-table_duplication(cast: InputItem_, fluid: Internal.InputFluid_, cooling_time?: number):Special.Recipes.BasinDuplicationTconstruct
+table_duplication(cast: InputItem_, fluid: InputFluid_): BasinDuplicationTconstruct
+table_duplication(cast: InputItem_, fluid: InputFluid_, cooling_time?: number): BasinDuplicationTconstruct
+```
+```ts
+class TableDuplicationTconstruct {
+  cast(cast: InputItem_): this
+  fluid(fluid: InputFluid_): this
+  cooling_time(coolingTime: number): this
+}
 ```
 
 #### `tconstruct.basin_duplication`
@@ -68,8 +103,15 @@ table_duplication(cast: InputItem_, fluid: Internal.InputFluid_, cooling_time?: 
 /**
  * @param cooling_time defaults to `1.0`
 */
-basin_duplication(cast: InputItem_, fluid: Internal.InputFluid_):Special.Recipes.BasinDuplicationTconstruct
-basin_duplication(cast: InputItem_, fluid: Internal.InputFluid_, cooling_time?: number):Special.Recipes.BasinDuplicationTconstruct
+basin_duplication(cast: InputItem_, fluid: InputFluid_): BasinDuplicationTconstruct
+basin_duplication(cast: InputItem_, fluid: InputFluid_, cooling_time?: number): BasinDuplicationTconstruct
+```
+```ts
+class BasinDuplicationTconstruct {
+  cast(cast: InputItem_): this
+  fluid(fluid: InputFluid_): this
+  cooling_time(coolingTime: number): this
+}
 ```
 
 ### 藥水澆鑄
@@ -80,8 +122,16 @@ basin_duplication(cast: InputItem_, fluid: Internal.InputFluid_, cooling_time?: 
 /**
  * @param cooling_time defaults to `1.0`
 */
-casting_table_potion(result: OutputItem_, bottle: InputItem_, fluid: Internal.InputFluid_):Special.Recipes.CastingTablePotionTconstruct
-casting_table_potion(result: OutputItem_, bottle: InputItem_, fluid: Internal.InputFluid_, cooling_time?: number):Special.Recipes.CastingTablePotionTconstruct
+casting_table_potion(result: OutputItem_, bottle: InputItem_, fluid: InputFluid_): CastingTablePotionTconstruct
+casting_table_potion(result: OutputItem_, bottle: InputItem_, fluid: InputFluid_, cooling_time?: number): CastingTablePotionTconstruct
+```
+```ts
+class CastingTablePotionTconstruct {
+  result(result: OutputItem_): this
+  bottle(bottle: InputItem_): this
+  fluid(fluid: InputFluid_): this
+  cooling_time(coolingTime: number): this
+}
 ```
 
 #### `tconstruct.casting_basin_potion`
@@ -90,8 +140,16 @@ casting_table_potion(result: OutputItem_, bottle: InputItem_, fluid: Internal.In
 /**
  * @param cooling_time defaults to `1.0`
 */
-casting_basin_potion(result: OutputItem_, bottle: InputItem_, fluid: Internal.InputFluid_):Special.Recipes.CastingBasinPotionTconstruct
-casting_basin_potion(result: OutputItem_, bottle: InputItem_, fluid: Internal.InputFluid_, cooling_time?: number):Special.Recipes.CastingBasinPotionTconstruct
+casting_basin_potion(result: OutputItem_, bottle: InputItem_, fluid: InputFluid_): CastingBasinPotionTconstruct
+casting_basin_potion(result: OutputItem_, bottle: InputItem_, fluid: InputFluid_, cooling_time?: number): CastingBasinPotionTconstruct
+```
+```ts
+class CastingBasinPotionTconstruct {
+  result(result: OutputItem_): this
+  bottle(bottle: InputItem_): this
+  fluid(fluid: InputFluid_): this
+  cooling_time(coolingTime: number): this
+}
 ```
 
 ### 容器填充
@@ -102,7 +160,13 @@ casting_basin_potion(result: OutputItem_, bottle: InputItem_, fluid: Internal.In
 /**
  * @param fluid_amount defaults to `100`
 */
-table_filling(fluid_amount?: number, container: InputItem_):Special.Recipes.TableFillingTconstruct
+table_filling(fluid_amount?: number, container: InputItem_): TableFillingTconstruct
+```
+```ts
+class TableFillingTconstruct {
+  fluid_amount(fluidAmount: number): this
+  container(container: InputItem_): this
+}
 ```
 
 #### `tconstruct.basin_filling`
@@ -111,7 +175,13 @@ table_filling(fluid_amount?: number, container: InputItem_):Special.Recipes.Tabl
 /**
  * @param fluid_amount defaults to `100`
 */
-basin_filling(fluid_amount?: number, container: InputItem_):Special.Recipes.BasinFillingTconstruct
+basin_filling(fluid_amount?: number, container: InputItem_): BasinFillingTconstruct
+```
+```ts
+class BasinFillingTconstruct {
+  fluid_amount(fluidAmount: number): this
+  container(container: InputItem_): this
+}
 ```
 
 ## 實體熔煉
@@ -122,9 +192,9 @@ basin_filling(fluid_amount?: number, container: InputItem_):Special.Recipes.Basi
 
 #### `tconstruct.entity_melting`
 
-```ts
+<!-- ```ts
 
-```
+``` -->
 
 ## 燃料
 
@@ -135,8 +205,15 @@ basin_filling(fluid_amount?: number, container: InputItem_):Special.Recipes.Basi
  * @param duration defaults to `100`
  * @param temperature defaults to `100.0`
 */
-melting_fuel(duration?: number, fluid: Internal.InputFluid_):Special.Recipes.MeltingFuelTconstruct
-melting_fuel(duration?: number, fluid: Internal.InputFluid_, temperature?: number):Special.Recipes.MeltingFuelTconstruct
+melting_fuel(duration?: number, fluid: InputFluid_): MeltingFuelTconstruct
+melting_fuel(duration?: number, fluid: InputFluid_, temperature?: number): MeltingFuelTconstruct
+```
+```ts
+class MeltingFuelTconstruct {
+  duration(duration: number): this
+  fluid(fluid: InputFluid_): this
+  temperature(temperature: number): this
+}
 ```
 
 ## 融化
@@ -150,9 +227,17 @@ melting_fuel(duration?: number, fluid: Internal.InputFluid_, temperature?: numbe
  * @param temperature defaults to `100.0`
  * @param time defaults to `100.0`
 */
-melting(result: Internal.OutputFluid_, ingredient: InputItem_):Special.Recipes.MeltingTconstruct
-melting(result: Internal.OutputFluid_, ingredient: InputItem_, temperature?: number):Special.Recipes.MeltingTconstruct
-melting(result: Internal.OutputFluid_, ingredient: InputItem_, temperature?: number, time?: number):Special.Recipes.MeltingTconstruct
+melting(result: OutputFluid_, ingredient: InputItem_): MeltingTconstruct
+melting(result: OutputFluid_, ingredient: InputItem_, temperature?: number): MeltingTconstruct
+melting(result: OutputFluid_, ingredient: InputItem_, temperature?: number, time?: number): MeltingTconstruct
+```
+```ts
+class MeltingTconstruct {
+  result(result: OutputFluid_): this
+  ingredient(ingredient: InputItem_): this
+  temperature(temperature: number): this
+  time(time: number): this
+}
 ```
 
 ### 物品融化－根據耐久度
@@ -163,9 +248,9 @@ melting(result: Internal.OutputFluid_, ingredient: InputItem_, temperature?: num
 
 #### `tconstruct.melting_durability`
 
-```ts
+<!-- ```ts
 
-```
+``` -->
 
 ### 礦物融化
 
@@ -175,24 +260,34 @@ melting(result: Internal.OutputFluid_, ingredient: InputItem_, temperature?: num
 
 #### `tconstruct.ore_melting`
 
-```ts
+<!-- ```ts
 
-```
+``` -->
 
 ## 鑄模成形
 
 #### `tconstruct.molding_table`
 
 ```ts
-molding_table(result: OutputItem_, pattern: InputItem_, material: InputItem_):Special.Recipes.MoldingTableTconstruct
+molding_table(result: OutputItem_, pattern: InputItem_, material: InputItem_): MoldingTableTconstruct
+```
+```ts
+class MoldingTableTconstruct {
+  result(result: OutputItem_): this
+  pattern(pattern: InputItem_): this
+  material(material: InputItem_): this
+}
 ```
 
 #### `tconstruct.molding_basin`
 
-::: warning WIP
-當前條目並未存在於模組內，未來可能會新增，目前內文僅供參考
-:::
-
 ```ts
-molding_basin(result: OutputItem_, pattern: InputItem_, material: InputItem_):Special.Recipes.MoldingTableTconstruct
+molding_basin(result: OutputItem_, pattern: InputItem_, material: InputItem_): MoldingTableTconstruct
+```
+```ts
+class MoldingBasinTconstruct {
+  result(result: OutputItem_): this
+  pattern(pattern: InputItem_): this
+  material(material: InputItem_): this
+}
 ```
