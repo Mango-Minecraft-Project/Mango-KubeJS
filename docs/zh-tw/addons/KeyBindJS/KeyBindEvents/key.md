@@ -4,6 +4,8 @@ shortTitle: press/release
 description: 按鍵按下/鬆開事件
 ---
 
+<ClientSide/>
+
 ```ts title="@at client"
 keyRelease(extra: string, handler: (event: KeyPressedEvent) => void):void,
 keyRelease(handler: (event: KeyPressedEvent) => void):void,

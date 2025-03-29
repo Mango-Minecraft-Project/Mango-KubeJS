@@ -1,5 +1,5 @@
 <template>
-  <a :href="aHref" class="custom-badge">
+  <a :href="aHref" class="custom-badge" target="_blank">
     <img src="https://img.shields.io/badge/CurseForge-313338?style=for-the-badge&logo=CurseForge" :alt="ImageAlt" />
   </a>
 </template>

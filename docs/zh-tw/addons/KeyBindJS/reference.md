@@ -1,6 +1,6 @@
 ---
-title: 引用
-description: 本頁包含了所有 KeyBindJS 的引用頁面。
+title: 參考
+description: 本頁包含了所有 KeyBindJS 的參考頁面。
 ---
 
 ## `KeyModifier_`

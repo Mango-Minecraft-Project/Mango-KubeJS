@@ -4,6 +4,8 @@ shortTitle: modify
 description: 修改按鍵綁定
 ---
 
+<StartupSide/>
+
 ```ts title="@at startup"
 modify(handler: (event: KeyBindModifyEvent) => void):void,
 ```
@@ -12,7 +14,7 @@ modify(handler: (event: KeyBindModifyEvent) => void):void,
 
 ## 範例
 
-```js title="startup_scripts/KeyBindJS.js"
+```js title="@at startup"
 KeyBindEvents.modify((event) => {
   // 修改默認按鍵
   event.modifyKey("key.curios.open.desc", GLFW.GLFW_KEY_X);

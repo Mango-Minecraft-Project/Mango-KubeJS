@@ -7,6 +7,8 @@ mod:
   ref: "../README.md"
 ---
 
+<ServerSide/>
+
 ```ts
 TConJSEvents.equipmentChange(handler: (event: TinkerToolChangeEventJS) => void): void
 ```

@@ -3,6 +3,7 @@ title: KeyBindEvents.register
 shortTitle: register
 description: 註冊按鍵綁定
 ---
+<StartupSide/>
 
 ```ts title="@at startup"
 register(handler: (event: KeyBindEvent) => void):void
@@ -12,7 +13,7 @@ register(handler: (event: KeyBindEvent) => void):void
 
 ## 範例
 
-```js
+```js title="@at startup"
 KeyBindEvents.register((event) => {
   // 創建按鍵綁定 (第一個參數為標識，按鍵觸發都會使用這個標識)
   event.create("create1", "key.test.create.1", -1, "key.group.debug");

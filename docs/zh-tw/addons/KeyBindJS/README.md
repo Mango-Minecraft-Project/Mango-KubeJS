@@ -18,6 +18,7 @@ mod:
   name: KeyBindJS
   author: 小忆然喵
   CurseForge: mc-mods/keybindjs
+  Modrinth: mod/keybindjs
   GitHub: yiran1457/KeyBindJS
   McMod: class/18686
 ---
@@ -26,17 +27,17 @@ mod:
 此模組為純客戶端模組，請勿在獨立伺服器端安裝此模組
 :::
 
-一个支持整合包作者使用 KubeJS 来注册、修改、移除按键绑定的 Mod。
+一個支援模組包作者使用 KubeJS 來註冊、修改、移除按鍵綁定的模組。
 
-以下是一个将打开饰品栏的默认按键改为 ALT+X，并移到原版的杂项分类下面，和删除掉跳跃按键的例子：
+以下是一個將打開飾品欄的預設按鍵改為 ALT+X，並移到原版的雜項分類下面，以及刪除跳躍按鍵的範例：
 
 ```js
 KeyBindEvents.modify((event) => {
-  event.modifyKey('key.curios.open.desc',GLFW.GLFW_KEY_X);
-  event.modifyModifier('key.curios.open.desc',KeyModifier.ALT);
-  event.modifyCategory('key.curios.open.desc','key.categories.misc');
+  event.modifyKey("key.curios.open.desc", GLFW.GLFW_KEY_X);
+  event.modifyModifier("key.curios.open.desc", KeyModifier.ALT);
+  event.modifyCategory("key.curios.open.desc", "key.categories.misc");
 
-  event.remove('key.jump');
+  event.remove("key.jump");
 });
 ```
 

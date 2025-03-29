@@ -8,6 +8,8 @@ mod:
   ref: "../README.md"
 ---
 
+<ServerSide/>
+
 ```js
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;

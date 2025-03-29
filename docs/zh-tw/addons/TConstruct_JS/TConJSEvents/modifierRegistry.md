@@ -8,6 +8,8 @@ mod:
   ref: "../README.md"
 ---
 
+<StartupSide/>
+
 ```ts
 TConJSEvents.modifierRegistry(handler: (event: ModifierRegisterEventJS) => void): void
 ```
