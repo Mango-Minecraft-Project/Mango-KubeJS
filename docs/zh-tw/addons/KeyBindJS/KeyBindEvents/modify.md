@@ -41,6 +41,7 @@ KeyBindEvents.modify((event) => {
 | `modifyCategory` | 修改按鍵分組   |
 | `remove`         | 移除按鍵       |
 | `addListener`    | 添加監聽       |
+| `addHideKey`     | 隱藏按鍵       |
 
 ### `modifyKey`
 
@@ -105,3 +106,16 @@ addListener(cusTomName: string, keyName: string): void;
 
 - `cusTomName: string` - 自定義名稱
 - `keyName: string` - 按鍵名稱
+
+
+### `addHideKey`
+
+隱藏按鍵
+
+```ts
+addHideKey(keyBindName: string): void;
+```
+
+#### 參數
+
+- `keyBindName: string` - 按鍵綁定的名稱
