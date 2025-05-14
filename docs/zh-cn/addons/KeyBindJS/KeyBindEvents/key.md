@@ -10,7 +10,6 @@ description: 按键按下/松开事件
 keyRelease(extra: string, handler: (event: KeyPressedEvent) => void):void,
 keyPressInGui(extra: string, handler: (event: KeyPressedEvent) => void):void,
 firstKeyPressInGui(extra: string, handler: (event: KeyPressedEvent) => void):void,
-firstKeyPressInGui(extra: string, handler: (event: KeyPressedEvent) => void):void,
 keyPress(extra: string, handler: (event: KeyPressedEvent) => void):void,
 keyReleaseInGui(extra: string, handler: (event: KeyPressedEvent) => void):void,
 ```
