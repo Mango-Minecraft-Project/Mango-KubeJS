@@ -99,7 +99,7 @@ remove(keyBindName: string): void;
 添加监听(已经不再需要，但仍然可用)
 
 ```ts
-addListener(cusTomName: string, keyName: string): void;
+addListener(customName: string, keyName: string): void;
 ```
 
 #### 参数
