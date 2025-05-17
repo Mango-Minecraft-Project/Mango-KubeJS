@@ -104,7 +104,7 @@ addListener(cusTomName: string, keyName: string): void;
 
 #### 参数
 
-- `cusTomName: string` - 自定义名称
+- `customName: string` - 自定义名称
 - `keyName: string` - 按键名称
 
 
