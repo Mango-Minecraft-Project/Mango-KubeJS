@@ -4,7 +4,7 @@ import locales from "./theme/locales.js";
 export default hopeTheme(
   {
     // Basic
-    hostname: "wiki.mango-kubejs.pages.dev",
+    hostname: "mango-kubejs.pages.dev",
     favicon: "/logo.png",
     license: "AGPL-3.0",
     // hotReload: true, // enable it to preview all changes in time
@@ -34,7 +34,7 @@ export default hopeTheme(
     contributors: true,
     editLink: true,
     docsRepo: "Mango-Minecraft-Project/Mango-KubeJS",
-    docsBranch: "wiki",
+    docsBranch: "main",
     docsDir: "docs",
 
     // - Footer
