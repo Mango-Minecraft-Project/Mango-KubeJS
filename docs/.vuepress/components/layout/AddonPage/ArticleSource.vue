@@ -1,7 +1,10 @@
 <template>
-  <div v-if="!frontmatter.isOriginal && source" class="component-info-block">
+  <div v-if="!frontmatter.isOriginal && (source || license)" class="component-info-block">
     <div v-if="source">
       {{ i18nText.source }}<a :href="source">{{ source }}</a>
+    </div>
+    <div v-if="license">
+      {{ i18nText.license }}{{ license }}
     </div>
   </div>
 </template>
@@ -18,6 +21,8 @@
   align-items: center;
   font-size: 18px;
   color: var(--vp-c-text-mute);
+
+  text-align: center;
 }
 </style>
 
@@ -32,16 +37,22 @@ export default {
     source() {
       return this.frontmatter.source;
     },
+    license() {
+      return this.frontmatter.license;
+    },
     i18nText() {
       return {
         "en-US": {
           source: "Original Article:",
+          license: "License: ",
         },
         "zh-CN": {
           source: "原文：",
+          license: "许可：",
         },
         "zh-TW": {
           source: "原文：",
+          license: "許可：",
         },
       }[usePageLang().value];
     },

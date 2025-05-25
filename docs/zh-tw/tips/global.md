@@ -1,6 +1,6 @@
 ---
 title: Global 物件
-description: 如何使用 Global 物件
+description: 如何使用 Global 
 layout: AddonPage
 source: https://kubejs.com/wiki/tips/global
 ---
