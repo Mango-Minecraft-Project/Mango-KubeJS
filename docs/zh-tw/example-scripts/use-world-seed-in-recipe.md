@@ -6,7 +6,7 @@ isOriginal: true
 
 :::: note 前情提要
 
-<!-- @include: Get-World-Seed.md -->
+<!-- @include: get-world-seed.md -->
 
 ::::
 
