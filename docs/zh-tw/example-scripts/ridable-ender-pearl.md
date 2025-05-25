@@ -4,7 +4,7 @@ description: 右鍵點擊終界珍珠，會丟出一顆雪球並騎乘在上面�
 isOriginal: true
 ---
 
-<Attachment link="0.mp4">
+<Attachment link="0.mp4" />
 
 ```js
 ItemEvents.rightClicked("ender_pearl", (event) => {

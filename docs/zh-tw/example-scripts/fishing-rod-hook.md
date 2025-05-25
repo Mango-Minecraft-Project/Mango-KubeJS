@@ -4,7 +4,7 @@ description: 當玩家使用魚竿時，會將玩家拉到魚鉤
 isOriginal: true
 ---
 
-<Attachment link="0.mp4">
+<Attachment link="0.mp4" />
 
 ```js
 ItemEvents.rightClicked("fishing_rod", (event) => {
