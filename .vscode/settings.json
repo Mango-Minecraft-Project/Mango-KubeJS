@@ -1,4 +1,13 @@
 {
   "files.autoSave": "off",
   "typescript.suggest.autoImports": true,
+  "cSpell.words": ["Mcmod", "Modrinth", "tconstruct"],
+  "files.exclude": {
+    "**/.git": false,
+    "docs/.vuepress/.cache": true,
+    "docs/.vuepress/.temp": true,
+    "docs/.vuepress/dist": true,
+    "node_modules": true,
+  },
+  "editor.tabSize": 2
 }

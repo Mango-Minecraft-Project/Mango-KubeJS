@@ -1,15 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap");
 
 body {
-  font-family: 'Noto Sans TC', 'Noto Sans SC', sans-serif;
+  font-family: "Noto Sans TC", "Noto Sans SC", sans-serif;
 }
 
+<<<<<<< HEAD
 .external-link-icon .theme-hope-content a.custom-badge[href*="://"]:not(.no-external-link-icon)::after {
   content: none;
 }
 
 .vp-navbar-center .vp-nav-item a.external-link::after {
   content: none;
+=======
+p {
+  text-align: start !important;
+}
+
+details tbody tr:nth-child(2n) {
+  background: rgb(29, 30, 33);
+  transition: background-color var(--vp-t-color);
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+#toc {
+  min-width: 15rem;
+  max-width: 20rem;
+>>>>>>> wiki
 }

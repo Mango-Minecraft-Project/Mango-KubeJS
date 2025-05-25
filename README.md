@@ -15,3 +15,9 @@ Creation base [VuePress Theme Hope](https://theme-hope.vuejs.press/)
    ```ps
    pnpm docs:dev
    ```
+
+## Git Configuration
+
+```ps
+git config core.ignorecase false
+```

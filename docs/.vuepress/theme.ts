@@ -1,141 +1,179 @@
 import { hopeTheme } from "vuepress-theme-hope";
-import { Page } from "vuepress";
+import locales from "./theme/locales.js";
 
-import { enusNavbar, zhtwNavbar, zhcnNavbar } from "./theme/navbar/index.js";
-import { enusSidebar, zhtwSidebar, zhcnSidebar } from "./theme/sidebar/index.js";
+export default hopeTheme(
+  {
+    // Basic
+    hostname: "wiki.mango-kubejs.pages.dev",
+    favicon: "/logo.png",
+    license: "AGPL-3.0",
+    // hotReload: true, // enable it to preview all changes in time
+    locales,
 
-export default hopeTheme({
-  hostname: "mango-kubejs.pages.dev",
+    // Feature
+    encrypt: {
+      config: {},
+    },
 
-  logo: "/logo.svg",
-  repo: "Mango-Minecraft-Project/Mango-KubeJS",
-  darkmode: "enable",
-  docsDir: "docs",
-  favicon: "/logo.png",
+    // Layouts
+    // - Navbar
+    navbarLayout: {
+      start: ["Brand", "Language", "Search"],
+      center: ["Links"],
+      end: ["Repo", "Outlook"],
+    },
+    logo: "/logo.svg",
+    repo: "Mango-Minecraft-Project/Mango-KubeJS",
 
-  blog: {
-    medias: {
-      BiliBili: "https://space.bilibili.com/430008973",
-      Discord: "https://discord.com/invite/SCAfRyAVnR",
-      Github: "https://github.com/EvanHsieh0415/",
-      QQ: "https://qm.qq.com/q/qmCIBVUwY",
-      Youtube: "https://www.youtube.com/@%E8%8A%92%E6%9E%9C%E5%87%8D%E5%B8%83%E4%B8%81",
-      "Personal Blog": {
-        icon: "https://avatars.githubusercontent.com/u/74277414",
-        link: "https://mango-blog.pages.dev/",
+    // - Sidebar
+    sidebarSorter: ["readme", "order", "filename", "title", "date", "date-desc"],
+    headerDepth: 2,
+
+    // - Metadata
+    lastUpdated: true,
+    contributors: true,
+    editLink: true,
+    docsRepo: "Mango-Minecraft-Project/Mango-KubeJS",
+    docsBranch: "wiki",
+    docsDir: "docs",
+
+    // - Footer
+    copyright: "Copyright © 2025 MangoJellyPudding",
+    displayFooter: true,
+
+    // Appearance
+    darkmode: "enable",
+    externalLinkIcon: false,
+    fullscreen: true,
+    pure: true,
+    focus: false,
+
+    // i18n
+    blogLocales: {
+      empty: "",
+    },
+
+    // Markdown
+    markdown: {
+      alert: true,
+      hint: true,
+      align: true,
+      attrs: true,
+      codeTabs: true,
+      component: true,
+      demo: true,
+      figure: true,
+      gfm: true,
+      imgLazyload: true,
+      imgSize: true,
+      include: true,
+      mark: true,
+      plantuml: true,
+      spoiler: true,
+      stylize: [
+        {
+          matcher: "Recommended",
+          replacer: ({ tag }) => {
+            if (tag === "em")
+              return {
+                tag: "Badge",
+                attrs: { type: "tip" },
+                content: "Recommended",
+              };
+          },
+        },
+      ],
+      sub: true,
+      sup: true,
+      tabs: true,
+      tasklist: true,
+      vPre: true,
+
+      highlighter: {
+        type: "shiki",
+
+        langAlias: {
+          "": "javascript",
+          text: "javascript",
+          plain: "javascript",
+          plaintext: "javascript",
+        },
+
+        theme: "one-dark-pro",
+        collapsedLines: false,
+        notationDiff: true,
+        notationFocus: true,
+        notationHighlight: true,
+        notationErrorLevel: true,
+        notationWordHighlight: true,
+        whitespace: "trailing",
+
+        defaultLang: "javascript",
+        logLevel: "silent",
       },
     },
-    avatar: "https://avatars.githubusercontent.com/u/74277414",
-  },
 
-  displayFooter: true,
-  blogLocales: {
-    empty: "",
-  },
+    plugins: {
+      blog: true,
 
-  locales: {
-    "/": {
-      navbar: enusNavbar,
-      sidebar: enusSidebar,
-
-      blog: {
-        description: "An interested KubeJS developer.",
+      components: {
+        components: ["Badge", "VPCard", "VidStack", "SiteInfo", "VPBanner"],
       },
 
-      author: {
-        name: "MangoJellyPudding",
-      },
-    },
-    "/zh-tw/": {
-      navbar: zhtwNavbar,
-      sidebar: zhtwSidebar,
-
-      blog: {
-        description: "一個興趣使然的 KubeJS 開發者",
+      icon: {
+        prefix: "fa6-solid:",
       },
 
-      author: {
-        name: "芒果凍布丁",
+      search: {
+        locales: {
+          "/zh-tw/": {
+            placeholder: "搜尋",
+          },
+        },
+        maxSuggestions: 20,
+        getExtraFields: (page) =>
+          (<string[]>page.frontmatter.tags ?? []).concat(<string[]>page.frontmatter.categories ?? []),
       },
 
-      navbarLocales: {
-        langName: "正體中文",
-      }
-    },
-    "/zh-cn/": {
-      navbar: zhcnNavbar,
-      sidebar: zhcnSidebar,
-
-      blog: {
-        description: "一个兴趣使然的 KubeJS 开发者",
+      git: {
+        changelog: true,
       },
 
-      author: {
-        name: "芒果凍布丁",
-      },
-    },
-  },
+      redirect: {
+        config: (app) => {
+          const config = {
+            ...Object.fromEntries(
+              app.pages
+                .filter(({ path }) => {
+                  const data = path.split("/").includes("addons");
+                  return data;
+                })
+                .map(({ path }) => {
+                  const before = path
+                    .replace("Heaven_Destiny_Moment", "heaven_destiny_moment")
+                    .replace("TConstruct_JS", "tconstruct_js");
+                  const data = [before, path];
+                  return before !== path ? data : [];
+                })
+                .filter((data) => !!data.length)
+            ),
+            "/zh-tw/addons/advancement_js": "/zh-tw/addons/Advancement_JS",
+            "/zh-tw/addons/createheatjs": "/zh-tw/addons/Create_Heat_JS",
+            "/zh-tw/addons/create-ponder": "/zh-tw/addons/Create_Ponder",
+            "/zh-tw/addons/eventjs": "/zh-tw/addons/EventJS",
+            "/zh-tw/addons/filesjs": "/zh-tw/addons/FilesJS",
+            "/zh-tw/addons/heaven_destiny_moment/": "/zh-tw/addons/Heaven_Destiny_Moment/",
+            "/zh-tw/addons/tconstruct_js/": "/zh-tw/addons/TConstruct_JS/",
 
-  encrypt: {
-    config: {},
-  },
-
-  // enable it to preview all changes in time
-  // hotReload: true,
-
-  // These features are enabled for demo, only preserve features you need here
-  markdown: {
-    align: true,
-    attrs: true,
-    codeTabs: true,
-    component: true,
-    demo: true,
-    figure: true,
-    gfm: true,
-    imgLazyload: true,
-    imgSize: true,
-    include: true,
-    mark: true,
-    plantuml: true,
-    spoiler: true,
-    stylize: [
-      {
-        matcher: "Recommended",
-        replacer: ({ tag }) => {
-          if (tag === "em")
-            return {
-              tag: "Badge",
-              attrs: { type: "tip" },
-              content: "Recommended",
-            };
+            "/addons/tconstruct_js/": "/addons/TConstruct_JS/",
+          };
+          // console.log(config);
+          return config;
         },
       },
-    ],
-    sub: true,
-    sup: true,
-    tabs: true,
-    tasklist: true,
-    vPre: true,
-  },
-
-  plugins: {
-    blog: {
-      filter: ({ frontmatter, filePathRelative, lang, path }: Page) =>
-        !!(
-          frontmatter.article ??
-          (!!filePathRelative &&
-            !frontmatter.home &&
-            frontmatter.index !== false)
-        ),
-      excerptLength: 100,
-    },
-
-    components: {
-      components: ["Badge", "VPCard", "VidStack"],
-    },
-
-    icon: {
-      prefix: "fa6-solid:",
     },
   },
-});
+  {
+    custom: true,
+  }
+);

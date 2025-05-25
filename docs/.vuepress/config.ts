@@ -3,7 +3,7 @@ import { getDirname, path } from "vuepress/utils";
 
 import theme from "./theme.js";
 
-const __dirname = getDirname(import.meta.url);
+const Dir = ($path: string) => path.resolve(getDirname(import.meta.url), $path);
 
 export default defineUserConfig({
   base: "/",
@@ -12,18 +12,18 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "en-US",
-      title: "Mango's KubeJS Encyclopaedia",
-      description: "Mango's KubeJS Encyclopaedia",
+      title: "Mango's KubeJS Wiki",
+      description: "Mango's KubeJS Wiki",
     },
     "/zh-tw/": {
       lang: "zh-TW",
-      title: "芒果的 KubeJS 百科",
-      description: "芒果的 KubeJS 百科",
+      title: "芒果的 KubeJS Wiki",
+      description: "芒果的 KubeJS Wiki",
     },
     "/zh-cn/": {
       lang: "zh-CN",
-      title: "芒果的 KubeJS 百科",
-      description: "芒果的 KubeJS 百科",
+      title: "芒果的 KubeJS Wiki",
+      description: "芒果的 KubeJS Wiki",
     },
   },
 
@@ -37,8 +37,17 @@ export default defineUserConfig({
     ["meta", { property: "theme-color", content: "#422066" }],
   ],
 
-  clientConfigFile: path.resolve(__dirname, "./client.ts"),
+  clientConfigFile: Dir("./client.ts"),
 
-  // Enable it with pwa
-  // shouldPrefetch: false,
+  alias: {
+    "@components": Dir("./components"),
+    "@private-components": Dir("./components/private"),
+    "@theme-hope": "vuepress-theme-hope",
+  },
+
+  markdown: {
+    headers: {
+      level: [2, 3, 4, 5],
+    },
+  },
 });
