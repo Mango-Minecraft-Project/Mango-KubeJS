@@ -6,7 +6,7 @@ isOriginal: true
 
 必須搭配 [Text Animator](https://modrinth.com/mod/text-animator) 模組使用
 
-<VidStack src="/example-scripts/Rainbow-Text-with-Text-Animator/0.mp4"/>
+<Attachment link="0.mp4">
 
 ```js
 StartupEvents.registry("item", (event) => {

@@ -4,7 +4,7 @@ description: 合成時消耗物品耐久，使用 `.damageIngredient` 方法
 isOriginal: true
 ---
 
-![example-scripts/Damage-Item-Recipe/0.png](/example-scripts/Damage-Item-Recipe/0.png)
+<Attachment link="0.png">
 
 ```js
 ServerEvents.recipes((event) => {

@@ -4,7 +4,7 @@ description: 使用 `.modifyResult` 方法根據材料修改合成產物。
 isOriginal: true
 ---
 
-![example-scripts/Modify-Result-with-Ingredient/0.png](/example-scripts/Modify-Result-with-Ingredient/0.png)
+<Attachment link="0.png">
 
 ```js
 ServerEvents.recipes((event) => {
