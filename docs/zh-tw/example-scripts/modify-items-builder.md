@@ -1,6 +1,7 @@
 ---
 title: 修改物品的 Builder
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 ```js

@@ -1,6 +1,7 @@
 ---
 title: 替換多個物品配方
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 ```js

@@ -1,11 +1,12 @@
 ---
 title: 套裝效果 + Tooltip 提示
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
-## 伺服器腳本
+當玩家穿戴完整套裝時，會自動套用套裝效果，並在 Tooltip 中顯示當前套裝名稱。
 
-```js
+```js title="<ServerSide/>"
 global.armorSets = {
   netherite: "Netherite Armor Set",
 };

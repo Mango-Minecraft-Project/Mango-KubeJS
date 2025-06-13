@@ -1,6 +1,7 @@
 ---
 title: 隨機混凝土鎬
-isOriginal: true
+isOriginal: 
+tags: [KubeJS 6]
 ---
 
 ## 啟動腳本

@@ -2,6 +2,7 @@
 title: 根據材料修改合成產物
 description: 使用 `.modifyResult` 方法根據材料修改合成產物。
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 <Attachment link="0.png" />

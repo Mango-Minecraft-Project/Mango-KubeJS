@@ -2,6 +2,7 @@
 title: 玩家範圍聊天
 description: 玩家範圍聊天，玩家可以在一定範圍內聊天
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 ```js

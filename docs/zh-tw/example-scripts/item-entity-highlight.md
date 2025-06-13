@@ -1,6 +1,7 @@
 ---
 title: 物品實體名稱高亮顯示
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 ```js

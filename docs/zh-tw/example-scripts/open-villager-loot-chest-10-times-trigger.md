@@ -2,6 +2,7 @@
 title: 每開啟 10 次村莊中的戰利品箱後觸發
 description: 玩家每開啟 10 次村莊中的戰利品箱後觸發，並在開啟後告訴玩家。
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 ```js

@@ -2,6 +2,7 @@
 title: 玩家死亡後掉落玩家頭顱
 description: 當玩家死亡時，掉落玩家的頭顱
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 ```js

@@ -2,6 +2,7 @@
 title: 在草地上跳躍有機率將草地踩成泥土
 description: 當玩家在草地上跳躍時，有 25% 的機率將草地踩成泥土。
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 ```js

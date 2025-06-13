@@ -2,6 +2,7 @@
 title: 隨機羊毛剪刀
 description: 使用剪刀隨機剪下羊毛，並隨機掉落不同顏色的羊毛。
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 ## 啟動腳本

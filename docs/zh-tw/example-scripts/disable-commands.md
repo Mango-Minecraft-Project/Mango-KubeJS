@@ -2,6 +2,7 @@
 title: 禁止玩家使用特定指令
 description: 禁止玩家使用特定指令，例如禁止使用 `painter` 指令
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 _You Shall Not Pass!_

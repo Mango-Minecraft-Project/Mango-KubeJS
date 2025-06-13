@@ -2,6 +2,7 @@
 title: 自訂訊息顯示
 description: 合成時消耗物品耐久，使用 `.damageIngredient` 方法
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 <Attachment link="0.png" />

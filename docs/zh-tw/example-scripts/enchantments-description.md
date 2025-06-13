@@ -4,7 +4,8 @@ description: 顯示附魔的描述，按住 Shift 鍵查看
 author:
   - name: 芒果凍布丁
   - name: KL_jiana
-isOriginal: true
+isOriginal: 
+tags: [KubeJS 6]
 ---
 
 部分代碼來源自：KL_jiana

@@ -2,6 +2,7 @@
 title: 在配方中使用世界種子
 description: 在配方中使用 Minecraft 世界的種子，並在伺服器啟動時獲取並儲存種子。
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 :::: note 前情提要

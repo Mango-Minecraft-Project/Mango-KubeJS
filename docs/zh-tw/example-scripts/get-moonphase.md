@@ -2,6 +2,7 @@
 title: 獲取當前月相
 description: 獲取當前月相，並在每個 Minecraft 日的第一個 tick 告訴玩家。
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 ```js

@@ -2,9 +2,10 @@
 title: 自訂訊息顯示
 description: 自訂訊息顯示，當玩家發送訊息時，會顯示玩家名稱和訊息
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
-```js
+```js title="<ServerSide/>"
 PlayerEvents.chat((event) => {
   let { player, message, server } = event;
   server.tell([

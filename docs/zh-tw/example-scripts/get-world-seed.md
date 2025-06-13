@@ -2,6 +2,7 @@
 title: 獲取世界種子
 description: 獲取 Minecraft 世界的種子，並以 NBT 格式儲存。
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 <!-- #region world-seed -->

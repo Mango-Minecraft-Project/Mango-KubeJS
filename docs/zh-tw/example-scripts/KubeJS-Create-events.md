@@ -6,6 +6,7 @@ author:
   - name: Prunoideae
     url: https://github.com/Prunoideae
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 ::: important

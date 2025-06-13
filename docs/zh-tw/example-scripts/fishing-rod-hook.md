@@ -2,6 +2,7 @@
 title: 魚竿鉤子
 description: 當玩家使用魚竿時，會將玩家拉到魚鉤
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 <Attachment link="0.mp4" />

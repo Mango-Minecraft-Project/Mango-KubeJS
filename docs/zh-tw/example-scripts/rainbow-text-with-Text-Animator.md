@@ -2,6 +2,7 @@
 title: 彩色字體
 description: 使用 Text Animator 模組實現彩色字體效果。
 isOriginal: true
+tags: [KubeJS 6]
 ---
 
 必須搭配 [Text Animator](https://modrinth.com/mod/text-animator) 模組使用
