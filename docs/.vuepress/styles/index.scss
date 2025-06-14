@@ -26,3 +26,9 @@ body {
     text-decoration: none !important;
   }
 }
+
+@media (max-width: 959px) {
+  .vp-toc-placeholder {
+    position: inherit !important;
+  }
+}
