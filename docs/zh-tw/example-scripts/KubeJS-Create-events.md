@@ -1,5 +1,5 @@
 ---
-title: KubeJS Create 所提供的 `CreateEvents`
+title: KubeJS Create 的 CreateEvents
 description: KubeJS Create 所提供的事件，包含蒸氣鍋爐熱量源、管道流體效果、注液器注液方塊等。
 author:
   - name: 芒果凍布丁

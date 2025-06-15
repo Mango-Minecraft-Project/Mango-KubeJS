@@ -1,10 +1,29 @@
 <template>
-  <Badge :text="side" type="info" :vertical="vertical" />
+  <Badge :text="text" type="info" :vertical="vertical" />
 </template>
 
 <script lang="ts">
+import { usePageLang } from 'vuepress/client';
+
 const sides = ["Client", "Server", "Startup"];
 const verticals = ["top", "middle", "baseline", "bottom"];
+const i18nText = {
+  "en-US": {
+    Client: "Client",
+    Server: "Server",
+    Startup: "Startup",
+  },
+  "zh-CN": {
+    Client: "客户端",
+    Server: "服务端",
+    Startup: "启动",
+  },
+  "zh-TW": {
+    Client: "客戶端",
+    Server: "伺服器端",
+    Startup: "啟動",
+  },
+}
 
 export default {
   props: {
@@ -22,6 +41,11 @@ export default {
         return verticals.includes(String(value));
       },
     },
+  },
+  computed: {
+    text() {
+      return (i18nText[usePageLang().value] ?? i18nText["en-US"])[this.side];
+    }
   },
 };
 </script>

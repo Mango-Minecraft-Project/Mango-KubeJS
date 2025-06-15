@@ -7,7 +7,7 @@ title: 断言（Assert）
 提供了以下方法：（以后可能会有改动？）
 
 ```java
-// T指的是任意类型，例如你输入的类型是字符串（String），那么T就是String
+// T指的是任意类型，例如你输入的类型是字符串（String），那么 T 就是 String
 public <T> T assertNotNull(T value);
 public <T> T assertNotNull(T value, String message);
 public <T> T requireNotNull(T value);

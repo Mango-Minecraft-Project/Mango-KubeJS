@@ -8,180 +8,137 @@ mod:
 
 ## 合金
 
-#### `tconstruct.alloy`
-
-```ts
-/**
- * @param temperature defaults to `100.0`
-*/
-alloy(result: OutputFluid_, inputs: InputFluid_[]): AlloyTconstruct
-alloy(result: OutputFluid_, inputs: InputFluid_[], temperature?: number): AlloyTconstruct
-```
-```ts
-class AlloyTconstruct {
-  result(result: OutputFluid_): this
-  inputs(inputs: InputFluid_[]): this
-  temperature(temperature: number): this
-}
+語法：
+```typescript :no-line-numbers
+alloy(result: Fluid, inputs: Fluid[], temperature?: number = 100)
 ```
 
-## 澆鑄
+特性：
+- 支援使用 `.temperature()` 方法設定熔煉溫度。
 
-### 物品澆鑄
+```javascript :no-line-numbers
+ServerEvents.recipes((event) => {
+  const { tconstruct } = event.recipes;
 
-#### `tconstruct.casting_table`
-
-```ts
-/**
- * @param cast_consumed defaults to `false`
- * @param cooling_time defaults to `1.0`
- * @param switch_slots defaults to `false`
-*/
-casting_table(result: OutputItem_, fluid: InputFluid_, cast: InputItem_): CastingTableTconstruct
-casting_table(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean): CastingTableTconstruct
-casting_table(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number): CastingTableTconstruct
-casting_table(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number, switch_slots?: boolean): CastingTableTconstruct
-```
-```ts
-class CastingTableTconstruct {
-  result(result: OutputItem_): this
-  fluid(fluid: InputFluid_): this
-  cast(cast: InputItem_): this
-  cast_consumed(castConsumed: boolean): this
-  cooling_time(coolingTime: number): this
-  switch_slots(switchSlots: boolean): this
-}
+  tconstruct.alloy("tconstruct:molten_rose_gold", [Fluid.of("tconstruct:molten_gold", 1000), Fluid.of("tconstruct:molten_copper", 1000)]);
+  tconstruct.alloy("tconstruct:molten_rose_gold", [Fluid.of("tconstruct:molten_gold", 1000), Fluid.of("tconstruct:molten_copper", 1000)], 1000);
+  tconstruct.alloy("tconstruct:molten_rose_gold", [Fluid.of("tconstruct:molten_gold", 1000), Fluid.of("tconstruct:molten_copper", 1000)]).temperature(1000);
+});
 ```
 
-#### `tconstruct.casting_basin`
+## 鑄件台/鑄造盆 物品澆鑄
 
-```ts
-/**
- * @param cast_consumed defaults to `false`
- * @param cooling_time defaults to `1.0`
- * @param switch_slots defaults to `false`
-*/
-casting_basin(result: OutputItem_, fluid: InputFluid_): CastingBasinTconstruct
-casting_basin(result: OutputItem_, fluid: InputFluid_, cast: InputItem_): CastingTableTconstruct
-casting_basin(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean): CastingTableTconstruct
-casting_basin(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number): CastingTableTconstruct
-casting_basin(result: OutputItem_, fluid: InputFluid_, cast: InputItem_, cast_consumed?: boolean, cooling_time?: number, switch_slots?: boolean): CastingTableTconstruct
-```
-```ts
-class CastingBasinTconstruct {
-  result(result: OutputItem_): this
-  fluid(fluid: InputFluid_): this
-  cast(cast: InputItem_): this
-  cast_consumed(castConsumed: boolean): this
-  cooling_time(coolingTime: number): this
-  switch_slots(switchSlots: boolean): this
-}
+語法：
+```typescript :no-line-numbers :no-line-numbers
+casting_table(
+  result: Item,
+  fluid: Fluid,
+  cast: Item,
+  cast_consumed?: boolean = false,
+  cooling_time?: number = 1.0,
+  switch_slots?: boolean = false
+)
+
+casting_basin(
+  result: Item,
+  fluid: Fluid,
+  cast: Item,
+  cast_consumed?: boolean = false,
+  cooling_time?: number = 1.0,
+  switch_slots?: boolean = false
+)
 ```
 
-### 鑄件複製
+特性：
+- 支援使用 `.cast_consumed(boolean)` 方法設定鑄件是否消耗。
+- 支援使用 `.cooling_time(number)` 方法設定冷卻時間。
+- 支援使用 `.switch_slots(boolean)` 方法切換物品和鑄件的槽位，以便進行下一個配方。
 
-#### `tconstruct.table_duplication`
+```javascript :no-line-numbers
+ServerEvents.recipes((event) => {
+  const { tconstruct } = event.recipes;
 
-```ts
-/**
- * @param cooling_time defaults to `1.0`
-*/
-table_duplication(cast: InputItem_, fluid: InputFluid_): BasinDuplicationTconstruct
-table_duplication(cast: InputItem_, fluid: InputFluid_, cooling_time?: number): BasinDuplicationTconstruct
-```
-```ts
-class TableDuplicationTconstruct {
-  cast(cast: InputItem_): this
-  fluid(fluid: InputFluid_): this
-  cooling_time(coolingTime: number): this
-}
-```
+  tconstruct.casting_table("minecraft:gold_apple", Fluid.of("tconstruct:molten_gold", 1000), "minecraft:apple");
+  tconstruct.casting_table("minecraft:gold_apple", Fluid.of("tconstruct:molten_gold", 1000), "minecraft:apple").cast_consumed(true);
+  tconstruct.casting_table("minecraft:gold_apple", Fluid.of("tconstruct:molten_gold", 1000), "minecraft:apple").cooling_time(1.5);
+  tconstruct.casting_table("minecraft:gold_apple", Fluid.of("tconstruct:molten_gold", 1000), "minecraft:apple").switch_slots(true);
 
-#### `tconstruct.basin_duplication`
-
-```ts
-/**
- * @param cooling_time defaults to `1.0`
-*/
-basin_duplication(cast: InputItem_, fluid: InputFluid_): BasinDuplicationTconstruct
-basin_duplication(cast: InputItem_, fluid: InputFluid_, cooling_time?: number): BasinDuplicationTconstruct
-```
-```ts
-class BasinDuplicationTconstruct {
-  cast(cast: InputItem_): this
-  fluid(fluid: InputFluid_): this
-  cooling_time(coolingTime: number): this
-}
+  tconstruct.casting_basin("minecraft:gold_block", Fluid.of("tconstruct:molten_gold", 1000), "minecraft:gold_ingot");
+  tconstruct.casting_basin("minecraft:gold_block", Fluid.of("tconstruct:molten_gold", 1000), "minecraft:gold_ingot").cast_consumed(true);
+  tconstruct.casting_basin("minecraft:gold_block", Fluid.of("tconstruct:molten_gold", 1000), "minecraft:gold_ingot").cooling_time(1.5);
+  tconstruct.casting_basin("minecraft:gold_block", Fluid.of("tconstruct:molten_gold", 1000), "minecraft:gold_ingot").switch_slots(true);
+});
 ```
 
-### 藥水澆鑄
+## 鑄件台/鑄造盆 鑄件複製
 
-#### `tconstruct.casting_table_potion`
-
-```ts
-/**
- * @param cooling_time defaults to `1.0`
-*/
-casting_table_potion(result: OutputItem_, bottle: InputItem_, fluid: InputFluid_): CastingTablePotionTconstruct
-casting_table_potion(result: OutputItem_, bottle: InputItem_, fluid: InputFluid_, cooling_time?: number): CastingTablePotionTconstruct
-```
-```ts
-class CastingTablePotionTconstruct {
-  result(result: OutputItem_): this
-  bottle(bottle: InputItem_): this
-  fluid(fluid: InputFluid_): this
-  cooling_time(coolingTime: number): this
-}
+語法：
+```typescript :no-line-numbers
+table_duplication(cast: Item, fluid: Fluid, cooling_time?: number = 1.0)
+basin_duplication(cast: Item, fluid: Fluid, cooling_time?: number = 1.0)
 ```
 
-#### `tconstruct.casting_basin_potion`
+特性：
+- 支援使用 `.cooling_time(number)` 方法設定冷卻時間。
 
-```ts
-/**
- * @param cooling_time defaults to `1.0`
-*/
-casting_basin_potion(result: OutputItem_, bottle: InputItem_, fluid: InputFluid_): CastingBasinPotionTconstruct
-casting_basin_potion(result: OutputItem_, bottle: InputItem_, fluid: InputFluid_, cooling_time?: number): CastingBasinPotionTconstruct
-```
-```ts
-class CastingBasinPotionTconstruct {
-  result(result: OutputItem_): this
-  bottle(bottle: InputItem_): this
-  fluid(fluid: InputFluid_): this
-  cooling_time(coolingTime: number): this
-}
+```javascript :no-line-numbers
+ServerEvents.recipes((event) => {
+  const { tconstruct } = event.recipes;
+
+  tconstruct.table_duplication("minecraft:gold_ingot", Fluid.of("tconstruct:molten_gold", 1000));
+  tconstruct.table_duplication("minecraft:gold_ingot", Fluid.of("tconstruct:molten_gold", 1000)).cooling_time(1.5);
+
+  tconstruct.basin_duplication("minecraft:gold_block", Fluid.of("tconstruct:molten_gold", 1000));
+  tconstruct.basin_duplication("minecraft:gold_block", Fluid.of("tconstruct:molten_gold", 1000)).cooling_time(1.5);
+});
 ```
 
-### 容器填充
+## 鑄件台/鑄造盆 藥水澆鑄
 
-#### `tconstruct.table_filling`
+語法：
 
-```ts
-/**
- * @param fluid_amount defaults to `100`
-*/
-table_filling(fluid_amount?: number, container: InputItem_): TableFillingTconstruct
-```
-```ts
-class TableFillingTconstruct {
-  fluid_amount(fluidAmount: number): this
-  container(container: InputItem_): this
-}
+```typescript :no-line-numbers
+casting_table_potion(result: Item, bottle: Item, fluid: Fluid, cooling_time?: number = 1.0)
+casting_basin_potion(result: Item, bottle: Item, fluid: Fluid, cooling_time?: number = 1.0)
 ```
 
-#### `tconstruct.basin_filling`
+特性：
+- 支援使用 `.cooling_time(number)` 方法設定冷卻時間。
 
-```ts
-/**
- * @param fluid_amount defaults to `100`
-*/
-basin_filling(fluid_amount?: number, container: InputItem_): BasinFillingTconstruct
+```javascript :no-line-numbers
+ServerEvents.recipes((event) => {
+  const { tconstruct } = event.recipes;
+
+  tconstruct.casting_table_potion("minecraft:potion", "minecraft:glass_bottle", Fluid.of("tconstruct:molten_gold", 1000));
+  tconstruct.casting_table_potion("minecraft:potion", "minecraft:glass_bottle", Fluid.of("tconstruct:molten_gold", 1000)).cooling_time(1.5);
+
+  tconstruct.casting_basin_potion("minecraft:potion", "minecraft:glass_bottle", Fluid.of("tconstruct:molten_gold", 1000));
+  tconstruct.casting_basin_potion("minecraft:potion", "minecraft:glass_bottle", Fluid.of("tconstruct:molten_gold", 1000)).cooling_time(1.5);
+});
 ```
-```ts
-class BasinFillingTconstruct {
-  fluid_amount(fluidAmount: number): this
-  container(container: InputItem_): this
-}
+
+## 鑄件台/鑄造盆 容器填充
+
+語法：
+```typescript :no-line-numbers
+table_filling(fluid_amount?: number = 100, container?: Item = AIR)
+basin_filling(fluid_amount?: number = 100, container?: Item = AIR)
+```
+
+特性：
+- 支援使用 `.fluid_amount(number)` 方法設定流體量。
+- 支援使用 `.container(Item)` 方法設定容器。
+
+```javascript :no-line-numbers
+ServerEvents.recipes((event) => {
+  const { tconstruct } = event.recipes;
+
+  tconstruct.table_filling(100, "minecraft:glass_bottle");
+  tconstruct.table_filling(200, "minecraft:bucket");
+
+  tconstruct.basin_filling(100, "minecraft:glass_bottle");
+  tconstruct.basin_filling(200, "minecraft:bucket");
+});
 ```
 
 ## 實體熔煉
@@ -190,104 +147,87 @@ class BasinFillingTconstruct {
 當前條目並未存在於模組內，未來可能會新增，目前內文僅供參考
 :::
 
-#### `tconstruct.entity_melting`
-
-<!-- ```ts
-
-``` -->
+語法：
+```typescript :no-line-numbers
+// entity_melting(result: Fluid, entity: Entity, temperature?: number = 100.0): EntityMeltingTconstruct
+```
 
 ## 燃料
 
-#### `tconstruct.melting_fuel`
-
-```ts
-/**
- * @param duration defaults to `100`
- * @param temperature defaults to `100.0`
-*/
-melting_fuel(duration?: number, fluid: InputFluid_): MeltingFuelTconstruct
-melting_fuel(duration?: number, fluid: InputFluid_, temperature?: number): MeltingFuelTconstruct
-```
-```ts
-class MeltingFuelTconstruct {
-  duration(duration: number): this
-  fluid(fluid: InputFluid_): this
-  temperature(temperature: number): this
-}
+語法：
+```typescript :no-line-numbers
+melting_fuel(duration?: number = 100, fluid: Fluid, temperature?: number = 100)
 ```
 
-## 融化
+特性：
+- 支援使用 `.duration(number)` 方法設定燃燒時間。
 
-### 物品融化
+```javascript :no-line-numbers
+ServerEvents.recipes((event) => {
+  const { tconstruct } = event.recipes;
 
-#### `tconstruct.melting`
-
-```ts
-/**
- * @param temperature defaults to `100.0`
- * @param time defaults to `100.0`
-*/
-melting(result: OutputFluid_, ingredient: InputItem_): MeltingTconstruct
-melting(result: OutputFluid_, ingredient: InputItem_, temperature?: number): MeltingTconstruct
-melting(result: OutputFluid_, ingredient: InputItem_, temperature?: number, time?: number): MeltingTconstruct
-```
-```ts
-class MeltingTconstruct {
-  result(result: OutputFluid_): this
-  ingredient(ingredient: InputItem_): this
-  temperature(temperature: number): this
-  time(time: number): this
-}
+  tconstruct.melting_fuel(100, Fluid.of("tconstruct:molten_gold", 1000));
+  tconstruct.melting_fuel(200, Fluid.of("tconstruct:molten_gold", 1000), 1200);
+});
 ```
 
-### 物品融化－根據耐久度
+## 物品融化
+
+語法：
+```typescript :no-line-numbers
+melting(result: Fluid, ingredient: Item, temperature?: number = 100, time?: number = 100)
+```
+
+特性：
+- 支援使用 `.temperature(number)` 方法設定熔煉溫度。
+- 支援使用 `.time(number)` 方法設定熔煉時間。
+
+```javascript :no-line-numbers
+ServerEvents.recipes((event) => {
+  const { tconstruct } = event.recipes;
+
+  tconstruct.melting(Fluid.of("tconstruct:molten_gold", 1000), "minecraft:gold_ingot");
+  tconstruct.melting(Fluid.of("tconstruct:molten_gold", 1000), "minecraft:gold_ingot").temperature(1200);
+  tconstruct.melting(Fluid.of("tconstruct:molten_gold", 1000), "minecraft:gold_ingot").time(200);
+});
+```
+
+## 物品融化－根據耐久度
 
 ::: warning WIP
 當前條目並未存在於模組內，未來可能會新增，目前內文僅供參考
 :::
 
-#### `tconstruct.melting_durability`
+語法：
+```typescript :no-line-numbers
+// melting_durability(result: Fluid, ingredient: Item, temperature?: number = 100, time?: number = 100)
+```
 
-<!-- ```ts
-
-``` -->
-
-### 礦物融化
+## 礦物融化
 
 ::: warning WIP
 當前條目並未存在於模組內，未來可能會新增，目前內文僅供參考
 :::
 
-#### `tconstruct.ore_melting`
-
-<!-- ```ts
-
-``` -->
-
-## 鑄模成形
-
-#### `tconstruct.molding_table`
-
-```ts
-molding_table(result: OutputItem_, pattern: InputItem_, material: InputItem_): MoldingTableTconstruct
-```
-```ts
-class MoldingTableTconstruct {
-  result(result: OutputItem_): this
-  pattern(pattern: InputItem_): this
-  material(material: InputItem_): this
-}
+語法：
+```typescript :no-line-numbers
+// ore_melting(result: Fluid, ingredient: Item, temperature?: number = 100, time?: number = 100)
 ```
 
-#### `tconstruct.molding_basin`
+## 鑄件台/鑄造盆 鑄模成形
 
-```ts
-molding_basin(result: OutputItem_, pattern: InputItem_, material: InputItem_): MoldingTableTconstruct
+語法：
+
+```typescript :no-line-numbers
+molding_table(result: Item, pattern: Item, material: Item)
+molding_basin(result: Item, pattern: Item, material: Item)
 ```
-```ts
-class MoldingBasinTconstruct {
-  result(result: OutputItem_): this
-  pattern(pattern: InputItem_): this
-  material(material: InputItem_): this
-}
+
+```javascript :no-line-numbers
+ServerEvents.recipes((event) => {
+  const { tconstruct } = event.recipes;
+
+  tconstruct.molding_table("minecraft:gold_ingot", "tconstruct:gold_ingot_pattern", "tconstruct:molten_gold");
+  tconstruct.molding_basin("minecraft:gold_block", "tconstruct:gold_block_pattern", "tconstruct:molten_gold");
+});
 ```
