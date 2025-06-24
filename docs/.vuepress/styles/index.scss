@@ -3,6 +3,12 @@
 
 body {
   font-family: "Noto Sans TC", "Noto Sans SC", sans-serif;
+
+  --field-color: #E06C75;
+  --method-color: #61AFEF;
+  --type-color: #E5C07B;
+  --normal-color: #ABB2BF;
+
 }
 
 .external-link-icon .theme-hope-content a.custom-badge[href*="://"]:not(.no-external-link-icon)::after
@@ -31,4 +37,21 @@ body {
   .vp-toc-placeholder {
     position: inherit !important;
   }
+}
+
+.field-color {
+  color: var(--field-color);
+}
+.method-color {
+  color: var(--method-color);
+}
+.type-color {
+  color: var(--type-color);
+}
+.normal-color {
+  color: var(--normal-color);
+}
+
+table.unwrap-without-last tr td:not(:last-child) {
+  white-space: nowrap;
 }

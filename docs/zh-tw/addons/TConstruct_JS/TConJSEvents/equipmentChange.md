@@ -18,7 +18,7 @@ TConJSEvents.equipmentChange((event: TinkerToolChangeEventJS) => {})
 
 ## 欄位概觀
 
-<table>
+<table class="unwrap-without-last">
   <thead>
     <tr>
       <th>名稱</th>
@@ -37,7 +37,7 @@ TConJSEvents.equipmentChange((event: TinkerToolChangeEventJS) => {})
 
 ## 方法概觀
 
-<table>
+<table class="unwrap-without-last">
   <thead>
     <tr>
       <th>名稱</th>
@@ -120,36 +120,10 @@ let enableDetails = ref(false);
 </script>
 
 <style lang="scss">
-.field-color {
-  color: var(--field-color);
-}
-.method-color {
-  color: var(--method-color);
-}
-.type-color {
-  color: var(--type-color);
-}
-.normal-color {
-  color: var(--normal-color);
-}
-
-body {
-  --field-color: #E06C75;
-  --method-color: #61AFEF;
-  --type-color: #E5C07B;
-  --normal-color: #ABB2BF;
-}
-
 h1, h2, h3 {
   pointer-events: none;
   a {
     pointer-events: auto;
-  }
-}
-
-table {
-  tr td:not(:last-child) {
-    white-space: nowrap;
   }
 }
 </style>

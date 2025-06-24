@@ -28,7 +28,10 @@ mod:
 | `hasModifier`          | `(arg0: ItemStack_, arg1: string): boolean;`                                  | 判斷物品堆疊是否具有修飾符           |
 | `newBuilder`           | `(): ModifierBuilder;`                                                        | 新建一個修飾符建立器                 |
 
+{.unwrap-without-last}
+
 ::: tip 術語解釋
+
 ---
 - `IToolStackView_`：匠魂工具堆疊介面
 - `ToolStack`：匠魂工具堆疊

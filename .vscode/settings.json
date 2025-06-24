@@ -9,5 +9,8 @@
     "docs/.vuepress/dist": true,
     "node_modules": true,
   },
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "[markdown]": {
+    "editor.snippets.codeActions.enabled": true
+  }
 }
