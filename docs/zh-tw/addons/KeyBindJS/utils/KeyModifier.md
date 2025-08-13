@@ -3,7 +3,22 @@ title: KeyModifier
 description: 與修飾按鍵相關的類型和方法
 ---
 
-## 屬性與方法
+::: tabs#code
+
+@tab KubeJS 6
+
+JavaDoc：https://lexxie.dev/forge/1.20.1/net/minecraftforge/client/settings/KeyModifier.html
+原始碼：[net.minecraftforge.client.settings.KeyModifier](https://github.com/MinecraftForge/MinecraftForge/blob/1.20.1/src/main/java/net/minecraftforge/client/settings/KeyModifier.java)
+
+
+@tab KubeJS 7
+
+JavaDoc：https://lexxie.dev/neoforge/1.21.1/net/neoforged/neoforge/client/settings/KeyModifier.html
+原始碼：[net.neoforged.neoforge.client.settings.KeyModifier](https://github.com/neoforged/NeoForge/blob/1.21.x/src/client/java/net/neoforged/neoforge/client/settings/KeyModifier.java)
+
+:::
+
+<!-- ## 屬性與方法
 
 ### 靜態
 
@@ -28,4 +43,4 @@ description: 與修飾按鍵相關的類型和方法
 | `isActive(arg0: IKeyConflictContext_)`                                   | `boolean`   | 檢查是否激活修飾按鍵 |
 | `getCombinedName(arg0: InputConstants$Key_, arg1: Supplier_<Component>)` | `Component` | 獲取組合名稱         |
 | `name()`                                                                 | `string`    | 獲取名稱             |
-| `ordinal()`                                                              | `number`    | 獲取序號             |
+| `ordinal()`                                                              | `number`    | 獲取序號             | -->

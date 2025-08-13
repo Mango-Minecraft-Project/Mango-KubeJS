@@ -4,17 +4,31 @@ shortTitle: modify
 description: 修改按鍵綁定
 ---
 
-<StartupSide/>
+::: code-tabs#code
 
-```ts title="@at startup"
+@tab KubeJS 6
+
+```ts title="<StartupSide/>"
 modify(handler: (event: KeyBindModifyEvent) => void):void,
 ```
+
+@tab KubeJS 7
+
+```ts title="<ClientSide/>"
+modify(handler: (event: KeyBindModifyEvent) => void):void,
+```
+
+:::
 
 ---
 
 ## 範例
 
-```js title="@at startup"
+::: code-tabs#code
+
+@tab KubeJS 6
+
+```js title="<StartupSide/>"
 KeyBindEvents.modify((event) => {
   // 修改默認按鍵
   event.modifyKey("key.curios.open.desc", GLFW.GLFW_KEY_X);
@@ -31,6 +45,28 @@ KeyBindEvents.modify((event) => {
   event.remove("key.jade.narrate"); // 語音複述
 });
 ```
+
+@tab KubeJS 7
+
+```js title="<ClientSide/>"
+KeyBindJSEvents.modify((event) => {
+  // 修改默認按鍵
+  event.modifyKey("key.curios.open.desc", GLFW.GLFW_KEY_X);
+
+  // 修改默認修飾符
+  event.modifyModifier("key.curios.open.desc", KeyModifier.ALT);
+
+  // 修改按鍵分組，若不清楚有什麼可以使用 @category_name 程式碼片段來查看
+  event.modifyCategory("key.curios.open.desc", "key.categories.misc");
+
+  // 移除按鍵
+  event.remove("key.saveToolbarActivator"); // 保存快捷欄
+  event.remove("key.loadToolbarActivator"); // 加載快捷欄
+  event.remove("key.jade.narrate"); // 語音複述
+});
+```
+
+:::
 
 ## 方法列表
 

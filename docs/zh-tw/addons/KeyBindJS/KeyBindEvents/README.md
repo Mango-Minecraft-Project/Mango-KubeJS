@@ -4,6 +4,10 @@ dir:
   link: true
 ---
 
+::: tabs#code
+
+@tab KubeJS 6
+
 ## 登錄 <StartupSide/>
 
 | 事件名稱                             | 說明         |
@@ -19,6 +23,26 @@ dir:
 | [`KeyBindEvents.modify`][modify] | 修改按鍵綁定 |
 
 [modify]: ./modify
+
+@tab KubeJS 7
+
+## 登錄 <ClientSide/>
+
+| 事件名稱                             | 說明         |
+| ------------------------------------ | ------------ |
+| [`KeyBindEvents.register`][register] | 註冊按鍵綁定 |
+
+[register]: ./register
+
+## 修改 <ClientSide/>
+
+| 事件名稱                         | 說明         |
+| -------------------------------- | ------------ |
+| [`KeyBindEvents.modify`][modify] | 修改按鍵綁定 |
+
+[modify]: ./modify
+
+:::
 
 ## 監聽 <ClientSide/>
 

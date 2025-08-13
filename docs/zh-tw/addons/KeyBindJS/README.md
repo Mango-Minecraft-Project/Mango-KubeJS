@@ -31,6 +31,10 @@ mod:
 
 以下是一個將打開飾品欄的預設按鍵改為 ALT+X，並移到原版的雜項分類下面，以及刪除跳躍按鍵的範例：
 
+::: code-tabs#code
+
+@tab KubeJS 6
+
 ```js
 KeyBindEvents.modify((event) => {
   event.modifyKey("key.curios.open.desc", GLFW.GLFW_KEY_X);
@@ -40,6 +44,20 @@ KeyBindEvents.modify((event) => {
   event.remove("key.jump");
 });
 ```
+
+@tab KubeJS 7
+
+```js
+KeyBindJSEvents.modify((event) => {
+  event.modifyKey("key.curios.open.desc", GLFW.GLFW_KEY_X);
+  event.modifyModifier("key.curios.open.desc", KeyModifier.ALT);
+  event.modifyCategory("key.curios.open.desc", "key.categories.misc");
+
+  event.remove("key.jump");
+});
+```
+
+:::
 
 ---
 

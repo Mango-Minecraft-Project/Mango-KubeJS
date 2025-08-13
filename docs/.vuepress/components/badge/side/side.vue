@@ -16,12 +16,12 @@ const i18nText = {
   "zh-CN": {
     Client: "客户端",
     Server: "服务端",
-    Startup: "启动",
+    Startup: "启动端",
   },
   "zh-TW": {
     Client: "客戶端",
     Server: "伺服器端",
-    Startup: "啟動",
+    Startup: "啟動端",
   },
 }
 
