@@ -11,13 +11,13 @@ tags: [KubeJS 7]
 
 你可以先在 `startup` 腳本中定義一個類別，然後在 `client` 和 `server` 腳本中使用它。這樣可以確保類別在兩端都可用。
 
-```javascript title="<StartupSide/> | startup_scripts/index.js"
+```js title="<StartupSide/>"
 global.Classes = global.Classes || {};
 ```
 
 然後在 `startup` 腳本中定義你的類別。這裡我們使用 ES5 的語法來定義類別，因為 KubeJS 使用的是 Rhino 引擎，這樣可以確保在所有端都能正常運行。
 
-```javascript title="<StartupSide/> | startup_scripts/index.js"
+```js title="<StartupSide/>"
 function MyClass(name) {
   this.name = name;
 };
@@ -31,12 +31,12 @@ MyClass.prototype.greet = function() {
 
 ::: code-tabs#define-class
 @tab `new Class()`
-```javascript title="<StartupSide/> | startup_scripts/index.js"
+```js title="<StartupSide/>"
 global.Classes.MyClass = MyClass;
 ```
 
 @tab `Class()`
-```javascript title="<StartupSide/> | startup_scripts/index.js"
+```js title="<StartupSide/>"
 global.Classes.MyClass = () => new MyClass();
 ```
 :::
@@ -44,14 +44,14 @@ global.Classes.MyClass = () => new MyClass();
 接下來就可以在 `client` 和 `server` 腳本中使用這個類別了。
 
 ::: code-tabs#use-class
-@tab `client` 腳本
-```javascript title="<ClientSide/> | client_scripts/index.js"
+@tab <ClientSide/>
+```js
 const myInstance = new global.Classes.MyClass("World");
 console.log(myInstance.greet()); // 輸出: Hello, World!
 ```
 
-@tab `server` 腳本
-```javascript title="<ServerSide/> | server_scripts/index.js"
+@tab <ServerSide/>
+```js
 const myInstance = new global.Classes.MyClass("Server");
 console.log(myInstance.greet()); // 輸出: Hello, Server!
 ```

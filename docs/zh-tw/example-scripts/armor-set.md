@@ -6,6 +6,10 @@ tags: [KubeJS 6]
 
 當玩家穿戴完整套裝時，會自動套用套裝效果，並在 Tooltip 中顯示當前套裝名稱。
 
+::: tabs#code
+
+@tab KubeJS 6
+
 ```js title="<ServerSide/>"
 global.armorSets = {
   netherite: "Netherite Armor Set",
@@ -55,3 +59,5 @@ ItemEvents.tooltip((event) => {
   });
 });
 ```
+
+:::
