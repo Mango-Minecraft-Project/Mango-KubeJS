@@ -258,8 +258,8 @@ conditionalStat(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntit
 - `arg1: number` - 匠魂修飾符等級
 - `arg2: LivingEntity` - 生物
 - `arg3: FloatToolStat` - 工具基本數值
-- `arg4: number` - 基礎數值
-- `arg5: number` - 倍率
+- `arg4: number` - 倍率
+- `arg5: number` - 基礎數值
 
 ##### 回傳值
 
@@ -270,7 +270,7 @@ conditionalStat(consumer: (arg0: IToolStackView, arg1: number, arg2: LivingEntit
 每級增加 10% 的攻擊傷害和彈射物傷害
 
 ```js
-builder.modifyStat((view, lvl, entity, stat, base, magnification) => {
+builder.modifyStat((view, lvl, entity, stat, magnification, base) => {
   switch (stat) {
     case TinkerToolStats.ATTACK_DAMAGE:
       return base * (1 + lvl * magnification);
