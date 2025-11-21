@@ -10,7 +10,7 @@ mod:
 
 語法：
 ```typescript :no-line-numbers
-alloy(result: Fluid, inputs: Fluid[], temperature?: number = 100)
+alloy(result: Fluid, inputs: Fluid[])
 ```
 
 特性：
@@ -30,23 +30,8 @@ ServerEvents.recipes((event) => {
 
 語法：
 ```typescript :no-line-numbers :no-line-numbers
-casting_table(
-  result: Item,
-  fluid: Fluid,
-  cast: Item,
-  cast_consumed?: boolean = false,
-  cooling_time?: number = 1.0,
-  switch_slots?: boolean = false
-)
-
-casting_basin(
-  result: Item,
-  fluid: Fluid,
-  cast: Item,
-  cast_consumed?: boolean = false,
-  cooling_time?: number = 1.0,
-  switch_slots?: boolean = false
-)
+casting_table(result: Item, fluid: Fluid, cast: Item)
+casting_basin(result: Item, fluid: Fluid, cast: Item)
 ```
 
 特性：
@@ -74,8 +59,8 @@ ServerEvents.recipes((event) => {
 
 語法：
 ```typescript :no-line-numbers
-table_duplication(cast: Item, fluid: Fluid, cooling_time?: number = 1.0)
-basin_duplication(cast: Item, fluid: Fluid, cooling_time?: number = 1.0)
+table_duplication(cast: Item, fluid: Fluid)
+basin_duplication(cast: Item, fluid: Fluid)
 ```
 
 特性：
@@ -98,8 +83,8 @@ ServerEvents.recipes((event) => {
 語法：
 
 ```typescript :no-line-numbers
-casting_table_potion(result: Item, bottle: Item, fluid: Fluid, cooling_time?: number = 1.0)
-casting_basin_potion(result: Item, bottle: Item, fluid: Fluid, cooling_time?: number = 1.0)
+casting_table_potion(result: Item, bottle: Item, fluid: Fluid)
+casting_basin_potion(result: Item, bottle: Item, fluid: Fluid)
 ```
 
 特性：
@@ -175,7 +160,7 @@ ServerEvents.recipes((event) => {
 
 語法：
 ```typescript :no-line-numbers
-melting(result: Fluid, ingredient: Item, temperature?: number = 100, time?: number = 100)
+melting(result: Fluid, ingredient: Item)
 ```
 
 特性：
