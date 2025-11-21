@@ -6,6 +6,10 @@ mod:
   ref: "../README.md"
 ---
 
+::: tip
+Translate by ChatGPT-5 mini
+:::
+
 ## Alloys
 
 Syntax：
@@ -216,7 +220,3 @@ ServerEvents.recipes((event) => {
   tconstruct.molding_basin("minecraft:gold_block", "tconstruct:gold_block_pattern", "tconstruct:molten_gold");
 });
 ```
-
-::: tip
-Translate by ChatGPT-5 mini
-:::
