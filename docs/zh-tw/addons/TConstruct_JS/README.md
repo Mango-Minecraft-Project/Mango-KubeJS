@@ -15,7 +15,6 @@ mod:
   name: TConstruct JS
   author: 晓月
   CurseForge: mc-mods/tconstructjs
-  # Modrinth: mod/tconjsconstructjs
   GitHub: Minecraft-Celestial/TConstructJS
   McMod: class/18657
 ---

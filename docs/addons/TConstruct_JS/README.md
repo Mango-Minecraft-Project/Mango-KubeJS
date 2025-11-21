@@ -12,10 +12,9 @@ layout: AddonPage
 mod:
   name: TConstruct JS
   author: xiaoyue
-  # CurseForge: mc-mods/tconstructjs
-  # Modrinth: mod/tconjsconstructjs
-  # GitHub: xiaoyue/constructjs
-  # McMod: class/17415
+  CurseForge: mc-mods/tconstructjs
+  GitHub: xiaoyue/constructjs
+  McMod: class/17415
 ---
 
 ::: warning
