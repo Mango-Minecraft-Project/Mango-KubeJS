@@ -141,18 +141,21 @@ ServerEvents.recipes((event) => {
 
 語法：
 ```typescript :no-line-numbers
-melting_fuel(duration?: number = 100, fluid: Fluid, temperature?: number = 100)
+melting_fuel(duration?: number = 100, fluid: Fluid, temperature?: number = 100, rate?: number = 20)
 ```
 
 特性：
 - 支援使用 `.duration(number)` 方法設定燃燒時間。
+- 支援使用 `.temperature(number)` 方法設定燃燒溫度。
+- 支援使用 `.rate(number)` 方法設定燃燒速率。
 
 ```javascript :no-line-numbers
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;
 
-  tconstruct.melting_fuel(100, Fluid.of("tconstruct:molten_gold", 1000));
-  tconstruct.melting_fuel(200, Fluid.of("tconstruct:molten_gold", 1000), 1200);
+  tconstruct.melting_fuel(300, Fluid.of("tconstruct:molten_gold", 1000), 1200, 30);
+  tconstruct.melting_fuel(200, Fluid.of("tconstruct:molten_gold", 1000)).temperature(1200);
+  tconstruct.melting_fuel(200, Fluid.of("tconstruct:molten_gold", 1000)).rate(30);
 });
 ```
 
