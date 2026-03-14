@@ -1,6 +1,6 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import locales from "./theme/locales.js";
-import { Page } from "vuepress";
+import type { Page } from "vuepress";
 
 export default hopeTheme(
   {
@@ -30,7 +30,7 @@ export default hopeTheme(
     logo: "/logo.svg",
     repo: "Mango-Minecraft-Project/Mango-KubeJS",
     repoDisplay: true,
-    repoLabel: "Github",
+    repoLabel: "GitHub",
 
     // - Sidebar
     sidebarSorter: ["readme", "order", "filename", "title", "date", "date-desc"],
