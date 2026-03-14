@@ -1,7 +1,19 @@
 {
   "files.autoSave": "off",
   "typescript.suggest.autoImports": true,
-  "cSpell.words": ["Mcmod", "Modrinth", "tconstruct"],
+  "cSpell.words": [
+    "createheatjs",
+    "darkmode",
+    "eventjs",
+    "filesjs",
+    "Lazyload",
+    "Mcmod",
+    "Modrinth",
+    "shiki",
+    "slimsearch",
+    "tconstruct",
+    "ytmango"
+  ],
   "files.exclude": {
     "**/.git": false,
     "docs/.vuepress/.cache": true,

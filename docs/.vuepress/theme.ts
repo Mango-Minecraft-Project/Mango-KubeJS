@@ -1,21 +1,26 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import locales from "./theme/locales.js";
+import { Page } from "vuepress";
 
 export default hopeTheme(
   {
-    // Basic
-    hostname: "mango-kubejs.pages.dev",
-    favicon: "/logo.png",
+    // # Basic
+    hostname: "kubejs.ytmango.uk",
+    author: {
+      name: "MangoJellyPudding",
+      url: "https://ytmango.uk",
+    },
     license: "AGPL-3.0",
+    favicon: "/logo.png",
     // hotReload: true, // enable it to preview all changes in time
     locales,
 
-    // Feature
+    // # Feature
     encrypt: {
       config: {},
     },
 
-    // Layouts
+    // # Layouts
     // - Navbar
     navbarLayout: {
       start: ["Brand", "Language", "Search"],
@@ -24,10 +29,12 @@ export default hopeTheme(
     },
     logo: "/logo.svg",
     repo: "Mango-Minecraft-Project/Mango-KubeJS",
+    repoDisplay: true,
+    repoLabel: "Github",
 
     // - Sidebar
     sidebarSorter: ["readme", "order", "filename", "title", "date", "date-desc"],
-    headerDepth: 2,
+    // headerDepth: 2,
 
     // - Metadata
     lastUpdated: true,
@@ -38,57 +45,34 @@ export default hopeTheme(
     docsDir: "docs",
 
     // - Footer
-    copyright: "Copyright © 2025 MangoJellyPudding",
+    copyright: `Copyright © ${new Date().getUTCFullYear()} MangoJellyPudding`,
     displayFooter: true,
 
-    // Appearance
+    // - misc
+    toc: true,
+
+    // # Appearance
     darkmode: "enable",
     externalLinkIcon: false,
     fullscreen: true,
     pure: true,
     focus: false,
+    print: true,
 
     // i18n
     blogLocales: {
       empty: "",
     },
 
-    // Markdown
+    // # Markdown
     markdown: {
-      alert: true,
-      hint: true,
-      align: true,
-      attrs: true,
-      codeTabs: true,
-      component: true,
-      demo: true,
-      figure: true,
+      // - behavior
       gfm: true,
-      imgLazyload: true,
-      imgSize: true,
-      include: true,
-      mark: true,
-      plantuml: true,
-      spoiler: true,
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-      sub: true,
-      sup: true,
-      tabs: true,
-      tasklist: true,
       vPre: true,
-
+      breaks: true,
+      linkify: true,
+      figure: true,
+      imgLazyload: true,
       highlighter: {
         type: "shiki",
 
@@ -111,6 +95,37 @@ export default hopeTheme(
         defaultLang: "javascript",
         logLevel: "silent",
       },
+      linksCheck: true,
+
+      // - grammar
+      component: true,
+      footnote: true,
+      imgMark: true,
+      imgSize: true,
+      obsidianImgSize: true,
+      include: true,
+      tabs: true,
+      tasklist: true,
+
+      // - stylize
+      align: true,
+      attrs: true,
+      mark: true,
+      sup: true,
+      sub: true,
+      spoiler: true,
+      stylize: [],
+
+      // - chart
+      plantuml: true,
+
+      // - code
+      codeTabs: true,
+      preview: true,
+      demo: true,
+
+      alert: true,
+      hint: true,
     },
 
     plugins: {
@@ -124,15 +139,21 @@ export default hopeTheme(
         prefix: "fa6-solid:",
       },
 
-      search: {
+      slimsearch: {
+        indexContent: false,
+        suggestion: true,
+
+        customFields: [
+          {
+            getter: (page: Page) =>
+              (<string[]>page.frontmatter.tags ?? []).concat(<string[]>page.frontmatter.categories ?? []),
+          },
+        ],
         locales: {
           "/zh-tw/": {
             placeholder: "搜尋",
           },
         },
-        maxSuggestions: 20,
-        getExtraFields: (page) =>
-          (<string[]>page.frontmatter.tags ?? []).concat(<string[]>page.frontmatter.categories ?? []),
       },
 
       git: {
@@ -155,7 +176,7 @@ export default hopeTheme(
                   const data = [before, path];
                   return before !== path ? data : [];
                 })
-                .filter((data) => !!data.length)
+                .filter((data) => !!data.length),
             ),
             "/zh-tw/addons/advancement_js": "/zh-tw/addons/Advancement_JS",
             "/zh-tw/addons/createheatjs": "/zh-tw/addons/Create_Heat_JS",
@@ -175,5 +196,5 @@ export default hopeTheme(
   },
   {
     custom: true,
-  }
+  },
 );
