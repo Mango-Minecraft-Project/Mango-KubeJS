@@ -2,7 +2,8 @@
 title: TConJSEvents.modifierRegistry
 shortTitle: modifierRegistry
 isOriginal: true
-headerDepth: 3
+toc:
+  levels: 3
 layout: AddonPage
 mod:
   ref: "../README.md"
