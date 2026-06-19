@@ -26,20 +26,19 @@ mod:
 | `getColor` | 無參數 | `TextColor` | 取得顏色 |
 
 <script setup lang="ts">
-export default {
-  components: {
-    AbilitySlot: {
-      template: `<Attachment link="ability_slot.png" class="icon-image" />`
-    },
-    DefenseSlot: {
-      template: `<Attachment link="defense_slot.png" class="icon-image" />`
-    },
-    SoulSlot: {
-      template: `<Attachment link="soul_slot.png" class="icon-image" />`
-    },
-    UpgradeSlot: {
-      template: `<Attachment link="upgrade_slot.png" class="icon-image" />`
-    }
-  }
+const AbilitySlot = {
+  template: `<Attachment link="ability_slot.png" class="icon-image" />`
+}
+
+const DefenseSlot = {
+  template: `<Attachment link="defense_slot.png" class="icon-image" />`
+}
+
+const SoulSlot = {
+  template: `<Attachment link="soul_slot.png" class="icon-image" />`
+}
+
+const UpgradeSlot = {
+  template: `<Attachment link="upgrade_slot.png" class="icon-image" />`
 }
 </script>
