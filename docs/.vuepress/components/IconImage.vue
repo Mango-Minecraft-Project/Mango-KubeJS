@@ -2,12 +2,6 @@
   <img :src="outputSrc" class="icon-image" />
 </template>
 
-<style scoped>
-.icon-image {
-  height: 1em;
-}
-</style>
-
 <script lang="ts">
 enum URL_PREFIX {
   WIKI = "https://minecraft.wiki/images/",

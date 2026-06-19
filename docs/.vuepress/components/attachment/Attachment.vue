@@ -1,5 +1,5 @@
 <template>
-  <component :is="currentComponent" :link="resolvedLink" :text="resolvedText" />
+  <component :is="currentComponent" :link="resolvedLink" :text="resolvedText" v-bind="$attrs" />
 </template>
 
 <script lang="ts">
@@ -28,6 +28,7 @@ function getComponentByExtension(extension: string) {
 }
 
 export default {
+  inheritAttrs: false,
   props: {
     type: {
       type: String,
@@ -38,6 +39,10 @@ export default {
       required: true,
     },
     text: String,
+    global: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     currentComponent() {
@@ -54,14 +59,12 @@ export default {
       }
     },
     resolvedLink() {
-      // "/xxx.html" -> "/docs/xxx/"
-      return (
-        "/docs/" +
-        useRoute()
-          .path.replace(/\.html$/, "/")
-          .replace(/^\//, "") +
-        this.link
-      );
+      let currentPath = useRoute().path.replace(/\.html$/, "/");
+      let url = currentPath + this.link;
+      if (this.global) {
+        url = url.replace("zh-tw/", ""); 
+      }
+      return url.startsWith('/') ? url : '/' + url;
     },
     resolvedText() {
       // 如果沒有指定 text，則使用 link
