@@ -8,6 +8,7 @@ const Dir = ($path: string) => path.resolve(getDirname(import.meta.url), $path);
 export default defineUserConfig({
   base: "/",
   port: 8080,
+  host: "localhost",
 
   locales: {
     "/": {

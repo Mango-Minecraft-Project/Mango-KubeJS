@@ -33,7 +33,14 @@ export default hopeTheme(
     repoLabel: "GitHub",
 
     // - Sidebar
-    sidebarSorter: ["readme", "order", "filename", "title", "date", "date-desc"],
+    sidebarSorter: [
+      "readme",
+      "order",
+      "filename",
+      "title",
+      "date",
+      "date-desc",
+    ],
     // headerDepth: 2,
 
     // - Metadata
@@ -106,6 +113,8 @@ export default hopeTheme(
       include: true,
       tabs: true,
       tasklist: true,
+      // math: true,
+      // revealjs: true,
 
       // - stylize
       align: true,
@@ -117,7 +126,14 @@ export default hopeTheme(
       stylize: [],
 
       // - chart
+      // chartjs: true,
+      // echarts: true,
+      // flowchart: true,
+      // markmap: true,
+      // mermaid: true,
       plantuml: true,
+      DANGEROUS_ALLOW_SCRIPT_EXECUTION: false,
+      DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST: [],
 
       // - code
       codeTabs: true,
@@ -146,7 +162,9 @@ export default hopeTheme(
         customFields: [
           {
             getter: (page: Page) =>
-              (<string[]>page.frontmatter.tags ?? []).concat(<string[]>page.frontmatter.categories ?? []),
+              (<string[]>page.frontmatter.tags ?? []).concat(
+                <string[]>page.frontmatter.categories ?? [],
+              ),
           },
         ],
         locales: {
@@ -183,7 +201,8 @@ export default hopeTheme(
             "/zh-tw/addons/create-ponder": "/zh-tw/addons/Create_Ponder",
             "/zh-tw/addons/eventjs": "/zh-tw/addons/EventJS",
             "/zh-tw/addons/filesjs": "/zh-tw/addons/FilesJS",
-            "/zh-tw/addons/heaven_destiny_moment/": "/zh-tw/addons/Heaven_Destiny_Moment/",
+            "/zh-tw/addons/heaven_destiny_moment/":
+              "/zh-tw/addons/Heaven_Destiny_Moment/",
             "/zh-tw/addons/tconstruct_js/": "/zh-tw/addons/TConstruct_JS/",
 
             "/addons/tconstruct_js/": "/addons/TConstruct_JS/",
