@@ -1,6 +1,6 @@
 {
   "files.autoSave": "off",
-  "typescript.suggest.autoImports": true,
+  "js/ts.suggest.autoImports": true,
   "cSpell.words": [
     "createheatjs",
     "darkmode",
@@ -19,7 +19,7 @@
     "docs/.vuepress/.cache": true,
     "docs/.vuepress/.temp": true,
     "docs/.vuepress/dist": true,
-    "node_modules": true,
+    "node_modules": true
   },
   "editor.tabSize": 2,
   "[markdown]": {
