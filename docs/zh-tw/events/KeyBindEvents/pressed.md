@@ -4,5 +4,5 @@ shortTitle: pressed
 ---
 
 ```ts
-function pressed(handler: (event: $KubeJSKeybinds$KeyEvent) => void): void
+function pressed(handler: (event: $KubeJSKeybinds$KeyEvent) => void): void;
 ```

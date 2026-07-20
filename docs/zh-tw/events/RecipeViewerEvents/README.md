@@ -20,34 +20,35 @@ dir:
 
 | 通用 RecipeViewerEvents | JEI | REI | EMI |
 | ----------------------- | --- | --- | --- |
-| `removeCategories`      | ✅   | ✅   | ✅   |
-| `removeRecipes`         | ✅   | ✅   | ✅   |
+| `removeCategories`      | ✅  | ✅  | ✅  |
+| `removeRecipes`         | ✅  | ✅  | ✅  |
 
 | 物品 RecipeViewerEvents   | JEI | REI | EMI |
 | ------------------------- | --- | --- | --- |
-| `addEntries`              | ✅   | ✅   | ✅   |
-| `removeEntries`           | ✅   | ✅   | ✅   |
-| `removeEntriesCompletely` | ✅   | ✅   | ✅   |
-| `addInformation`          | ✅   | ✅   | ✅   |
-| `groupEntries`            | 🧋   | ✅   | 🧋   |
+| `addEntries`              | ✅  | ✅  | ✅  |
+| `removeEntries`           | ✅  | ✅  | ✅  |
+| `removeEntriesCompletely` | ✅  | ✅  | ✅  |
+| `addInformation`          | ✅  | ✅  | ✅  |
+| `groupEntries`            | 🧋  | ✅  | 🧋  |
 
 | 流體 RecipeViewerEvents   | JEI | REI | EMI |
 | ------------------------- | --- | --- | --- |
-| `addEntries`              | ✅   | ✅   | ✅   |
-| `removeEntries`           | ✅   | ✅   | ✅   |
-| `removeEntriesCompletely` | ✅   | ✅   | ✅   |
-| `addInformation`          | ✅   | ✅   | ✅   |
-| `groupEntries`            | 🧋   | ✅   | 🧋   |
+| `addEntries`              | ✅  | ✅  | ✅  |
+| `removeEntries`           | ✅  | ✅  | ✅  |
+| `removeEntriesCompletely` | ✅  | ✅  | ✅  |
+| `addInformation`          | ✅  | ✅  | ✅  |
+| `groupEntries`            | 🧋  | ✅  | 🧋  |
 
 如果您看到兩個圖標，則表示客戶端和伺服器端
 
-| 自訂條目 RecipeViewerEvents | JEI | REI    | EMI |
-| ----------------------------- | --- | ------ | --- |
-| `addEntries`                  | ❌   | ✅* / ❌ | ❌   |
-| `removeEntries`               | ❌   | ✅* / ❌ | ❌   |
-| removeEntriesCompletely`      | ❌   | ✅* / ❌ | ❌   |
-| `addInformation`              | ❌   | ✅* / ❌ | ❌   |
-| `groupEntries`                | 🧋   | ✅* / ❌ | 🧋   |
-* 需要 KubeJS 插件來註冊自訂類型
+| 自訂條目 RecipeViewerEvents | JEI | REI       | EMI |
+| --------------------------- | --- | --------- | --- |
+| `addEntries`                | ❌  | ✅\* / ❌ | ❌  |
+| `removeEntries`             | ❌  | ✅\* / ❌ | ❌  |
+| removeEntriesCompletely`    | ❌  | ✅\* / ❌ | ❌  |
+| `addInformation`            | ❌  | ✅\* / ❌ | ❌  |
+| `groupEntries`              | 🧋  | ✅\* / ❌ | 🧋  |
+
+- 需要 KubeJS 插件來註冊自訂類型
 
 <catalog/>

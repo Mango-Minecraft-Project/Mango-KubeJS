@@ -1,3 +1,3 @@
 <template>
-  <http httpType="TRACE"/>
+  <http httpType="TRACE" />
 </template>

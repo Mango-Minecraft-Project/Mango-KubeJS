@@ -4,5 +4,7 @@ shortTitle: modelProperties
 ---
 
 ```ts
-function modelProperties(handler: (event: $ItemModelPropertiesKubeEvent) => void): void
+function modelProperties(
+  handler: (event: $ItemModelPropertiesKubeEvent) => void,
+): void;
 ```

@@ -1,3 +1,3 @@
 <template>
-  <http httpType="CONNECT"/>
+  <http httpType="CONNECT" />
 </template>

@@ -1,3 +1,3 @@
 <template>
-  <http httpType="DELETE"/>
+  <http httpType="DELETE" />
 </template>

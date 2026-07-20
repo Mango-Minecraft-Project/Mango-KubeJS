@@ -1,6 +1,9 @@
 <template>
   <a :href="aHref" class="custom-badge" target="_blank">
-    <img src="https://img.shields.io/badge/Modrinth-313338?style=for-the-badge&logo=Modrinth" :alt="ImageAlt" />
+    <img
+      src="https://img.shields.io/badge/Modrinth-313338?style=for-the-badge&logo=Modrinth"
+      :alt="ImageAlt"
+    />
   </a>
 </template>
 

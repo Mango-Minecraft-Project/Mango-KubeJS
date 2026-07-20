@@ -1,6 +1,6 @@
 ---
 title: Global 物件
-description: 如何使用 Global 
+description: 如何使用 Global
 layout: AddonPage
 source: https://kubejs.com/wiki/tips/global
 ---
@@ -13,18 +13,17 @@ source: https://kubejs.com/wiki/tips/global
 
 ```js
 // 啟動腳本
-global.items = [
-  ['hi_wiki', '4x diamond']
-]
-StartupEvents.registry('item', event => {
+global.items = [["hi_wiki", "4x diamond"]];
+StartupEvents.registry("item", (event) => {
   // 註冊物品
-  global.items.forEach(items => event.register(items[0]))
-})
+  global.items.forEach((items) => event.register(items[0]));
+});
 ```
+
 ```js
 // 伺服器腳本
-ServerEvents.recipes(event => {
+ServerEvents.recipes((event) => {
   // 添加配方
-  global.items.forEach(items => event.shapeless(items[0], items[1]))
-})
+  global.items.forEach((items) => event.shapeless(items[0], items[1]));
+});
 ```

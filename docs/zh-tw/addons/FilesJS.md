@@ -17,7 +17,7 @@ mod:
 source: https://github.com/xiaoliziawa/Files-JS/blob/main/README-CN.md
 ---
 
-*FilesJS（檔案吉斯）是一個功能強大的 KubeJS 6 附屬模組，用來偷走你的失諧帳號和錢包。*
+_FilesJS（檔案吉斯）是一個功能強大的 KubeJS 6 附屬模組，用來偷走你的失諧帳號和錢包。_
 
 ## 功能
 
@@ -33,92 +33,91 @@ source: https://github.com/xiaoliziawa/Files-JS/blob/main/README-CN.md
 ### 檔案讀寫操作
 
 ```javascript
-
 // 讀取檔案內容
-let content = FilesJS.readFile('kubejs/config/myconfig.txt');
+let content = FilesJS.readFile("kubejs/config/myconfig.txt");
 
 // 寫入檔案
-FilesJS.writeFile('kubejs/data/output.txt', '你好，世界！');
+FilesJS.writeFile("kubejs/data/output.txt", "你好，世界！");
 
 // 追加到檔案
-FilesJS.appendFile('kubejs/logs/mylog.txt', '新的日誌條目');
+FilesJS.appendFile("kubejs/logs/mylog.txt", "新的日誌條目");
 
 // 追加單行
-FilesJS.appendLine('kubejs/logs/mylog.txt', '新的一行');
+FilesJS.appendLine("kubejs/logs/mylog.txt", "新的一行");
 
 // 寫入多行
-FilesJS.writeLines('kubejs/data/lines.txt', ['第一行', '第二行', '第三行']);
+FilesJS.writeLines("kubejs/data/lines.txt", ["第一行", "第二行", "第三行"]);
 
 // 讀取所有行
-let lines = FilesJS.readLines('kubejs/data/lines.txt');
+let lines = FilesJS.readLines("kubejs/data/lines.txt");
 
 // 讀取最後N行
-let lastLines = FilesJS.readLastLines('kubejs/logs/latest.log', 10);
+let lastLines = FilesJS.readLastLines("kubejs/logs/latest.log", 10);
 
 // 保存腳本檔案（自動添加.js副檔名和時間戳註釋）
-FilesJS.saveScript('kubejs/scripts/newscript', 'console.log("Hello");');
+FilesJS.saveScript("kubejs/scripts/newscript", 'console.log("Hello");');
 ```
 
 ### 檔案管理操作
 
 ```javascript
 // 檢查檔案是否存在
-if (FilesJS.exists('kubejs/scripts/myscript.js')) {
-    // 執行操作
+if (FilesJS.exists("kubejs/scripts/myscript.js")) {
+  // 執行操作
 }
 
 // 刪除檔案
-FilesJS.delete('kubejs/temp/oldfile.txt');
+FilesJS.delete("kubejs/temp/oldfile.txt");
 
 // 複製檔案
-FilesJS.copy('source.txt', 'target.txt');
+FilesJS.copy("source.txt", "target.txt");
 
 // 移動檔案
-FilesJS.move('old/path.txt', 'new/path.txt');
+FilesJS.move("old/path.txt", "new/path.txt");
 
 // 重命名檔案
-FilesJS.renameFile('oldname.txt', 'newname.txt');
+FilesJS.renameFile("oldname.txt", "newname.txt");
 
 // 創建目錄
-FilesJS.createDirectory('kubejs/newdir');
+FilesJS.createDirectory("kubejs/newdir");
 
 // 檢查檔案是否為空
-let isEmpty = FilesJS.isFileEmpty('kubejs/data/file.txt');
+let isEmpty = FilesJS.isFileEmpty("kubejs/data/file.txt");
 
 // 獲取檔案 MD5 哈希值
-let hash = FilesJS.getFileMD5('kubejs/data/important.dat');
+let hash = FilesJS.getFileMD5("kubejs/data/important.dat");
 
 // 比較兩個檔案
-let areEqual = FilesJS.compareFiles('file1.txt', 'file2.txt');
+let areEqual = FilesJS.compareFiles("file1.txt", "file2.txt");
 ```
 
 ### 批量檔案操作
 
 ```javascript
 // 合併多個檔案
-FilesJS.mergeFiles(['file1.txt', 'file2.txt'], 'merged.txt');
+FilesJS.mergeFiles(["file1.txt", "file2.txt"], "merged.txt");
 
 // 批量複製檔案（使用萬用字元）
-FilesJS.copyFiles('source/dir', 'target/dir', '*.json');
+FilesJS.copyFiles("source/dir", "target/dir", "*.json");
 
 // 創建 ZIP 壓縮包
-FilesJS.createZip('kubejs/data', 'kubejs/backups/data.zip');
+FilesJS.createZip("kubejs/data", "kubejs/backups/data.zip");
 
 // 替換檔案中的內容
-FilesJS.replaceInFile('config.txt', '舊值', '新值');
+FilesJS.replaceInFile("config.txt", "舊值", "新值");
 ```
 
 ### 目錄操作
 
 ```javascript
 // 列出目錄中的檔案
-let files = FilesJS.listFiles('kubejs/data');
+let files = FilesJS.listFiles("kubejs/data");
 
 // 遞歸列出所有檔案
-let allFiles = FilesJS.listFilesRecursively('kubejs/scripts');
+let allFiles = FilesJS.listFilesRecursively("kubejs/scripts");
 
 // 獲取檔案信息
-let fileInfo = FilesJS.getFileInfo('kubejs/config/settings.json');
+let fileInfo = FilesJS.getFileInfo("kubejs/config/settings.json");
 // fileInfo包含：exists, size, lastModified, isDirectory, isFile, isReadable, isWritable
 ```
 
@@ -126,31 +125,31 @@ let fileInfo = FilesJS.getFileInfo('kubejs/config/settings.json');
 
 ```javascript
 // 監視目錄變更
-FilesJS.watchDirectory('kubejs/data', (changedPath) => {
-    console.log('檔案已更改:', changedPath);
+FilesJS.watchDirectory("kubejs/data", (changedPath) => {
+  console.log("檔案已更改:", changedPath);
 });
 
 // 監視檔案內容變更（帶相似度閾值）
-FilesJS.watchContentChanges('kubejs/config/dynamic.json', 0.1);
+FilesJS.watchContentChanges("kubejs/config/dynamic.json", 0.1);
 
 // 監視匹配特定模式的檔案
-FilesJS.watchFilePattern('kubejs/scripts', '*.js');
+FilesJS.watchFilePattern("kubejs/scripts", "*.js");
 
 // 監視檔案大小
-FilesJS.watchFileSize('kubejs/data/growing.log', 1024 * 1024); // 1MB閾值
+FilesJS.watchFileSize("kubejs/data/growing.log", 1024 * 1024); // 1MB閾值
 ```
 
 ### 備份系統
 
 ```javascript
 // 立即創建備份
-FilesJS.backupFile('kubejs/important/data.json');
+FilesJS.backupFile("kubejs/important/data.json");
 
 // 計劃備份（延遲執行tick）
-FilesJS.scheduleBackup('kubejs/config/settings.json', 100); // 100 tick後開始備份這個檔案
+FilesJS.scheduleBackup("kubejs/config/settings.json", 100); // 100 tick後開始備份這個檔案
 
 // 搜索檔案內容
-let matches = FilesJS.searchInFile('kubejs/logs/latest.log', 'ERROR');
+let matches = FilesJS.searchInFile("kubejs/logs/latest.log", "ERROR");
 ```
 
 ## 安全性和限制
@@ -217,9 +216,9 @@ let matches = FilesJS.searchInFile('kubejs/logs/latest.log', 'ERROR');
 
 ```javascript
 try {
-    Files.writeFile('kubejs/data/test.txt', '內容');
+  Files.writeFile("kubejs/data/test.txt", "內容");
 } catch (exception) {
-    console.error('寫入檔案失敗:', exception.message);
+  console.error("寫入檔案失敗:", exception.message);
 }
 ```
 
@@ -247,6 +246,7 @@ try {
 ## 支持
 
 如果遇到問題或有疑問：
+
 1. 檢查日誌中的詳細錯誤信息
 2. 驗證檔案權限和路徑
 3. 確保在允許的目錄中操作

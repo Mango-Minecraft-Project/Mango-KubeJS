@@ -4,5 +4,8 @@ shortTitle: removeEntries
 ---
 
 ```ts
-function removeEntries(extra: string, handler: (event: $RemoveEntriesKubeEvent) => void): void
+function removeEntries(
+  extra: string,
+  handler: (event: $RemoveEntriesKubeEvent) => void,
+): void;
 ```

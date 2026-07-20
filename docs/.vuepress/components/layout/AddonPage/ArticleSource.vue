@@ -1,5 +1,8 @@
 <template>
-  <div v-if="displayName.some((name) => frontmatter[name])" class="component-info-block">
+  <div
+    v-if="displayName.some((name) => frontmatter[name])"
+    class="component-info-block"
+  >
     <template v-for="name in displayName">
       <div v-if="frontmatter[name]">
         {{ i18nText[name] }}<span v-html="specialConsumer(name)"></span>
@@ -46,7 +49,7 @@ export default {
           default:
             return text;
         }
-      }
+      };
     },
     i18nText() {
       return {

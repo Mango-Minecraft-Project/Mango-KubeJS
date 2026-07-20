@@ -4,5 +4,7 @@ shortTitle: specialRecipeSerializers
 ---
 
 ```ts
-function specialRecipeSerializers(handler: (event: $SpecialRecipeSerializerManager) => void): void
+function specialRecipeSerializers(
+  handler: (event: $SpecialRecipeSerializerManager) => void,
+): void;
 ```

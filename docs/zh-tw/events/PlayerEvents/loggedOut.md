@@ -4,5 +4,5 @@ shortTitle: loggedOut
 ---
 
 ```ts
-function loggedOut(handler: (event: $SimplePlayerKubeEvent) => void): void
+function loggedOut(handler: (event: $SimplePlayerKubeEvent) => void): void;
 ```

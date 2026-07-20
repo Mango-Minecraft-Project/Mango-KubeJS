@@ -27,17 +27,18 @@ ClassJS 是一個在 KubeJS 中建立 Java 類別的模組。
 
 ```javascript
 let ExampleClass = ClassCreator.create("ExampleClass")
-    .toPublic()           // 設定類別為 public
-    .defaultConstructor() // 新增預設建構子
-    .createMethod("exampleMethod", [], "java.lang.String") // 方法名稱、參數型別、與回傳型別
-        .toPublic()
-        .code(builder => {
-            builder.pushString("你好，ClassJS！")   // 將字串參考推到操作數棧
-                .returnObject();                    // 回傳該字串
-        })
-    .defineClass();     // 定義該類別
+  .toPublic() // 設定類別為 public
+  .defaultConstructor() // 新增預設建構子
+  .createMethod("exampleMethod", [], "java.lang.String") // 方法名稱、參數型別、與回傳型別
+  .toPublic()
+  .code((builder) => {
+    builder
+      .pushString("你好，ClassJS！") // 將字串參考推到操作數棧
+      .returnObject(); // 回傳該字串
+  })
+  .defineClass(); // 定義該類別
 
-console.info((new ExampleClass()).exampleMethod());
+console.info(new ExampleClass().exampleMethod());
 ```
 
 等價的 Java 程式碼：
@@ -62,13 +63,14 @@ public class ExampleClass {
 
 ```javascript
 let ExampleClass = ClassCreator.create("ExampleClass")
-    .toPublic()
-    .createMethod("exampleMethod", ["int", "int"], "int")
-        .toPublic().toStatic()
-        .codeJS((num1, num2) => {
-            return num1 + num2;
-        })
-    .defineClass();
+  .toPublic()
+  .createMethod("exampleMethod", ["int", "int"], "int")
+  .toPublic()
+  .toStatic()
+  .codeJS((num1, num2) => {
+    return num1 + num2;
+  })
+  .defineClass();
 
 console.info(ExampleClass.exampleMethod(1, 2));
 // 在 startup.log 的輸出為
@@ -93,12 +95,12 @@ public class ExampleClass {
 
 ## 載入已建立的類別
 
-類別只能在 *startup* 腳本中定義。如果你想在其他腳本中使用它們，可以使用 `ClassJSUtils.loadClass` 方法。
+類別只能在 _startup_ 腳本中定義。如果你想在其他腳本中使用它們，可以使用 `ClassJSUtils.loadClass` 方法。
 
 ```javascript
 ClassCreator.create("SomeClass")
-    /** 對這個類別進行一些操作以加入內容 */
-    .defineClass();
+  /** 對這個類別進行一些操作以加入內容 */
+  .defineClass();
 
 // 在其他腳本中：
 

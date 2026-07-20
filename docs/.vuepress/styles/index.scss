@@ -4,15 +4,15 @@
 body {
   font-family: "Noto Sans TC", "Noto Sans SC", sans-serif;
 
-  --field-color: #E06C75;
-  --method-color: #61AFEF;
-  --type-color: #E5C07B;
-  --normal-color: #ABB2BF;
-
+  --field-color: #e06c75;
+  --method-color: #61afef;
+  --type-color: #e5c07b;
+  --normal-color: #abb2bf;
 }
 
-.external-link-icon .theme-hope-content a.custom-badge[href*="://"]:not(.no-external-link-icon)::after
-{
+.external-link-icon
+  .theme-hope-content
+  a.custom-badge[href*="://"]:not(.no-external-link-icon)::after {
   content: none;
 }
 
@@ -58,10 +58,10 @@ table.unwrap-without-last tr td:not(:last-child) {
 
 .icon-image {
   height: 1em;
-  
+
   /* 基礎置中 */
-  vertical-align: middle; 
-  
+  vertical-align: middle;
+
   /* 微調：通常向上位移 0.1em 到 0.15em 可以達到視覺上的絕對置中 */
   position: relative;
   top: -0.1em;

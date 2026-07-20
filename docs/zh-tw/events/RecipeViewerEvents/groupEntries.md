@@ -4,5 +4,8 @@ shortTitle: groupEntries
 ---
 
 ```ts
-function groupEntries(extra: string, handler: (event: $GroupEntriesKubeEvent) => void): void
+function groupEntries(
+  extra: string,
+  handler: (event: $GroupEntriesKubeEvent) => void,
+): void;
 ```

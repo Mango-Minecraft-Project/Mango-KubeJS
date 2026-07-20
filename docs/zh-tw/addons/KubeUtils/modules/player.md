@@ -14,7 +14,7 @@ const kuPlayer = new Ku.Player(player);
 PlayerEvents.tick((event) => {
   const player = event.player;
   const kuPlayer = new Ku.Player(player);
-})
+});
 ```
 
 ## 方法
@@ -26,9 +26,9 @@ PlayerEvents.tick((event) => {
 ```javascript
 const kuPlayer = new Ku.Player(player);
 kuPlayer.showActionBarComponent({
-  "text": "Hello",
-  "bold": true
-})
+  text: "Hello",
+  bold: true,
+});
 ```
 
 ### `showActionBar(text: String)`
@@ -37,7 +37,7 @@ kuPlayer.showActionBarComponent({
 
 ```javascript
 const kuPlayer = new Ku.Player(player);
-kuPlayer.showActionBar("hello")
+kuPlayer.showActionBar("hello");
 ```
 
 ### `showActionBar(text: String, color: color)`
@@ -46,7 +46,7 @@ kuPlayer.showActionBar("hello")
 
 ```javascript
 const kuPlayer = new Ku.Player(player);
-kuPlayer.showActionBar("hello", "blue")
+kuPlayer.showActionBar("hello", "blue");
 ```
 
 ### `showActionBar(text: String, color: color, bold: boolean)`
@@ -55,7 +55,7 @@ kuPlayer.showActionBar("hello", "blue")
 
 ```javascript
 const kuPlayer = new Ku.Player(player);
-kuPlayer.showActionBar("hello", Color.BLUE, true)
+kuPlayer.showActionBar("hello", Color.BLUE, true);
 ```
 
 ### `clearStarterItemsFlag()`
@@ -66,8 +66,8 @@ kuPlayer.showActionBar("hello", Color.BLUE, true)
 
 ```javascript
 const kuPlayer = new Ku.Player(player);
-const success = kuPlayer.clearStarterItemsFlag()
-console.log(success) // true
+const success = kuPlayer.clearStarterItemsFlag();
+console.log(success); // true
 ```
 
 ### `isClientSide()`
@@ -76,6 +76,6 @@ console.log(success) // true
 
 ```javascript
 const kuPlayer = new Ku.Player(player);
-const isClient = kuPlayer.isClientSide()
-console.log(isClient) // true
+const isClient = kuPlayer.isClientSide();
+console.log(isClient); // true
 ```

@@ -1,6 +1,6 @@
-import { enusNavbar, zhtwNavbar, zhcnNavbar } from "./navbar/index.js";
+import { enusNavbar, zhcnNavbar, zhtwNavbar } from "./navbar/index.js";
 import { zhTWLocale } from "./patch/i18n/zh_tw.js";
-import { enusSidebar, zhtwSidebar, zhcnSidebar } from "./sidebar/index.js";
+import { enusSidebar, zhcnSidebar, zhtwSidebar } from "./sidebar/index.js";
 
 export default {
   "/": {

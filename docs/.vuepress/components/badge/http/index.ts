@@ -17,5 +17,5 @@ export default {
   PATCH,
   POST,
   PUT,
-  TRACE
+  TRACE,
 };

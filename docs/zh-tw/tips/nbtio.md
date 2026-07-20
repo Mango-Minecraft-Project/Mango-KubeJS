@@ -10,5 +10,8 @@ description: 了解如何使用 NBTIO 來讀取和寫入 NBT 文件
 config = NBTIO.read("kubejs/config/myawesomeconfig.nbt");
 
 // 寫入到現有/新文件
-NBTIO.write("kubejs/config/myawesomeconfig.nbt", { settings: "creeper", weirdblock: "minecraft:end_gateway" });
+NBTIO.write("kubejs/config/myawesomeconfig.nbt", {
+  settings: "creeper",
+  weirdblock: "minecraft:end_gateway",
+});
 ```

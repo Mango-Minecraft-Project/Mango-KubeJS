@@ -1,9 +1,9 @@
 <template>
-  <component 
-    :is="currentComponent" 
-    :link="resolvedLink" 
-    :text="resolvedText" 
-    v-bind="$attrs" 
+  <component
+    :is="currentComponent"
+    :link="resolvedLink"
+    :text="resolvedText"
+    v-bind="$attrs"
   />
 </template>
 
@@ -24,7 +24,7 @@ const props = withDefaults(
   }>(),
   {
     global: false,
-  }
+  },
 );
 
 // 停用屬性繼承到根節點（因為我們要手動 v-bind="$attrs" 給動態組件）

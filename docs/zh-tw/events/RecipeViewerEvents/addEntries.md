@@ -4,5 +4,8 @@ shortTitle: addEntries
 ---
 
 ```ts
-function addEntries(extra: string, handler: (event: $AddEntriesKubeEvent) => void): void
+function addEntries(
+  extra: string,
+  handler: (event: $AddEntriesKubeEvent) => void,
+): void;
 ```

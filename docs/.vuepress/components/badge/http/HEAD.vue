@@ -1,3 +1,3 @@
 <template>
-  <http httpType="HEAD"/>
+  <http httpType="HEAD" />
 </template>

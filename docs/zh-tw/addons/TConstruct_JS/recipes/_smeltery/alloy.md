@@ -2,6 +2,7 @@
 index: false
 dir: false
 ---
+
 ## 合金
 
 ::: tabs
@@ -9,7 +10,7 @@ dir: false
 @tab 語法
 
 ```typescript :no-line-numbers title=" "
-alloy(result, inputs, temperature)
+alloy(result, inputs, temperature);
 ```
 
 @tab 參數說明
@@ -32,12 +33,24 @@ alloy(result, inputs, temperature)
 
 :::
 
-```javascript title="範例" :no-line-numbers 
+```javascript title="範例" :no-line-numbers
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;
 
-  tconstruct.alloy("tconstruct:molten_rose_gold", ["tconstruct:molten_gold", "tconstruct:molten_copper"]); // [!code focus]
-  tconstruct.alloy("tconstruct:molten_rose_gold", ["tconstruct:molten_gold", "tconstruct:molten_copper"], 1000); // [!code focus]
-  tconstruct.alloy("tconstruct:molten_rose_gold", ["tconstruct:molten_gold", "tconstruct:molten_copper"]).temperature(1000); // [!code focus]
+  tconstruct.alloy("tconstruct:molten_rose_gold", [
+    "tconstruct:molten_gold",
+    "tconstruct:molten_copper",
+  ]); // [!code focus]
+  tconstruct.alloy(
+    "tconstruct:molten_rose_gold",
+    ["tconstruct:molten_gold", "tconstruct:molten_copper"],
+    1000,
+  ); // [!code focus]
+  tconstruct
+    .alloy("tconstruct:molten_rose_gold", [
+      "tconstruct:molten_gold",
+      "tconstruct:molten_copper",
+    ])
+    .temperature(1000); // [!code focus]
 });
 ```

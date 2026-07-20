@@ -7,6 +7,11 @@ shortTitle: stoppedFalling
 /**
  * Invoked when a falling block finishes falling.
  */
-function stoppedFalling(extra: $ResourceKey$$Type<($Block)>, handler: (event: $BlockStoppedFallingKubeEvent) => void): void
-function stoppedFalling(handler: (event: $BlockStoppedFallingKubeEvent) => void): void
+function stoppedFalling(
+  extra: $ResourceKey$$Type<$Block>,
+  handler: (event: $BlockStoppedFallingKubeEvent) => void,
+): void;
+function stoppedFalling(
+  handler: (event: $BlockStoppedFallingKubeEvent) => void,
+): void;
 ```

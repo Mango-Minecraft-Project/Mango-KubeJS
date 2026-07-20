@@ -1,3 +1,3 @@
 <template>
-  <http httpType="POST"/>
+  <http httpType="POST" />
 </template>

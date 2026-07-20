@@ -7,5 +7,7 @@ shortTitle: modification
 /**
  * Invoked after all items are registered to modify them.
  */
-function modification(handler: (event: $ItemModificationKubeEvent) => void): void
+function modification(
+  handler: (event: $ItemModificationKubeEvent) => void,
+): void;
 ```

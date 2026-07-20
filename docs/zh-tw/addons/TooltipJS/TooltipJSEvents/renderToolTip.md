@@ -7,6 +7,9 @@ mod:
 ---
 
 ```ts title="<ClientSide/>"
-function renderToolTip(extra: $Item$$Type, handler: ((event: $RenderTooltipEventJS) => void)): void
-function renderToolTip(handler: ((event: $RenderTooltipEventJS) => void)): void
+function renderToolTip(
+  extra: $Item$$Type,
+  handler: (event: $RenderTooltipEventJS) => void,
+): void;
+function renderToolTip(handler: (event: $RenderTooltipEventJS) => void): void;
 ```

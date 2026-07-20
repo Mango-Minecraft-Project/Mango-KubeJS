@@ -4,5 +4,7 @@ shortTitle: particleProviderRegistry
 ---
 
 ```ts
-function particleProviderRegistry(handler: (event: $ParticleProviderRegistryKubeEvent) => void): void
+function particleProviderRegistry(
+  handler: (event: $ParticleProviderRegistryKubeEvent) => void,
+): void;
 ```

@@ -4,5 +4,7 @@ shortTitle: recipeSchemaRegistry
 ---
 
 ```ts
-function recipeSchemaRegistry(handler: (event: $RecipeSchemaRegistry) => void): void
+function recipeSchemaRegistry(
+  handler: (event: $RecipeSchemaRegistry) => void,
+): void;
 ```

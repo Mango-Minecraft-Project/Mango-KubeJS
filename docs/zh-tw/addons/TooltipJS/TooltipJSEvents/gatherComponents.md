@@ -7,6 +7,11 @@ mod:
 ---
 
 ```ts title="<ClientSide/>"
-function gatherComponents(extra: $Item$$Type, handler: ((event: $GatherComponentsEventJS) => void)): void
-function gatherComponents(handler: ((event: $GatherComponentsEventJS) => void)): void
+function gatherComponents(
+  extra: $Item$$Type,
+  handler: (event: $GatherComponentsEventJS) => void,
+): void;
+function gatherComponents(
+  handler: (event: $GatherComponentsEventJS) => void,
+): void;
 ```

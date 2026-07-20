@@ -9,7 +9,7 @@ export default {
       type: String,
       required: true,
     },
-    text: String
+    text: String,
   },
 };
 </script>

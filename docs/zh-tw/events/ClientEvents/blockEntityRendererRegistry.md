@@ -4,5 +4,7 @@ shortTitle: blockEntityRendererRegistry
 ---
 
 ```ts
-function blockEntityRendererRegistry(handler: (event: $BlockEntityRendererRegistryKubeEvent) => void): void
+function blockEntityRendererRegistry(
+  handler: (event: $BlockEntityRendererRegistryKubeEvent) => void,
+): void;
 ```

@@ -15,13 +15,13 @@ source: https://kubejs.com/wiki/tips/persistent-data
 以下是持久數據的示例：
 
 ```js
-PlayerEvents.loggedIn(event => {
+PlayerEvents.loggedIn((event) => {
   const { persistentData } = event.player;
   if (!persistentData.firstJoin) {
-    persistentData.firstJoin = true
+    persistentData.firstJoin = true;
     // 僅在首次加入時執行的操作，這裡我們給玩家一些鑽石和一把劍
-    event.player.give('29x diamond')
-    event.player.give('minecraft:diamond_sword[damage=2]')
+    event.player.give("29x diamond");
+    event.player.give("minecraft:diamond_sword[damage=2]");
   }
-})
+});
 ```

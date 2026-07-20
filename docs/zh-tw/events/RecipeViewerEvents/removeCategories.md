@@ -4,5 +4,7 @@ shortTitle: removeCategories
 ---
 
 ```ts
-function removeCategories(handler: (event: $RemoveCategoriesKubeEvent) => void): void
+function removeCategories(
+  handler: (event: $RemoveCategoriesKubeEvent) => void,
+): void;
 ```

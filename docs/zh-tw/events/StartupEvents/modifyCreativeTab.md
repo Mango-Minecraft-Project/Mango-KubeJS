@@ -4,5 +4,8 @@ shortTitle: modifyCreativeTab
 ---
 
 ```ts
-function modifyCreativeTab(extra: $ResourceLocation$$Type, handler: (event: $CreativeTabKubeEvent) => void): void
+function modifyCreativeTab(
+  extra: $ResourceLocation$$Type,
+  handler: (event: $CreativeTabKubeEvent) => void,
+): void;
 ```

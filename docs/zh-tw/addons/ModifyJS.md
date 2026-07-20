@@ -36,28 +36,61 @@ const $Axis = Java.loadClass("com.mojang.math.Axis");
 StartupEvents.registry("block", (event) => {
   event.create("test_block").item((pose) => {
     pose.isCustomRenderer(true);
-    pose.renderByItem((itemStack, itemDisplayContext, poseStack, buffer, packedLight, packedOverlay) => {
-      poseStack.pushPose();
-      let time = Date.now();
-      let angle = (time / 10) % 360;
-      poseStack.mulPose($Axis.YP.rotationDegrees(angle));
-      Client.itemRenderer
-        .getBlockEntityRenderer()
-        .renderByItem("blue_bed", itemDisplayContext, poseStack, buffer, packedLight, packedOverlay);
-      poseStack.popPose();
-    });
+    pose.renderByItem(
+      (
+        itemStack,
+        itemDisplayContext,
+        poseStack,
+        buffer,
+        packedLight,
+        packedOverlay,
+      ) => {
+        poseStack.pushPose();
+        let time = Date.now();
+        let angle = (time / 10) % 360;
+        poseStack.mulPose($Axis.YP.rotationDegrees(angle));
+        Client.itemRenderer
+          .getBlockEntityRenderer()
+          .renderByItem(
+            "blue_bed",
+            itemDisplayContext,
+            poseStack,
+            buffer,
+            packedLight,
+            packedOverlay,
+          );
+        poseStack.popPose();
+      },
+    );
   });
 });
 
 // 如果你需要為普通物品添加物品渲染器，你應該使用建構器類型 `mjs_item`
 StartupEvents.registry("item", (event) => {
-  event.create("test_item", "mjs_item")
+  event
+    .create("test_item", "mjs_item")
     .isCustomRenderer(true)
-    .renderByItem((itemStack, itemDisplayContext, poseStack, buffer, packedLight, packedOverlay) => {
-      Client.itemRenderer
-        .getBlockEntityRenderer()
-        .renderByItem("blue_bed", itemDisplayContext, poseStack, buffer, packedLight, packedOverlay);
-    });
+    .renderByItem(
+      (
+        itemStack,
+        itemDisplayContext,
+        poseStack,
+        buffer,
+        packedLight,
+        packedOverlay,
+      ) => {
+        Client.itemRenderer
+          .getBlockEntityRenderer()
+          .renderByItem(
+            "blue_bed",
+            itemDisplayContext,
+            poseStack,
+            buffer,
+            packedLight,
+            packedOverlay,
+          );
+      },
+    );
 });
 ```
 
@@ -66,15 +99,13 @@ StartupEvents.registry("item", (event) => {
 ```js {5-11}
 // [!code word:"mek_unit"]
 StartupEvents.registry("item", (event) => {
-  const module_item = event.create("module_create_energy_unit", "mek_unit")
+  const module_item = event.create("module_create_energy_unit", "mek_unit");
 
-    // Mekanism 模組化物品
-    module_item
-      .setSlot("all")
-      .tickServer((module, player) => {
-        const maxEnergy = KJSModuleUtils.getMaxEnergy(module.getContainer());
-        module.getEnergyContainer().setEnergy(maxEnergy);
-      });
+  // Mekanism 模組化物品
+  module_item.setSlot("all").tickServer((module, player) => {
+    const maxEnergy = KJSModuleUtils.getMaxEnergy(module.getContainer());
+    module.getEnergyContainer().setEnergy(maxEnergy);
+  });
 });
 ```
 

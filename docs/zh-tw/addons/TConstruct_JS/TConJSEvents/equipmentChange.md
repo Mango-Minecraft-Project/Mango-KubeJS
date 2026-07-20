@@ -8,12 +8,13 @@ mod:
 ---
 
 <button @click="enableDetails = !enableDetails" class="btn">
-  {{ enableDetails ? "隱藏細節" : "顯示細節" }}
+{{ enableDetails ? "隱藏細節" : "顯示細節" }}
 </button>
 
 語法：
+
 ```typescript :no-line-numbers title="<ServerSide/>"
-TConJSEvents.equipmentChange((event: TinkerToolChangeEventJS) => {})
+TConJSEvents.equipmentChange((event: TinkerToolChangeEventJS) => {});
 ```
 
 ## 欄位概觀

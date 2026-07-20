@@ -7,6 +7,9 @@ shortTitle: canPickUp
 /**
  * Invoked when a player picks up an item. Cancelling (in `ItemEvents.canPickUp`) will prevent the item from being picked up.
  */
-function canPickUp(extra: $ResourceKey$$Type<($Item)>, handler: (event: $ItemPickedUpKubeEvent) => void): void
-function canPickUp(handler: (event: $ItemPickedUpKubeEvent) => void): void
+function canPickUp(
+  extra: $ResourceKey$$Type<$Item>,
+  handler: (event: $ItemPickedUpKubeEvent) => void,
+): void;
+function canPickUp(handler: (event: $ItemPickedUpKubeEvent) => void): void;
 ```

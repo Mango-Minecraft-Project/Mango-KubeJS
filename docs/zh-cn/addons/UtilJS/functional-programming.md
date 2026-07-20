@@ -9,9 +9,9 @@ ServerEvents.tick((event) => {
   event.server
     .wrap()
     .takeIf((take) => take.playerCount == 1)
-    .also(al => {
+    .also((al) => {
       al.runCommandSilent("say player count = 1");
-  });
+    });
 });
 ```
 

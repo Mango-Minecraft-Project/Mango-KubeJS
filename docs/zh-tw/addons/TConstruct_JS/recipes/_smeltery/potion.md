@@ -5,8 +5,8 @@
 @tab 語法
 
 ```typescript :no-line-numbers title=" "
-casting_table_potion(result, bottle, fluid, cooling_time)
-casting_basin_potion(result, bottle, fluid, cooling_time)
+casting_table_potion(result, bottle, fluid, cooling_time);
+casting_basin_potion(result, bottle, fluid, cooling_time);
 ```
 
 @tab 參數說明
@@ -31,16 +31,34 @@ casting_basin_potion(result, bottle, fluid, cooling_time)
 
 :::
 
-```javascript title="範例" :no-line-numbers 
+```javascript title="範例" :no-line-numbers
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;
 
-  tconstruct.casting_table_potion("minecraft:potion", "minecraft:glass_bottle", "tconstruct:molten_gold"); // [!code focus]
-  tconstruct.casting_table_potion("minecraft:potion", "minecraft:glass_bottle", "tconstruct:molten_gold") // [!code focus]
+  tconstruct.casting_table_potion(
+    "minecraft:potion",
+    "minecraft:glass_bottle",
+    "tconstruct:molten_gold",
+  ); // [!code focus]
+  tconstruct
+    .casting_table_potion(
+      "minecraft:potion",
+      "minecraft:glass_bottle",
+      "tconstruct:molten_gold",
+    ) // [!code focus]
     .cooling_time(1.5); // [!code focus]
 
-  tconstruct.casting_basin_potion("minecraft:potion", "minecraft:glass_bottle", "tconstruct:molten_gold"); // [!code focus]
-  tconstruct.casting_basin_potion("minecraft:potion", "minecraft:glass_bottle", "tconstruct:molten_gold") // [!code focus]
+  tconstruct.casting_basin_potion(
+    "minecraft:potion",
+    "minecraft:glass_bottle",
+    "tconstruct:molten_gold",
+  ); // [!code focus]
+  tconstruct
+    .casting_basin_potion(
+      "minecraft:potion",
+      "minecraft:glass_bottle",
+      "tconstruct:molten_gold",
+    ) // [!code focus]
     .cooling_time(1.5); // [!code focus]
 });
 ```

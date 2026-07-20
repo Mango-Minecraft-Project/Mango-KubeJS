@@ -4,5 +4,7 @@ shortTitle: modifyTooltips
 ---
 
 ```ts
-function modifyTooltips(handler: (event: $ModifyItemTooltipsKubeEvent) => void): void
+function modifyTooltips(
+  handler: (event: $ModifyItemTooltipsKubeEvent) => void,
+): void;
 ```

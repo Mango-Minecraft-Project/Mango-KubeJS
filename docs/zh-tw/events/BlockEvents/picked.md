@@ -4,5 +4,5 @@ shortTitle: picked
 ---
 
 ```ts
-function picked(handler: (event: $BlockPickedKubeEvent) => void): void
+function picked(handler: (event: $BlockPickedKubeEvent) => void): void;
 ```

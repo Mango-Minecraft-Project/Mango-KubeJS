@@ -4,5 +4,5 @@ shortTitle: chat
 ---
 
 ```ts
-function chat(handler: (event: $PlayerChatReceivedKubeEvent) => void): void
+function chat(handler: (event: $PlayerChatReceivedKubeEvent) => void): void;
 ```

@@ -32,7 +32,8 @@ register(handler: (event: KeyBindEvent) => void):void
 KeyBindEvents.register((event) => {
   // 創建按鍵綁定 (第一個參數為標識，按鍵觸發都會使用這個標識)
   event.create("create1", "key.test.create.1", -1, "key.group.debug");
-  event.create("create2", "key.test.create.2", GLFW.GLFW_KEY_X, "key.group.debug")
+  event
+    .create("create2", "key.test.create.2", GLFW.GLFW_KEY_X, "key.group.debug")
     .addModifier(KeyModifier.ALT); // 添加修飾按鍵
 });
 ```
@@ -43,7 +44,8 @@ KeyBindEvents.register((event) => {
 KeyBindJSEvents.register((event) => {
   // 創建按鍵綁定 (第一個參數為標識，按鍵觸發都會使用這個標識)
   event.create("create1", "key.test.create.1", -1, "key.group.debug");
-  event.create("create2", "key.test.create.2", GLFW.GLFW_KEY_X, "key.group.debug")
+  event
+    .create("create2", "key.test.create.2", GLFW.GLFW_KEY_X, "key.group.debug")
     .addModifier(KeyModifier.ALT); // 添加修飾按鍵
 });
 ```
@@ -52,8 +54,8 @@ KeyBindJSEvents.register((event) => {
 
 ## 方法
 
-| 方法名稱                                                                                     | 回傳值                        | 說明         |
-| -------------------------------------------------------------------------------------------- | ----------------------------- | ------------ |
+| 方法名稱                                                                               | 回傳值                        | 說明         |
+| -------------------------------------------------------------------------------------- | ----------------------------- | ------------ |
 | `create(customName: string, keyNameKey: string, keyCode: number, keyGroupKey: string)` | `KeyBindEvent$KeyBindBuilder` | 創建按鍵綁定 |
 
 ### `create`

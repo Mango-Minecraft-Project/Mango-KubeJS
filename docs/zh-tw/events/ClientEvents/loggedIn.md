@@ -4,5 +4,5 @@ shortTitle: loggedIn
 ---
 
 ```ts
-function loggedIn(handler: (event: $ClientPlayerKubeEvent) => void): void
+function loggedIn(handler: (event: $ClientPlayerKubeEvent) => void): void;
 ```

@@ -1,3 +1,3 @@
 <template>
-  <http httpType="OPTIONS"/>
+  <http httpType="OPTIONS" />
 </template>

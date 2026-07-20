@@ -4,5 +4,8 @@ shortTitle: modifyRecipeResult
 ---
 
 ```ts
-function modifyRecipeResult(extra: string, handler: (event: $ModifyCraftingItemKubeEvent) => void): void
+function modifyRecipeResult(
+  extra: string,
+  handler: (event: $ModifyCraftingItemKubeEvent) => void,
+): void;
 ```

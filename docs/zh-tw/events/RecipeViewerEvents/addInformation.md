@@ -4,5 +4,8 @@ shortTitle: addInformation
 ---
 
 ```ts
-function addInformation(extra: string, handler: (event: $AddInformationKubeEvent) => void): void
+function addInformation(
+  extra: string,
+  handler: (event: $AddInformationKubeEvent) => void,
+): void;
 ```

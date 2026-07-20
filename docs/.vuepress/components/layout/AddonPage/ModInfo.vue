@@ -3,7 +3,9 @@
     <div v-if="name">{{ i18nText.name }}<br />　{{ name }}</div>
     <div v-if="author">{{ i18nText.author }}<br />　{{ author }}</div>
     <div v-if="hasExternalLink">
-      <span v-if="CurseForge"><BadgeCurseForge :path="CurseForge" /><br /></span>
+      <span v-if="CurseForge"
+        ><BadgeCurseForge :path="CurseForge" /><br
+      /></span>
       <span v-if="Modrinth"><BadgeModrinth :path="Modrinth" /><br /></span>
       <span v-if="GitHub"><BadgeGitHub :path="GitHub" /><br /></span>
       <span v-if="McMod"><BadgeMcMod :path="McMod" /><br /></span>
@@ -87,7 +89,13 @@ export default {
     },
 
     hasExternalLink() {
-      return this.CurseForge || this.Modrinth || this.GitHub || this.McMod || this.Wiki;
+      return (
+        this.CurseForge ||
+        this.Modrinth ||
+        this.GitHub ||
+        this.McMod ||
+        this.Wiki
+      );
     },
     CurseForge() {
       return this.mod.CurseForge ?? this.mod.curseforge;

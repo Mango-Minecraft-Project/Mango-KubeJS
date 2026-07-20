@@ -4,5 +4,5 @@ shortTitle: registry
 ---
 
 ```ts
-function register(handler: (event: $KeybindRegistryKubeEvent) => void): void
+function register(handler: (event: $KeybindRegistryKubeEvent) => void): void;
 ```

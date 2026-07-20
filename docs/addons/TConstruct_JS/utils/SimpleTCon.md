@@ -28,14 +28,16 @@ mod:
 | `hasModifier`          | `(arg0: ItemStack_, arg1: string): boolean;`                                  | Checks if the item stack has a modifier                 |
 | `newBuilder`           | `(): ModifierBuilder;`                                                        | Creates a new modifier builder                          |
 
-::: tip Terminology
----
+## ::: tip Terminology
+
 - `IToolStackView_`: Tinkers' tool stack interface
 - `ToolStack`: Tinkers' tool stack
+
 ---
+
 - `Modifier`: Modifier
 - `ModifierEntry`: Modifier entry, includes modifier and additional information such as level
-:::
+  :::
 
 [ResourceLocation]: https://minecraft.wiki/w/Resource_location
 [Beans]: https://kubejs.com/wiki/tips/beans

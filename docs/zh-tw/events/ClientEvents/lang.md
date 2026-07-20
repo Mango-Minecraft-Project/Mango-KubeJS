@@ -4,5 +4,5 @@ shortTitle: lang
 ---
 
 ```ts
-function lang(extra: string, handler: (event: $LangKubeEvent) => void): void
+function lang(extra: string, handler: (event: $LangKubeEvent) => void): void;
 ```

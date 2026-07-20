@@ -14,7 +14,7 @@ const kuLevel = new Ku.Level(player.level);
 PlayerEvents.tick((event) => {
   const player = event.player;
   const kuLevel = new Ku.Level(player.level);
-})
+});
 ```
 
 ## 方法
@@ -33,6 +33,7 @@ kuLevel.spawnStructure("minecraft:structures/village_1", BlockPos.ZERO);
 此方法為軟性失敗，若結構不存在，方法將不會有任何動作。
 
 ### `findEntitiesWithinRadius(entityId: EntityType, start: BlockPos, range: Number)`
+
 ### `已棄用：請使用 findLivingEntitiesWithinRadius`
 
 在指定半徑內尋找特定實體類型的生物。實體類型通常像是 `minecraft:skeleton`。模組中的實體類型可從其 Java 程式碼中找到。
@@ -209,6 +210,9 @@ console.log(structures) // ["minecraft:dungeon", "minecraft:jungle_mansion"]
 `@return boolean`
 
 ```javascript
-const isSame = Ku.Level.blocksAreEqual(Blocks.GRASS.defaultState(), Blocks.GRASS.defaultState());
-console.log(isSame) // true
+const isSame = Ku.Level.blocksAreEqual(
+  Blocks.GRASS.defaultState(),
+  Blocks.GRASS.defaultState(),
+);
+console.log(isSame); // true
 ```

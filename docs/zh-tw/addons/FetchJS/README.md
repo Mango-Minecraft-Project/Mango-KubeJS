@@ -29,7 +29,7 @@ Fetch方法類似於Web中的fetch，可用於調用介面、發送數據。
 最常見的用法是模組包讀取官方公告，或者動態從Github倉庫更新設定檔。
 
 ```javascript
-FetchJS.fetch("https://api.xygeng.cn/one", data=> {
+FetchJS.fetch("https://api.xygeng.cn/one", (data) => {
   event.player.tell(data);
 });
 ```
@@ -42,11 +42,14 @@ Download方法用於下載，如圖片、模組等。
 
 ```javascript
 FetchJS.download(
-  "https://raw.githubusercontent.com/Tower-of-Sighs/SmartKeyPrompts/refs/heads/master/libs/SlashBladeResharped-1.20.1-1.3.40.jar", 
-  "mods/SlashBladeResharped-1.20.1-1.3.40.jar", 
-  progress => {
-    event.player.displayClientMessage(Component.literal("下載中" + Math.round(progress * 100) + "%"), true);
-  }
+  "https://raw.githubusercontent.com/Tower-of-Sighs/SmartKeyPrompts/refs/heads/master/libs/SlashBladeResharped-1.20.1-1.3.40.jar",
+  "mods/SlashBladeResharped-1.20.1-1.3.40.jar",
+  (progress) => {
+    event.player.displayClientMessage(
+      Component.literal("下載中" + Math.round(progress * 100) + "%"),
+      true,
+    );
+  },
 );
 ```
 
@@ -71,10 +74,10 @@ boolean fetch(
   Consumer<String> callback
 );
 boolean download(
-  String url, 
-  String path, 
-  Map<String, String> headers, 
-  int timeoutMillis, 
+  String url,
+  String path,
+  Map<String, String> headers,
+  int timeoutMillis,
   Consumer<Double> progressCallback);
 ```
 

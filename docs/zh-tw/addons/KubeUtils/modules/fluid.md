@@ -11,8 +11,8 @@ title: 流體（靜態）
 `@return null | net.minecraft.world.level.material.Fluid[]`
 
 ```javascript
-const fluids = Ku.Fluids.getFluidsByNamespace("minecraft")
-console.log(fluids) // [Fluid.WATER, Fluid.LAVA]
+const fluids = Ku.Fluids.getFluidsByNamespace("minecraft");
+console.log(fluids); // [Fluid.WATER, Fluid.LAVA]
 ```
 
 ### `getFluidsByNamespaces(namespaces: string[])`
@@ -24,8 +24,8 @@ console.log(fluids) // [Fluid.WATER, Fluid.LAVA]
 `@return net.minecraft.world.level.material.Fluid[]`
 
 ```javascript
-const fluids = Ku.Fluids.getFluidsByNamespaces(["minecraft", "thermal"])
-console.log(fluids) // [Fluid.WATER, Fluid.LAVA, Fluid.CREOSOTE]（範例回應）
+const fluids = Ku.Fluids.getFluidsByNamespaces(["minecraft", "thermal"]);
+console.log(fluids); // [Fluid.WATER, Fluid.LAVA, Fluid.CREOSOTE]（範例回應）
 ```
 
 ### `notEmpty(fluid: net.minecraft.world.level.material.Fluid)`

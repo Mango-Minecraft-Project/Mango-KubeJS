@@ -4,5 +4,7 @@ shortTitle: released
 ---
 
 ```ts
-function released(handler: (event: $KubeJSKeybinds$TickingKeyEvent) => void): void
+function released(
+  handler: (event: $KubeJSKeybinds$TickingKeyEvent) => void,
+): void;
 ```

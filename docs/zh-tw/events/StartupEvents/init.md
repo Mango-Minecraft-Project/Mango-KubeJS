@@ -4,5 +4,5 @@ shortTitle: init
 ---
 
 ```ts
-function init(handler: (event: $KubeStartupEvent) => void): void
+function init(handler: (event: $KubeStartupEvent) => void): void;
 ```

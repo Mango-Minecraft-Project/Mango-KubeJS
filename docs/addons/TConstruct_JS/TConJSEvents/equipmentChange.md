@@ -8,12 +8,13 @@ mod:
 ---
 
 <button @click="enableDetails = !enableDetails" class="btn">
-  {{ enableDetails ? "Hide Details" : "Show Details" }}
+{{ enableDetails ? "Hide Details" : "Show Details" }}
 </button>
 
 Syntax:
+
 ```typescript :no-line-numbers title="<ServerSide/>"
-TConJSEvents.equipmentChange((event: TinkerToolChangeEventJS) => {})
+TConJSEvents.equipmentChange((event: TinkerToolChangeEventJS) => {});
 ```
 
 ## Field Overview

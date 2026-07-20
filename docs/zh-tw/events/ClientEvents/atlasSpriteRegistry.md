@@ -4,5 +4,8 @@ shortTitle: atlasSpriteRegistry
 ---
 
 ```ts
-function atlasSpriteRegistry(extra: $ResourceLocation$$Type, handler: (event: $AtlasSpriteRegistryKubeEvent) => void): void
+function atlasSpriteRegistry(
+  extra: $ResourceLocation$$Type,
+  handler: (event: $AtlasSpriteRegistryKubeEvent) => void,
+): void;
 ```

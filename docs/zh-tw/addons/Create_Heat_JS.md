@@ -26,16 +26,16 @@ source: https://github.com/XiaoHuNao/CreateHeatJS/blob/1.20.1/README.md
 ```js
 // server_scripts
 ServerEvents.recipes((event) => {
-  const { create } = event.recipes
-   
-  create.mixing("minecraft:diamond", [
-    "minecraft:coal_block"
-  ]).heatLevel("melt")
-   
-  create.compacting("minecraft:diamond", [
-    "minecraft:coal_block"
-  ]).heatLevel("melt")
-})
+  const { create } = event.recipes;
+
+  create
+    .mixing("minecraft:diamond", ["minecraft:coal_block"])
+    .heatLevel("melt");
+
+  create
+    .compacting("minecraft:diamond", ["minecraft:coal_block"])
+    .heatLevel("melt");
+});
 ```
 
 註冊新的熱源類型 & 熱量等級。
@@ -43,10 +43,11 @@ ServerEvents.recipes((event) => {
 ```js
 // startup_scripts
 CreateHeatJS.registerHeatEvent((event) => {
-  event.registerHeat("melt", 0xFF8C00)
+  event
+    .registerHeat("melt", 0xff8c00)
     .addHeatSource("minecraft:fire")
-    .register()
-})
+    .register();
+});
 ```
 
 ::: warning JEI內顯示默認是本地化鍵名，需要自己寫語言文件進行本地化
@@ -54,12 +55,11 @@ CreateHeatJS.registerHeatEvent((event) => {
 ```js
 // client_scripts
 ClientEvents.lang("zh_tw", (event) => {
-  let heatedTip = [
-    ["melt", "熔化"]
-  ]
+  let heatedTip = [["melt", "熔化"]];
   heatedTip.forEach(([key, text]) => {
-    event.add("create.recipe.heat_requirement." + key, text)
-  })
-})
+    event.add("create.recipe.heat_requirement." + key, text);
+  });
+});
 ```
+
 :::

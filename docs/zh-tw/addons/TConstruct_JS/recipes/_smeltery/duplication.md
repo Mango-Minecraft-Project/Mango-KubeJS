@@ -5,8 +5,8 @@
 @tab 語法
 
 ```typescript :no-line-numbers title=" "
-table_duplication(cast, fluid, cooling_time)
-basin_duplication(cast, fluid, cooling_time)
+table_duplication(cast, fluid, cooling_time);
+basin_duplication(cast, fluid, cooling_time);
 ```
 
 @tab 參數說明
@@ -29,16 +29,24 @@ basin_duplication(cast, fluid, cooling_time)
 
 :::
 
-```javascript title="範例" :no-line-numbers 
+```javascript title="範例" :no-line-numbers
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;
 
-  tconstruct.table_duplication("minecraft:gold_ingot", "tconstruct:molten_gold"); // [!code focus]
-  tconstruct.table_duplication("minecraft:gold_ingot", "tconstruct:molten_gold") // [!code focus]
+  tconstruct.table_duplication(
+    "minecraft:gold_ingot",
+    "tconstruct:molten_gold",
+  ); // [!code focus]
+  tconstruct
+    .table_duplication("minecraft:gold_ingot", "tconstruct:molten_gold") // [!code focus]
     .cooling_time(1.5); // [!code focus]
 
-  tconstruct.basin_duplication("minecraft:gold_block", "tconstruct:molten_gold"); // [!code focus]
-  tconstruct.basin_duplication("minecraft:gold_block", "tconstruct:molten_gold") // [!code focus]
+  tconstruct.basin_duplication(
+    "minecraft:gold_block",
+    "tconstruct:molten_gold",
+  ); // [!code focus]
+  tconstruct
+    .basin_duplication("minecraft:gold_block", "tconstruct:molten_gold") // [!code focus]
     .cooling_time(1.5); // [!code focus]
 });
 ```

@@ -1,3 +1,3 @@
 <template>
-  <http httpType="PATCH"/>
+  <http httpType="PATCH" />
 </template>

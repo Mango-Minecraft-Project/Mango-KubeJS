@@ -33,12 +33,15 @@ mod:
 ::: tip 術語解釋
 
 ---
+
 - `IToolStackView_`：匠魂工具堆疊介面
 - `ToolStack`：匠魂工具堆疊
+
 ---
+
 - `Modifier`：修飾符
 - `ModifierEntry`：修飾符條目，包含修飾符和等級等額外資訊
-:::
+  :::
 
 [資源路徑]: https://zh.minecraft.wiki/w/資源路徑
 [Beans]: /zh-tw/tips/beans

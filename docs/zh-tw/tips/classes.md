@@ -13,7 +13,7 @@ isOriginal: true
 function MyClass(name) {
   this.name = name;
 }
-MyClass.prototype.greet = function() {
+MyClass.prototype.greet = function () {
   return `Hello, ${this.name}!`;
 };
 

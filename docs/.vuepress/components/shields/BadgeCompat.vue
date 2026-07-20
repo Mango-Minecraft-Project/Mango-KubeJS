@@ -4,7 +4,11 @@
       <tbody>
         <tr>
           <td v-for="badge in available" :key="badge.path">
-            <component :is="badge.component" :path="badge.path" :name="badge.name" />
+            <component
+              :is="badge.component"
+              :path="badge.path"
+              :name="badge.name"
+            />
           </td>
         </tr>
       </tbody>

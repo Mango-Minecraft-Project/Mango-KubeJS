@@ -9,7 +9,17 @@ export default {
       type: String,
       default: "GET",
       validator(value, props) {
-        return ["GET", "HEAD", "POST", "PUT", "DELETE", "CONNECT", "OPTIONS", "TRACE", "PATCH"].includes(String(value).toUpperCase());
+        return [
+          "GET",
+          "HEAD",
+          "POST",
+          "PUT",
+          "DELETE",
+          "CONNECT",
+          "OPTIONS",
+          "TRACE",
+          "PATCH",
+        ].includes(String(value).toUpperCase());
       },
     },
     vertical: {
@@ -18,7 +28,7 @@ export default {
       validator(value, props) {
         return ["top", "middle", "baseline", "bottom"].includes(String(value));
       },
-    }
+    },
   },
   computed: {
     httpTypeU() {

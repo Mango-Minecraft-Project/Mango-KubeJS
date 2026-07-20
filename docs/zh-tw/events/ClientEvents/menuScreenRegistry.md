@@ -4,5 +4,7 @@ shortTitle: menuScreenRegistry
 ---
 
 ```ts
-function menuScreenRegistry(handler: (event: $MenuScreenRegistryKubeEvent) => void): void
+function menuScreenRegistry(
+  handler: (event: $MenuScreenRegistryKubeEvent) => void,
+): void;
 ```

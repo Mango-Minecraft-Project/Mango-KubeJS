@@ -4,5 +4,8 @@ shortTitle: modifyRecipeIngredient
 ---
 
 ```ts
-function modifyRecipeIngredient(extra: string, handler: (event: $ModifyCraftingItemKubeEvent) => void): void
+function modifyRecipeIngredient(
+  extra: string,
+  handler: (event: $ModifyCraftingItemKubeEvent) => void,
+): void;
 ```

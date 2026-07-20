@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { usePageLang } from 'vuepress/client';
+import { usePageLang } from "vuepress/client";
 
 const sides = ["Client", "Server", "Startup"];
 const verticals = ["top", "middle", "baseline", "bottom"];
@@ -23,7 +23,7 @@ const i18nText = {
     Server: "伺服器端",
     Startup: "啟動端",
   },
-}
+};
 
 export default {
   props: {
@@ -45,7 +45,7 @@ export default {
   computed: {
     text() {
       return (i18nText[usePageLang().value] ?? i18nText["en-US"])[this.side];
-    }
+    },
   },
 };
 </script>

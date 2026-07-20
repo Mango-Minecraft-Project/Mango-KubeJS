@@ -13,7 +13,7 @@ mod:
 ```js
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;
-})
+});
 ```
 
 ---

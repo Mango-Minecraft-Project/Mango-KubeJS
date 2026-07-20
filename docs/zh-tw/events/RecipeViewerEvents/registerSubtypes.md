@@ -4,5 +4,8 @@ shortTitle: registerSubtypes
 ---
 
 ```ts
-function registerSubtypes(extra: string, handler: (event: $RegisterSubtypesKubeEvent) => void): void
+function registerSubtypes(
+  extra: string,
+  handler: (event: $RegisterSubtypesKubeEvent) => void,
+): void;
 ```

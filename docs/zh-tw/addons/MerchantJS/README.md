@@ -71,7 +71,7 @@ let offer0 = MerchantJSUtils.createMerchantOffer({
   maxUses: 50, // 最大可交易次數，可選，預設為 99。
   xp: 5, // 獎勵經驗值，可選，預設為 0。
   priceMultiplier: 0, // 價格浮動乘數，可選，預設為 0。
-  demand: 0 // 初始需求值，可選，預設為 0。
+  demand: 0, // 初始需求值，可選，預設為 0。
 });
 ```
 
@@ -80,7 +80,7 @@ let offer0 = MerchantJSUtils.createMerchantOffer({
 此時可搭配本模組提供的切換交易事件：
 
 ```javascript title="<ClientSide/>"
-MerchantEvents.switchTrade(event => {
+MerchantEvents.switchTrade((event) => {
   if (event.titleKey == "小飛豬卡通屋") {
     // 判斷是否為小飛豬的交易介面，原版交易也會支援！
     if (event.getOffer().getMaxUses() == 0) {
@@ -101,8 +101,10 @@ MerchantEvents.switchTrade(event => {
 KubeJS 提供的 persistentData 就很方便了，剩下的關鍵在於何時觸發資料刷新。
 
 ```javascript title="<ServerSide/>"
-MerchantEvents.afterTrade(event => {
-  event.player.tell(`非常感謝您購買 ${event.getOffer().result.id}，歡迎下次再來！`);
+MerchantEvents.afterTrade((event) => {
+  event.player.tell(
+    `非常感謝您購買 ${event.getOffer().result.id}，歡迎下次再來！`,
+  );
   event.player.addXP(event.getOffer().xp);
 });
 ```

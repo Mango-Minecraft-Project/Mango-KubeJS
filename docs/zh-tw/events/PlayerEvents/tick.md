@@ -4,5 +4,5 @@ shortTitle: tick
 ---
 
 ```ts
-function tick(handler: (event: $SimplePlayerKubeEvent) => void): void
+function tick(handler: (event: $SimplePlayerKubeEvent) => void): void;
 ```

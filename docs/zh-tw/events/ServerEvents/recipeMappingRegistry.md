@@ -4,5 +4,7 @@ shortTitle: recipeMappingRegistry
 ---
 
 ```ts
-function recipeMappingRegistry(handler: (event: $RecipeMappingRegistry) => void): void
+function recipeMappingRegistry(
+  handler: (event: $RecipeMappingRegistry) => void,
+): void;
 ```

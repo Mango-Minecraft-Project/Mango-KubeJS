@@ -4,5 +4,5 @@ shortTitle: removeRecipes
 ---
 
 ```ts
-function removeRecipes(handler: (event: $RemoveRecipesKubeEvent) => void): void
+function removeRecipes(handler: (event: $RemoveRecipesKubeEvent) => void): void;
 ```

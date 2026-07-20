@@ -4,5 +4,8 @@ shortTitle: basicCommand
 ---
 
 ```ts
-function basicCommand(extra: string, handler: (event: $BasicCommandKubeEvent) => void): void
+function basicCommand(
+  extra: string,
+  handler: (event: $BasicCommandKubeEvent) => void,
+): void;
 ```

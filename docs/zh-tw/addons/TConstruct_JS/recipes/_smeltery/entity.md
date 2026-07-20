@@ -37,7 +37,7 @@
 
 :::
 
-<!-- ```javascript title="範例" :no-line-numbers 
+<!-- ```javascript title="範例" :no-line-numbers
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;
 

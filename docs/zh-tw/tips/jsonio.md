@@ -10,5 +10,8 @@ description: 了解如何使用 `JsonIO` 來讀取和寫入 JSON 文件
 let config = JsonIO.read("kubejs/config/myawesomeconfig.json");
 
 // 寫入到現有/新文件
-JsonIO.write("kubejs/config/myawesomeconfig.json", { settings: "creeper", weirdblock: "minecraft:end_gateway" });
+JsonIO.write("kubejs/config/myawesomeconfig.json", {
+  settings: "creeper",
+  weirdblock: "minecraft:end_gateway",
+});
 ```

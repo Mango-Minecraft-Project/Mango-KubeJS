@@ -7,5 +7,5 @@ shortTitle: rightDebugInfo
 /**
  * Invoked when the debug info is rendered.
  */
-function rightDebugInfo(handler: (event: $DebugInfoKubeEvent) => void): void
+function rightDebugInfo(handler: (event: $DebugInfoKubeEvent) => void): void;
 ```

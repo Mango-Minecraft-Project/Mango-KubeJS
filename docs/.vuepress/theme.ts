@@ -1,6 +1,6 @@
+import type { Page } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 import locales from "./theme/locales.js";
-import type { Page } from "vuepress";
 
 export default hopeTheme(
   {

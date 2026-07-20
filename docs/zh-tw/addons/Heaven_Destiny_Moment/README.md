@@ -23,13 +23,13 @@ mod:
 //修改當前支持的生物生成規則
 {
   "spawn_rule": {
-    "allow_original_biome_spawn_settings": true, 
+    "allow_original_biome_spawn_settings": true,
     //是否允許原始生物群系生成設置自然生成
-    "slimes_spawn_everywhere": true, 
+    "slimes_spawn_everywhere": true,
     //是否允許史萊姆無視方塊限制生成
-    "ignoreLightLevel": true, 
+    "ignoreLightLevel": true,
     //是否允許生物無視光照等級生成
-    "ignoreDistance": true 
+    "ignoreDistance": true
     //是否允許生物無視與玩家的距離生成
   }
 }

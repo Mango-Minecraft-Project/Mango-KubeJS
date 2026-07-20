@@ -39,7 +39,7 @@ casting_basin(result, fluid, cast?, cast_consumed?, cooling_time?, switch_slots?
 
 :::
 
-<!-- ```javascript title="範例" :no-line-numbers 
+<!-- ```javascript title="範例" :no-line-numbers
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;
 

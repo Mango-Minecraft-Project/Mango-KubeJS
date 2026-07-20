@@ -13,7 +13,7 @@ mod:
 ```json
 {
   "bar_render_type": {
-    "type": "heaven_destiny_moment:default",
+    "type": "heaven_destiny_moment:default"
   },
   "area": {},
   "moment_data": {
@@ -24,10 +24,7 @@ mod:
           "data": {
             "id": "minecraft:speed",
             "duration": 10,
-            "neoforge:cures": [
-              "milk",
-              "protected_by_totem"
-            ],
+            "neoforge:cures": ["milk", "protected_by_totem"],
             "show_icon": true
           },
           "weight": 10
@@ -36,10 +33,7 @@ mod:
           "data": {
             "id": "minecraft:bad_omen",
             "duration": 10,
-            "neoforge:cures": [
-              "milk",
-              "protected_by_totem"
-            ],
+            "neoforge:cures": ["milk", "protected_by_totem"],
             "show_icon": true
           },
           "weight": 40
@@ -48,10 +42,7 @@ mod:
           "data": {
             "id": "minecraft:glowing",
             "duration": 10,
-            "neoforge:cures": [
-              "milk",
-              "protected_by_totem"
-            ],
+            "neoforge:cures": ["milk", "protected_by_totem"],
             "show_icon": true
           },
           "weight": 5
@@ -71,13 +62,13 @@ mod:
       "start": {
         "color": "#FF0000",
         "translate": "moment.tooltip.text.start.terra_moment.blood_moon"
-      },
+      }
     }
   },
   "clientSettings": {
     "clientMoonSettings": {
       "moon_size": 25.0,
-      "moon_texture": "terra_moment:textures/gui/blood_moon.png",
+      "moon_texture": "terra_moment:textures/gui/blood_moon.png"
     },
     "environmentColor": 16711680
   }
@@ -90,9 +81,12 @@ mod:
 
 ```js
 StartupEvents.registry("heaven_destiny_moment:moment", (event) => {
-  event.create("minecraft:night") // 創建一個 Moment
+  event
+    .create("minecraft:night") // 創建一個 Moment
     // 設置 BossBar 顯示
-    .barRenderType(new DefaultBarRenderType(BossBarOverlay.PROGRESS, BossBarColor.PURPLE))
+    .barRenderType(
+      new DefaultBarRenderType(BossBarOverlay.PROGRESS, BossBarColor.PURPLE),
+    )
 
     // 設置事件獎勵
     .momentData((data) => {
@@ -104,31 +98,27 @@ StartupEvents.registry("heaven_destiny_moment:moment", (event) => {
         new AttributeReward.Builder()
           .addAttribute(new AttributeElement(Attributes.ATTACK_DAMAGE, 1))
           .build(),
-        new ItemReward.Builder()
-          .add(new ItemStack(Items.DIAMOND))
-          .build()
-      )
+        new ItemReward.Builder().add(new ItemStack(Items.DIAMOND)).build(),
+      );
     })
 
     // 設置提示設置
     .tipSettings((setting) => {
       setting
         .tooltip(MomentState.READY, TerraMoment.asDescriptionId("slime_rain"))
-        .tooltip(MomentState.READY, SoundEvent.GOAT_HORN_SOUND_VARIANTS.get(2))
+        .tooltip(MomentState.READY, SoundEvent.GOAT_HORN_SOUND_VARIANTS.get(2));
     })
-    
+
     // 設置客戶端設置
     .clientSettings((setting) => {
-      setting
-        .environmentColor(16711680)
-        .clientMoonSetting((moonSetting) => {
-          moonSetting
-            .moonColor(16711680)
-            .moonSize(25)
-            .moonTexture(TerraMoment.asResource("textures/gui/blood_moon.png"))
-        })
-    })
-})
+      setting.environmentColor(16711680).clientMoonSetting((moonSetting) => {
+        moonSetting
+          .moonColor(16711680)
+          .moonSize(25)
+          .moonTexture(TerraMoment.asResource("textures/gui/blood_moon.png"));
+      });
+    });
+});
 ```
 
 ### 2.1. MomentBuilder
@@ -156,6 +146,7 @@ BossBar 渲染類型
 ```ts
 new DefaultBarRenderType(overlay: BossBarOverlay, color: BossBarColor): MomentBuilder
 ```
+
 - [BossBarOverlay](#bossbaroverlay)
 - [BossBarColor](#bossbarcolor)
 
@@ -299,6 +290,7 @@ BossBar 的顏色
 條件
 
 天命時刻內建條件類型：
+
 - [`LevelCondition`](#levelcondition)：維度條件
 - [`LocationCondition`](#locationcondition)：位置條件
 - [`PlayerCondition`](#playercondition)：玩家條件
@@ -423,4 +415,3 @@ new Weighted(type: RandomType, totalWeight: number, list: WeightEntry[]): Weight
 | `ClientMoonSetting.moonColor(color: number)`               | 設置月亮顏色 |
 | `ClientMoonSetting.moonSize(size: number)`                 | 設置月亮大小 |
 | `ClientMoonSetting.moonTexture(texture: ResourceLocation)` | 設置月亮材質 |
-

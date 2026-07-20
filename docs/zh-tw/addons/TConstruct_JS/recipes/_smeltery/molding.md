@@ -32,11 +32,19 @@ molding_basin(result, pattern?, material?, pattern_consumed?)
 
 :::
 
-```javascript title="範例" :no-line-numbers 
+```javascript title="範例" :no-line-numbers
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;
 
-  tconstruct.molding_table("minecraft:gold_ingot", "tconstruct:gold_ingot_pattern", "tconstruct:molten_gold"); // [!code focus]
-  tconstruct.molding_basin("minecraft:gold_block", "tconstruct:gold_block_pattern", "tconstruct:molten_gold"); // [!code focus]
+  tconstruct.molding_table(
+    "minecraft:gold_ingot",
+    "tconstruct:gold_ingot_pattern",
+    "tconstruct:molten_gold",
+  ); // [!code focus]
+  tconstruct.molding_basin(
+    "minecraft:gold_block",
+    "tconstruct:gold_block_pattern",
+    "tconstruct:molten_gold",
+  ); // [!code focus]
 });
 ```

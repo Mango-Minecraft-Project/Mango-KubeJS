@@ -4,5 +4,7 @@ shortTitle: decorateChat
 ---
 
 ```ts
-function decorateChat(handler: (event: $PlayerChatReceivedKubeEvent) => void): void
+function decorateChat(
+  handler: (event: $PlayerChatReceivedKubeEvent) => void,
+): void;
 ```

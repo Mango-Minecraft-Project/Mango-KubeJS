@@ -21,77 +21,87 @@ mod:
 source: https://github.com/westernat/AdvancementJS/blob/2001/forge/README.md
 ---
 
-## 快速範例（最新版本 ```2.9.4```）
+## 快速範例（最新版本 `2.9.4`）
 
 ### 啟動腳本
 
 ```js
 // 創建自訂觸發器
-AdvJSEvents.trigger(event => {
-  event.create("advjs:get_adv")
+AdvJSEvents.trigger((event) => {
+  event
+    .create("advjs:get_adv")
     // 定義了多少匹配，就應該放多少測試
     // 在這個例子中，我們定義了2個匹配
-    .match(advancement => advancement.getId() == "minecraft:story/smelt_iron")
-    .match(playerName => playerName == "Dev")
-})
+    .match((advancement) => advancement.getId() == "minecraft:story/smelt_iron")
+    .match((playerName) => playerName == "Dev");
+});
 ```
 
 ### 伺服器腳本
 
 ```js
-AdvJSEvents.advancement(event => {
+AdvJSEvents.advancement((event) => {
   const { PREDICATE, TRIGGER } = event;
 
   // 定義觸發器
-  const jump5times = TRIGGER.tick(triggerBuilder =>
-    triggerBuilder.addStat(Stats.JUMP, Stats.CUSTOM, { min: 5 }));
-  const bred_in_nether = TRIGGER.bredAnimals(triggerBuilder => {
-    triggerBuilder.setChildByPredicate(PREDICATE.entityFromJson({
-      stepping_on: {
-        dimension: "the_nether"
-      }
-    }))
+  const jump5times = TRIGGER.tick((triggerBuilder) =>
+    triggerBuilder.addStat(Stats.JUMP, Stats.CUSTOM, { min: 5 }),
+  );
+  const bred_in_nether = TRIGGER.bredAnimals((triggerBuilder) => {
+    triggerBuilder.setChildByPredicate(
+      PREDICATE.entityFromJson({
+        stepping_on: {
+          dimension: "the_nether",
+        },
+      }),
+    );
   });
   // AdvJS 自訂觸發器
-  const destroy_dirt = TRIGGER.blockDestroyed(triggerBuilder => triggerBuilder.setBlock("dirt"));
+  const destroy_dirt = TRIGGER.blockDestroyed((triggerBuilder) =>
+    triggerBuilder.setBlock("dirt"),
+  );
   // 你的自訂觸發器
   const get_adv = TRIGGER.custom("advjs:get_adv");
 
   // 創建根進度
-  const root = event.create("advjs:hell")
-    .display(displayBuilder => {
-      displayBuilder.setTitle("AdvancementJS")
-      displayBuilder.setDescription("快速範例")
-      displayBuilder.setIcon("diamond")
+  const root = event
+    .create("advjs:hell")
+    .display((displayBuilder) => {
+      displayBuilder.setTitle("AdvancementJS");
+      displayBuilder.setDescription("快速範例");
+      displayBuilder.setIcon("diamond");
     })
-    .criteria(criteriaBuilder => criteriaBuilder.add("dirt", destroy_dirt))
-    .rewards(rewardsBuilder => {
-      rewardsBuilder.setExperience(100)
+    .criteria((criteriaBuilder) => criteriaBuilder.add("dirt", destroy_dirt))
+    .rewards((rewardsBuilder) => {
+      rewardsBuilder.setExperience(100);
       // AdvJS 自訂獎勵
-      rewardsBuilder.addEffect("absorption", 200)
+      rewardsBuilder.addEffect("absorption", 200);
     })
     // 使其可重複
     .repeatable();
 
   // 為根進度添加子進度
-  root.addChild("child1", childBuilder => {
+  root.addChild("child1", (childBuilder) => {
     childBuilder
-      .display(displayBuilder => {
-        displayBuilder.setTitle(Text.red("Holy"))
-        displayBuilder.setDescription(Text.red("地獄開始"))
+      .display((displayBuilder) => {
+        displayBuilder.setTitle(Text.red("Holy"));
+        displayBuilder.setDescription(Text.red("地獄開始"));
       })
-      .criteria(criteriaBuilder => {
+      .criteria((criteriaBuilder) => {
         // 'OR' 意味著如果你想達成這個進度，
         // 你只需要匹配以下兩個觸發器中的一個
-        criteriaBuilder.setStrategy(RequirementsStrategy.OR)
-        criteriaBuilder.add("bred", bred_in_nether)
-        criteriaBuilder.add("jump", jump5times)
-        criteriaBuilder.add("get_adv", get_adv)
+        criteriaBuilder.setStrategy(RequirementsStrategy.OR);
+        criteriaBuilder.add("bred", bred_in_nether);
+        criteriaBuilder.add("jump", jump5times);
+        criteriaBuilder.add("get_adv", get_adv);
       })
-      .rewards(rewardsBuilder => {
-        rewardsBuilder.setRecipes("minecraft:lodestone", "minecraft:brewing_stand")
-        rewardsBuilder.setExperience(100)
-      })
+      .rewards((rewardsBuilder) => {
+        rewardsBuilder.setRecipes(
+          "minecraft:lodestone",
+          "minecraft:brewing_stand",
+        );
+        rewardsBuilder.setExperience(100);
+      });
   });
 
   // 使用 AdvancementFilter 移除現有進度，可用的過濾器在文檔中有寫。
@@ -99,53 +109,65 @@ AdvJSEvents.advancement(event => {
   event.remove({
     mod: "minecraft",
     icon: "minecraft:lava_bucket",
-    frame: "task"
+    frame: "task",
   });
 
   // 修改現有進度
-  event.get("minecraft:story/smelt_iron")
+  event
+    .get("minecraft:story/smelt_iron")
     // 將偏移應用於顯示
     .displayOffset(1, 1, true)
-    .modifyDisplay(displayBuilder => displayBuilder.setIcon("diamond_pickaxe"))
-    .addChild("child2", childBuilder => {
+    .modifyDisplay((displayBuilder) =>
+      displayBuilder.setIcon("diamond_pickaxe"),
+    )
+    .addChild("child2", (childBuilder) => {
       childBuilder
-        .display(displayBuilder => {
-          displayBuilder.setIcon("recovery_compass")
-          displayBuilder.setTitle('我會回來的！')
-          displayBuilder.setDescription(Text.green("祝你好運"))
+        .display((displayBuilder) => {
+          displayBuilder.setIcon("recovery_compass");
+          displayBuilder.setTitle("我會回來的！");
+          displayBuilder.setDescription(Text.green("祝你好運"));
           // 你也可以在 DisplayBuilder 中應用顯示
-          displayBuilder.offset(-1, 0)
+          displayBuilder.offset(-1, 0);
         })
         // 觸發器也可以從 json 創建
-        .criteria(criteriaBuilder => criteriaBuilder.add("go_back_to_home", TRIGGER.fromJson({
-          "trigger": "minecraft:changed_dimension",
-          "conditions": {
-            "from": "minecraft:the_end",
-            "to": "minecraft:overworld"
-          }
-        })))
+        .criteria((criteriaBuilder) =>
+          criteriaBuilder.add(
+            "go_back_to_home",
+            TRIGGER.fromJson({
+              trigger: "minecraft:changed_dimension",
+              conditions: {
+                from: "minecraft:the_end",
+                to: "minecraft:overworld",
+              },
+            }),
+          ),
+        )
         // 檢查父進度是否完成，否則無法完成
-        .requireParentDone()
+        .requireParentDone();
     });
-})
+});
 
-AdvJSEvents.lock(event => {
+AdvJSEvents.lock((event) => {
   event.result("stone_slab", "minecraft:story/smelt_iron");
   event.itemUse("spyglass", "minecraft:story/smelt_iron");
   event.blockInteract("chest", "minecraft:story/smelt_iron");
   event.entityInteract("villager", "minecraft:story/smelt_iron");
-})
+});
 
 // 與 'Better Advancements' 兼容
-AdvJSEvents.betterAdv(event => {
-  event.modify("advjs:hell/child1").posX(0).posY(32).hideLines()
-})
+AdvJSEvents.betterAdv((event) => {
+  event.modify("advjs:hell/child1").posX(0).posY(32).hideLines();
+});
 
-PlayerEvents.advancement(event => {
+PlayerEvents.advancement((event) => {
   const player = event.getPlayer();
   // 第一個參數用於匹配玩家謂詞，另外兩個是你定義的匹配
-  CustomTriggers.of("advjs:get_adv").trigger(player, event.getAdvancement(), player.username)
-})
+  CustomTriggers.of("advjs:get_adv").trigger(
+    player,
+    event.getAdvancement(),
+    player.username,
+  );
+});
 ```
 
 # 如何重新加載

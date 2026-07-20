@@ -4,5 +4,8 @@ shortTitle: generateData
 ---
 
 ```ts
-function generateData(extra: $GeneratedDataStage$$Type, handler: (event: $KubeDataGenerator) => void): void
+function generateData(
+  extra: $GeneratedDataStage$$Type,
+  handler: (event: $KubeDataGenerator) => void,
+): void;
 ```

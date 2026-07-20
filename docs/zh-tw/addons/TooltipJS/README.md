@@ -16,7 +16,7 @@ mod:
   author: 忆然
   # CurseForge: mc-mods/
   # Modrinth: mod/
-  # GitHub: 
+  # GitHub:
   # Mcmod: class/
 # source: https://github.com/
 ---

@@ -4,5 +4,5 @@ shortTitle: loaded
 ---
 
 ```ts
-function loaded(handler: (event: $ServerKubeEvent) => void): void
+function loaded(handler: (event: $ServerKubeEvent) => void): void;
 ```

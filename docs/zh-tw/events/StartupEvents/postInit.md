@@ -4,5 +4,5 @@ shortTitle: postInit
 ---
 
 ```ts
-function postInit(handler: (event: $KubeStartupEvent) => void): void
+function postInit(handler: (event: $KubeStartupEvent) => void): void;
 ```

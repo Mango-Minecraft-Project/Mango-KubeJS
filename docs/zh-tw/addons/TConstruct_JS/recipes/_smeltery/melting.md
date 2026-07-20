@@ -5,7 +5,7 @@
 @tab 語法
 
 ```typescript :no-line-numbers title=" "
-melting(result, ingredient)
+melting(result, ingredient);
 ```
 
 @tab 參數說明
@@ -25,7 +25,7 @@ melting(result, ingredient)
 
 :::
 
-```javascript title="範例" :no-line-numbers 
+```javascript title="範例" :no-line-numbers
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;
 

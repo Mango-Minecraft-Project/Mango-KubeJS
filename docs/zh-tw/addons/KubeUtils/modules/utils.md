@@ -15,9 +15,9 @@ const isEmpty = new Ku.Utils.nullOrEmpty("minecraft:air");
 const isEmpty2 = new Ku.Utils.nullOrEmpty(Items.AIR);
 const isEmpty3 = new Ku.Utils.nullOrEmpty(Fluids.WATER);
 
-console.log(isEmpty) // true
-console.log(isEmpty2) // true
-console.log(isEmpty3) // false
+console.log(isEmpty); // true
+console.log(isEmpty2); // true
+console.log(isEmpty3); // false
 ```
 
 ### `notNullOrEmpty(input: any)`

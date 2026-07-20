@@ -4,5 +4,8 @@ shortTitle: dynamicTooltips
 ---
 
 ```ts
-function dynamicTooltips(extra: string, handler: (event: $DynamicItemTooltipsKubeEvent) => void): void
+function dynamicTooltips(
+  extra: string,
+  handler: (event: $DynamicItemTooltipsKubeEvent) => void,
+): void;
 ```

@@ -1,3 +1,3 @@
 <template>
-  <http httpType="GET"/>
+  <http httpType="GET" />
 </template>

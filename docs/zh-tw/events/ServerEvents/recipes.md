@@ -4,5 +4,5 @@ shortTitle: recipes
 ---
 
 ```ts
-function recipes(handler: (event: $RecipesKubeEvent) => void): void
+function recipes(handler: (event: $RecipesKubeEvent) => void): void;
 ```

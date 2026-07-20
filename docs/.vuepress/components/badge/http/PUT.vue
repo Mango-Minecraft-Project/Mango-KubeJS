@@ -1,3 +1,3 @@
 <template>
-  <http httpType="PUT"/>
+  <http httpType="PUT" />
 </template>

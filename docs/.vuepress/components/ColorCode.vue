@@ -1,5 +1,7 @@
 <template>
-  <div><span class="color-code" :style="backgroundColor"></span>&nbsp;{{ color }}</div>
+  <div>
+    <span class="color-code" :style="backgroundColor"></span>&nbsp;{{ color }}
+  </div>
 </template>
 
 <style scoped>

@@ -10,7 +10,6 @@ description: 與修飾按鍵相關的類型和方法
 JavaDoc：https://lexxie.dev/forge/1.20.1/net/minecraftforge/client/settings/KeyModifier.html
 原始碼：[net.minecraftforge.client.settings.KeyModifier](https://github.com/MinecraftForge/MinecraftForge/blob/1.20.1/src/main/java/net/minecraftforge/client/settings/KeyModifier.java)
 
-
 @tab KubeJS 7
 
 JavaDoc：https://lexxie.dev/neoforge/1.21.1/net/neoforged/neoforge/client/settings/KeyModifier.html
