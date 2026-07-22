@@ -55,7 +55,7 @@ FetchJS.download(
 
 <Attachment link="download-SlashBladeResharped.png" />
 
-例子中調用這個方法往mods文件夾裡下載拔刀劍模組，並且能即時顯示下載進度。
+例子中調用這個方法往mods資料夾裡下載拔刀劍模組，並且能即時顯示下載進度。
 
 下載圖片會更加快且實用，請盡量下載正經的東西哦。
 
