@@ -33,24 +33,27 @@ alloy(result, inputs, temperature);
 
 :::
 
-```javascript title="範例" :no-line-numbers
+```javascript title="範例" :no-line-numbers {4-14,21}
 ServerEvents.recipes((event) => {
   const { tconstruct } = event.recipes;
 
-  tconstruct.alloy("tconstruct:molten_rose_gold", [
-    "tconstruct:molten_gold",
-    "tconstruct:molten_copper",
-  ]); // [!code focus]
+  tconstruct.alloy(
+    "tconstruct:molten_rose_gold", [
+      "tconstruct:molten_gold",
+      "tconstruct:molten_copper",
+    ]
+  );
   tconstruct.alloy(
     "tconstruct:molten_rose_gold",
     ["tconstruct:molten_gold", "tconstruct:molten_copper"],
     1000,
-  ); // [!code focus]
-  tconstruct
-    .alloy("tconstruct:molten_rose_gold", [
+  );
+  tconstruct.alloy(
+    "tconstruct:molten_rose_gold", 
+    [
       "tconstruct:molten_gold",
       "tconstruct:molten_copper",
-    ])
-    .temperature(1000); // [!code focus]
+    ]
+  ).temperature(1000);
 });
 ```

@@ -8,7 +8,7 @@
 
 ```ts :no-line-numbers
 craftable(
-  boolean craftable
+  craftable: boolean
 )
 ```
 
@@ -19,7 +19,7 @@ craftable(
 
 ```ts :no-line-numbers
 hidden(
-  boolean hidden
+  hidden: boolean
 )
 ```
 
@@ -30,7 +30,7 @@ hidden(
 
 ```ts :no-line-numbers
 sortOrder(
-  int sortOrder
+  sortOrder: int
 )
 ```
 
@@ -56,7 +56,7 @@ sortOrder(
   
 ```ts :no-line-numbers
 tier(
-  int tier
+  tier: int
 )
 ```
 
