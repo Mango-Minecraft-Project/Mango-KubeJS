@@ -1,4 +1,5 @@
 import ColorCode from "./ColorCode.vue";
+import ItemIcon from "./ItemIcon.vue";
 import IconImage from "./IconImage.vue";
 import Attachment from "./attachment/Attachment.vue";
 import Http from "./badge/http/http.vue";
@@ -14,6 +15,7 @@ const alias = {
 export default {
   ...BadgeComponent,
   ColorCode,
+  ItemIcon,
   IconImage,
   Attachment,
   ModInfo,

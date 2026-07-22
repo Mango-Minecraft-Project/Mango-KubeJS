@@ -23,6 +23,7 @@
   },
   "editor.tabSize": 2,
   "[markdown]": {
-    "editor.snippets.codeActions.enabled": true
+    "editor.snippets.codeActions.enabled": true,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   }
 }

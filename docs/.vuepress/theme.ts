@@ -23,9 +23,9 @@ export default hopeTheme(
     // # Layouts
     // - Navbar
     navbarLayout: {
-      start: ["Brand", "Language", "Search"],
+      start: ["Brand", "Search"],
       center: ["Links"],
-      end: ["Repo", "Outlook"],
+      end: ["Language", "Repo", "Outlook"],
     },
     logo: "/logo.svg",
     repo: "Mango-Minecraft-Project/Mango-KubeJS",
