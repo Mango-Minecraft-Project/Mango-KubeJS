@@ -76,7 +76,7 @@ addMaterialData(
 ```
 
   </td>
-  <td>添加材料數據</td>
+  <td>添加材料資料</td>
   </tr>
 
 </tbody></table>

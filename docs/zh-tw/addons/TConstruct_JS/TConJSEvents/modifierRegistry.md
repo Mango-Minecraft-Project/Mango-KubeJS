@@ -142,7 +142,7 @@ addToolStats(consumer: (arg0: IToolContext, arg1: number, arg2: ModifierStatsBui
 
 - `arg0: IToolContext` - 工具上下文
 - `arg1: number` - 匠魂修飾符等級
-- `arg2: ModifierStatsBuilder` - 修飾符統計數據生成器
+- `arg2: ModifierStatsBuilder` - 修飾符統計資料生成器
 
 ##### 範例
 

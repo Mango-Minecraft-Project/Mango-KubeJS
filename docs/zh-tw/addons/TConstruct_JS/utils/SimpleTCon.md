@@ -21,7 +21,7 @@ mod:
 | `getModifiersFromGame` | `(): Stream<Modifier>;`                                                       | （Getter）獲取遊戲內所有修飾符       |
 | `modifiersFromGame`    | `Stream<Modifier>`                                                            | （[Beans]）獲取遊戲內所有修飾符      |
 | `getModifiersFromTag`  | `(arg0: string): List<Modifier>;`                                             | 根據修飾符標籤獲取指定的修飾符       |
-| `getTinkerData`        | `(arg0: Entity_, arg1: NonNullConsumer_<TinkerDataCapability$Holder>): void;` | 獲取匠魂數據                         |
+| `getTinkerData`        | `(arg0: Entity_, arg1: NonNullConsumer_<TinkerDataCapability$Holder>): void;` | 獲取匠魂資料                         |
 | `getToolInSlot`        | `(arg0: LivingEntity_, arg1: EquipmentSlot_): ToolStack;`                     | 獲取實體指定欄位的工具堆疊           |
 | `getToolStack`         | `(arg0: ItemStack_): ToolStack;`                                              | 將物品堆疊轉換成工具堆疊             |
 | `hasMaterialInTool`    | `(arg0: IToolStackView_, arg1: string): boolean;`                             | 判斷 IToolStackView 是否具有指定材料 |

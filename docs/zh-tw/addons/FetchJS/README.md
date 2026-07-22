@@ -20,11 +20,11 @@ source: https://github.com/Mafuyu404/FetchJS/blob/master/README.md
 
 # FetchJS
 
-提供了簡單的方法，允許使用者透過KubeJS調用http介面、發送數據或下載文件。
+提供了簡單的方法，允許使用者透過KubeJS調用http介面、發送資料或下載文件。
 
 ### 簡單範例
 
-Fetch方法類似於Web中的fetch，可用於調用介面、發送數據。
+Fetch方法類似於Web中的fetch，可用於調用介面、發送資料。
 
 最常見的用法是模組包讀取官方公告，或者動態從Github倉庫更新設定檔。
 
@@ -34,7 +34,7 @@ FetchJS.fetch("https://api.xygeng.cn/one", (data) => {
 });
 ```
 
-這個網址是一個隨機名言介面，可用於測試，返回的數據：
+這個網址是一個隨機名言介面，可用於測試，返回的資料：
 
 <Attachment link="random-maxim.png" />
 

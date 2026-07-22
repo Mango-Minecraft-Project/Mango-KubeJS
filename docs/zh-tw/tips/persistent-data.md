@@ -6,13 +6,13 @@ source: https://kubejs.com/wiki/tips/persistent-data
 ---
 
 `persistentData` 是一個可用於玩家（`Player`）、世界（`ServerLevel`）和伺服器（`MinecraftServer`）的對象。
-它對於簡單的數據存儲非常有用。
+它對於簡單的資料存儲非常有用。
 
 <!-- ::: caution
-持久數據在 1.21+ 版本中已損壞！
+持久資料在 1.21+ 版本中已損壞！
 ::: -->
 
-以下是持久數據的示例：
+以下是持久資料的示例：
 
 ```js
 PlayerEvents.loggedIn((event) => {

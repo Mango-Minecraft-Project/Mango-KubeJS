@@ -210,12 +210,12 @@ fullArmor(
 ```ts :no-line-numbers
 part(
   partId: string, // 部件 ID
-  data: map<string, object> // 部件屬性數據
+  data: map<string, object> // 部件屬性資料
 )
 ```
 
   </td>
-  <td>設置部件的屬性數據</td>
+  <td>設置部件的屬性資料</td>
 </tr></tbody></table>
 
 :::
