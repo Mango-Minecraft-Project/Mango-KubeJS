@@ -33,15 +33,15 @@ const methods = clazz.getDeclaredMethods();
 const method = methods.find(m => m.getName() == "m_128382_");
 const output = new $FastByteArrayOutputStream();
 
-//复制前所在的路径，如 kubejs/assets/capejs/textures/capes/cape.png
-const image = $ImageIO.read("图片路径");
+//複製前所在的路徑，如 kubejs/assets/capejs/textures/capes/cape.png
+const image = $ImageIO.read("圖片路徑");
 
-// png 可以换成其他格式，但是需要与文件后缀统一
+// png 可以換成其他格式，但是需要與檔案副檔名統一
 $ImageIO["write(java.awt.image.RenderedImage,java.lang.String,java.io.OutputStream)"](image, "png", output);
 const nbt = new $CompoundTag();
 method.invoke(nbt, "image", output.array);
 
-// player是事件中的玩家，如果不解构需要改为 event.player
+// player 是事件中的玩家，如果不解構需要改為 event.player
 player.sendData("image", nbt);
 output.close();
 ```
@@ -59,8 +59,8 @@ NetworkEvents.dataReceived("image", (event) => {
   /**@type {$RenderedImage_}*/
   const image2 = $ImageIO["read(java.io.InputStream)"](input);
 
-  //目标路径，png和后缀与上文提到的规则一致
-  $ImageIO.write(image2, "png", "图片路径");
+  // 目標路徑，png 和副檔名與上文提到的規則一致
+  $ImageIO.write(image2, "png", "圖片路徑");
   input.close();
 })
 ```
@@ -73,13 +73,13 @@ const $FastByteArrayOutputStream = Java.loadClass("it.unimi.dsi.fastutil.io.Fast
 const $FastByteArrayInputStream = Java.loadClass("it.unimi.dsi.fastutil.io.FastByteArrayInputStream");
 
 const output = new $FastByteArrayOutputStream();
-const image = $ImageIO.read("原图路径");
+const image = $ImageIO.read("原圖路徑");
 $ImageIO["write(java.awt.image.RenderedImage,java.lang.String,java.io.OutputStream)"](image, "png", output);
 const input = new $FastByteArrayInputStream(output.array);
 
 /**@type {$RenderedImage_}*/
 const image2 = $ImageIO["read(java.io.InputStream)"](input);
-$ImageIO.write(image2, "png", "目标路径");
+$ImageIO.write(image2, "png", "目標路徑");
 input.close();
 output.close();
 ```
