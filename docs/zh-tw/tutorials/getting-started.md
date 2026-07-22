@@ -16,7 +16,7 @@ source: https://kubejs.com/wiki/tutorials/getting-started
 
 ## 使用 ProbeJS
 
-ProbeJS 是 KubeJS 的一個重要插件，它基於生成的 TypeScript 文件提供程式碼補全功能。
+ProbeJS 是 KubeJS 的一個重要插件，它基於生成的 TypeScript 檔案提供程式碼補全功能。
 
 它可以幫助您找到方法和字段，並為方法、函數和事件處理程序提供文檔。
 

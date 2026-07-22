@@ -50,7 +50,7 @@ CreateHeatJS.registerHeatEvent((event) => {
 });
 ```
 
-::: warning JEI內顯示默認是本地化鍵名，需要自己寫語言文件進行本地化
+::: warning JEI內顯示默認是本地化鍵名，需要自己寫語言檔案進行本地化
 
 ```js
 // client_scripts

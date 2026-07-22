@@ -35,7 +35,7 @@ TConJSEvents.modifierRegistry((event) => {
 | `createNew`   | `(id: string, builder: (builder: ModifierBuilderJS) => void) => void` | 創建一個新的修飾符 |
 
 ::: note
-builder 實際在 ProbeJS 生成的文件中的類型顯示為 `Consumer_<com.xiaoyue.tconstruct_js.content.ModifierBuilder>`，為了方便理解，這裡將其簡化為 `ModifierBuilderJS`。
+builder 實際在 ProbeJS 生成的檔案中的類型顯示為 `Consumer_<com.xiaoyue.tconstruct_js.content.ModifierBuilder>`，為了方便理解，這裡將其簡化為 `ModifierBuilderJS`。
 :::
 
 ## `ModifierBuilderJS`

@@ -37,7 +37,7 @@ isOriginal: true
 
 ## 其他
 
-- 基礎知識、文件
+- 基礎知識、檔案
   - Quick Reference
     - JavaScript：[https://wangchujiang.com/reference/docs/javascript.html](https://wangchujiang.com/reference/docs/javascript.html)
     - ES2015+：[https://wangchujiang.com/reference/docs/es6.html](https://wangchujiang.com/reference/docs/es6.html)

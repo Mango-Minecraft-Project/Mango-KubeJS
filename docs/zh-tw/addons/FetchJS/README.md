@@ -20,7 +20,7 @@ source: https://github.com/Mafuyu404/FetchJS/blob/master/README.md
 
 # FetchJS
 
-提供了簡單的方法，允許使用者透過KubeJS調用http介面、發送資料或下載文件。
+提供了簡單的方法，允許使用者透過KubeJS調用http介面、發送資料或下載檔案。
 
 ### 簡單範例
 

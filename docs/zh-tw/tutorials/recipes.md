@@ -151,7 +151,7 @@ event.recipes.minecraft.stonecutting('3x minecraft:stick', '#minecraft:planks')
 
 ### 自訂/模組 JSON 配方
 
-如果模組支持資料包配方，你可以在不需要任何附加模組支持的情況下為其添加配方！不幸的是，我們無法提供具體建議，因為每個模組的設計都不同，但如果模組有 GitHub（大多數都有！）或其他原始碼，你可以在 `/src/generated/resources/data/<modname>/recipes/` 中找到相關的 JSON 文件。不然你也可能可以通過解壓模組的 .jar 文件找到它。
+如果模組支持資料包配方，你可以在不需要任何附加模組支持的情況下為其添加配方！不幸的是，我們無法提供具體建議，因為每個模組的設計都不同，但如果模組有 GitHub（大多數都有！）或其他原始碼，你可以在 `/src/generated/resources/data/<modname>/recipes/` 中找到相關的 JSON 檔案。不然你也可能可以通過解壓模組的 .jar 檔案找到它。
 
 這裡有一個添加 農夫樂事（Farmer's Delight） 砧板配方的例子，定義了輸入、輸出和工具，直接取自他們的 [GitHub](https://github.com/vectorwing/FarmersDelight/blob/1.20/src/generated/resources/data/farmersdelight/recipes/cutting/cake.json)。顯然，你可以替換這裡的任何物品來製作自己的配方！
 
