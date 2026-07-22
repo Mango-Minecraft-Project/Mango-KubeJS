@@ -1,28 +1,18 @@
 {
   "files.autoSave": "off",
   "js/ts.suggest.autoImports": true,
-  "cSpell.words": [
-    "createheatjs",
-    "darkmode",
-    "eventjs",
-    "filesjs",
-    "Lazyload",
-    "Mcmod",
-    "Modrinth",
-    "shiki",
-    "slimsearch",
-    "tconstruct",
-    "ytmango"
-  ],
+  "cSpell.words": [],
   "files.exclude": {
     "**/.git": false,
-    "docs/.vuepress/.cache": true,
-    "docs/.vuepress/.temp": true,
-    "docs/.vuepress/dist": true,
+    "docs/.vitepress/.cache": true,
+    "docs/.vitepress/.temp": true,
+    "docs/.vitepress/dist": true,
     "node_modules": true
   },
   "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[markdown]": {
-    "editor.snippets.codeActions.enabled": true
+    "editor.snippets.codeActions.enabled": true,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   }
 }
