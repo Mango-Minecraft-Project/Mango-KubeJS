@@ -11,5 +11,5 @@ source: https://kubejs.com/wiki/tutorials/hand
 1. 將物品放在主手中
 2. 執行指令
 3. 現在你應該會看到類似這樣的內容：
-   <Attachment link="hand_output.png" />
+   <Attachment src="hand_output.png" />
 4. 點擊綠色文字（物品 ID）來複製它

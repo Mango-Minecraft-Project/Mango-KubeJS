@@ -11,12 +11,12 @@ mod:
 實際內容請以 [Github 上的原始碼](https://github.com/SlimeKnights/TinkersConstruct/blob/1.20.1/src/main/java/slimeknights/tconstruct/library/tools/SlotType.java)為準
 :::
 
-| 欄位                     | 說明                                                             |
-| ------------------------ | ---------------------------------------------------------------- |
-| `TinkerSlotType.UPGRADE` | <Attachment link="upgrade_slot.png" class="icon-image" /> 升級槽 |
-| `TinkerSlotType.ABILITY` | <Attachment link="ability_slot.png" class="icon-image" /> 能力槽 |
-| `TinkerSlotType.DEFENSE` | <Attachment link="defense_slot.png" class="icon-image" /> 防禦槽 |
-| `TinkerSlotType.SOUL`    | <Attachment link="soul_slot.png" class="icon-image" /> 靈魂槽    |
+| 欄位                     | 說明                                                            |
+| ------------------------ | --------------------------------------------------------------- |
+| `TinkerSlotType.UPGRADE` | <Attachment src="upgrade_slot.png" class="icon-image" /> 升級槽 |
+| `TinkerSlotType.ABILITY` | <Attachment src="ability_slot.png" class="icon-image" /> 能力槽 |
+| `TinkerSlotType.DEFENSE` | <Attachment src="defense_slot.png" class="icon-image" /> 防禦槽 |
+| `TinkerSlotType.SOUL`    | <Attachment src="soul_slot.png" class="icon-image" /> 靈魂槽    |
 
 | 方法名           | 參數          | 回傳值      | 說明                       |
 | ---------------- | ------------- | ----------- | -------------------------- |

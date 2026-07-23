@@ -22,7 +22,7 @@ This mod has not been publicly released yet, this document is for reference only
 :::
 
 :::details Download Link
-<Attachment link="tconstruct_js-1.0+aa6.jar" text="Click here"/>
+<Attachment src="tconstruct_js-1.0+aa6.jar" text="Click here"/>
 :::
 
 ---

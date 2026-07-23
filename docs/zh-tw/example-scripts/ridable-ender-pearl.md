@@ -5,7 +5,7 @@ isOriginal: true
 tags: [KubeJS 6]
 ---
 
-<Attachment link="0.mp4" />
+<Attachment src="0.mp4" />
 
 ```js
 ItemEvents.rightClicked("ender_pearl", (event) => {

@@ -5,7 +5,7 @@ isOriginal: true
 tags: [KubeJS 6]
 ---
 
-<Attachment link="0.png" />
+<Attachment src="0.png" />
 
 ```js
 ServerEvents.recipes((event) => {

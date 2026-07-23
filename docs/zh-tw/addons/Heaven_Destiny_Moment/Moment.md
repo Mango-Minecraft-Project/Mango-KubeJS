@@ -152,7 +152,7 @@ new DefaultBarRenderType(overlay: BossBarOverlay, color: BossBarColor): MomentBu
 
 附屬模組可以實現 IBarRenderType 介面達成自訂 BossBar，如：
 
-<Attachment link="CustomBarRenderTypeExample.png"/>
+<Attachment src="CustomBarRenderTypeExample.png"/>
 
 #### `BossBarOverlay`
 

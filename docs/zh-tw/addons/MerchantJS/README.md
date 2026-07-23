@@ -117,4 +117,4 @@ MerchantEvents.afterTrade((event) => {
 
 暫無，歡迎許願。
 
-<Attachment link="example.png" />
+<Attachment src="example.png" />

@@ -36,7 +36,7 @@ FetchJS.fetch("https://api.xygeng.cn/one", (data) => {
 
 這個網址是一個隨機名言介面，可用於測試，返回的資料：
 
-<Attachment link="random-maxim.png" />
+<Attachment src="random-maxim.png" />
 
 Download方法用於下載，如圖片、模組等。
 
@@ -53,7 +53,7 @@ FetchJS.download(
 );
 ```
 
-<Attachment link="download-SlashBladeResharped.png" />
+<Attachment src="download-SlashBladeResharped.png" />
 
 例子中調用這個方法往mods資料夾裡下載拔刀劍模組，並且能即時顯示下載進度。
 

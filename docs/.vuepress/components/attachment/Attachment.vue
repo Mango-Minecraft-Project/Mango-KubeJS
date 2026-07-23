@@ -1,7 +1,7 @@
 <template>
   <component
     :is="currentComponent"
-    :link="resolvedLink"
+    :src="resolvedSrc"
     :text="resolvedText"
     v-bind="$attrs"
   />
@@ -10,82 +10,132 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vuepress/client";
-import Image from "./AttachmentImage.vue";
-import Video from "./AttachmentVideo.vue";
-import Download from "./AttachmentDownload.vue";
 
-// 定義 Props
-const props = withDefaults(
-  defineProps<{
-    type?: "download" | "video" | "image";
-    link: string;
-    text?: string;
-    global?: boolean;
-  }>(),
-  {
-    global: false,
-  },
-);
+import AttachmentImage from "./AttachmentImage.vue";
+import AttachmentVideo from "./AttachmentVideo.vue";
+import AttachmentDownload from "./AttachmentDownload.vue";
 
-// 停用屬性繼承到根節點（因為我們要手動 v-bind="$attrs" 給動態組件）
 defineOptions({
   inheritAttrs: false,
 });
 
-// 獲取目前路由（必須在 setup 頂層調用）
+const props = withDefaults(
+  defineProps<{
+    src?: string;
+    link?: string; // 保留舊版相容性
+    text?: string;
+    type?: string;
+    global?: boolean;
+  }>(),
+  {
+    global: true,
+  },
+);
+
 const route = useRoute();
 
-// 輔助函式：取得副檔名
+const LANGUAGES = ["en-us", "zh-tw", "zh-cn"];
+
+const source = computed(() => {
+  return props.src ?? props.link ?? "";
+});
+
 function getExtension(filename: string) {
-  const match = filename.match(/\.(\w+)$/);
-  return match ? match[1] : "";
+  return filename.split(".").pop()?.toLowerCase() ?? "";
 }
 
-// 輔助函式：根據副檔名取得組件
 function getComponentByExtension(extension: string) {
   switch (extension) {
     case "mp4":
     case "mp3":
     case "ogg":
-      return Video;
+    case "webm":
+      return AttachmentVideo;
+
     case "png":
     case "jpg":
+    case "jpeg":
     case "gif":
-      return Image;
+    case "webp":
+    case "svg":
+      return AttachmentImage;
+
     default:
-      return Download;
+      return AttachmentDownload;
   }
 }
 
-// 計算屬性：決定要渲染哪個組件
+function getAttachmentDirectory(path: string) {
+  const clean = path.replace(/\.html$/, "").replace(/^\/|\/$/g, "");
+
+  const parts = clean.split("/");
+
+  const filename = parts.pop();
+
+  if (!filename) {
+    return parts.join("/");
+  }
+
+  // README 不保留資料夾名稱
+  if (filename.toLowerCase() === "readme") {
+    return parts.join("/");
+  }
+
+  // 其他頁面保留檔名作為資料夾
+  return [...parts, filename].join("/");
+}
+
 const currentComponent = computed(() => {
-  switch (props.type) {
+  const type = props.type?.toLowerCase();
+
+  switch (type) {
     case "download":
-      return Download;
-    case "video":
-      return Video;
+      return AttachmentDownload;
+
     case "image":
-      return Image;
+    case "img":
+      return AttachmentImage;
+
+    case "video":
+      return AttachmentVideo;
+
     default:
-      return getComponentByExtension(getExtension(props.link));
+      return getComponentByExtension(getExtension(source.value));
   }
 });
 
-// 計算屬性：解析最終的 Link 路徑
-const resolvedLink = computed(() => {
-  // 修正：從正確的 route.path 開始處理
-  let currentPath = route.path.replace(/\.html$/, "/");
-  let url = currentPath + props.link;
+const resolvedSrc = computed(() => {
+  const src = source.value;
 
-  if (props.global) {
-    url = url.replace("zh-tw/", "");
+  // 外部 URL
+  if (src.startsWith("http://") || src.startsWith("https://")) {
+    return src;
   }
 
-  return url.startsWith("/") ? url : "/" + url;
+  // 手動指定絕對路徑
+  if (src.startsWith("/")) {
+    return src;
+  }
+
+  const attachmentDir = getAttachmentDirectory(route.path);
+
+  const segments = attachmentDir.split("/").filter(Boolean);
+
+  let lang = "en-us";
+
+  if (segments.length > 0 && LANGUAGES.includes(segments[0].toLowerCase())) {
+    lang = segments[0];
+    segments.shift();
+  }
+
+  const relativeDir = segments.join("/");
+
+  const prefix = props.global ? "/global" : `/${lang}`;
+
+  return `${prefix}/${relativeDir}/${src}`.replace(/\/+/g, "/");
 });
 
-// 計算屬性：解析顯示文字
 const resolvedText = computed(() => {
-  return props.text ?? props.link;
+  return props.text ?? source.value;
 });
 </script>
