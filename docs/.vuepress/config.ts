@@ -1,5 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
+import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
 
 import theme from "./theme.js";
 
@@ -51,4 +52,10 @@ export default defineUserConfig({
       level: [2, 3, 4, 5],
     },
   },
+
+  plugins: [
+    // registerComponentsPlugin({
+    // componentsDir: path.resolve(__dirname, "./components"),
+    // }),
+  ],
 });

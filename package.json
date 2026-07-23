@@ -13,6 +13,7 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.30",
     "@vuepress/plugin-redirect": "2.0.0-rc.131",
+    "@vuepress/plugin-register-components": "2.0.0-rc.132",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.131",
     "sass-embedded": "^1.100.0",
     "vidstack": "^1.15.6",

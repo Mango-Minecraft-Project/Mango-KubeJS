@@ -25,5 +25,6 @@
   "[markdown]": {
     "editor.snippets.codeActions.enabled": true,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  }
+  },
+  "workbench.externalBrowser": "edge"
 }
